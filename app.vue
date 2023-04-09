@@ -180,7 +180,8 @@
 
     <div class="pa3 pa5-ns f3 white lh-copy bg-orange">
       <h3 class="ma0 pa0 pv4 lh-title tracked tc">Say hello: <a href="mailto:studio@room302.studio"
-          class="fw8 link underline white">studio@room302.studio</a></h3>
+          class="fw8 link underline white">
+          <span class="db dib-ns">studio</span><span class="db dib-ns">@room302.studio</span></a></h3>
     </div>
 
     <div class="pa3 pa5-ns f3 near-white lh-copy measure center">
@@ -366,7 +367,7 @@ h1 {
   /* font-size: 9.9rem; */
 }
 
-#logo {
+.logo {
   max-height: 50vh;
 }
 
