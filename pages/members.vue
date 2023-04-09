@@ -2,6 +2,7 @@
   <div class="pa2 pa5-l near-black">
     <h2>Studio Members</h2>
     <div class="member mv5">
+      <img src="member-headshots/curran-headshot.png" alt="EJ Fox" class="h4 br2"/>
       <h3 class="orange ma0 pa0 pb2">Curran Kelleher</h3>
       <div class="member-bio measure">
         <p>TK.</p>
@@ -26,6 +27,7 @@
     </div>
 
     <div class="member mv5">
+      <img src="member-headshots/ian-headshot.png" alt="EJ Fox" class="h4 br2"/>
       <h3 class="orange ma0 pa0 pb2">Ian Johnson</h3>
       <div class="member-bio measure">
         <p>TK</p>
