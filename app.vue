@@ -8,9 +8,8 @@
       <!-- <img src="/logo1.r2.svg" id="logo" alt="Room 302 Studio" class="w-100 pa6-ns" /> -->
 
       <svg version="1.1" class="w-100 logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        viewBox="0 0 369.5 374" style="enable-background:new 0 0 369.5 374;" xml:space="preserve">
-        <g id="room"
-          transform-origin="50% 50%"
+        viewBox="0 0 370 374">
+        <g id="room" transform-origin="50% 50%"
         >
           <g>
             <path class="white-fill st0" d="M153.4,160.3c-2.7,0-3.7-2.2-3.7-5.4V148c0-1.7-0.9-3.1-2.8-3.1h-3.6V160h-6.8v-36.7h11.3c5,0,8.4,2.9,8.4,8
@@ -60,8 +59,7 @@
   			s6.6,2.7,9.2,4.8s4.7,4.7,6.3,7.8C276.9,193.6,277.7,197.1,277.7,201.2z" />
           </g>
         </g>
-        <g id="circle"
-          transform-origin="50% 50%"
+        <g id="circle" transform-origin="center center"
         >
           <g>
             <path class="st0" d="M219.9,44.4l1.7-1.1c0.9,1.6,2.3,2.9,4.1,3.4c2.2,0.6,3.8-0.1,4.3-1.8s-0.6-2.6-2-3.7l-2.1-1.7
@@ -250,7 +248,7 @@ onMounted(() => {
   const letterDurationScalar = 0.04
   const letterAppearScalar = 3.3
 
-  // animate #three in
+  // // animate #three in
   tl.add({
     targets: 'svg #three',
     opacity: [0, 1],
@@ -306,21 +304,21 @@ onMounted(() => {
   // })
 
   // animate the text
-  tl.add({
-    targets: 'svg #text',
-    opacity: [0, 1],
-    duration: 500,
-    // delay: 500,
-  })
+  // tl.add({
+  //   targets: 'svg #text',
+  //   opacity: [0, 1],
+  //   duration: 500,
+  //   // delay: 500,
+  // })
 
   // make the circle rotate forever
-  anime({
-    targets: 'svg #circle',
-    rotate: [0,360],
-    duration: 192000,
-    easing: 'linear',
-    loop: true,
-  })
+  // anime({
+  //   targets: 'svg #circle',
+  //   rotate: [0,360],
+  //   duration: 192000,
+  //   easing: 'linear',
+  //   loop: true,
+  // })
 
 
 
@@ -368,7 +366,7 @@ h1 {
 }
 
 .logo {
-  max-height: 50vh;
+  max-height: 60vh;
 }
 
 .monospace {
