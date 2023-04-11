@@ -183,9 +183,9 @@
     <div class="pa3 pa5-ns f3 near-white lh-copy measure center">
       <h2 class="orange lh-title f2">Available to hire</h2>
       <p>
-        At <span class="orange">Room 302 Studio</span> we bring together <NuxtLink class="link underline dim white" to="/members">a team</NuxtLink>         <img src="member-headshots/curran-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Curran" />
-        <img src="member-headshots/ej-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="EJ" />
-        <img src="member-headshots/ian-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Ian" /> of skilled data visualization and prototyping experts
+        At <span class="orange">Room 302 Studio</span> we bring together <NuxtLink class="link underline dim white" to="/members">a team</NuxtLink> <img src="~/assets/member-headshots/curran-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Curran" />
+        <img src="~/assets/member-headshots/ej-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="EJ" />
+        <img src="~/assets/member-headshots/ian-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Ian" /> of skilled data visualization and prototyping experts
 
         
         
@@ -212,11 +212,11 @@
         We collaborate on personal projects, open source work, and pro-bono projects that make a difference.
       </p>
 
-      <p>As part of our cooperative network, you'll unlock early access to tools and templates, take part in inspiring exchanges, and team up on transformative projects that leave a lasting mark.
+      <p>As part of our cooperative network, studio members unlock early access to tools and templates, take part in inspiring exchanges, and team up on transformative projects that leave a lasting mark.
       </p>
 
       <p>
-        No matter where you're at in your creative adventure, we are trying to build the ultimate playground for growth, collaboration, and tangible results. Let's roll up our sleeves and <strong>build something amazing together!</strong>
+        No matter where you're at in your creative adventure, we are trying to build the ultimate playground for growth, collaboration, and tangible results.      
       </p>
     </div>
 
