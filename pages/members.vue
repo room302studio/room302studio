@@ -27,7 +27,7 @@
           be a staple in election coverage to this day.</p>
 
         <p>At Room 302 Studio, EJ brings a unique perspective, pushing boundaries and exploring uncharted territory.
-          Drawing inspiration from nature, ecology, and spirituality, he's dedicated to crafting experiences that leave a
+          Drawing inspiration from nature, ecology, and art, he's dedicated to crafting experiences that leave a
           lasting impression.</p>
       </div>
     </div>
