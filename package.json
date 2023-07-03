@@ -12,6 +12,7 @@
     "nuxt": "^3.3.2"
   },
   "dependencies": {
+    "@gtm-support/vue-gtm": "^2.0.0",
     "@nuxtjs/google-fonts": "^3.0.0",
     "@vueuse/nuxt": "^9.13.0",
     "animejs": "^3.2.1",
