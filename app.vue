@@ -36,4 +36,8 @@ body {
 .white-fill {
   fill: #D1DCE3 !important;
 }
+
+.bg-dark-blue {
+  background-color: #2A3A44 !important;
+}
 </style>
