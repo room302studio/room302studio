@@ -1,5 +1,5 @@
 <template>
-<ul class="list ma0 pv1 pv4-l ph2 ph5-l f2 tc sans-serif fw8">
+<ul class="list ma0 pv1 pv4-l ph2 ph5-l f4 tc sans-serif fw8">
   <li class="pa1 lh-copy dib mr2 mr4-l mv0">
     <NuxtLink class="link black underline dim" to="/">Home</NuxtLink>    
   </li>
@@ -8,6 +8,10 @@
   </li> -->
   <li class="pa1 lh-copy dib mr2 mr4-l mv0">
     <NuxtLink class="link black underline dim" to="/members">Members</NuxtLink>
+  </li>
+
+  <li class="pa1 lh-copy dib mr2 mr4-l mv0">
+    <NuxtLink class="link black underline dim" to="/events">Events</NuxtLink>
   </li>
 </ul>
 </template>
