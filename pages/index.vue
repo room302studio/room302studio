@@ -183,12 +183,15 @@
     <div class="pa3 pa5-ns f3 near-white lh-copy measure center">
       <h2 class="orange lh-title f2">Available to hire</h2>
       <p>
-        At <span class="orange">Room 302 Studio</span> we bring together <NuxtLink class="link underline dim white" to="/members">a team</NuxtLink>         <img src="~/public/member-headshots/curran-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Curran" />
+        At <span class="orange">Room 302 Studio</span> we bring together <NuxtLink class="link underline dim white"
+          to="/members">a team</NuxtLink> <img src="~/public/member-headshots/curran-headshot.png"
+          class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Curran" />
         <img src="~/public/member-headshots/ej-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="EJ" />
-        <img src="~/public/member-headshots/ian-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Ian" /> of skilled data visualization and prototyping experts
+        <img src="~/public/member-headshots/ian-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Ian" /> of
+        skilled data visualization and prototyping experts
 
-        
-        
+
+
         who are dedicated to transforming
         <!-- <NuxtLink class="link underline dim white" to="/our-work">ideas into reality</NuxtLink>. -->
         ideas into reality.
@@ -204,7 +207,8 @@
     <div class="pa3 pa5-ns f3 near-white lh-copy measure center">
       <h2 class="orange lh-title f2">Available for collaboration</h2>
       <p>
-        In addition to our client services, <span class="orange">Room 302 Studio</span> is a vibrant virtual studio space where passionate creators, innovators, and visionaries come together to
+        In addition to our client services, <span class="orange">Room 302 Studio</span> is a vibrant virtual studio space
+        where passionate creators, innovators, and visionaries come together to
         collaborate, learn, and grow.
       </p>
 
@@ -212,15 +216,63 @@
         We collaborate on personal projects, open source work, and pro-bono projects that make a difference.
       </p>
 
-      <p>As part of our cooperative network, you'll unlock early access to tools and templates, take part in inspiring exchanges, and team up on transformative projects that leave a lasting mark.
+      <p>As part of our cooperative network, you'll unlock early access to tools and templates, take part in inspiring
+        exchanges, and team up on transformative projects that leave a lasting mark.
       </p>
 
       <p>
-        No matter where you're at in your creative adventure, we are trying to build the ultimate playground for growth, collaboration, and tangible results. Let's roll up our sleeves and <strong>build something amazing together!</strong>
+        No matter where you're at in your creative adventure, we are trying to build the ultimate playground for growth,
+        collaboration, and tangible results. Let's roll up our sleeves and <strong>build something amazing
+          together!</strong>
       </p>
     </div>
 
+    <div class="tc">
+      <div id="mc_embed_shell" class="center pa2 pv4 sans-serif">
+        <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+        <div id="mc_embed_signup" class="center tl pv3 br2 bg-dark-blue white">
+          <form
+            action="https://studio.us21.list-manage.com/subscribe/post?u=d293b3249ec6d06eab05818f9&amp;id=b45dde966b&amp;f_id=00e9dae6f0"
+            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+            target="_self" novalidate="">
+            <div id="mc_embed_signup_scroll">
+              <h2>Subscribe for updates on what we're working on...</h2>
+              <!-- <div class="indicates-required"><span class="asterisk">*</span> indicates required</div> -->
+              <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address 
+                  <!-- <span
+                    class="asterisk">*</span> -->
+                  </label>
+                    <input type="email" name="EMAIL" class="required email"
+                  id="mce-EMAIL" required="" value=""
+                    placeholder="youremail@wherever.com"
+                  >
+                  <span id="mce-EMAIL-HELPERTEXT" class="helper_text bg-dark-blue white"></span>
+                </div>
+              <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display: none;"></div>
+                <div class="response" id="mce-success-response" style="display: none;"></div>
+              </div>
+              <div aria-hidden="true" style="position: absolute; left: -5000px;" class="bg-dark-blue bn">
+                /* real people should not fill this in and expect good things - do not remove this or risk form bot
+                signups */
+                <input type="text" name="b_d293b3249ec6d06eab05818f9_b45dde966b" tabindex="-1" value="">
+              </div>
+              <div class="optionalParent">
+                <div class="clear foot">
+                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button bg-orange white" value="Subscribe">
+                  <!-- <p class="brandingLogo" style="margin: 0px auto;"><a href="http://eepurl.com/iuOCtw"
+                      title="Mailchimp - email marketing made easy and fun"><img
+                        src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"
+                        alt="referral badge"></a></p> -->
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
 
+    </div>
 
   </div>
 </template>
@@ -336,7 +388,6 @@ onMounted(() => {
 })
 </script>
 <style scoped>
-
 /* make a background gradient animation that super-slowly fades from background-color: #2A3A44; to a slightly darker version with an offset radial array that is scaled way beyond the viewport  and rotates extremely slowly */
 
 .index {
@@ -361,4 +412,13 @@ h1 {
   fill: #D1DCE3 !important;
   opacity: 0.2;
 }
+
+/* mailchimp signup */
+#mc_embed_signup {
+            background: #fff;
+            clear: left;
+            /* font: 14px Helvetica, Arial, sans-serif; */
+            max-width: 600px;
+          }
+
 </style>
