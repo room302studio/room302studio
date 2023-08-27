@@ -184,10 +184,10 @@
       <h2 class="orange lh-title f2">Available to hire</h2>
       <p>
         At <span class="orange">Room 302 Studio</span> we bring together <NuxtLink class="link underline dim white"
-          to="/members">a team</NuxtLink> <img src="~/public/member-headshots/curran-headshot.png"
+          to="/members">a team</NuxtLink> <img src="member-headshots/curran-headshot.png"
           class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Curran" />
-        <img src="~/public/member-headshots/ej-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="EJ" />
-        <img src="~/public/member-headshots/ian-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Ian" /> of
+        <img src="member-headshots/ej-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="EJ" />
+        <img src="member-headshots/ian-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Ian" /> of
         skilled data visualization and prototyping experts
 
 
@@ -227,7 +227,9 @@
       </p>
     </div>
 
-    <MailchimpSignupForm />
+    <MailchimpSignupForm 
+      class="pa0 pa5-ns measure-wide center"
+    />
 
   </div>
 </template>
