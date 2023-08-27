@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    ssr: false, // for netlify deploy
     modules: [
     '@vueuse/nuxt',
     '@nuxt/image',
