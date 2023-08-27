@@ -5,6 +5,9 @@
   </div>
 </template>
 <script setup>
+useHead({
+  title: 'Room 302 Studio'
+})
 
 </script>
 <style>
