@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
     modules: [
     '@vueuse/nuxt',
+    '@nuxt/image',
     ['@nuxtjs/google-fonts', {
       families: {
         'Source Code Pro': [200, 400, 700, 900],

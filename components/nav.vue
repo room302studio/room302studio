@@ -34,6 +34,7 @@ li a {
 /* make the non router-active links opacity 25% */
 li > a.router-link-exact-active {
   opacity: 1;
+  text-decoration: underline;
 }
 
 li > a.router-link-active {
@@ -42,6 +43,7 @@ li > a.router-link-active {
 
 li > a {
   opacity: 0.25;
+  text-decoration: none;
 }
 
 li > a:hover {

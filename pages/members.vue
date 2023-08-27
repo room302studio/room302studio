@@ -1,5 +1,5 @@
 <template>
-  <div class="pa2 pa5-l near-black">
+  <div class="pa2 pa5-ns near-black">
     <h2>Studio Members</h2>
     <div class="member mv5">
       <img src="member-headshots/curran-headshot.png" alt="Curran" class="h4 br2" />

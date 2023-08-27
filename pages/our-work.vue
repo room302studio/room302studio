@@ -11,12 +11,14 @@
       <p>
         In a series examining environmental justice's impact on different communities, we created interactive
         scroll-powered maps and visualizations for <strong>The Margin's</strong> five inaugural stories.</p>
-        
-        <p>Our visualizations included timelines, historical redlining maps, and a scroll-powered tour of the Skagit River.
-        The visualizations served to enhance the compelling narratives illustrating how environmental justice dynamics affect people's
+
+      <p>Our visualizations included timelines, historical redlining maps, and a scroll-powered tour of the Skagit River.
+        The visualizations served to enhance the compelling narratives illustrating how environmental justice dynamics
+        affect people's
         lives.
       </p>
-      <img src="our-work-images/themargin.png" alt="">
+      <nuxt-img   sizes="sm:100vw md:100vw lg:1080px"
+src="our-work-images/themargin.png" alt="" />
     </div>
 
     <div class="mv4 pa4 ba">
@@ -31,8 +33,30 @@
         over time. The project allowed viewers to navigate through rich datasets by isolating each origin or destination,
         providing an immersive and enlightening exploration of refugee movements with an innovative visualization.
       </p>
-      <img src="our-work-images/unhcr.png" alt="">
+      <nuxt-img   sizes="sm:100vw md:100vw lg:1080px"
+src="our-work-images/unhcr.png" alt="" />
     </div>
+
+    <div class="mv4 pa4 ba">
+      <h4>AI-driven Business Assistant</h4>
+      <h5>Client: Noan</h5>
+      <p>
+        <a href="https://www.getnoan.com/">https://www.getnoan.com/</a>
+      </p>
+      <p>
+        Transforming an abstract concept into a tangible solution, Room 302 Studio architected and developed an innovative
+        MVP for Noan, a pioneering business co-pilot. Our work encompassed the full breadth of the app, strategically
+        converting a non-technical vision into a dynamic AI platform employed for advanced language model generation.</p>
+
+      <p>Complementing our rapid prototype development, we spearheaded the creation of proprietary IP. Our ground-breaking
+        CMS solution, fueled by Storyblok, empowers non-technical users to swiftly create strings of prompts, streamlining
+        operational efficiency. Leveraging OpenAI's GPT-4 at the onset of its introduction, we stand testament to our
+        capacity to harness emerging technologies speedily and effectively.
+      </p>
+      <nuxt-img   sizes="sm:100vw md:100vw lg:1920px"
+src="our-work-images/getnoan.png" alt="" />
+    </div>
+
 
     <div class="mv4 pa4 ba">
       <h4>Ukraine Grain</h4>
@@ -46,7 +70,8 @@
         reduction in output would mean for Ukraine's total grain production and its downstream consumers. The result was
         an engaging, scroll-based app that made complex data accessible and intuitive.
       </p>
-      <img src="our-work-images/ukrainegrain.png" alt="">
+      <nuxt-img   sizes="sm:100vw md:100vw lg:1080px"
+src="our-work-images/ukrainegrain.png" alt="" />
     </div>
 
     <div class="mv4 pa4 ba">
