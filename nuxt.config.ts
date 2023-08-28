@@ -1,8 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    // ssr: false, // for netlify deploy
-    ssr: true, // to generate nuxt images
-    target: 'static',
+    ssr: false, // for netlify deploy
     modules: [
     '@vueuse/nuxt',
     [
