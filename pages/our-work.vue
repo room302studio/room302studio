@@ -18,7 +18,7 @@
         lives.
       </p>
       <img   sizes="sm:100vw md:100vw lg:1080px"
-src="our-work-images/themargin.png" alt="" />
+src="/our-work-images/themargin.png" alt="" />
     </div>
 
     <div class="mv4 pa4 ba">
@@ -34,7 +34,7 @@ src="our-work-images/themargin.png" alt="" />
         providing an immersive and enlightening exploration of refugee movements with an innovative visualization.
       </p>
       <img   sizes="sm:100vw md:100vw lg:1080px"
-src="our-work-images/unhcr.png" alt="" />
+src="/our-work-images/unhcr.png" alt="" />
     </div>
 
     <div class="mv4 pa4 ba">
@@ -54,7 +54,7 @@ src="our-work-images/unhcr.png" alt="" />
         capacity to harness emerging technologies speedily and effectively.
       </p>
       <img   sizes="sm:100vw md:100vw lg:1920px"
-src="our-work-images/getnoan.png" alt="" />
+src="/our-work-images/getnoan.png" alt="" />
     </div>
 
 
@@ -71,7 +71,7 @@ src="our-work-images/getnoan.png" alt="" />
         an engaging, scroll-based app that made complex data accessible and intuitive.
       </p>
       <img   sizes="sm:100vw md:100vw lg:1080px"
-src="our-work-images/ukrainegrain.png" alt="" />
+src="/our-work-images/ukrainegrain.png" alt="" />
     </div>
 
     <div class="mv4 pa4 ba">
