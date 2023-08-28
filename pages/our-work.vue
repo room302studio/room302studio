@@ -17,7 +17,7 @@
         affect people's
         lives.
       </p>
-      <nuxt-img   sizes="sm:100vw md:100vw lg:1080px"
+      <img   sizes="sm:100vw md:100vw lg:1080px"
 src="our-work-images/themargin.png" alt="" />
     </div>
 
@@ -33,7 +33,7 @@ src="our-work-images/themargin.png" alt="" />
         over time. The project allowed viewers to navigate through rich datasets by isolating each origin or destination,
         providing an immersive and enlightening exploration of refugee movements with an innovative visualization.
       </p>
-      <nuxt-img   sizes="sm:100vw md:100vw lg:1080px"
+      <img   sizes="sm:100vw md:100vw lg:1080px"
 src="our-work-images/unhcr.png" alt="" />
     </div>
 
@@ -53,7 +53,7 @@ src="our-work-images/unhcr.png" alt="" />
         operational efficiency. Leveraging OpenAI's GPT-4 at the onset of its introduction, we stand testament to our
         capacity to harness emerging technologies speedily and effectively.
       </p>
-      <nuxt-img   sizes="sm:100vw md:100vw lg:1920px"
+      <img   sizes="sm:100vw md:100vw lg:1920px"
 src="our-work-images/getnoan.png" alt="" />
     </div>
 
@@ -70,7 +70,7 @@ src="our-work-images/getnoan.png" alt="" />
         reduction in output would mean for Ukraine's total grain production and its downstream consumers. The result was
         an engaging, scroll-based app that made complex data accessible and intuitive.
       </p>
-      <nuxt-img   sizes="sm:100vw md:100vw lg:1080px"
+      <img   sizes="sm:100vw md:100vw lg:1080px"
 src="our-work-images/ukrainegrain.png" alt="" />
     </div>
 
