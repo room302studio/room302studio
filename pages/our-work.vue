@@ -37,7 +37,7 @@ src="/our-work-images/themargin.png" alt="" />
 src="/our-work-images/unhcr.png" alt="" />
     </div>
 
-    <div class="mv4 pa4 ba">
+    <!-- <div class="mv4 pa4 ba">
       <h4>AI-driven Business Assistant</h4>
       <h5>Client: Noan</h5>
       <p>
@@ -55,7 +55,7 @@ src="/our-work-images/unhcr.png" alt="" />
       </p>
       <img   sizes="sm:100vw md:100vw lg:1920px"
 src="/our-work-images/getnoan.png" alt="" />
-    </div>
+    </div> -->
 
 
     <div class="mv4 pa4 ba">
