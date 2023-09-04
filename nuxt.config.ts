@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    ssr: false, // for netlify deploy
-    modules: [
+  ssr: false, // for netlify deploy
+  modules: [
+    '@nuxt/content',
     '@vueuse/nuxt',
     [
       '@nuxt/image',
@@ -20,7 +21,7 @@ export default defineNuxtConfig({
     title: 'Room 302 Studio',
     meta: [
       { charset: 'utf-8' },
-      { name: 'title', content: 'Room 302 Studio' },      
+      { name: 'title', content: 'Room 302 Studio' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
