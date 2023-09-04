@@ -1,7 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    ssr: false, // for netlify deploy
     modules: [
     '@vueuse/nuxt',
+    [
+      '@nuxt/image',
+      {
+        provider: 'static',
+      },
+    ],
     ['@nuxtjs/google-fonts', {
       families: {
         'Source Code Pro': [200, 400, 700, 900],

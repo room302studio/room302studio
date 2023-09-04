@@ -1,8 +1,8 @@
 <template>
-  <div class="pa2 pa5-l near-black">
+  <div class="pa2 pa5-ns near-black">
     <h2>Studio Members</h2>
     <div class="member mv5">
-      <img src="~/public/member-headshots/curran-headshot.png" alt="Curran" class="h4 br2" />
+      <img src="/member-headshots/curran-headshot.png" alt="Curran" class="h4 br2" />
       <h3 class="orange ma0 pa0 pb2">Curran Kelleher</h3>
       <div class="member-bio measure">
         <p>Curran Kelleher is a data visualization expert and educator, committed to empowering others through sharing
@@ -17,8 +17,10 @@
       </div>
     </div>
 
+    <!-- EJ Fox -->
+
     <div class="member mv5">
-      <img src="~/public/member-headshots/ej-headshot.png" alt="EJ Fox" class="h4 br2" />
+      <img src="/member-headshots/ej-headshot.png" alt="EJ Fox" class="h4 br2" />
       <h3 class="orange ma0 pa0 pb2">EJ Fox</h3>
       <div class="member-bio measure">
         <p>EJ Fox is a data visualization designer and developer with a passion for creating innovative and captivating
@@ -33,7 +35,21 @@
     </div>
 
     <div class="member mv5">
-      <img src="~/public/member-headshots/ian-headshot.png" alt="Ian" class="h4 br2" />
+      <img src="/member-headshots/israel-headshot.png" alt="Israel Gonzalez" class="h4 br2" />
+      <h3 class="orange ma0 pa0 pb2">Israel Gonzalez</h3>
+      <div class="member-bio measure">
+        <p>Israel, a devoted software engineer, has an unwavering commitment to overcoming complex challenges. From his initial coding experiences with game development during his middle school years, Israel has adventured through an array of technical terrains including machine learning, data visualization, and mobile applications.</p>
+
+      <p>At Room 302 Studio, Israel showcases his innovative approach and eagerness to harness the potential of AI language models. He is committed to tackling diverse problems head on, from autonomous problem-solving and simulations, to robotics and scientific research. Inspired by his thirst for problem-solving, Israel is dedicated to making a significant impact through technology.</p>
+      </div>
+    </div>
+    
+
+    <h3 class="mv0 pv0 sans-serif b tracked gray">On sabbatical: </h3>
+
+    <!-- Ian Johnson -->
+    <div class="member mv5 o-20">
+      <img src="/member-headshots/ian-headshot.png" alt="Ian" class="h4 br2" />
       <h3 class="orange ma0 pa0 pb2">Ian Johnson</h3>
       <div class="member-bio measure">
         <p>Ian Johnson is a data alchemist focused on building web-based data
@@ -49,6 +65,8 @@
           learnings to enrich everyone who crosses his path.</p>
       </div>
     </div>
+
+
 
     <hr class="mv5" />
 
