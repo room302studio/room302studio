@@ -34,16 +34,15 @@
       </div>
     </div>
 
-    <!-- Israel Gonzalez -->
-
-    <!-- <div class="member mv5">
+    <div class="member mv5">
       <img src="/member-headshots/israel-headshot.png" alt="Israel Gonzalez" class="h4 br2" />
       <h3 class="orange ma0 pa0 pb2">Israel Gonzalez</h3>
       <div class="member-bio measure">
-        <p></p>
-        <p></p>
+        <p>Israel, a devoted software engineer, has an unwavering commitment to overcoming complex challenges. From his initial coding experiences with game development during his middle school years, Israel has adventured through an array of technical terrains including machine learning, data visualization, and mobile applications.</p>
+
+      <p>At Room 302 Studio, Israel showcases his innovative approach and eagerness to harness the potential of AI language models. He is committed to tackling diverse problems head on, from autonomous problem-solving and simulations, to robotics and scientific research. Inspired by his thirst for problem-solving, Israel is dedicated to making a significant impact through technology.</p>
       </div>
-    </div> -->
+    </div>
     
 
     <h3 class="mv0 pv0 sans-serif b tracked gray">On sabbatical: </h3>
