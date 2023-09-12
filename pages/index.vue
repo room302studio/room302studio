@@ -163,73 +163,60 @@
 
     </div>
 
+
     <div class="pa3 pa5-ns f3 near-white lh-copy measure center">
-      <p>
-        <span class="orange">Room 302 Studio</span> creates work that makes a <strong>real impact</strong>.
+      <p class="white">
+        We are a bespoke innovation lab that guides concepts from ideation to implementation.
       </p>
-      <p>
-        Our
-        top-tier consulting services focus on building joyful experiences and tools that contribute to a
-        better world.
+
+      <p class="mt6">
+        Innovation is at the heart of everything we do. Our collaborations span startups, mature companies, non-profits,
+        and news
+        organizations. We provide the tools, expertise, and collaborative environment
+        needed to <span class="orange">turn ideas into reality.</span> Our team of experts thrives on pushing boundaries,
+        experimenting with
+        cutting-edge technologies, and driving change.
+      </p>
+
+      <p class="f4 mv6">
+        We harness the power of over 30 collective years of data visualization and prototyping expertise from our founding
+        members.
+        <NuxtLink class="link underline dim white" to="/members">
+          <img src="/member-headshots/curran-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Curran" />
+          <img src="/member-headshots/ej-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="EJ" />
+          <img src="/member-headshots/israel-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Israel" />
+          <img src="/member-headshots/ian-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Ian" />
+        </NuxtLink>
+        We've extended our capabilities to include product development, artificial intelligence, and other cutting-edge
+        technologies.
+      </p>
+
+      <p class="f4 mv6">
+        Our diverse backgrounds enable us to approach projects from multiple perspectives. We've had the
+        privilege of working with renowned organizations such as GitHub, NBC News, The Washington Post, CBS News,
+        McKinsey, Stamen, and Google, bringing a wealth of experience and expertise to every project.
+      </p>
+
+      <p class="f4 mv6">
+        Whether you're a startup eager to revolutionize the market, an established firm seeking innovation and growth, or
+        a non-profit wanting to propel societal change, <strong class="orange">Room 302 Studio</strong> is your trusted
+        collaborator. Let's work together
+        to transform your ideas into tangible solutions that make a lasting difference in the world.
       </p>
     </div>
 
-    <div class="pa3 pa5-ns f3 white lh-copy bg-orange">
-      <h3 class="ma0 pa0 pv4 lh-title tracked tc">Say hello: <a href="mailto:studio@room302.studio"
-          class="fw8 link underline white">
-          <span class="db dib-ns">studio</span><span class="db dib-ns">@room302.studio</span></a></h3>
-    </div>
-
-    <div class="pa3 pa5-ns f3 near-white lh-copy measure center">
-      <h2 class="orange lh-title f2">Available to hire</h2>
-      <p>
-        At <span class="orange">Room 302 Studio</span> we bring together <NuxtLink class="link underline dim white"
-          to="/members">a team</NuxtLink> <img src="/member-headshots/curran-headshot.png"
-          class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Curran" />
-        <img src="/member-headshots/ej-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="EJ" />
-        <img src="/member-headshots/ian-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Ian" /> of
-        skilled data visualization and prototyping experts
-
-
-
-        who are dedicated to transforming
-        <!-- <NuxtLink class="link underline dim white" to="/our-work">ideas into reality</NuxtLink>. -->
-        ideas into reality.
-      </p>
-
-      <p>
-        With our diverse skill sets and collaborative approach, we'll help transform your data or idea into a
-        visualization or prototype that
-        tells your story, engages your audience, and helps you explore uncharted territory.
-      </p>
-    </div>
-
-    <div class="pa3 pa5-ns f3 near-white lh-copy measure center">
+    <div class="pa3 pa5-ns f5 near-white lh-copy measure center">
       <h2 class="orange lh-title f2">Available for collaboration</h2>
-      <p>
-        In addition to our client services, <span class="orange">Room 302 Studio</span> is a vibrant virtual studio space
-        where passionate creators, innovators, and visionaries come together to
-        collaborate, learn, and grow.
-      </p>
+      <p>Beyond traditional client services, <strong class="orange">Room 302 Studio</strong> serves as a dynamic digital
+        workspace, uniting creators to collectively build and grow. We champion personal projects, contribute to
+        open-source
+        initiatives, and engage in impactful pro-bono work.</p>
 
-      <p>
-        We collaborate on personal projects, open source work, and pro-bono projects that make a difference.
-      </p>
-
-      <p>As part of our cooperative network, you'll unlock early access to tools and templates, take part in inspiring
-        exchanges, and team up on transformative projects that leave a lasting mark.
-      </p>
-
-      <p>
-        No matter where you're at in your creative adventure, we are trying to build the ultimate playground for growth,
-        collaboration, and tangible results. Let's roll up our sleeves and <strong>build something amazing
-          together!</strong>
-      </p>
+      <p>By joining our collaborative network, gain exclusive early access to resources, partake in stimulating
+        discussions, and contribute to projects that make a significant impact.</p>
     </div>
 
-    <MailchimpSignupForm 
-      class="pa0 pa5-ns measure-wide center"
-    />
+    <MailchimpSignupForm class="pa0 pa5-ns measure-wide center" />
 
   </div>
 </template>

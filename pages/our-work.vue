@@ -17,8 +17,7 @@
         affect people's
         lives.
       </p>
-      <img   sizes="sm:100vw md:100vw lg:1080px"
-src="/our-work-images/themargin.png" alt="" />
+      <img sizes="sm:100vw md:100vw lg:1080px" src="/our-work-images/themargin.png" alt="" />
     </div>
 
     <div class="mv4 pa4 ba">
@@ -33,8 +32,7 @@ src="/our-work-images/themargin.png" alt="" />
         over time. The project allowed viewers to navigate through rich datasets by isolating each origin or destination,
         providing an immersive and enlightening exploration of refugee movements with an innovative visualization.
       </p>
-      <img   sizes="sm:100vw md:100vw lg:1080px"
-src="/our-work-images/unhcr.png" alt="" />
+      <img sizes="sm:100vw md:100vw lg:1080px" src="/our-work-images/unhcr.png" alt="" />
     </div>
 
     <!-- <div class="mv4 pa4 ba">
@@ -70,8 +68,7 @@ src="/our-work-images/getnoan.png" alt="" />
         reduction in output would mean for Ukraine's total grain production and its downstream consumers. The result was
         an engaging, scroll-based app that made complex data accessible and intuitive.
       </p>
-      <img   sizes="sm:100vw md:100vw lg:1080px"
-src="/our-work-images/ukrainegrain.png" alt="" />
+      <img sizes="sm:100vw md:100vw lg:1080px" src="/our-work-images/ukrainegrain.png" alt="" />
     </div>
 
     <div class="mv4 pa4 ba">
@@ -88,6 +85,8 @@ src="/our-work-images/ukrainegrain.png" alt="" />
 
       </p>
     </div>
+
+    <MailchimpSignupForm class="pa0 pa5-ns center" />
 
 
   </div>
