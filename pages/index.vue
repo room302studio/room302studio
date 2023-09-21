@@ -205,6 +205,14 @@
       </p>
     </div>
 
+
+    <div class="pa3 pa5-ns f3 f1-l white lh-copy bg-orange">
+      <h3 class="ma0 pa0 pv4 lh-title tracked tc">Say hello: <a href="mailto:studio@room302.studio"
+          class="fw8 link underline white b">
+          <span class="db dib-ns">studio</span><span class="db dib-ns">@room302.studio</span></a></h3>
+    </div>
+
+
     <div class="pa3 pa5-ns f5 near-white lh-copy measure center">
       <h2 class="orange lh-title f2">Available for collaboration</h2>
       <p>Beyond traditional client services, <strong class="orange">Room 302 Studio</strong> serves as a dynamic digital
