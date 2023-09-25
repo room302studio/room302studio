@@ -1,5 +1,5 @@
 <template>
-  <div>
+    <div class="pa2 pa5-l f3 lh-copy">
     <form name="contact" netlify>
       <p>
         <label>Name <input type="text" name="name" /></label>
