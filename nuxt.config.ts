@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
     ssr: false, // for netlify deploy
     modules: [
+    '@nuxt/content',
     '@vueuse/nuxt',
     [
       '@nuxt/image',
@@ -15,6 +16,9 @@ export default defineNuxtConfig({
       },
     }],
   ],
+  content: {
+    documentDriven: true,
+  },
   css: ['tachyons/css/tachyons.min.css'],
   head: {
     title: 'Room 302 Studio',
