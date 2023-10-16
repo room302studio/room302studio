@@ -1,6 +1,6 @@
 # Our Work
 
-## [Mapping Environmental Justice
+## Mapping Environmental Justice
 ### Client: The Margin
 https://themargin.us/
 
