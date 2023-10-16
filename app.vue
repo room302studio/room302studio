@@ -1,8 +1,8 @@
 <template>
-  <div>    
+  <NuxtLayout>
     <Nav />
     <NuxtPage />
-  </div>
+  </NuxtLayout>
 </template>
 <script setup>
 useHead({
