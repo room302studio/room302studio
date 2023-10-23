@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
     ssr: false, // for netlify deploy
     modules: [
+    '@vueuse/motion/nuxt',
     '@nuxt/content',
     '@nuxt/ui',
     '@vueuse/nuxt',
@@ -14,6 +15,7 @@ export default defineNuxtConfig({
     ['@nuxtjs/google-fonts', {
       families: {
         'Source Code Pro': [200, 400, 700, 900],
+        'Modak': [400],
       },
     }],
   ],
