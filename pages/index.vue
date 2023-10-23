@@ -164,58 +164,65 @@
     </div>
 
 
-    <div class="pa3 pa5-ns f3 near-white lh-copy measure center">
-      <p class="white">
+    <div class="px-3 py-5 md:py-10 text-lg text-white leading-relaxed max-w-3xl mx-auto">
+      <p class="text-white">
         We are a bespoke innovation lab that guides concepts from ideation to implementation.
       </p>
 
-      <p class="mt6">
+      <p class="mt-6">
         Innovation is at the heart of everything we do. Our collaborations span startups, mature companies, non-profits,
         and news
         organizations. We provide the tools, expertise, and collaborative environment
-        needed to <span class="orange">turn ideas into reality.</span> Our team of experts thrives on pushing boundaries,
+        needed to <span class="text-orange">turn ideas into reality.</span> Our team of experts thrives on pushing
+        boundaries,
         experimenting with
         cutting-edge technologies, and driving change.
       </p>
 
-      <p class="f4 mv6">
+      <p class="text-xl mt-12">
         We harness the power of over 30 collective years of data visualization and prototyping expertise from our founding
         members.
-        <NuxtLink class="link underline dim white" to="/members">
-          <img src="/member-headshots/curran-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Curran" />
-          <img src="/member-headshots/ej-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="EJ" />
-          <img src="/member-headshots/israel-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Israel" />
-          <img src="/member-headshots/ian-headshot.png" class="w1 h1 br4 dib v-mid mh1 ba b--white" alt="Ian" />
+        <NuxtLink class="link underline text-white" to="/members">
+          <img src="/member-headshots/curran-headshot.png"
+            class="w-6 h-6 rounded-full inline-block align-middle mx-1 border border-white" alt="Curran" />
+          <img src="/member-headshots/ej-headshot.png"
+            class="w-6 h-6 rounded-full inline-block align-middle mx-1 border border-white" alt="EJ" />
+          <img src="/member-headshots/israel-headshot.png"
+            class="w-6 h-6 rounded-full inline-block align-middle mx-1 border border-white" alt="Israel" />
+          <img src="/member-headshots/ian-headshot.png"
+            class="w-6 h-6 rounded-full inline-block align-middle mx-1 border border-white" alt="Ian" />
         </NuxtLink>
         We've extended our capabilities to include product development, artificial intelligence, and other cutting-edge
         technologies.
       </p>
 
-      <p class="f4 mv6">
+      <p class="text-xl mt-12">
         Our diverse backgrounds enable us to approach projects from multiple perspectives. We've had the
         privilege of working with renowned organizations such as GitHub, NBC News, The Washington Post, CBS News,
         McKinsey, Stamen, and Google, bringing a wealth of experience and expertise to every project.
       </p>
 
-      <p class="f4 mv6">
+      <p class="text-xl mt-12">
         Whether you're a startup eager to revolutionize the market, an established firm seeking innovation and growth, or
-        a non-profit wanting to propel societal change, <strong class="orange">Room 302 Studio</strong> is your trusted
+        a non-profit wanting to propel societal change, <strong class="text-orange">Room 302 Studio</strong> is your
+        trusted
         collaborator. Let's work together
         to transform your ideas into tangible solutions that make a lasting difference in the world.
       </p>
     </div>
 
 
-    <div class="pa3 pa5-ns f3 f1-l white lh-copy bg-orange">
-      <h3 class="ma0 pa0 pv4 lh-title tracked tc">Say hello: <a href="mailto:studio@room302.studio"
-          class="fw8 link underline white b">
-          <span class="db dib-ns">studio</span><span class="db dib-ns">@room302.studio</span></a></h3>
+    <div class="px-3 py-5 md:py-10 text-lg md:text-4xl text-white leading-relaxed bg-specialorange-500">
+      <h3 class="m-0 p-0 py-4 leading-tight text-center tracking-wide">Say hello: <a href="mailto:studio@room302.studio"
+          class="font-bold link underline text-white">
+          <span class="hidden md:inline-block">studio</span><span class="inline-block">@room302.studio</span></a></h3>
     </div>
 
 
-    <div class="pa3 pa5-ns f5 near-white lh-copy measure center">
-      <h2 class="orange lh-title f2">Available for collaboration</h2>
-      <p>Beyond traditional client services, <strong class="orange">Room 302 Studio</strong> serves as a dynamic digital
+    <div class="px-3 py-5 md:py-10 text-sm md:text-lg text-white leading-relaxed max-w-3xl mx-auto">
+      <h2 class="text-orange text-2xl leading-tight">Available for collaboration</h2>
+      <p>Beyond traditional client services, <strong class="text-orange">Room 302 Studio</strong> serves as a dynamic
+        digital
         workspace, uniting creators to collectively build and grow. We champion personal projects, contribute to
         open-source
         initiatives, and engage in impactful pro-bono work.</p>
@@ -224,7 +231,7 @@
         discussions, and contribute to projects that make a significant impact.</p>
     </div>
 
-    <MailchimpSignupForm class="pa0 pa5-ns measure-wide center" />
+    <MailchimpSignupForm class="p-0 md:py-10 max-w-3xl mx-auto" />
 
   </div>
 </template>
