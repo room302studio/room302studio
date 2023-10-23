@@ -1,11 +1,5 @@
 <template>
-  <section class="">
+  <section class="max-w-none prose dark:prose-invert">
     <slot />
   </section>
 </template>
-  
-<script setup>
-
-</script>
-  
-<style></style>

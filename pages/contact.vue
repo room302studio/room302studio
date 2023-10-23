@@ -1,7 +1,9 @@
 <template>
-  <div class="py-20 bg-gray-100 dark:bg-gray-900 mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="py-20 mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl lg:text-8xl font-bold text-gray-800 dark:text-white py-0 mt-0 text-center tracking-widest">Get in
+      touch</h2>
     <UCard class="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden max-w-lg mx-auto">
-      <h2 class="text-3xl font-bold text-gray-800 dark:text-white py-4">Get in touch</h2>
+
       <form name="contact" netlify>
         <div class="mb-4">
           <UInput id="name" type="text" name="name" placeholder="Your Name" label="Your Name" />
@@ -31,7 +33,7 @@
             label="Are we allowed to open-source/work in the open on this project?" />
         </div>
         <div class="flex justify-end">
-          <UButton type="submit">Send Inquiry</UButton>
+          <UButton type="submit" icon="i-heroicons-arrow-up-right" :trailing="true">Send Inquiry</UButton>
         </div>
       </form>
     </UCard>

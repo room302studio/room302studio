@@ -1,13 +1,13 @@
 <template>
-  <div class="index">
+  <div class="index p-4 lg:p-12">
     <!-- <div class="pa5 f3 near-white">  
     <img src="/logo1.r2.svg" alt="Room 302 Studio" class="w-100"/>
   </div> -->
     <!-- use tachyons flex to vertically and horizontally center the logo -->
-    <div class="flex items-center justify-center w-100 overflow-hidden">
+    <div class="flex items-center justify-center">
       <!-- <img src="/logo1.r2.svg" id="logo" alt="Room 302 Studio" class="w-100 pa6-ns" /> -->
 
-      <svg version="1.1" class="w-100 logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      <svg version="1.1" class="w-100 h-96" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px" y="0px" viewBox="0 0 370 374">
         <g id="room" transform-origin="50% 50%">
           <g>
@@ -164,64 +164,107 @@
     </div>
 
 
-    <div class="px-3 py-5 md:py-10 text-lg text-white leading-relaxed max-w-3xl mx-auto">
-      <p class="text-white">
-        We are a bespoke innovation lab that guides concepts from ideation to implementation.
-      </p>
+    <section
+      class="flex flex-col md:flex-row items-center justify-center px-3 py-5 md:py-10 text-lg dark:text-white leading-relaxed mx-auto my-12 lg:my-24">
+      <div class="md:w-1/2 md:order-1">
+        <p class="p-4 lg:p-8">
+          We are a bespoke innovation lab that guides concepts from ideation to implementation.
+        </p>
+      </div>
+      <div class="md:w-1/2 md:order-2">
+        <img src="https://via.placeholder.com/600x400" alt="Hero Image 1" class="w-full h-auto skew-y-3">
+      </div>
 
-      <p class="mt-6">
-        Innovation is at the heart of everything we do. Our collaborations span startups, mature companies, non-profits,
-        and news
-        organizations. We provide the tools, expertise, and collaborative environment
-        needed to <span class="text-orange">turn ideas into reality.</span> Our team of experts thrives on pushing
-        boundaries,
-        experimenting with
-        cutting-edge technologies, and driving change.
-      </p>
+    </section>
 
-      <p class="text-xl mt-12">
-        We harness the power of over 30 collective years of data visualization and prototyping expertise from our founding
-        members.
-        <NuxtLink class="link underline text-white" to="/members">
-          <img src="/member-headshots/curran-headshot.png"
-            class="w-6 h-6 rounded-full inline-block align-middle mx-1 border border-white" alt="Curran" />
+    <section
+      class="flex flex-col md:flex-row items-center justify-center px-3 py-5 md:py-10 text-lg dark:text-white leading-relaxed mx-auto my-12 lg:my-24">
+      <div class="md:w-1/2" v-motion-slide-visible-left>
+        <img src="https://via.placeholder.com/600x400" alt="Hero Image 2" class="w-full h-auto -skew-y-3">
+      </div>
+      <div class="md:w-1/2" v-motion-slide-visible-right>
+        <p class="mt-6 p-4 lg:p-8">
+          Innovation is at the heart of everything we do. Our collaborations span startups, mature companies, non-profits,
+          and news organizations.
+          We provide the tools, expertise, and collaborative environment
+          needed to <span class="text-orange">turn ideas into reality.</span> Our team of experts thrives on pushing
+          boundaries,
+          experimenting with
+          cutting-edge technologies, and driving change.
+        </p>
+      </div>
+
+    </section>
+
+    <section
+      class="flex flex-col md:flex-row items-center justify-center px-3 py-5 md:py-10 text-lg dark:text-white leading-relaxed mx-auto my-12 lg:my-24">
+      <div class="md:w-1/2 md:order-2" v-motion-slide-visible-right>
+        <img src="https://via.placeholder.com/600x400" alt="Hero Image 3" class="w-full h-auto skew-y-3">
+      </div>
+      <div class="md:w-1/2 md:order-1">
+        <p class="text-xl mt-12 p-4 lg:p-8">
+          We harness the power of over 30 collective years of data visualization and prototyping expertise from our
+
+          founding
+          members. <img src="/member-headshots/curran-headshot.png"
+            class="w-5 h-5 rounded-full inline-block align-middle mx-1 my-0 border border-white" alt="Curran" />
           <img src="/member-headshots/ej-headshot.png"
-            class="w-6 h-6 rounded-full inline-block align-middle mx-1 border border-white" alt="EJ" />
+            class="w-5 h-5 rounded-full inline-block align-middle mx-1 my-0 border border-white" alt="EJ" />
           <img src="/member-headshots/israel-headshot.png"
-            class="w-6 h-6 rounded-full inline-block align-middle mx-1 border border-white" alt="Israel" />
+            class="w-5 h-5 rounded-full inline-block align-middle mx-1 my-0 border border-white" alt="Israel" />
           <img src="/member-headshots/ian-headshot.png"
-            class="w-6 h-6 rounded-full inline-block align-middle mx-1 border border-white" alt="Ian" />
-        </NuxtLink>
-        We've extended our capabilities to include product development, artificial intelligence, and other cutting-edge
-        technologies.
-      </p>
+            class="w-5 h-5 rounded-full inline-block align-middle mx-1 my-0 border border-white" alt="Ian" />
 
-      <p class="text-xl mt-12">
-        Our diverse backgrounds enable us to approach projects from multiple perspectives. We've had the
-        privilege of working with renowned organizations such as GitHub, NBC News, The Washington Post, CBS News,
-        McKinsey, Stamen, and Google, bringing a wealth of experience and expertise to every project.
-      </p>
+          We've extended our capabilities to include product development, artificial intelligence, and other cutting-edge
+          technologies.
+        </p>
+      </div>
+    </section>
 
-      <p class="text-xl mt-12">
-        Whether you're a startup eager to revolutionize the market, an established firm seeking innovation and growth, or
-        a non-profit wanting to propel societal change, <strong class="text-orange">Room 302 Studio</strong> is your
-        trusted
-        collaborator. Let's work together
-        to transform your ideas into tangible solutions that make a lasting difference in the world.
-      </p>
-    </div>
+    <section
+      class="flex flex-col md:flex-row items-center justify-center px-3 py-5 md:py-10 text-lg dark:text-white leading-relaxed mx-auto my-12 lg:my-24">
+
+      <div class="md:w-1/2" v-motion-slide-visible-left>
+        <img src="https://via.placeholder.com/600x400" alt="Hero Image 4" class="w-full h-auto -skew-y-3">
+      </div>
+      <div class="md:w-1/2">
+        <p class="text-xl mt-12 p-4 lg:p-8">
+          Our diverse backgrounds enable us to approach projects from multiple perspectives. We've had the
+          privilege of working with renowned organizations such as GitHub, NBC News, The Washington Post, CBS News,
+          McKinsey, Stamen, and Google, bringing a wealth of experience and expertise to every project.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="flex flex-col md:flex-row items-center justify-center px-3 py-5 md:py-10 text-lg dark:text-white leading-relaxed mx-auto my-12 lg:my-24">
+      <div class="md:w-1/2 md:order-2" v-motion-slide-visible-right>
+        <img src="https://via.placeholder.com/600x400" alt="Hero Image 5" class="w-full h-auto skew-y-3">
+      </div>
+      <div class="md:w-1/2 md:order-1">
+        <p class="text-xl mt-12 p-4 lg:p-8">
+          Whether you're a startup eager to revolutionize the market, an established firm seeking innovation and growth,
+          or
+          a non-profit wanting to propel societal change, <strong class="text-orange">Room 302 Studio</strong> is your
+          trusted
+          collaborator. Let's work together
+          to transform your ideas into tangible solutions that make a lasting difference in the world.
+        </p>
+      </div>
+    </section>
 
 
-    <div class="px-3 py-5 md:py-10 text-lg md:text-4xl text-white leading-relaxed bg-specialorange-500">
-      <h3 class="m-0 p-0 py-4 leading-tight text-center tracking-wide">Say hello: <a href="mailto:studio@room302.studio"
+    <div class="px-3 py-5 my-12 md:py-10 text-lg md:text-4xl text-white leading-relaxed bg-specialorange-500">
+      <h4 class="m-0 p-0 py-4 leading-tight text-center tracking-wide">Say hello: <a href="mailto:studio@room302.studio"
           class="font-bold link underline text-white">
-          <span class="hidden md:inline-block">studio</span><span class="inline-block">@room302.studio</span></a></h3>
+          <span class="hidden md:inline-block">studio</span><span class="inline-block">@room302.studio</span></a></h4>
     </div>
 
 
-    <div class="px-3 py-5 md:py-10 text-sm md:text-lg text-white leading-relaxed max-w-3xl mx-auto">
-      <h2 class="text-orange text-2xl leading-tight">Available for collaboration</h2>
-      <p>Beyond traditional client services, <strong class="text-orange">Room 302 Studio</strong> serves as a dynamic
+    <div class="px-3 py-5 md:py-10 text-sm md:text-lg dark:text-white leading-relaxed max-w-prose">
+      <h2 class="text-2xl leading-tight">Available for collaboration</h2>
+      <p>Beyond traditional client services, <strong class="text-specialorange-500">Room 302 Studio</strong> serves as a
+        dynamic
         digital
         workspace, uniting creators to collectively build and grow. We champion personal projects, contribute to
         open-source
@@ -231,7 +274,7 @@
         discussions, and contribute to projects that make a significant impact.</p>
     </div>
 
-    <MailchimpSignupForm class="p-0 md:py-10 max-w-3xl mx-auto" />
+    <MailchimpSignupForm class="p-0 md:py-10 mx-auto" />
 
   </div>
 </template>
@@ -347,28 +390,13 @@ onMounted(() => {
 })
 </script>
 <style scoped>
-/* make a background gradient animation that super-slowly fades from background-color: #2A3A44; to a slightly darker version with an offset radial array that is scaled way beyond the viewport  and rotates extremely slowly */
-
-.index {
-  background: #2A3A44;
-  /* the animation is applied to the background */
-  /* background: linear-gradient(90deg, rgb(22, 19, 39) 0%, rgba(42,58,68,1) 50%, rgba(42,58,68,1) 100%); */
-  /* more subtle */
-  background: linear-gradient(33deg, rgb(30, 45, 70) 0%, rgba(42, 58, 68, 1) 50%, rgba(42, 58, 68, 1) 100%);
-
-  background-size: 320% 320%;
-}
-
-h1 {
-  /* font-size: 9.9rem; */
-}
-
-.logo {
-  max-height: 60vh;
-}
-
 #circle path {
   fill: #D1DCE3 !important;
+  opacity: 0.2;
+}
+
+.light #circle path {
+  fill: #999 !important;
   opacity: 0.2;
 }
 </style>
