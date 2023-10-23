@@ -20,27 +20,11 @@ body {
   font-family: 'Source Code Pro', monospace !important;
 }
 
-.near-white {
-  color: #D1DCE3 !important;
-}
-
-.orange {
-  color: #E17055 !important;
-}
-
-.bg-orange {
-  background-color: #E17055 !important;
-}
-
 .orange-fill {
   fill: #E17055 !important;
 }
 
 .white-fill {
   fill: #D1DCE3 !important;
-}
-
-.bg-dark-blue {
-  background-color: #2A3A44 !important;
 }
 </style>

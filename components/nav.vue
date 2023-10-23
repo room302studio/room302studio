@@ -1,25 +1,41 @@
 <template>
-  <ul class="list ma0 pv2 pv4-l ph2 ph5-l f4 tc sans-serif fw8">
-    <li class="pa1 lh-copy dib mr2 mr4-l mv0">
-      <NuxtLink class="link black underline dim" to="/">Home</NuxtLink>
+  <ul class="list ma0 py-2 lg:py-4 px-2 lg:px-5 text-xl lg:text-2xl text-center font-extrabold">
+    <li class="inline-block px-1 leading-loose mr-2 lg:mr-4 my-0">
+      <NuxtLink
+        class="link text-black dark:text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100"
+        to="/">Home</NuxtLink>
     </li>
-    <!-- <li class="pa1 lh-copy dib mr2 mr4-l mv0">
-    <NuxtLink class="link black underline dim" to="/our-work">Our Work</NuxtLink>
+    <!-- <li class="inline-block px-1 leading-loose mr-2 lg:mr-4 my-0">
+    <NuxtLink class="link text-black dark:text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100" to="/our-work">Our Work</NuxtLink>
   </li> -->
-    <li class="pa1 lh-copy dib mr2 mr4-l mv0">
-      <NuxtLink class="link black underline dim" to="/members">Members</NuxtLink>
+    <li class="inline-block px-1 leading-loose mr-2 lg:mr-4 my-0">
+      <NuxtLink
+        class="link text-black dark:text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100"
+        to="/members">Members</NuxtLink>
     </li>
 
-    <li class="pa1 lh-copy dib mr2 mr4-l mv0">
-      <NuxtLink class="link black underline dim" to="/our-work">Previous Work</NuxtLink>
+    <li class="inline-block px-1 leading-loose mr-2 lg:mr-4 my-0">
+      <NuxtLink
+        class="link text-black dark:text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100"
+        to="/our-work">Previous Work</NuxtLink>
     </li>
 
-    <li class="pa1 lh-copy dib mr2 mr4-l mv0">
-      <NuxtLink class="link black underline dim" to="/events">Events</NuxtLink>
+    <li class="inline-block px-1 leading-loose mr-2 lg:mr-4 my-0">
+      <NuxtLink
+        class="link text-black dark:text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100"
+        to="/events">Events</NuxtLink>
     </li>
 
-    <li class="pa1 lh-copy dib mr2 mr4-l mv0">
-      <NuxtLink class="link black underline dim" to="/blog">Blog</NuxtLink>
+    <li class="inline-block px-1 leading-loose mr-2 lg:mr-4 my-0">
+      <NuxtLink
+        class="link text-black dark:text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100"
+        to="/blog">Blog</NuxtLink>
+    </li>
+
+    <li class="inline-block px-1 leading-loose mr-2 lg:mr-4 my-0">
+      <NuxtLink
+        class="link text-black dark:text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100"
+        to="/contact">Get in touch</NuxtLink>
     </li>
   </ul>
 </template>
