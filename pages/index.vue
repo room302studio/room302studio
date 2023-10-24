@@ -167,23 +167,34 @@
     <section
       class="flex flex-col md:flex-row items-center justify-center px-3 py-5 md:py-10 text-lg dark:text-white leading-relaxed mx-auto my-12 lg:my-24">
       <div class="md:w-1/2 md:order-1">
-        <p class="p-4 lg:p-8">
-          We are a bespoke innovation lab that guides concepts from ideation to implementation.
+        <p class="p-4 lg:p-8 leading-loose text-3xl">
+          We are a bespoke innovation lab that guides concepts from <span
+            class="font-display text-4xl tracking-wider">ideation</span> to
+          <span class="font-display text-4xl tracking-wider">implementation</span>
         </p>
       </div>
       <div class="md:w-1/2 md:order-2">
-        <img src="https://via.placeholder.com/600x400" alt="Hero Image 1" class="w-full h-auto skew-y-3">
+        <img src="https://via.placeholder.com/600x400" alt="Hero Image 1"
+          class="w-full h-auto skew-y-1 hover:skew-y-0 transition-transform duration-500 drop-shadow-sm rounded">
       </div>
 
     </section>
 
+    <div
+      class="px-3 py-5 my-12 md:py-10 text-lg md:text-4xl text-white leading-relaxed bg-specialorange-500 drop-shadow-lg rounded">
+      <h4 class="m-0 p-0 py-4 leading-tight text-center tracking-wide">Say hello: <a href="mailto:studio@room302.studio"
+          class="font-bold link underline text-white">
+          <span class="hidden md:inline-block">studio</span><span class="inline-block">@room302.studio</span></a></h4>
+    </div>
+
     <section
       class="flex flex-col md:flex-row items-center justify-center px-3 py-5 md:py-10 text-lg dark:text-white leading-relaxed mx-auto my-12 lg:my-24">
       <div class="md:w-1/2" v-motion-slide-visible-left>
-        <img src="https://via.placeholder.com/600x400" alt="Hero Image 2" class="w-full h-auto -skew-y-3">
+        <img src="https://via.placeholder.com/600x400" alt="Hero Image 2"
+          class="w-full h-auto -skew-y-1 hover:skew-y-0 transition-transform duration-500 drop-shadow-sm rounded">
       </div>
       <div class="md:w-1/2" v-motion-slide-visible-right>
-        <p class="mt-6 p-4 lg:p-8">
+        <p class="mt-6 p-4 lg:p-8 leading-loose text-lg lg:text-2xl">
           Innovation is at the heart of everything we do. Our collaborations span startups, mature companies, non-profits,
           and news organizations.
           We provide the tools, expertise, and collaborative environment
@@ -199,10 +210,11 @@
     <section
       class="flex flex-col md:flex-row items-center justify-center px-3 py-5 md:py-10 text-lg dark:text-white leading-relaxed mx-auto my-12 lg:my-24">
       <div class="md:w-1/2 md:order-2" v-motion-slide-visible-right>
-        <img src="https://via.placeholder.com/600x400" alt="Hero Image 3" class="w-full h-auto skew-y-3">
+        <img src="https://via.placeholder.com/600x400" alt="Hero Image 3"
+          class="w-full h-auto skew-y-1 hover:skew-y-0 transition-transform duration-500 drop-shadow-sm rounded">
       </div>
       <div class="md:w-1/2 md:order-1">
-        <p class="text-xl mt-12 p-4 lg:p-8">
+        <p class="mt-12 p-4 lg:p-8 leading-loose text-lg lg:text-2xl">
           We harness the power of over 30 collective years of data visualization and prototyping expertise from our
 
           founding
@@ -225,10 +237,11 @@
       class="flex flex-col md:flex-row items-center justify-center px-3 py-5 md:py-10 text-lg dark:text-white leading-relaxed mx-auto my-12 lg:my-24">
 
       <div class="md:w-1/2" v-motion-slide-visible-left>
-        <img src="https://via.placeholder.com/600x400" alt="Hero Image 4" class="w-full h-auto -skew-y-3">
+        <img src="https://via.placeholder.com/600x400" alt="Hero Image 4"
+          class="w-full h-auto -skew-y-1 hover:skew-y-0 transition-transform duration-500 drop-shadow-sm rounded">
       </div>
       <div class="md:w-1/2">
-        <p class="text-xl mt-12 p-4 lg:p-8">
+        <p class="mt-12 p-4 lg:p-8 leading-loose text-lg lg:text-2xl">
           Our diverse backgrounds enable us to approach projects from multiple perspectives. We've had the
           privilege of working with renowned organizations such as GitHub, NBC News, The Washington Post, CBS News,
           McKinsey, Stamen, and Google, bringing a wealth of experience and expertise to every project.
@@ -239,10 +252,11 @@
     <section
       class="flex flex-col md:flex-row items-center justify-center px-3 py-5 md:py-10 text-lg dark:text-white leading-relaxed mx-auto my-12 lg:my-24">
       <div class="md:w-1/2 md:order-2" v-motion-slide-visible-right>
-        <img src="https://via.placeholder.com/600x400" alt="Hero Image 5" class="w-full h-auto skew-y-3">
+        <img src="https://via.placeholder.com/600x400" alt="Hero Image 5"
+          class="w-full h-auto skew-y-1 hover:skew-y-0 transition-transform duration-500 drop-shadow-sm rounded">
       </div>
       <div class="md:w-1/2 md:order-1">
-        <p class="text-xl mt-12 p-4 lg:p-8">
+        <p class="text-lg xl:text-2xl mt-12 p-4 lg:p-8 leading-loose">
           Whether you're a startup eager to revolutionize the market, an established firm seeking innovation and growth,
           or
           a non-profit wanting to propel societal change, <strong class="text-orange">Room 302 Studio</strong> is your
@@ -254,15 +268,17 @@
     </section>
 
 
-    <div class="px-3 py-5 my-12 md:py-10 text-lg md:text-4xl text-white leading-relaxed bg-specialorange-500">
-      <h4 class="m-0 p-0 py-4 leading-tight text-center tracking-wide">Say hello: <a href="mailto:studio@room302.studio"
-          class="font-bold link underline text-white">
-          <span class="hidden md:inline-block">studio</span><span class="inline-block">@room302.studio</span></a></h4>
+
+
+
+    <div class="px-3 py-5 md:py-10 text-sm md:text-lg dark:text-white leading-relaxed max-w-prose mx-auto lg:mx-0">
+      <h2 class="text-lg lg:text-2xl leading-tight">Contact the studio</h2>
+      <ContactForm />
     </div>
 
 
     <div class="px-3 py-5 md:py-10 text-sm md:text-lg dark:text-white leading-relaxed max-w-prose">
-      <h2 class="text-2xl leading-tight">Available for collaboration</h2>
+      <h2 class="text-lg lg:text-2xl leading-tight">Available for collaboration</h2>
       <p>Beyond traditional client services, <strong class="text-specialorange-500">Room 302 Studio</strong> serves as a
         dynamic
         digital
@@ -274,7 +290,7 @@
         discussions, and contribute to projects that make a significant impact.</p>
     </div>
 
-    <MailchimpSignupForm class="p-0 md:py-10 mx-auto" />
+    <MailchimpSignupForm class="p-0 md:py-10 max-w-prose" />
 
   </div>
 </template>
