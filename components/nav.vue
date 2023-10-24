@@ -1,41 +1,41 @@
 <template>
-  <ul class="flex list lg:py-6 px-2 lg:px-5 text-center font-extrabold leading-none bg-black text-white">
-    <li class="inline-block px-1 mr-2 lg:mr-4 my-0 flex-1 justify-center">
+  <ul
+    class="flex flex-col md:flex-row list py-4 lg:py-6 px-2 lg:px-5 md:text-center font-extrabold leading-none bg-black text-white">
+    <li class="inline-block p-1 mr-1 md:mr-2 lg:mr-4 my-0 md:my-1 flex-1 justify-center">
       <NuxtLink class="link text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100" to="/">
         Home
       </NuxtLink>
     </li>
-    <!-- <li class="inline-block px-1 mr-2 lg:mr-4 my-0">
+    <!-- <li class="inline-block p-1 mr-1 md:mr-2 lg:mr-4 my-0">
     <NuxtLink class="link text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100" to="/our-work">Our Work</NuxtLink>
   </li> -->
-    <li class="inline-block px-1 mr-2 lg:mr-4 my-0 flex-1">
+    <li class="inline-block p-1 mr-1 md:mr-2 lg:mr-4 my-0 md:my-1 flex-1">
       <NuxtLink class="link text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100"
         to="/members">Members
       </NuxtLink>
     </li>
 
-    <li class="inline-block px-1 mr-2 lg:mr-4 my-0 flex-1">
+    <li class="inline-block p-1 mr-1 md:mr-2 lg:mr-4 my-0 md:my-1 flex-1">
       <NuxtLink class="link text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100"
         to="/our-work">
-        Previous Work</NuxtLink>
+        Our Work</NuxtLink>
     </li>
 
-    <li class="inline-block px-1 mr-2 lg:mr-4 my-0 flex-1">
+    <!-- <li class="inline-block p-1 mr-1 md:mr-2 lg:mr-4 my-0 md:my-1 flex-1">
       <NuxtLink class="link text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100"
         to="/events">Events
       </NuxtLink>
-    </li>
+    </li> -->
 
-    <li class="inline-block px-1 mr-2 lg:mr-4 my-0 flex-1">
+    <li class="inline-block p-1 mr-1 md:mr-2 lg:mr-4 my-0 md:my-1 flex-1">
       <NuxtLink class="link text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100"
         to="/blog">Blog
       </NuxtLink>
     </li>
 
-    <li class="inline-block px-1 mr-2 lg:mr-4 my-0 flex-1">
+    <li class="inline-block p-1 mr-1 md:mr-2 lg:mr-4 my-0 md:my-1 flex-1">
       <NuxtLink class="link text-white underline transition-opacity duration-150 ease-in-out hover:opacity-100"
-        to="/contact">Get in
-        touch</NuxtLink>
+        to="/contact">Contact</NuxtLink>
     </li>
   </ul>
 </template>
@@ -97,4 +97,5 @@ li>a {
 
 li>a:hover {
   opacity: 1;
-}</style>
+}
+</style>
