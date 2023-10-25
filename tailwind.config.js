@@ -3,13 +3,13 @@ import  colors from 'tailwindcss/colors'
 
 module.exports = {
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      white: colors.white,
-      black: colors.black,
-      red: colors.red,
-    },
+    // colors: {
+    //   transparent: 'transparent',
+    //   current: 'currentColor',
+    //   white: colors.white,
+    //   black: colors.black,
+    //   red: colors.red,
+    // },
     extend: {
       colors: {
         specialorange: {
