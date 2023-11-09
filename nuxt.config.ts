@@ -17,10 +17,15 @@ export default defineNuxtConfig({
         'Source Code Pro': [200, 400, 700, 900],
         'Modak': [400],
       },
-    }],
+    },
+    '@nuxtjs/google-gtag'  
+  ],
   ],
   content: {
     documentDriven: true,
+  },
+  'google-gtag': {
+    id: 'G-6XGQNYZQMC',
   },
   // css: ['tachyons/css/tachyons.min.css'],
   // head: {
