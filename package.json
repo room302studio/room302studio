@@ -9,6 +9,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/devtools": "^1.0.0",
     "@nuxt/image": "^1.0.0-rc.1",
     "nuxt": "^3.3.2"
   },
@@ -21,6 +22,7 @@
     "@vueuse/nuxt": "^9.13.0",
     "animejs": "^3.2.1",
     "confetti-js": "^0.0.18",
+    "d3-time-format": "^4.1.0",
     "nuxt-use-motion": "^2.0.0-beta.11",
     "tachyons": "^4.12.0"
   }

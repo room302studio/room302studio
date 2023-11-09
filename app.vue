@@ -28,11 +28,11 @@ body {
   fill: #D1DCE3 !important;
 }
 
-h1,
+/* h1,
 h2,
 h3 {
   font-family: 'Modak', cursive;
-}
+} */
 
 .font-display {
   font-family: 'Modak', cursive;
