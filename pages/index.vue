@@ -1,5 +1,5 @@
 <template>
-  <div class="index p-4 lg:p-12">
+  <div class="index p-4 lg:p-12" ref="scrollcontainer">
     <!-- <div class="pa5 f3 near-white">  
     <img src="/logo1.r2.svg" alt="Room 302 Studio" class="w-100"/>
   </div> -->
@@ -164,6 +164,8 @@
     </div>
 
 
+
+
     <section
       class="flex flex-col md:flex-row items-center justify-center px-3 py-5 md:py-10 text-lg dark:text-white leading-relaxed mx-auto my-12 lg:my-24">
       <div class="md:w-1/2 md:order-1">
@@ -175,9 +177,9 @@
       </div>
       <div class="md:w-1/2 md:order-2">
         <img src="https://via.placeholder.com/600x400" alt="Hero Image 1"
-          class="w-full h-auto skew-y-1 hover:skew-y-0 transition-transform duration-500 drop-shadow-sm rounded">
+          class="w-full h-auto transition-transform duration-500 drop-shadow-sm rounded"
+          :style="{ transform: `skewY(${skewY.value}deg)` }">
       </div>
-
     </section>
 
     <div
@@ -295,6 +297,12 @@
   </div>
 </template>
 <script setup>
+const scrollcontainer = ref(null)
+
+const scroll  = useScroll(scrollcontainer)
+const skewY = computed(() => scroll.y / 10)
+
+
 // import animejs
 import anime from 'animejs/lib/anime.es.js'
 

@@ -16,10 +16,6 @@
         icon="i-heroicons-user-group-20-solid" />
     </div>
     <div class="mb-4">
-      <UCheckbox id="dataset" type="checkbox" name="dataset" label="Can you provide a sample dataset?"
-        icon="i-heroicons-clipboard-20-solid" />
-    </div>
-    <div class="mb-4">
       <h4>Project budget</h4>
       <!-- add a radio item for under 5k / non-profit -->
       <URadio id="budget-under-5k" type="radio" name="budget" value="under-5k" label="Small project ($0-$5k)" />
@@ -31,20 +27,16 @@
       <UCheckbox id="opensource" type="checkbox" name="opensource"
         label="Are we allowed to open-source/work in the open on this project?"
         help="Whenever possible we post in-progress screenshots, livestream working sessions, and open-source our code, but we understand some clients require confidentiality." />
-      <!-- question mark icon with a tooltip explaining this-->
-      <!-- like
-          <template>
-          <UTooltip text="Tooltip example" :shortcuts="['⌘', 'O']">
-            <UButton color="gray" label="Hover me" />
-          </UTooltip>
-        </template>
-        -->
-      <!-- <UTooltip
-        text="Whenever possible we post in-progress screenshots, livestream working sessions, and open-source our code">
-        <UIcon name="i-heroicons-question-mark-circle" size="2xl" />
-      </UTooltip> -->
     </div>
-    <!-- brief text description of project-->
+
+    <div class="mb-4">
+      <UCheckbox id="dataset" type="checkbox" name="dataset" label="If applicable, can you provide a sample dataset?"
+        icon="i-heroicons-clipboard-20-solid" v-model="hasDataset" />
+    </div>
+    <div class="mb-4" v-if="hasDataset">
+      <UInput id="datafile" type="file" name="datafile" label="Upload your dataset" />
+    </div>
+
     <div class="mb-4">
       <UTextarea id="description" name="description" placeholder="Brief description of project"
         label="Brief description of project" />
@@ -57,7 +49,9 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 
+let hasDataset = ref(false);
 </script>
 
 <style></style>

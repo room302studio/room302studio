@@ -1,5 +1,5 @@
 <template>
-  <main class="prose dark:prose-invert p-4 md:p-8 lg:p-12">
+  <main class="measure-wide f4 lh-copy prose dark:prose-invert p-4 md:p-10 lg:p-14">
     <!-- <ContentDoc /> -->
     <ContentRenderer :value="data">
       <template #empty>
@@ -9,10 +9,8 @@
   </main>
 </template>
 <script setup>
-
-// use the blog layout 
 definePageMeta({
-  layout: 'work'
+  layout: 'our-work'
 })
 
 const route = useRoute()

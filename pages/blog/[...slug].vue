@@ -1,9 +1,9 @@
 <template>
-  <main class="prose dark:prose-invert p-4 md:p-8 lg:p-12">
+  <main class="measure-wide f4 lh-copy prose dark:prose-invert p-4 md:p-10 lg:p-14">
     <!-- <ContentDoc /> -->
     <ContentRenderer :value="data">
       <template #empty>
-        <p>We couldn't find this blog post.</p>
+        <p class="f4 lh-copy">We couldn't find this blog post.</p>
       </template>
     </ContentRenderer>
   </main>

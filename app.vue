@@ -32,7 +32,7 @@ h1 {
   font-family: 'Modak', cursive;
 }
 
-.font-display {
+*/ .font-display {
   font-family: 'Modak', cursive;
 }
 </style>
