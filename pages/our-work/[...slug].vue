@@ -12,12 +12,12 @@
 
 // use the blog layout 
 definePageMeta({
-  layout: 'blog'
+  layout: 'work'
 })
 
 const route = useRoute()
 
 const { data } = await useAsyncData(async () => {
-  return queryContent('blog', route.params.slug[0]).findOne()
+  return queryContent('our-work', route.params.slug[0]).findOne()
 })
 </script>

@@ -22,6 +22,8 @@
         Drawing inspiration from nature, ecology, and art, he's dedicated to crafting experiences that leave a
         lasting impression.</p>
     </MemberBio>
+
+
     <MemberBio name="Israel Gonzalez" email="israel@room302.studio" headshot="/member-headshots/israel-headshot.png">
       <p>Israel, a devoted software engineer, has an unwavering commitment to overcoming complex challenges. From his
         initial coding experiences with game development during his middle school years, Israel has adventured through
@@ -31,6 +33,22 @@
         language models. He is committed to tackling diverse problems head on, from autonomous problem-solving and
         simulations, to robotics and scientific research. Inspired by his thirst for problem-solving, Israel is
         dedicated to making a significant impact through technology.</p>
+    </MemberBio>
+
+    <MemberBio name="Elena Haliczer" email="elena@room302.studio" headshot="/member-headshots/elena-headshot.png">
+      <p>TK</p>
+
+      <p>TK</p>
+    </MemberBio>
+
+    <MemberBio name="Sam Vogt" email="sam@room302.studio" headshot="/member-headshots/sam-headshot.png">
+      <p>Sam Vogt is an experienced visual designer with a focus on meaningful data narratives and visualization. Sam
+        worked his way into visualization projects starting as an illustrator and brand designer, learning to encode
+        organizational values in the elements of visual communication.</p>
+
+      <p>From there it was a surprisingly short jump to the world of data visualization because, after all, both
+        disciplines share foundational principles such as integrity, accessibility, and emotional resonance - and both
+        strive to turn information into action.</p>
     </MemberBio>
 
 
