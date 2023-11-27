@@ -28,9 +28,7 @@ body {
   fill: #D1DCE3 !important;
 }
 
-h1,
-h2,
-h3 {
+h1 {
   font-family: 'Modak', cursive;
 }
 
