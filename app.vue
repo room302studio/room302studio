@@ -1,5 +1,5 @@
 <template>
-  <div>    
+  <div class="p-12 lg:p-24 bg-stone-100 dark:bg-stone-900">
     <Nav />
     <NuxtPage />
   </div>
@@ -11,16 +11,29 @@ useHead({
 
 </script>
 <style>
+/* h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  text-wrap: balance;
+} */
+
+.text-balance {
+  text-wrap: balance;
+}
+
 body {
   /* background-color: #2A3A44; */
-  font-family: 'Source Code Pro', monospace;
+  font-family: 'Rubik', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .monospace {
   font-family: 'Source Code Pro', monospace !important;
 }
 
-.near-white {
+/* .near-white {
   color: #D1DCE3 !important;
 }
 
@@ -42,5 +55,5 @@ body {
 
 .bg-dark-blue {
   background-color: #2A3A44 !important;
-}
+} */
 </style>

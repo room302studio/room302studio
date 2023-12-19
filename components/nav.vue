@@ -1,54 +1,64 @@
 <template>
-<ul class="list ma0 pv2 pv4-l ph2 ph5-l f4 tc sans-serif fw8">
-  <li class="pa1 lh-copy dib mr2 mr4-l mv0">
-    <NuxtLink class="link black underline dim" to="/">Home</NuxtLink>    
-  </li>
-  <!-- <li class="pa1 lh-copy dib mr2 mr4-l mv0">
-    <NuxtLink class="link black underline dim" to="/our-work">Our Work</NuxtLink>
-  </li> -->
-  <li class="pa1 lh-copy dib mr2 mr4-l mv0">
-    <NuxtLink class="link black underline dim" to="/members">Members</NuxtLink>
-  </li>
-
-  <li class="pa1 lh-copy dib mr2 mr4-l mv0">
-    <NuxtLink class="link black underline dim" to="/our-work">Previous Work</NuxtLink>
-  </li>
-
-  <li class="pa1 lh-copy dib mr2 mr4-l mv0">
-    <NuxtLink class="link black underline dim" to="/events">Events</NuxtLink>
-  </li>
-</ul>
+  <div class="flex space-x-8 items-center py-6">
+    <Logo class="font-bold " />
+    <ul class="flex space-x-4 lg:space-x-8 uppercase">
+      <li>
+        <NuxtLink to="/" :class="linkClasses" active-class="border-primary-500">Home</NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/members" :class="linkClasses" active-class="border-primary-500">
+          Members
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/our-work" :class="linkClasses" active-class="border-primary-500">Work
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/events" :class="linkClasses" active-class="border-primary-500">Events
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/blog" :class="linkClasses" active-class="border-primary-500">Blog
+        </NuxtLink>
+      </li>
+    </ul>
+  </div>
 </template>
 <script setup>
+import { animate, stagger } from '/Users/ejfox/code/anime-beta/lib/anime.esm.min.js'
+
+const linkClasses = "no-underline hover:border-primary-500 border-b-2 transition text-xs text-gray-700 dark:text-gray-300"
+
+onMounted(() => {
+  animate('li', {
+    translateY: {
+      to: 0,
+      from: '-6.3rem',
+      ease: 'outQuad',
+      duration: 2000,
+    },
+    // scale: [0.9, 1],
+    scale: {
+      from: 0.9,
+      to: 1,
+      duration: 1000,
+      delay: stagger(500)
+    },
+    opacity: {
+      from: 0,
+      to: 1,
+      duration: 1000,
+      delay: stagger(500)
+    },
+    // scaleZ: { from: 0, to: 1 },
+    // scale: { from: 0.2, to: 1 },
+    duration: 600,
+    delay: stagger(400),
+    ease: 'inOutQuad',
+  })
+})
+
 
 </script>
-<style scoped>
-li {
-  margin-right: 8vw;
-}
-
-li a {
-  transition: opacity 1.5s cubic-bezier(0.5, 1, 0.89, 1);
-}
-
-/* make the non router-active links opacity 25% */
-li > a.router-link-exact-active {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-li > a.router-link-active {
-  opacity: 1;
-}
-
-li > a {
-  opacity: 0.25;
-  text-decoration: none;
-}
-
-li > a:hover {
-  opacity: 1;
-}
-
-
-</style>
+<style scoped></style>

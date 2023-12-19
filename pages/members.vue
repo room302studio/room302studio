@@ -1,10 +1,10 @@
 <template>
-  <div class="pa2 pa5-ns near-black">
-    <h2>Studio Members</h2>
-    <div class="member mv5">
-      <img src="/member-headshots/curran-headshot.png" alt="Curran" class="h4 br2" />
-      <h3 class="orange ma0 pa0 pb2">Curran Kelleher</h3>
-      <div class="member-bio measure">
+  <div class="p-2 md:p-5 text-gray-900 dark:text-gray-300 max-w-lg mx-auto">
+    <h2 class="text-2xl font-bold">Studio Members</h2>
+    <div class="member mt-5">
+      <img src="/member-headshots/curran-headshot.png" alt="Curran" class="h-16 rounded-md" />
+      <h3 class="text-orange-500 mt-0 mb-2">Curran Kelleher</h3>
+      <div class="member-bio">
         <p>Curran Kelleher is a data visualization expert and educator, committed to empowering others through sharing
           knowledge and creating cutting-edge tools. With experience at renowned organizations like Stamen and McKinsey,
           Curran brings a wealth of expertise to the table.</p>
@@ -19,10 +19,10 @@
 
     <!-- EJ Fox -->
 
-    <div class="member mv5">
-      <img src="/member-headshots/ej-headshot.png" alt="EJ Fox" class="h4 br2" />
-      <h3 class="orange ma0 pa0 pb2">EJ Fox</h3>
-      <div class="member-bio measure">
+    <div class="member mt-5">
+      <img src="/member-headshots/ej-headshot.png" alt="EJ Fox" class="h-16 rounded-md" />
+      <h3 class="text-orange-500 mt-0 mb-2">EJ Fox</h3>
+      <div class="member-bio">
         <p>EJ Fox is a data visualization designer and developer with a passion for creating innovative and captivating
           visuals. After beginning his career with static infographics, EJ honed his skills and transitioned into the
           dynamic world of coding. At NBC News, EJ helped create the modern version of the Big Board which continues to
@@ -34,24 +34,29 @@
       </div>
     </div>
 
-    <div class="member mv5">
-      <img src="/member-headshots/israel-headshot.png" alt="Israel Gonzalez" class="h4 br2" />
-      <h3 class="orange ma0 pa0 pb2">Israel Gonzalez</h3>
-      <div class="member-bio measure">
-        <p>Israel, a devoted software engineer, has an unwavering commitment to overcoming complex challenges. From his initial coding experiences with game development during his middle school years, Israel has adventured through an array of technical terrains including machine learning, data visualization, and mobile applications.</p>
+    <div class="member mt-5">
+      <img src="/member-headshots/israel-headshot.png" alt="Israel Gonzalez" class="h-16 rounded-md" />
+      <h3 class="text-orange-500 mt-0 mb-2">Israel Gonzalez</h3>
+      <div class="member-bio">
+        <p>Israel, a devoted software engineer, has an unwavering commitment to overcoming complex challenges. From his
+          initial coding experiences with game development during his middle school years, Israel has adventured through
+          an array of technical terrains including machine learning, data visualization, and mobile applications.</p>
 
-      <p>At Room 302 Studio, Israel showcases his innovative approach and eagerness to harness the potential of AI language models. He is committed to tackling diverse problems head on, from autonomous problem-solving and simulations, to robotics and scientific research. Inspired by his thirst for problem-solving, Israel is dedicated to making a significant impact through technology.</p>
+        <p>At Room 302 Studio, Israel showcases his innovative approach and eagerness to harness the potential of AI
+          language models. He is committed to tackling diverse problems head on, from autonomous problem-solving and
+          simulations, to robotics and scientific research. Inspired by his thirst for problem-solving, Israel is
+          dedicated to making a significant impact through technology.</p>
       </div>
     </div>
-    
 
-    <h3 class="mv0 pv0 sans-serif b tracked gray">On sabbatical: </h3>
+
+    <h3 class="mt-0 pt-0 font-bold text-gray-600">On sabbatical: </h3>
 
     <!-- Ian Johnson -->
-    <div class="member mv5 o-20">
-      <img src="/member-headshots/ian-headshot.png" alt="Ian" class="h4 br2" />
-      <h3 class="orange ma0 pa0 pb2">Ian Johnson</h3>
-      <div class="member-bio measure">
+    <div class="member mt-5 opacity-20">
+      <img src="/member-headshots/ian-headshot.png" alt="Ian" class="h-16 rounded-md" />
+      <h3 class="text-orange-500 mt-0 mb-2">Ian Johnson</h3>
+      <div class="member-bio">
         <p>Ian Johnson is a data alchemist focused on building web-based data
           interfaces. Ian studied scientific computing in school and learned design
           on the job, bringing the two together to tackle sophisticated data
@@ -68,17 +73,17 @@
 
 
 
-    <hr class="mv5" />
+    <hr class="mt-5" />
 
-    <h2 class="mv4">Collaborators</h2>
-    <div class="f6">
+    <h2 class="mt-4 text-2xl font-bold">Collaborators</h2>
+    <div class="text-sm">
       <p>
         Special thanks to the following people and organizations for their collaboration and support.
       </p>
 
-      <ul class="list pl0 sans-serif">
+      <ul class="list-none pl-0">
         <li v-for="collaborator in sortedCollaborators" :key="collaborator"
-          class="tracked dib pv1 ph3 gray bg-white b--light-gray ba br2 ma2 fw2">
+          class="tracking-wide inline-block py-1 px-3 text-gray-600 bg-white border border-light-gray rounded-md m-2 font-semibold">
           {{ collaborator }}
         </li>
       </ul>
