@@ -1,5 +1,5 @@
-
-<div class="flex space-x-8 items-center py-6">
+<template>
+  <div class="flex space-x-8 items-center py-6">
     <Logo class="font-bold " />
     <ul class="flex space-x-4 lg:space-x-8 uppercase">
       <li>
