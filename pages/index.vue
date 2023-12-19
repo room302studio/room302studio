@@ -116,10 +116,16 @@ const skewY = computed(() => scroll.y / 10)
 // import animejs
 // import anime from 'animejs/lib/anime.es.js'
 // import { animate, stagger, createTimeline } from '/Users/ejfox/code/anime-beta/lib/anime.esm.min.js'
+// const tl = createTimeline({
+//     loop: true,
+//   })
 
 function animate() { }
 function stagger() { }
 function createTimeline() { }
+const tl = {
+  add: function () { }
+}
 
 
 
@@ -144,9 +150,7 @@ onMounted(() => {
 
   // })
 
-  const tl = createTimeline({
-    loop: true,
-  })
+
 
   // tl.add('.intro-wrapper img', {
   //   rotateX: { from: -100, to: 100 },
