@@ -118,9 +118,7 @@ const skewY = computed(() => scroll.y / 10)
 // import { animate, stagger, createTimeline } from '/Users/ejfox/code/anime-beta/lib/anime.esm.min.js'
 
 function animate() { }
-
 function stagger() { }
-
 function createTimeline() { }
 
 

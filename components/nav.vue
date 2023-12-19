@@ -26,7 +26,11 @@
   </div>
 </template>
 <script setup>
-import { animate, stagger } from '/Users/ejfox/code/anime-beta/lib/anime.esm.min.js' // early anime v4 release
+// import { animate, stagger } from '/Users/ejfox/code/anime-beta/lib/anime.esm.min.js' // early anime v4 release
+
+function animate() { }
+function stagger() { }
+function createTimeline() { }
 
 const linkClasses = "no-underline hover:border-primary-500 border-b-2 transition text-xs text-gray-700 dark:text-gray-300"
 
