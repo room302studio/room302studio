@@ -8,12 +8,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/ui',
     // '@nuxtjs/google-gtag',
-    [
-      '@nuxt/image',
-      {
-        provider: 'static',
-      },
-    ],
     ['@nuxtjs/google-fonts', {
       families: {
         'Rubik': [300, 400, 500, 700],
