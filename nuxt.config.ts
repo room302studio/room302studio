@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@vueuse/nuxt',
     '@nuxt/ui',
-    '@nuxtjs/google-gtag',
+    // '@nuxtjs/google-gtag',
     [
       '@nuxt/image',
       {
@@ -25,9 +25,9 @@ export default defineNuxtConfig({
   content: {
     documentDriven: true,
   },
-  'google-gtag': {
-    id: 'G-6XGQNYZQMC',
-  },
+  // 'google-gtag': {
+  //   id: 'G-6XGQNYZQMC',
+  // },
   // css: ['tachyons/css/tachyons.min.css'],
   app:{
   head: {
