@@ -1,5 +1,7 @@
 <template>
-  <main class="measure-wide f4 lh-copy prose dark:prose-invert p-4 md:p-10 lg:p-14">
+  <main
+    class="measure-wide f4 lh-copy prose dark:prose-invert p-4 md:p-10 lg:p-14"
+  >
     <!-- <ContentDoc /> -->
     <ContentRenderer :value="data">
       <template #empty>
@@ -9,15 +11,14 @@
   </main>
 </template>
 <script setup>
-
-// use the blog layout 
+// use the blog layout
 definePageMeta({
-  layout: 'blog'
-})
+  layout: "blog",
+});
 
-const route = useRoute()
+const route = useRoute();
 
 const { data } = await useAsyncData(async () => {
-  return queryContent('blog', route.params.slug[0]).findOne()
-})
+  return queryContent("blog", route.params.slug[0]).findOne();
+});
 </script>

@@ -6,9 +6,8 @@
 </template>
 <script setup>
 useHead({
-  title: 'Room 302 Studio'
-})
-
+  title: "Room 302 Studio",
+});
 </script>
 <style>
 /* h1,
@@ -26,11 +25,11 @@ p {
 
 body {
   /* background-color: #2A3A44; */
-  font-family: 'Rubik', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .monospace {
-  font-family: 'Source Code Pro', monospace !important;
+  font-family: "Source Code Pro", monospace !important;
 }
 
 /* .near-white {

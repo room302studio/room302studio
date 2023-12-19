@@ -5,8 +5,9 @@
         <!-- <pre>{{ post }}</pre> -->
         <!-- <h2>{{ post.title }}</h2> -->
         <h2 class="text-2xl md:text-6xl font-bold mb-2">
-          <NuxtLink :to="`${post._path}`" class="
-        no-underline">{{ post.title }}</NuxtLink>
+          <NuxtLink :to="`${post._path}`" class="no-underline">{{
+            post.title
+          }}</NuxtLink>
         </h2>
         <p>{{ post.description }}</p>
       </li>
@@ -15,6 +16,7 @@
 </template>
 
 <script setup>
-const { data: posts } = await useAsyncData('content/our-work', () => queryContent('our-work').find())
-
+const { data: posts } = await useAsyncData("content/our-work", () =>
+  queryContent("our-work").find(),
+);
 </script>
