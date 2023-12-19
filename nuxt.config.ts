@@ -2,10 +2,12 @@
 export default defineNuxtConfig({
     ssr: false, // for netlify deploy
     modules: [
-    '@vueuse/motion/nuxt',
+    // '@vueuse/motion/nuxt',
     '@nuxt/content',
     '@nuxt/ui',
     '@vueuse/nuxt',
+    '@nuxt/ui',
+    '@nuxtjs/google-gtag',
     [
       '@nuxt/image',
       {
@@ -14,12 +16,11 @@ export default defineNuxtConfig({
     ],
     ['@nuxtjs/google-fonts', {
       families: {
-        'Source Code Pro': [200, 400, 700, 900],
-        'Modak': [400],
+        'Rubik': [300, 400, 500, 700],
+        'Source Code Pro': [400, 700],
       },
     },
-    '@nuxtjs/google-gtag'  
-  ],
+    ],      
   ],
   content: {
     documentDriven: true,
