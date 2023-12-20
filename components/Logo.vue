@@ -1,7 +1,11 @@
 <template>
-  <div>Room 302 Studio (Logo here)</div>
+  <div>
+    <img src="/room302-logo.svg" class="w-12 h-12" />
+  </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+</script>
 
 <style scoped></style>
