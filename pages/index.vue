@@ -31,19 +31,52 @@
             </p>
           </div>
         </div>
-        <div
-          class="intro-images-wrapper w-3/6 grid grid-cols-1 grid-rows-1 relative p-12"
-        >
-          <img
-            src="https://via.placeholder.com/900"
-            alt=""
-            class="intro-image row-start-1 col-start-1 w-full shadow-lg rounded-sm"
-          />
-          <img
-            src="https://via.placeholder.com/900"
-            alt=""
-            class="intro-image row-start-1 col-start-1 w-full shadow-lg rounded-sm absolute translate-x-10 translate-y-10 hover:translate-x-11 hover:translate-y-11 transition-transform"
-          />
+        <div class="intro-images-wrapper w-3/6 grid grid-cols-1 grid-rows-1 relative p-12">
+          <img src="/our-work-images/unhcr.png" alt="" class="intro-image row-start-1 col-start-1 w-full rounded-sm" />
+          <img src="/our-work-images/unhcr.png" alt=""
+            class="intro-image row-start-1 col-start-1 w-full rounded-sm absolute translate-x-10 translate-y-10 hover:translate-x-11 hover:translate-y-11 transition-transform" />
+        </div>
+      </div>
+
+      <div
+        class="callout-section bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-800 my-24 py-12 lg:py-24 px-16 lg:px-12 rounded-sm shadow-lg">
+
+        <p class="text-5xl lg:w-8/12 leading-tight">
+          Boop bop beepity bop<span class="text-primary-500">.</span>
+        </p>
+
+        <!-- now use flexbox to make a 3-wide of these sections -->
+        <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-400 text-sm">
+          <div class="callout-section-item my-4 lg:w-1/3">
+            <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
+            <div>
+              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Header text</h4>
+              <p class="text-balance lg:mr-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+                voluptatum.
+              </p>
+            </div>
+          </div>
+          <div class="callout-section-item my-4 lg:w-1/3">
+            <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
+            <div>
+              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Header text</h4>
+              <p class="text-balance lg:mr-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+                voluptatum.
+              </p>
+            </div>
+          </div>
+          <div class="callout-section-item my-4 lg:w-1/3">
+            <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
+            <div>
+              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Header text</h4>
+              <p class="text-balance lg:mr-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+                voluptatum.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -51,26 +84,14 @@
         We harness the power of over 30 collective years of data visualization
         and prototyping expertise from our founding members.
         <NuxtLink class="underline dark:text-white" to="/members">
-          <img
-            src="/member-headshots/curran-headshot.png"
-            class="w-4 h-4 rounded-full inline-block mr-1 border border-white"
-            alt="Curran"
-          />
-          <img
-            src="/member-headshots/ej-headshot.png"
-            class="w-4 h-4 rounded-full inline-block mr-1 border border-white"
-            alt="EJ"
-          />
-          <img
-            src="/member-headshots/israel-headshot.png"
-            class="w-4 h-4 rounded-full inline-block mr-1 border border-white"
-            alt="Israel"
-          />
-          <img
-            src="/member-headshots/ian-headshot.png"
-            class="w-4 h-4 rounded-full inline-block mr-1 border border-white"
-            alt="Ian"
-          />
+          <img src="/member-headshots/curran-headshot.png"
+            class="w-4 h-4 rounded-full inline-block mr-1 border border-white" alt="Curran" />
+          <img src="/member-headshots/ej-headshot.png" class="w-4 h-4 rounded-full inline-block mr-1 border border-white"
+            alt="EJ" />
+          <img src="/member-headshots/israel-headshot.png"
+            class="w-4 h-4 rounded-full inline-block mr-1 border border-white" alt="Israel" />
+          <img src="/member-headshots/ian-headshot.png" class="w-4 h-4 rounded-full inline-block mr-1 border border-white"
+            alt="Ian" />
         </NuxtLink>
         We've extended our capabilities to include product development,
         artificial intelligence, and other cutting-edge technologies.
@@ -94,24 +115,21 @@
       </p>
     </div>
 
+    <!-- we are gonna use mouseX and mousY and some basic CSS transforms to make it so the div is always "looking" at the mouse -->
+
     <div
-      class="p-3 md:p-5 text-3xl md:text-5xl dark:text-white leading-relaxed bg-orange"
-    >
+      class="callout-section bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-800 my-24 py-24 px-12 text-2xl lg:text-6xl text-balance"
+      ref="faceMouseEl" :style="faceMouseTransform">
       <h3 class="m-0 p-0 py-4 leading-tight text-center">
         Say hello:
-        <a
-          href="mailto:studio@room302.studio"
-          class="font-bold underline dark:text-white"
-        >
-          <span class="hidden md:inline-block">studio</span
-          ><span class="hidden md:inline-block">@room302.studio</span></a
-        >
+        <a href="mailto:studio@room302.studio"
+          class="font-bold underline dark:text-stone-900 hover:text-primary-500 transition-colors duration-200 dark:hover:text-primary-700">
+          <span class="">studio</span><span class="">@room302.studio</span></a>
       </h3>
     </div>
 
-    <div
-      class="p-3 md:p-5 text-lg dark:text-white leading-relaxed max-w-xl mx-auto"
-    >
+
+    <div class="p-3 md:p-5 text-lg dark:text-white leading-relaxed max-w-xl mx-auto">
       <h2 class="text-orange text-2xl leading-tight">
         Available for collaboration
       </h2>
@@ -130,14 +148,86 @@
       </p>
     </div>
 
-    <MailchimpSignupForm class="p-0 md:p-5 max-w-xl mx-auto" />
+    <div
+      class="callout-section bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-800 my-24 py-12 lg:py-24 px-16 lg:px-12 rounded-sm shadow-lg">
+
+      <p class="text-5xl lg:w-8/12 leading-tight">
+        Coach Artie, our Studio AI Assistant<span class="text-primary-500">?</span>
+      </p>
+
+      <!-- now use flexbox to make a 3-wide of these sections -->
+      <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-400 text-sm">
+        <div class="callout-section-item my-4 lg:w-1/3">
+          <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
+          <div>
+            <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Header text</h4>
+            <p class="text-balance lg:mr-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+              voluptatum.
+            </p>
+          </div>
+        </div>
+        <div class="callout-section-item my-4 lg:w-1/3">
+          <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
+          <div>
+            <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Header text</h4>
+            <p class="text-balance lg:mr-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+              voluptatum.
+            </p>
+          </div>
+        </div>
+        <div class="callout-section-item my-4 lg:w-1/3">
+          <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
+          <div>
+            <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Header text</h4>
+            <p class="text-balance lg:mr-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+              voluptatum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-sm my-8 leading-relaxed monospace">
+        Subscribe for updates on what we're working on...
+      </h2>
+      <MailchimpSignupForm class="" />
+    </div>
+
   </div>
 </template>
 <script setup>
 const scrollcontainer = ref(null);
 
 const scroll = useScroll(scrollcontainer);
-const skewY = computed(() => scroll.y / 10);
+// const skewY = computed(() => scroll.y / 10);
+
+const { x: mouseX, y: mouseY } = useMouse();
+
+const skewX = computed(() => mouseX / 10);
+const skewY = computed(() => mouseY / 10);
+
+const { height: windowHeight, width: windowWidth } = useWindowSize()
+
+const faceMouseEl = ref(null)
+
+const { x: faceMouseX, y: faceMouseY } = useElementBounding(faceMouseEl)
+
+const faceMouseTransform = computed(() => {
+  const xRotate = ((faceMouseY.value - faceMouseX.value) / windowWidth.value) * 30;
+  const xAngle = Math.max(Math.round(xRotate * 180) / 80, -88);
+
+  // we need to lock the xAngle so it doesn't go past 90 degrees and flip backwards
+  const lockedXAngle = Math.min(Math.max(xAngle, -45), 88);
+
+  // Apply the rotation using CSS 3D transforms
+  return {
+    transform: `perspective(1000px) rotateX(${lockedXAngle}deg) `
+  };
+});
 
 // import animejs
 // import anime from 'animejs/lib/anime.es.js'
@@ -146,11 +236,11 @@ const skewY = computed(() => scroll.y / 10);
 //     loop: true,
 //   })
 
-function animate() {}
-function stagger() {}
-function createTimeline() {}
+function animate() { }
+function stagger() { }
+function createTimeline() { }
 const tl = {
-  add: function () {},
+  add: function () { },
 };
 
 onMounted(() => {

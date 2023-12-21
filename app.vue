@@ -1,5 +1,5 @@
 <template>
-  <section class="p-12 lg:p-24 bg-stone-100 dark:bg-stone-900">
+  <section class="p-8 md:p-12 lg:p-24 bg-stone-100 dark:bg-stone-900">
     <Nav />
     <NuxtPage />
   </section>

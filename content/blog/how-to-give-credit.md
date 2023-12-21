@@ -4,6 +4,8 @@ inprogress: true
 date: 2023-09-03T14:18:33-04:00
 modified: 2023-12-17T19:08:46-05:00
 tags: howto process
+author: EJ Fox
+authorEmail: ejfox@room302.studio
 ---
 
 ## How To Give Credit
