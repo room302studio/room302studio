@@ -3,6 +3,8 @@ dek: "In which the author proudly presents his new venture: Room 302 Studio, an 
 date: 2023-04-10T01:00:00-04:00
 modified: 2023-04-09T23:48:17-04:00
 tags: personal dataviz 
+author: EJ Fox
+authorEmail: ejfox@room302.studio
 ---
 
 # Introducing room302.studio

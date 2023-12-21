@@ -27,6 +27,9 @@ export default defineNuxtConfig({
   content: {
     documentDriven: true,
   },
+  ui: {
+    icons: 'all'
+  },
   // 'google-gtag': {
   //   id: 'G-6XGQNYZQMC',
   // },
