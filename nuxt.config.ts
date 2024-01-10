@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@vueuse/nuxt",
     "@nuxt/ui",
-    // '@nuxtjs/google-gtag',
+    'nuxt-gtag',
     [
       "@nuxtjs/google-fonts",
       {
@@ -30,10 +30,9 @@ export default defineNuxtConfig({
   ui: {
     icons: 'all'
   },
-  // 'google-gtag': {
-  //   id: 'G-6XGQNYZQMC',
-  // },
-  // css: ['tachyons/css/tachyons.min.css'],
+  gtag: {
+    id: 'G-6XGQNYZQMC',
+  },
   app: {
     head: {
       title: "Room 302 Studio",
@@ -66,4 +65,5 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
   },
+  
 });
