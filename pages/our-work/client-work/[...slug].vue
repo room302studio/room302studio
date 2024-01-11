@@ -1,6 +1,5 @@
 <template>
   <main class="f4 lh-copy prose dark:prose-invert">
-    <!-- <ContentDoc /> -->
     <ContentRenderer :value="data">
       <template #empty>
         <div>
@@ -22,6 +21,6 @@ definePageMeta({
 const route = useRoute();
 
 const { data } = await useAsyncData(async () => {
-  return queryContent("client-work", route.params.slug[0]).findOne();
+  return queryContent("our-work/client-work", route.params.slug[0]).findOne();
 });
 </script>

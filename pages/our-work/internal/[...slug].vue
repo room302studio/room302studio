@@ -22,6 +22,6 @@ definePageMeta({
 const route = useRoute();
 
 const { data } = await useAsyncData(async () => {
-  return queryContent("client-work", route.params.slug[0]).findOne();
+  return queryContent("our-work/internal", route.params.slug[0]).findOne();
 });
 </script>

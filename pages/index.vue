@@ -1,6 +1,7 @@
 <template>
   <div class="index">
-    <div class="py-5 dark:text-white leading-relaxed">
+    <div class="py-5 dark:text-white leading-relaxed text-lg">
+
       <p class="dark:text-white text-4xl w-8/12">
         We are a bespoke innovation lab that guides concepts from ideation to
         implementation<span class="text-primary-500">.</span>
@@ -14,6 +15,25 @@
         experts thrives on pushing boundaries, experimenting with cutting-edge
         technologies, and driving change.
       </p>
+
+      <p class="text-lg mt-6 max-w-prose text-balance">
+        We harness the power of over 30 collective years of data visualization
+        and prototyping expertise from our founding members.
+        <NuxtLink class="underline dark:text-white" to="/members">
+          <img src="/member-headshots/curran-headshot.png"
+            class="w-4 h-4 rounded-full inline-block mr-1 border border-white" alt="Curran" />
+          <img src="/member-headshots/ej-headshot.png" class="w-4 h-4 rounded-full inline-block mr-1 border border-white"
+            alt="EJ" />
+          <img src="/member-headshots/israel-headshot.png"
+            class="w-4 h-4 rounded-full inline-block mr-1 border border-white" alt="Israel" />
+          <img src="/member-headshots/ian-headshot.png" class="w-4 h-4 rounded-full inline-block mr-1 border border-white"
+            alt="Ian" />
+        </NuxtLink>
+        We've extended our capabilities to include product development,
+        artificial intelligence, and other cutting-edge technologies.
+      </p>
+
+
 
       <div class="intro-wrapper relative flex my-32 max-w-2xl">
         <div class="intro-text-wrapper w-1/2">
@@ -42,60 +62,66 @@
         class="callout-section bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-800 my-24 py-12 lg:py-24 px-16 lg:px-12 rounded-sm shadow-lg">
 
         <p class="text-5xl lg:w-8/12 leading-tight">
-          Boop bop beepity bop<span class="text-primary-500">.</span>
+          Bringing your ideas from 0 to 60<span class="text-primary-500">.</span>
         </p>
 
         <!-- now use flexbox to make a 3-wide of these sections -->
         <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-400 text-sm">
           <div class="callout-section-item my-4 lg:w-1/3">
-            <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
             <div>
-              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Header text</h4>
+              <h4 class="text-lg leading-tight mb-4 text-stone-300 dark:text-stone-700 font-bold monospace">
+                <UIcon name="i-material-symbols-light:speed-rounded" />
+                Fast-paced prototyping
+              </h4>
               <p class="text-balance lg:mr-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                voluptatum.
+                We know the best way to make a great ideas is to iterate. A lot. Our focus on rapid prototyping lets us
+                get further, faster, and make sure we're building the right thing.
               </p>
             </div>
           </div>
           <div class="callout-section-item my-4 lg:w-1/3">
-            <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
+
             <div>
-              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Header text</h4>
+              <h4 class="text-lg leading-tight mb-4 text-stone-300 dark:text-stone-700 font-bold monospace">
+                <UIcon name="i-material-symbols-light:insert-chart-outline" /> Rooted in data
+              </h4>
               <p class="text-balance lg:mr-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                voluptatum.
+                Our studio has a deep background in data visualization and analysis. We use data both to inform
+                our product decisions, as well as incorporating data into the DNA of our products.
               </p>
             </div>
           </div>
+
           <div class="callout-section-item my-4 lg:w-1/3">
-            <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
             <div>
-              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Header text</h4>
+              <h4 class="text-lg leading-tight mb-4 text-stone-300 dark:text-stone-700 font-bold monospace">
+                <UIcon name="i-fa6-solid-hammer" />
+                Willing to bleed
+              </h4>
               <p class="text-balance lg:mr-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                voluptatum.
+                Part of being on the cutting edge is being willing to take risks. We're not afraid to try new things,
+                explore uncharted territory, and push the boundaries of what's possible.
               </p>
             </div>
           </div>
+
+          <!-- <div class="callout-section-item my-4 lg:w-1/3">
+            <div>
+              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">
+                <UIcon name="i-fa6-solid-hammer" class="w-12 h-12" />
+                Focused on impact
+              </h4>
+              <p class="text-balance lg:mr-4">
+                We want to make work that makes the world better. We work with non-profits, news organizations, and smart
+                collaborators to find places technology can be leveraged to make a difference, where concepts can be
+                proven, and momentum can be built.
+              </p>
+            </div>
+          </div> -->
+
+
         </div>
       </div>
-
-      <p class="text-lg mt-6 max-w-prose text-balance">
-        We harness the power of over 30 collective years of data visualization
-        and prototyping expertise from our founding members.
-        <NuxtLink class="underline dark:text-white" to="/members">
-          <img src="/member-headshots/curran-headshot.png"
-            class="w-4 h-4 rounded-full inline-block mr-1 border border-white" alt="Curran" />
-          <img src="/member-headshots/ej-headshot.png" class="w-4 h-4 rounded-full inline-block mr-1 border border-white"
-            alt="EJ" />
-          <img src="/member-headshots/israel-headshot.png"
-            class="w-4 h-4 rounded-full inline-block mr-1 border border-white" alt="Israel" />
-          <img src="/member-headshots/ian-headshot.png" class="w-4 h-4 rounded-full inline-block mr-1 border border-white"
-            alt="Ian" />
-        </NuxtLink>
-        We've extended our capabilities to include product development,
-        artificial intelligence, and other cutting-edge technologies.
-      </p>
 
       <p class="text-lg mt-6 max-w-prose text-balance">
         Our diverse backgrounds enable us to approach projects from multiple
@@ -158,7 +184,7 @@
       <!-- now use flexbox to make a 3-wide of these sections -->
       <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-400 text-sm">
         <div class="callout-section-item my-4 lg:w-1/3">
-          <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
+          <UIcon name="i-heroicons-" class="w-12 h-12" />
           <div>
             <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Header text</h4>
             <p class="text-balance lg:mr-4">
@@ -200,202 +226,6 @@
   </div>
 </template>
 <script setup>
-const scrollcontainer = ref(null);
-
-const scroll = useScroll(scrollcontainer);
-// const skewY = computed(() => scroll.y / 10);
-
-const { x: mouseX, y: mouseY } = useMouse();
-
-const skewX = computed(() => mouseX / 10);
-const skewY = computed(() => mouseY / 10);
-
-const { height: windowHeight, width: windowWidth } = useWindowSize()
-
-const faceMouseEl = ref(null)
-
-const { x: faceMouseX, y: faceMouseY } = useElementBounding(faceMouseEl)
-
-const faceMouseTransform = computed(() => {
-  const xRotate = ((faceMouseY.value - faceMouseX.value) / windowWidth.value) * 30;
-  const xAngle = Math.max(Math.round(xRotate * 180) / 80, -88);
-
-  // we need to lock the xAngle so it doesn't go past 90 degrees and flip backwards
-  const lockedXAngle = Math.min(Math.max(xAngle, -45), 88);
-
-  // Apply the rotation using CSS 3D transforms
-  return {
-    transform: `perspective(1000px) rotateX(${lockedXAngle}deg) `
-  };
-});
-
-// import animejs
-// import anime from 'animejs/lib/anime.es.js'
-// import { animate, stagger, createTimeline } from '/Users/ejfox/code/anime-beta/lib/anime.esm.min.js'
-// const tl = createTimeline({
-//     loop: true,
-//   })
-
-function animate() { }
-function stagger() { }
-function createTimeline() { }
-const tl = {
-  add: function () { },
-};
-
-onMounted(() => {
-  // animate('.intro-wrapper img', {
-  //   // translateX: 320,
-  //   // scaleZ: { from: 0, to: 1 },
-  //   // scale: { from: 0.2, to: 1 },
-  //   keyframes: [
-  //     { rotateX: 0 },
-  //     { rotateY: 22 },
-  //     { rotateX: 22 },
-  //   ],
-  //   scale: [0.9, 1],
-  //   duration: 2000,
-  //   // delay: stagger(250),
-  //   // ease: 'inOutQuad',
-  //   // ease: 'outElastic(1, 1)',
-  //   ease: 'linear',
-  //   loop: true,
-  //   alternate: true
-
-  // })
-
-  // tl.add('.intro-wrapper img', {
-  //   rotateX: { from: -100, to: 100 },
-  // })
-
-  tl.add(".intro-wrapper img", {
-    keyframes: [
-      { rotateX: 8, duration: 100, ease: "inOutQuad" },
-      { rotateY: -8, translateX: 1, duration: 900, ease: "outQuad" },
-    ],
-    delay: stagger(2000),
-    endDelay: 2500,
-  });
-
-  // tl.add('.intro-wrapper img', {
-  //   scale: 1.1,
-  //   delay: stagger(2000)
-  // })
-
-  tl.add(".intro-wrapper img", {
-    keyframes: [{ rotateX: 0, rotateY: 0, translateX: 0, duration: 3000 }],
-    delay: stagger(2000),
-    ease: "inOutQuad",
-  });
-
-  // tl.add('.intro-wrapper img', {
-  //   scale: 1,
-  //   delay: stagger(2000)
-  // })
-});
-
-// animate logo on mounted
-// onMounted(() => {
-
-//   const animStepDuration = 500
-
-//   const tl = anime.timeline({
-//     easing: 'easeInOutQuad',
-//     duration: animStepDuration,
-//     delay: 200
-//   })
-
-//   // anime room in
-//   tl.add({
-//     targets: 'svg #room',
-//     opacity: [0, 1],
-//     translateY: [-100, 0],
-//     duration: animStepDuration * 1.2,
-//   })
-
-//   // animate 302 in
-//   // tl.add({
-//   //   targets: 'svg #threeohtwo302',
-//   //   opacity: [0, 1],
-//   //   // animate the letters in a bit slower than the rest of the animation
-//   //   duration: animStepDuration,
-//   // }, '-=' + animStepDuration * 0.72)
-
-//   const letterEasing = 'spring(1, 80, 10, 0)'
-//   const letterDurationScalar = 0.04
-//   const letterAppearScalar = 3.3
-
-//   // // animate #three in
-//   tl.add({
-//     targets: 'svg #three',
-//     opacity: [0, 1],
-//     translateY: [-25, 0],
-//     translateX: [-25, 0],
-//     rotateX: [-90, 0],
-//     // rotateY: [45, 0],
-//     // easing: 'spring(1, 80, 10, 0)',
-//     // even looser springier spring, but same duration
-//     easing: letterEasing,
-//     duration: animStepDuration * letterDurationScalar,
-//   }, '-=' + animStepDuration * 0.6)
-
-//   // animate #oh in
-//   tl.add({
-//     targets: 'svg #oh',
-//     opacity: [0, 1],
-//     translateY: [-25, 0],
-//     // translateX: [-25, 0],
-//     rotateX: [90, 0],
-//     // rotateY: [180, 0],
-//     easing: letterEasing,
-//     duration: animStepDuration * letterDurationScalar,
-//   }, '-=' + animStepDuration * letterAppearScalar)
-
-//   // animate #two in
-//   tl.add({
-//     targets: 'svg #two',
-//     opacity: [0, 1],
-//     translateY: [-25, 0],
-//     translateX: [25, 0],
-//     rotateX: [180, 0],
-//     // rotateY: [90, 0],
-//     easing: letterEasing,
-//     duration: animStepDuration * letterDurationScalar,
-//   }, '-=' + animStepDuration * letterAppearScalar)
-
-//   // animate the circle in
-//   tl.add({
-//     targets: 'svg #circle',
-//     opacity: [0, 1],
-//     duration: animStepDuration * 1.9,
-//   }, '-=' + animStepDuration * 2.2)
-
-//   // tl.add({
-//   //   targets: 'svg #circle',
-//   //   rotate: [0,360],
-//   //   duration: 3000,
-//   //   easing: 'linear',
-//   //   loop: true,
-//   // })
-
-//   // animate the text
-//   // tl.add({
-//   //   targets: 'svg #text',
-//   //   opacity: [0, 1],
-//   //   duration: 500,
-//   //   // delay: 500,
-//   // })
-
-//   // make the circle rotate forever
-//   // anime({
-//   //   targets: 'svg #circle',
-//   //   rotate: [0,360],
-//   //   duration: 192000,
-//   //   easing: 'linear',
-//   //   loop: true,
-//   // })
-
-// })
 </script>
 <style scoped>
 p {

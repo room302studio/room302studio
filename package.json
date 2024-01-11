@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@gtm-support/vue-gtm": "^2.0.0",
-    "@iconify/json": "^2.2.160",
+    "@iconify/json": "^2.2.167",
     "@nuxt/content": "^2.8.5",
     "@nuxt/ui": "^2.11.1",
     "@nuxtjs/google-fonts": "^3.0.0",
