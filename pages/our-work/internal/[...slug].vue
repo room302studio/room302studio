@@ -1,18 +1,20 @@
 <template>
-  <main class="f4 lh-copy prose dark:prose-invert">
-    <!-- <ContentDoc /> -->
-    <ContentRenderer :value="data">
-      <template #empty>
-        <div>
-          <p>We couldn't find this blog post.</p>
+  <NuxtLayout>
+    <main class="f4 lh-copy prose dark:prose-invert">
+      <!-- <ContentDoc /> -->
+      <ContentRenderer :value="data">
+        <template #empty>
+          <div>
+            <p>We couldn't find this blog post.</p>
 
-          <UButton to="/" class="mt-4">
-            Back home
-          </UButton>
-        </div>
-      </template>
-    </ContentRenderer>
-  </main>
+            <UButton to="/" class="mt-4">
+              Back home
+            </UButton>
+          </div>
+        </template>
+      </ContentRenderer>
+    </main>
+  </NuxtLayout>
 </template>
 <script setup>
 definePageMeta({
