@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxt/ui",
     'nuxt-gtag',
+    '@tresjs/nuxt',
     [
       "@nuxtjs/google-fonts",
       {
@@ -25,7 +26,7 @@ export default defineNuxtConfig({
     ],
   ],
   content: {
-    documentDriven: true,
+    // documentDriven: true,
   },
   ui: {
     icons: 'all'
