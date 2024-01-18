@@ -17,9 +17,9 @@
   </NuxtLayout>
 </template>
 <script setup>
-definePageMeta({
-  layout: "our-work",
-});
+// definePageMeta({
+//   layout: "default",
+// });
 
 const route = useRoute();
 

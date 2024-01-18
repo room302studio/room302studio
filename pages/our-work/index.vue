@@ -42,6 +42,12 @@
 </template>
 
 <script setup>
+
+// use the default layout
+definePageMeta({
+  layout: "default",
+})
+
 const { data: clientWork } = await useAsyncData("content/our-work/client-work", () =>
   queryContent("our-work/client-work").find(),
 );

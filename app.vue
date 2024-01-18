@@ -1,8 +1,9 @@
 <template>
-  <section class="p-8 md:p-12 lg:p-24 bg-stone-100 dark:bg-stone-950 min-h-screen">
-    <Nav />
-    <NuxtPage />
-  </section>
+  <NuxtLayout>
+    <section class="">
+      <NuxtPage />
+    </section>
+  </NuxtLayout>
 </template>
 <script setup>
 useHead({
