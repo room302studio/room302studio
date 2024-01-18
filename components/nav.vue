@@ -1,43 +1,33 @@
 <template>
-  <div class="flex space-x-8 items-center py-6">
+  <div class="flex space-x-8 items-center p-8 md:p-12 lg:px-24">
     <Logo class="font-bold" />
     <ul class="flex space-x-4 lg:space-x-8 uppercase">
       <li>
-        <NuxtLink to="/" :class="linkClasses" active-class="border-primary-500"
-          >Home</NuxtLink
-        >
+        <NuxtLink to="/" :class="linkClasses" active-class="border-primary-500">Home</NuxtLink>
       </li>
       <li>
-        <NuxtLink
-          to="/members"
-          :class="linkClasses"
-          active-class="border-primary-500"
-        >
+        <NuxtLink to="/members" :class="linkClasses" active-class="border-primary-500">
           Members
         </NuxtLink>
       </li>
       <li>
-        <NuxtLink
-          to="/our-work"
-          :class="linkClasses"
-          active-class="border-primary-500"
-          >Work
+        <NuxtLink to="/our-work" :class="linkClasses" active-class="border-primary-500">Work
         </NuxtLink>
       </li>
       <li>
-        <NuxtLink
-          to="/events"
-          :class="linkClasses"
-          active-class="border-primary-500"
-          >Events
+        <NuxtLink to="/events" :class="linkClasses" active-class="border-primary-500">Events
         </NuxtLink>
       </li>
       <li>
-        <NuxtLink
-          to="/blog"
-          :class="linkClasses"
-          active-class="border-primary-500"
-          >Blog
+        <NuxtLink to="/blog" :class="linkClasses" active-class="border-primary-500">Blog
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/services" :class="linkClasses" active-class="border-primary-500">Services
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/process" :class="linkClasses" active-class="border-primary-500">Process
         </NuxtLink>
       </li>
     </ul>
@@ -46,9 +36,9 @@
 <script setup>
 // import { animate, stagger } from '/Users/ejfox/code/anime-beta/lib/anime.esm.min.js' // early anime v4 release
 
-function animate() {}
-function stagger() {}
-function createTimeline() {}
+function animate() { }
+function stagger() { }
+function createTimeline() { }
 
 const linkClasses =
   "no-underline hover:border-primary-500 border-b-2 transition text-xs text-gray-700 dark:text-gray-300";

@@ -11,7 +11,8 @@
   "devDependencies": {
     "@nuxt/devtools": "^1.0.0",
     "@nuxt/image": "^1.0.0-rc.1",
-    "nuxt": "^3.3.2"
+    "nuxt": "^3.3.2",
+    "sass": "^1.70.0"
   },
   "dependencies": {
     "@gtm-support/vue-gtm": "^2.0.0",
