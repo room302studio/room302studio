@@ -1,23 +1,21 @@
 <template>
-  <NuxtLayout>
-    <main class="f4 lh-copy prose dark:prose-invert">
-      <ContentRenderer :value="data">
-        <template #empty>
-          <div>
-            <p>We couldn't find this blog post.</p>
+  <main class="f4 lh-copy prose dark:prose-invert">
+    <ContentRenderer :value="data">
+      <template #empty>
+        <div>
+          <p>We couldn't find this blog post.</p>
 
-            <UButton to="/" class="mt-4">
-              Back home
-            </UButton>
-          </div>
-        </template>
-      </ContentRenderer>
-    </main>
-  </NuxtLayout>
+          <UButton to="/" class="mt-4">
+            Back home
+          </UButton>
+        </div>
+      </template>
+    </ContentRenderer>
+  </main>
 </template>
 <script setup>
 definePageMeta({
-  layout: "our-work",
+  layout: "work",
 });
 
 const route = useRoute();

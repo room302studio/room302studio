@@ -1,6 +1,7 @@
 <template>
   <main>
-    <SiteNav class="border-red-500 border-2" />
+    <SiteNav class="" />
+    <h2 class="text-8xl font-bold text-center text-gray-800 dark:text-gray-100">BLOG</h2>
     <div class="p-8">
 
       <slot />

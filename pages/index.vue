@@ -74,17 +74,18 @@
 
         <div class="pad relative flex my-32">
           <div class="w-1/2">
-            <h4 class="text-xs font-medium text-gray-500">Toptop</h4>
-            <h2 class="text-xl font-medium text-primary-500">Biggy metus</h2>
+            <h4 class="text-xs font-medium text-gray-500">What we love</h4>
+            <h2 class="text-xl font-medium text-primary-500">Turning Complex Problems Into Action</h2>
             <div class="intro-text text-sm my-2 pl-4 border-l-2 border-gray-500">
               <p class="pad max-w-prose text-blance">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                voluptatum.
+                From ideation to execution, our multidisciplinary approach weaves together the latest in tech advancements
+                with strategic design thinking.
               </p>
 
               <p class="pad max-w-prose text-blance">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                voluptatum.
+                Whether it's uncovering trends in huge datasets or crafting intuitive experiences, our work is always
+                pushing the envelope on what's possible and shaping a future where data
+                becomes actionable knowledge.
               </p>
             </div>
           </div>

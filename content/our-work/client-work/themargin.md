@@ -5,6 +5,7 @@ description: "Brief description of the case study"
 date: "2022-01-01"
 image: "/path/to/feature/image.jpg"
 url: "https://themargin.us/"
+tags: ["dataviz", "interactive", "mapping", "nonprofit"]
 ---
 
 # The Margin: Mapping Environmental Justice

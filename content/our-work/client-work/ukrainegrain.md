@@ -4,10 +4,7 @@ description: "Brief description of the case study"
 date: "2022-01-01"
 image: "/path/to/feature/image.jpg"
 url: "https://stories.theplotline.org/ukr-grain/"
-processImages: 
-	- "/path/to/feature/image.jpg"
-	- "/path/to/feature/image.jpg"
-	- "/path/to/feature/image.jpg"
+tags: ["dataviz", "interactive", "mapping", "nonprofit"]
 --- 
 
 In the wake of the conflict in Ukraine, the world faced a looming crisis — the threat to global grain supplies. In partnership with Earthrise Media for The Plotline, we undertook the mission of translating the complexities of agricultural supply chains and the impacts of war into an interactive tool that can be used both by experts and the general public.
