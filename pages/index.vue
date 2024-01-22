@@ -214,6 +214,13 @@
         </p>
       </div>
 
+      <div class="p-3 md:p-5 text-lg dark:text-white leading-relaxed max-w-xl mx-auto">
+        <iframe src="https://discord.com/widget?id=932719842522443928&theme=dark" width="100%" height="500"
+          allowtransparency="true" frameborder="0"
+          sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+          class="rounded-lg shadow-lg"></iframe>
+      </div>
+
       <div
         class="callout-section bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-800 my-24 py-12 lg:py-24 px-16 lg:px-12 rounded-sm shadow-lg">
 
@@ -226,30 +233,27 @@
           <div class="callout-section-item my-4 lg:w-1/3">
             <UIcon name="i-heroicons-" class="w-12 h-12" />
             <div>
-              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Header text</h4>
+              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Enhancing our collaborations</h4>
               <p class=" text-balance lg:mr-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                voluptatum.
+                Why we use him, what he does, how he works, etc.
               </p>
             </div>
           </div>
           <div class="callout-section-item my-4 lg:w-1/3">
             <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
             <div>
-              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Header text</h4>
+              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Disclaimer</h4>
               <p class=" text-balance lg:mr-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                voluptatum.
+                He'll be around
               </p>
             </div>
           </div>
           <div class="callout-section-item my-4 lg:w-1/3">
             <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
             <div>
-              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Header text</h4>
+              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Testimonials</h4>
               <p class="text-balance lg:mr-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-                voluptatum.
+                What the process was like for the people who worked with him
               </p>
             </div>
           </div>
@@ -266,7 +270,7 @@
   </div>
 </template>
 <script setup>
-import { animate, createAnimatable, stagger } from '~/anime.esm.min.js'
+import { animate, createAnimatable, stagger } from '~/anime.esm.js'
 import { TresCanvas, useLoader, extend } from '@tresjs/core'
 import { createNoise3D } from 'simplex-noise';
 import { EffectComposer, DepthOfField, Glitch, Noise, Outline, Pixelation, Vignette } from '@tresjs/post-processing'
