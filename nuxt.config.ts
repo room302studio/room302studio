@@ -21,6 +21,7 @@ export default defineNuxtConfig({
         families: {
           Rubik: [300, 400, 500, 700],
           "Source Code Pro": [400, 700],
+          "IBM Plex Sans": [400, 500, 600, 700],
         },
       },
     ],
@@ -35,6 +36,7 @@ export default defineNuxtConfig({
     id: 'G-6XGQNYZQMC',
   },
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       title: "Room 302 Studio",
       meta: [

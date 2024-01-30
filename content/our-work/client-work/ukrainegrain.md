@@ -2,7 +2,7 @@
 title: "The Plotline: Ukraine Grain"
 description: "Brief description of the case study"
 date: "2022-01-01"
-image: "/path/to/feature/image.jpg"
+image: "/our-work-images/unhcr.png"
 url: "https://stories.theplotline.org/ukr-grain/"
 tags: ["dataviz", "interactive", "mapping", "nonprofit"]
 --- 

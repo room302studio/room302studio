@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <img src="/room302-logo.svg" class="w-12 h-12" />
-  </div>
+  <img src="/room302-logo.svg" class="" />
 </template>
 
 <script setup>

@@ -1,75 +1,72 @@
 <template>
-  <div class="flex space-x-8 items-center p-8 md:p-12 lg:px-24">
-    <Logo class="font-bold" />
-    <ul class="flex space-x-4 lg:space-x-8 uppercase">
+  <div id="site-nav"
+    class="text-center md:flex md:space-x-8 items-center p-8 md:p-12 lg:px-24 w-full align-middle justify-between z-10 tracking-wide">
+    <Logo class="text-center md:w-16 md:h-16 lg:h-24 lg:w-24 mx-auto" />
+    <ul class="md:flex md:space-x-4 lg:space-x-8 uppercase my-4 md:my-0">
       <li>
-        <NuxtLink to="/" :class="linkClasses" active-class="border-primary-500">Home</NuxtLink>
+        <NuxtLink to="/" :class="linkClasses" :active-class="activeClasses">Home</NuxtLink>
       </li>
       <li>
-        <NuxtLink to="/members" :class="linkClasses" active-class="border-primary-500">
+        <NuxtLink to="/our-work" :class="linkClasses" :active-class="activeClasses">Work
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/process" :class="linkClasses" :active-class="activeClasses">Process
+        </NuxtLink>
+      </li>
+
+      <li>
+        <NuxtLink to="/events" :class="linkClasses" :active-class="activeClasses">Events
+        </NuxtLink>
+      </li>
+
+      <li>
+        <NuxtLink to="/blog" :class="linkClasses" :active-class="activeClasses">Blog
+        </NuxtLink>
+      </li>
+
+      <li>
+        <NuxtLink to="/members" :class="linkClasses" :active-class="activeClasses">
           Members
         </NuxtLink>
       </li>
-      <li>
-        <NuxtLink to="/our-work" :class="linkClasses" active-class="border-primary-500">Work
+
+
+      <!-- <li>
+        <NuxtLink to="/services" :class="linkClasses" :active-class="activeClasses">Services
         </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/events" :class="linkClasses" active-class="border-primary-500">Events
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/blog" :class="linkClasses" active-class="border-primary-500">Blog
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/services" :class="linkClasses" active-class="border-primary-500">Services
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink to="/process" :class="linkClasses" active-class="border-primary-500">Process
-        </NuxtLink>
-      </li>
+      </li> -->
+
     </ul>
+
+    <!-- Add an orange Contact Us button that is pushed all the way right on desktop, but is centered below on mobile -->
+    <div class="">
+      <UButton to="/contact" color="orange">
+        Contact Us
+      </UButton>
+    </div>
   </div>
 </template>
 <script setup>
-// import { animate, stagger } from '/Users/ejfox/code/anime-beta/lib/anime.esm.min.js' // early anime v4 release
-
-function animate() { }
-function stagger() { }
-function createTimeline() { }
 
 const linkClasses =
-  "no-underline hover:border-primary-500 border-b-2 transition text-xs text-gray-700 dark:text-gray-300";
+  "no-underline hover:border-primary-500/50 border-b-2 transition text-xs text-gray-500 dark:text-gray-500 duration-200 font-medium mx-1 md:mx-2";
 
-onMounted(() => {
-  animate("li", {
-    translateY: {
-      to: 0,
-      from: "-6.3rem",
-      ease: "outQuad",
-      duration: 2000,
-    },
-    // scale: [0.9, 1],
-    scale: {
-      from: 0.9,
-      to: 1,
-      duration: 1000,
-      delay: stagger(500),
-    },
-    opacity: {
-      from: 0,
-      to: 1,
-      duration: 1000,
-      delay: stagger(500),
-    },
-    // scaleZ: { from: 0, to: 1 },
-    // scale: { from: 0.2, to: 1 },
-    duration: 600,
-    delay: stagger(400),
-    ease: "inOutQuad",
-  });
-});
+const activeClasses = "border-primary-500 text-gray-700 font-semibold tracking-widest"
 </script>
-<style scoped></style>
+<style scoped>
+/* add some subtle transitions / animations */
+#site-nav a {
+  font-family: "IBM Plex Sans", sans-serif;
+  transition: all 0.2s ease-in-out;
+}
+
+#site-nav a:hover,
+#site-nav a:focus {
+  transform: scale(1.1);
+}
+
+#site-nav a:active {
+  transform: scale(0.9);
+}
+</style>

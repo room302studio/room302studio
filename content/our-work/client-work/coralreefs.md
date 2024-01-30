@@ -2,6 +2,7 @@
 title: "Mapping Resilience: A Data-Driven Mission to Save Coral Reefs"
 client: "Wildlife Conservation Society"
 description: "Brief description of the case study"
+role: 'UX / UI Ideation'
 date: "2022-01-01"
 image: "/path/to/feature/image.jpg"
 tags: ["dataviz", "interactive", "mapping", "nonprofit"]
