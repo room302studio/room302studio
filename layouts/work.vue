@@ -1,6 +1,6 @@
 <template>
   <main>
-    <SiteNav class="border-red-500 border-2" />
+    <SiteNav class="" />
     <div class="p-8">
 
       <slot />
