@@ -1,11 +1,12 @@
 <template>
-  <div class="pa2 tc">
-    <h2>Room 302 Studio Events</h2>
+  <div class="pa2 tc min-h-screen flex justify-center items-center">
+    <h2 class="flex-1">Room 302 Studio Events</h2>
 
-    <h4>Coming soon...</h4>
+    <div>
+      <h4 class="flex-1">Want to know about what we are planning?</h4>
 
-    <h4>Want to know about what we are planning?</h4>
+      <MailchimpSignupForm class="flex-4" />
+    </div>
 
-    <MailchimpSignupForm />
   </div>
 </template>

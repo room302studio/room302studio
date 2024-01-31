@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="min-h-screen">
 
     <!-- some paragraphs explaining the difference between our internal and client work -->
     <h1 class="text-6xl font-light mb-8">Our Work</h1>
@@ -25,7 +25,7 @@
       <!-- make 3x3 grid of the projects in cards -->
       <div class="projects grid grid-cols-3 gap-4">
         <div v-for="project in internalWork" :key="project.title" :project="project"
-          class="hover:shadow-lg transition-all flex rounded-lg bg-zinc-100">
+          class="hover:shadow-lg transition-all flex rounded-lg bg-zinc-100 dark:bg-zinc-900">
           <div class="flex-1 min-w-24">
             <!-- Assuming you have an image url 'backgroundUrl' -->
             <div class="h-full bg-cover bg-center" :style="{ backgroundImage: `url(${project.image})` }"></div>
@@ -47,11 +47,11 @@
     </section>
 
     <section>
-      <h2 class="text-4xl my-8">Internal Projects</h2>
+      <h2 class="text-4xl my-8">Client Work</h2>
       <!-- make 3x3 grid of the projects in cards -->
       <div class="projects grid grid-cols-3 gap-4">
         <div v-for="project in clientWork" :key="project.title" :project="project"
-          class="hover:shadow-lg transition-all flex rounded-lg bg-zinc-100 ">
+          class="hover:shadow-lg transition-all flex rounded-lg bg-zinc-100 dark:bg-zinc-900">
           <div class="flex-1 min-w-24">
             <!-- Assuming you have an image url 'backgroundUrl' -->
             <div class="h-full bg-cover bg-center" :style="{ backgroundImage: `url(${project.image})` }"></div>
