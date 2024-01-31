@@ -2,7 +2,7 @@
   <div class="bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-800 py-8">
     <div class="my-12 py-6 lg:py-24 px-16 lg:px-12 ">
       <p ref="creativeHub" class="text-5xl lg:w-8/12 leading-tight">
-        Sparking Innovation at Every Step<span class="text-primary-500">.</span>
+        Building <span class="text-primary-500">elegant utilities</span> for good.
       </p>
 
       <!-- Three callout sections with new titles and icons -->
@@ -52,37 +52,46 @@
     </div>
 
     <!-- include a little sitemap / verbose navigation and a motivational quote -->
-    <div class="lg:py-24 px-16 lg:px-12  flex">
+    <div class="lg:py-24 px-16 lg:px-12 flex ">
       <!-- quote -->
-      <div class="w-1/3 pr-4 ">
+      <div class="w-1/3 pr-4 md:pr-8 text-xl md:text-2xl font-bold text-balance">
         We focus on joy-driven development
       </div>
 
       <div class="sitemap-section-item flex w-full">
         <div class="md:w-1/3">
-          <h4>Section</h4>
+          <h4 class="text-stone-500 tracking-widest font-semibold">Learn More</h4>
           <ul class="list-none">
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <li>
+              <NuxtLink to="/blog/">Blog</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/process/">Process</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/process/">Services</NuxtLink>
+            </li>
           </ul>
         </div>
 
         <div class="md:w-1/3">
-          <h4>Section</h4>
+          <h4 class="text-stone-500 tracking-widest font-semibold">Hire Us</h4>
           <ul class="list-none">
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <li>
+              <NuxtLink to="/contact/">Contact</NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/contact/#calendar">Free consultation</NuxtLink>
+            </li>
           </ul>
         </div>
 
         <div class="md:w-1/3">
-          <h4>Section</h4>
+          <h4 class="text-stone-500 tracking-widest font-semibold">Get Involved</h4>
           <ul class="list-none">
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <li><a href="#">Join the Discord</a></li>
+            <li><a href="#">Sign up for Updates</a></li>
+            <li><a href="#">See upcoming events</a></li>
           </ul>
         </div>
 
@@ -90,3 +99,8 @@
     </div>
   </div>
 </template>
+<style lang="scss" scoped>
+li {
+  @apply my-2 text-xs;
+}
+</style>

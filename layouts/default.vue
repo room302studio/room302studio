@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="absolute z-0 left-0 top-0 pointer-events-none">
+    <div class="absolute -z-10 left-0 top-0 pointer-events-none">
       <TresCanvas window-size alpha shadows class="pointer-events-none" style="pointer-events: none !important;">
         <TresPerspectiveCamera ref="cam" :position="[cameraPosition.x, cameraPosition.y, cameraPosition.z]" :fov="50"
           :near="0.4" :far="1000" />
