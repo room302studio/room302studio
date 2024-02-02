@@ -9,13 +9,13 @@
           target="_self" novalidate="">
           <div id="mc_embed_signup_scroll">
             <!-- <div class="indicates-required"><span class="asterisk">*</span> indicates required</div> -->
-            <div class="mc-field-group">
-              <label for="mce-EMAIL">Email Address
+            <div class="mc-field-group text-gray-400 dark:text-gray-600 font-light">
+              <label for="mce-EMAIL" class="uppercase text-xs">Email Address
                 <!-- <span
                     class="asterisk">*</span> -->
               </label>
-              <input type="email" name="EMAIL" class=" required email w-full p-6" id="mce-EMAIL" required="" value=""
-                placeholder="youremail@wherever.com" />
+              <input type="email" name="EMAIL" class=" required email w-full p-6 border border-primary-500" id="mce-EMAIL"
+                required="true" value="" placeholder="youremail@wherever.com" />
               <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
             </div>
             <div id="mce-responses" class="clear foot">

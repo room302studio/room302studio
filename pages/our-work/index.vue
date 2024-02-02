@@ -20,36 +20,10 @@
     </section>
 
 
-    <section>
-      <h2 class="text-4xl my-8">Internal Projects</h2>
-      <!-- make 3x3 grid of the projects in cards -->
-      <div class="projects grid grid-cols-3 gap-4">
-        <div v-for="project in internalWork" :key="project.title" :project="project"
-          class="hover:shadow-lg transition-all flex rounded-lg bg-zinc-100 dark:bg-zinc-900">
-          <div class="flex-1 min-w-24">
-            <!-- Assuming you have an image url 'backgroundUrl' -->
-            <div class="h-full bg-cover bg-center" :style="{ backgroundImage: `url(${project.image})` }"></div>
-          </div>
-
-          <div class="flex-1 p-4">
-            <NuxtLink :to="project._path" class="text-lg font-bold tracking-wide leading-tight">
-              {{ project.title }}
-            </NuxtLink>
-            <p class="text-sm text-stone-600 leading-normal">{{ project.description }}</p>
-
-
-            <!-- <UButton :to="project._path" class="mt-4" color="gray">
-              View Project
-            </UBUtton> -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
+    <section class="my-12 lg:my-24">
       <h2 class="text-4xl my-8">Client Work</h2>
       <!-- make 3x3 grid of the projects in cards -->
-      <div class="projects grid grid-cols-3 gap-4">
+      <div class="projects text-sm leading-tight grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-32">
         <div v-for="project in clientWork" :key="project.title" :project="project"
           class="hover:shadow-lg transition-all flex rounded-lg bg-zinc-100 dark:bg-zinc-900">
           <div class="flex-1 min-w-24">
@@ -58,12 +32,14 @@
           </div>
 
           <div class="flex-1 p-4">
-            <NuxtLink :to="project._path" class="text-lg font-bold tracking-wide leading-tight">
+            <NuxtLink :to="project._path" class="text-lg font-bold tracking-wide leading-tight text-stone-700">
               {{ project.title }}
             </NuxtLink>
-            <p class="text-sm text-stone-600 leading-normal">{{ project.description }}</p>
+            <p class="text-xs text-stone-800 tracking-wider monospace mb-4 mt-2">{{ project.client }}</p>
 
-            <p class="text-sm text-stone-600 leading-normal">{{ project.client }}</p>
+            <p class="text-xs text-stone-500 leading-normal">{{ project.description }}</p>
+
+
 
             <!-- <UButton :to="project._path" class="mt-4" color="gray">
               View Project
@@ -72,6 +48,34 @@
         </div>
       </div>
     </section>
+
+
+    <section class="mt-24 lg:mt-36">
+      <h2 class="text-4xl my-8">Internal Projects</h2>
+      <!-- make 3x3 grid of the projects in cards -->
+      <div class="projects text-sm leading-tight grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-32">
+        <div v-for="project in internalWork" :key="project.title" :project="project"
+          class="hover:shadow-lg transition-all flex rounded-lg bg-zinc-100 dark:bg-zinc-900">
+          <div class="flex-1 min-w-24">
+            <!-- Assuming you have an image url 'backgroundUrl' -->
+            <div class="h-full bg-cover bg-center" :style="{ backgroundImage: `url(${project.image})` }"></div>
+          </div>
+
+          <div class="flex-1 p-4">
+            <NuxtLink :to="project._path" class="text-lg font-bold tracking-wide leading-tight text-stone-800">
+              {{ project.title }}
+            </NuxtLink>
+            <p class="text-sm text-stone-600 leading-normal">{{ project.description }}</p>
+
+
+            <!-- <UButton :to="project._path" class="mt-4" color="gray">
+              View Project
+            </UBUtton> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
 
 
     <!-- <section>
@@ -89,7 +93,7 @@
 
 const categories = [
   {
-    name: 'All Clients',
+    name: 'All',
     slug: 'all',
   },
   {
@@ -103,6 +107,10 @@ const categories = [
   {
     name: 'Nonprofits',
     slug: 'nonprofits',
+  },
+  {
+    name: 'AI',
+    slug: 'ai',
   },
 
 ]

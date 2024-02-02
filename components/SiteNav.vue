@@ -1,7 +1,7 @@
 <template>
   <div id="site-nav"
     class="text-center md:flex md:space-x-8 items-center p-8 md:p-12 lg:px-24 w-full align-middle justify-between z-10 tracking-wide">
-    <Logo class="text-center md:w-16 md:h-16 lg:h-24 lg:w-24 mx-auto" />
+    <Logo class="text-center md:w-16 md:h-16 lg:h-24 lg:w-24 mx-auto md:mx-0" />
     <ul class="md:flex md:space-x-4 lg:space-x-8 uppercase my-4 md:my-0">
       <li>
         <NuxtLink to="/" :class="linkClasses" :active-class="activeClasses">Home</NuxtLink>

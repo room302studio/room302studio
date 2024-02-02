@@ -1,6 +1,5 @@
 <template>
   <main class="f4 lh-copy prose dark:prose-invert">
-    <!-- big hero image -->
     <div v-if="data?.image" :style="{
       backgroundImage: `url(${data.image})`,
     }" class="min-h-96 bg-cover bg-center rounded-lg shadow-md">
@@ -10,8 +9,8 @@
     <!-- project metadata -->
     <div class="flex">
       <div class="w-1/2">
-        <h4 class="text-gray-400 uppercase text-xs font-medium">Project Description</h4>
-        <p>
+        <h4 class="text-gray-400 uppercase text-xs font-medium">Project Brief</h4>
+        <p class="text-sm tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2">
           {{ data?.description }}
         </p>
       </div>
@@ -19,21 +18,21 @@
       <div class="w-1/2 flex">
         <div class="w-1/3">
           <h4 class="text-gray-400 uppercase text-xs font-medium">Client</h4>
-          <p>
+          <p class="text-sm tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2">
             {{ data?.client }}
           </p>
         </div>
 
         <div class="w-1/3">
           <h4 class="text-gray-400 uppercase text-xs font-medium">Services</h4>
-          <p>
+          <p class="text-sm tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2">
             {{ data?.role }}
           </p>
         </div>
 
         <div class="w-1/3">
           <h4 class="text-gray-400 uppercase text-xs font-medium">Technology</h4>
-          <p>
+          <p class="text-sm tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2">
             {{ data?.technology }}
           </p>
         </div>

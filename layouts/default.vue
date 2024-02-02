@@ -1,5 +1,9 @@
 <template>
-  <div>
+  <div class="">
+    <!-- background texture image, full-width at the top of the page behind everything -->
+
+    <img :src="['/bg_texture.png']" alt="" class="absolute top-0 left-0 w-full -z-10 pointer-events-none dark:hidden" />
+
     <div class="absolute -z-10 left-0 top-0 pointer-events-none">
       <TresCanvas window-size alpha shadows class="pointer-events-none" style="pointer-events: none !important;">
         <TresPerspectiveCamera ref="cam" :position="[cameraPosition.x, cameraPosition.y, cameraPosition.z]" :fov="50"
@@ -60,17 +64,9 @@ const { x: mouseX, y: mouseY } = useMouse()
 
 let camAnimation
 
-
-/* template refs */
-const zeroToSixty = ref(null)
-const zeroToSixtyVisible = useElementVisibility(zeroToSixty)
-
-const sayHello = ref(null)
-const sayHelloVisible = useElementVisibility(sayHello)
-
 // Initialize spheres at 0,0,0
 const initSpheres = () => {
-  const numSpheres = 900; // Number of spheres to generate
+  const numSpheres = 500; // Number of spheres to generate
 
   for (let i = 0; i < numSpheres; i++) {
     const size = 0.025;
@@ -96,6 +92,7 @@ const initSpheres = () => {
 
 // Generate spheres using Perlin noise
 const distributeSpheresRandomly = () => {
+  console.log('Distriubting spheres randomly')
   let newSpheres = [];
   for (let i = 0; i < spheres.value.length; i++) {
     const { x, y, z } = getRandom3DPosition(i);
@@ -119,7 +116,7 @@ const distributeSpheresRandomly = () => {
     // ease: 'outBounce',
     ease: 'inOutQuad',
     delay: stagger(10),
-    duration: 999
+    duration: 100
   })
 };
 
@@ -170,16 +167,17 @@ onMounted(() => {
 
 const spheresDistributed = ref(false)
 
-watch(zeroToSixtyVisible, (visible) => {
-  if (visible && spheresDistributed.value === false) {
-    distributeSpheresRandomly()
-    spheresDistributed.value = true
-  }
-})
-
 const lightPosition = ref([-10, -10, 3])
 
+import { useRoute } from 'vue-router'
+const route = useRoute()
 
+// watch the route and when it changes, push the spheres around a bit
+watch(route, (newRoute, oldRoute) => {
+  console.log('route changed')
+  console.log(oldRoute, newRoute)
+  distributeSpheresRandomly()
+})
 
 // make the pixelation decrease as the y increases
 const pixelationAmount = computed(() => {
@@ -212,4 +210,15 @@ onLoop(({ delta, elapsed }) => {
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.bg-with-texture {
+  background: url('/bg_texture.png');
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #f5f5f5;
+  /* min-height: 100vh; */
+  position: relative;
+  overflow: hidden;
+}
+</style>

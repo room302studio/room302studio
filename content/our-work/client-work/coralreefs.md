@@ -1,7 +1,8 @@
 ---
-title: "Mapping Resilience: A Data-Driven Mission to Save Coral Reefs"
+title: "Mapping Resilience"
 client: "Wildlife Conservation Society"
-description: "Brief description of the case study"
+brief: "Tell the stories of coral reefs through interactive maps and visualizations"
+description: "We partnered with the Wildlife Conservation Society on an interesting and vital challenge: to bring to light the resilience of certain coral reefs in the throes of climate change."
 role: 'UX / UI Ideation'
 date: "2022-01-01"
 image: "/path/to/feature/image.jpg"

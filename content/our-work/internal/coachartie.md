@@ -1,6 +1,6 @@
 ---
-title: "LatentScope"
-description: "A tool for mapping and understanding latent space in AI models"
+title: "Coach Artie"
+description: "GPT-powered AI studio assistant in our Discord"
 date: "2022-01-01"
 image: "/our-work-images/themargin.png"
 ---
