@@ -18,6 +18,29 @@
           technologies, and driving change.
         </p>
 
+        <div class="pad relative flex my-32">
+          <div class="w-1/2">
+            <h4 class="text-xs text-gray-500 uppercase font-extralight tracking-widest">What we love</h4>
+            <h2 class="text-xl font-medium text-primary-500 pb-8">Turning Complex Problems Into Action</h2>
+            <div class="intro-text text-sm my-2 pl-4 border-l-2 border-gray-500">
+              <p class="pad max-w-prose">
+                From ideation to execution, our multidisciplinary approach weaves together the latest tech
+                with strategic design thinking.
+              </p>
+
+              <p class="pad max-w-prose">
+                Whether it's uncovering trends in huge datasets or crafting intuitive experiences, our work is focused on
+                pushing the envelope of what's possible.
+              </p>
+            </div>
+          </div>
+          <div class="intro-images-wrapper w-3/6 grid grid-cols-1 grid-rows-1 relative p-12">
+            <img src="/our-work-images/unhcr.png" alt="" class="intro-image row-start-1 col-start-1 w-full rounded-sm" />
+            <img src="/our-work-images/themargin.png" alt=""
+              class="intro-image row-start-1 col-start-1 w-full rounded-sm absolute translate-x-10 translate-y-10 hover:translate-x-11 hover:translate-y-11 transition-transform" />
+          </div>
+        </div>
+
         <p class="pad text-lg mt-6 max-w-prose text-balance">
           We harness the power of over 30 collective years of data visualization
           and prototyping expertise from our founding members.
@@ -38,32 +61,6 @@
           We've extended our capabilities to include product development,
           artificial intelligence, and other cutting-edge technologies.
         </p>
-
-
-
-        <div class="pad relative flex my-32">
-          <div class="w-1/2">
-            <h4 class="text-xs font-medium text-gray-500">What we love</h4>
-            <h2 class="text-xl font-medium text-primary-500">Turning Complex Problems Into Action</h2>
-            <div class="intro-text text-sm my-2 pl-4 border-l-2 border-gray-500">
-              <p class="pad max-w-prose text-blance">
-                From ideation to execution, our multidisciplinary approach weaves together the latest in tech advancements
-                with strategic design thinking.
-              </p>
-
-              <p class="pad max-w-prose text-blance">
-                Whether it's uncovering trends in huge datasets or crafting intuitive experiences, our work is always
-                pushing the envelope on what's possible and shaping a future where data
-                becomes actionable knowledge.
-              </p>
-            </div>
-          </div>
-          <div class="intro-images-wrapper w-3/6 grid grid-cols-1 grid-rows-1 relative p-12">
-            <img src="/our-work-images/unhcr.png" alt="" class="intro-image row-start-1 col-start-1 w-full rounded-sm" />
-            <img src="/our-work-images/themargin.png" alt=""
-              class="intro-image row-start-1 col-start-1 w-full rounded-sm absolute translate-x-10 translate-y-10 hover:translate-x-11 hover:translate-y-11 transition-transform" />
-          </div>
-        </div>
 
         <div
           class="callout-section bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-800 my-24 py-12 lg:py-24 px-16 lg:px-12 rounded-sm shadow-lg">
@@ -165,7 +162,7 @@
 
 
       <div class="p-3 md:p-5 text-lg dark:text-white leading-relaxed max-w-xl mx-auto">
-        <h2 class="text-orange text-2xl leading-tight">
+        <h2 class="text-orange text-2xl leading-tight py-8">
           Available for collaboration
         </h2>
         <p>
@@ -181,13 +178,11 @@
           resources, partake in stimulating discussions, and contribute to
           projects that make a significant impact.
         </p>
-      </div>
 
-      <div class="p-3 md:p-5 text-lg dark:text-white leading-relaxed max-w-xl mx-auto">
-        <iframe src="https://discord.com/widget?id=932719842522443928&theme=dark" width="100%" height="500"
+        <iframe src="https://discord.com/widget?id=932719842522443928&theme=dark" width="100%" height="320"
           allowtransparency="true" frameborder="0"
           sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-          class="rounded-lg shadow-lg"></iframe>
+          class="rounded-lg shadow-lg my-8"></iframe>
       </div>
 
       <div
@@ -200,29 +195,32 @@
         <!-- now use flexbox to make a 3-wide of these sections -->
         <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-400 text-sm">
           <div class="callout-section-item my-4 lg:w-1/3">
-            <UIcon name="i-heroicons-" class="w-12 h-12" />
+            <UIcon name="i-pixelarticons-user" class="w-12 h-12 mb-4" />
             <div>
-              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Enhancing our collaborations</h4>
+              <!-- <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Enhancing our collaborations</h4> -->
               <p class=" text-balance lg:mr-4">
-                Why we use him, what he does, how he works, etc.
+                Artie, Room 302 Studio's AI, helps organize our teamwork in Discord, using his unique capabilities to
+                support every stage of our creative process and give us more time to focus on what matters.
               </p>
             </div>
           </div>
           <div class="callout-section-item my-4 lg:w-1/3">
-            <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
+            <UIcon name="i-pixelarticons-briefcase-account" class="w-12 h-12 mb-4" />
             <div>
-              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Disclaimer</h4>
+              <!-- <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Disclaimer</h4> -->
               <p class=" text-balance lg:mr-4">
-                He'll be around
+                Information shared with Artie remains confidential, reserved for studio use to safeguard member privacy
+                and project integrity.
               </p>
             </div>
           </div>
           <div class="callout-section-item my-4 lg:w-1/3">
-            <UIcon name="i-heroicons-photograph" class="w-12 h-12" />
+            <UIcon name="i-pixelarticons-human-handsup" class="w-12 h-12 mb-4" />
             <div>
-              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Testimonials</h4>
+              <!-- <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Testimonials</h4> -->
               <p class="text-balance lg:mr-4">
-                What the process was like for the people who worked with him
+                Our members praise Artie for transforming ideas into tangible results and providing invaluable support in
+                crunch time, making it a staple in our creative toolkit.
               </p>
             </div>
           </div>
