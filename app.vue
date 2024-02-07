@@ -26,7 +26,7 @@ p {
 
 body {
   /* background-color: #2A3A44; */
-  font-family: "Rubik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "IBM Plex Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .monospace {

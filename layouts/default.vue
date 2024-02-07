@@ -113,10 +113,10 @@ const distributeSpheresRandomly = () => {
     z: (el, i) => newSpheres[i].z,
     color: (el, i) => newSpheres[i].color,
     // ease: 'inOutQuart',
-    // ease: 'outBounce',
-    ease: 'inOutQuad',
-    delay: stagger(10),
-    duration: 100
+    ease: 'inOutBounce',
+    // ease: 'inOutQuad',
+    delay: stagger(2),
+    duration: 80
   })
 };
 

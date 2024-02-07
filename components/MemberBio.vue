@@ -1,21 +1,15 @@
 <template>
-  <div
-    class="member m-10 md:my-24 py-10 lg:py-18 p-4 flex flex-col md:flex-row items-center"
-  >
-    <div class="p-4 md:p-8 lg:p-10 w-1/2">
-      <img
-        :src="headshot"
-        :alt="name"
-        class="rounded md:mr-4 shadow-lg w-fit"
-      />
-    </div>
-    <div class="flex flex-col">
-      <h3
-        class="text-specialorange-500 my-0 py-0 text-2-xl md:text-4xl font-bold tracking-widest"
-      >
+  <div class="member flex flex-col md:flex-row items-center">
+    <div class="p-2">
+      <img :src="headshot" :alt="name" class="rounded-lg shadow-md md:mr-4 w-full object-cover" />
+
+      <h3 class="text-specialorange-500 my-0 pt-2 text-md font-semibold">
         {{ name }}
       </h3>
-      <!-- add email -->
+
+      <h4 class="text-zinc-500 font-semibold my-0 py-0 text-sm">
+        {{ role }}
+      </h4>
 
       <h4 class="text-specialorange-900 my-0 py-2 text-1-xl">
         <a href="`mailto:${email}`" class="hover:text-specialorange-500">{{
@@ -23,7 +17,10 @@
         }}</a>
       </h4>
 
-      <div class="member-bio max-w-prose prose dark:prose-dark dark:text-white">
+      <!-- <UButton @click="showBio = !showBio" class="mt-4" color="gray">
+        {{ showBio ? "Hide" : "Show" }} Bio
+      </UButton> -->
+      <div class="member-bio max-w-prose prose dark:prose-dark dark:text-white" v-show="showBio">
         <slot />
       </div>
     </div>
@@ -44,5 +41,11 @@ const props = defineProps({
     type: String,
     required: false,
   },
+  role: {
+    type: String,
+    required: false,
+  },
 });
+
+const showBio = ref(false)
 </script>
