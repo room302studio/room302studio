@@ -9,10 +9,10 @@
       </div>
     </div>
 
-    <hr class="my-5 border-gray-300 dark:border-gray-700" />
+    <hr class="my-32 border-gray-300 dark:border-gray-700" />
 
-    <h2 class="my-4 text-2xl font-bold py-3 px-4 md:px-0">Collaborators</h2>
-    <div class="text-sm">
+    <h2 class="my-16 text-2xl font-bold py-3 px-4 md:px-0">Collaborators</h2>
+    <div class="text-sm mb-32">
       <p class="p-4 md:p-0">
         Special thanks to the following people and organizations for their
         collaboration and support.
@@ -34,7 +34,6 @@ const collaborators = [
   "Jeff Klein",
   "RJ Andrews",
   "The Plotline",
-  "Innocence Project New Orleans",
   "Public Data Works",
 ];
 
