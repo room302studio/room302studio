@@ -1,17 +1,12 @@
 <template>
-  <div class="py-20 mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl lg:text-8xl font-bold text-gray-800 dark:text-white py-0 mt-0 text-center tracking-widest">
+  <div class="mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-light text-gray-800 dark:text-white py-0 mt-0 ">
       Get in touch
     </h2>
-    <UCard class="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden max-w-lg mx-auto my-24 md:my-36">
-      <ContactForm />
-    </UCard>
 
-    <h2 class="text-3xl lg:text-8xl font-bold text-gray-800 dark:text-white py-0 mt-0 text-center tracking-widest">
-      Book a Time
-    </h2>
-    <UCard class="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden max-w-lg mx-auto">
-      <CalendarBooking />
-    </UCard>
+    <div class="max-w-lg mx-auto my-4 lg:my-12">
+      <ContactForm />
+    </div>
+
   </div>
 </template>

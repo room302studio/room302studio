@@ -1,62 +1,47 @@
 <template>
   <div class="index">
-
     <div class="z-10 relative">
-      <div class="py-5 dark:text-white leading-relaxed text-lg">
-
-        <p class="pad dark:text-white text-4xl w-8/12">
-          We are a bespoke innovation lab that guides concepts from ideation to
+      <div class="py-5 dark:text-stone-200 leading-relaxed text-lg">
+        <p class="pad text-4xl lg:w-8/12 text-stone-600 dark:text-stone-200 text-balance">
+          We are a bespoke <span class="text-stone-800 dark:text-stone-200">innovation lab</span> that guides concepts
+          from
+          ideation to
           implementation<span class="text-primary-500">.</span>
         </p>
 
-        <p class="pad text-lg mt-6 max-w-prose text-balance">
+        <p class="pad text-lg mt-6 max-w-prose text-balance text-stone-700 dark:text-stone-400">
           Innovation is at the heart of everything we do. Our collaborations span
           startups, mature companies, non-profits, and news organizations. We
           provide the tools, expertise, and collaborative environment needed to
-          <span class="text-orange">turn ideas into reality.</span> Our team of
+          <span class="font-bold text-stone-950 dark:text-stone-50 tracking-wider">turn ideas into reality.</span> Our
+          team
+          of
           experts thrives on pushing boundaries, experimenting with cutting-edge
           technologies, and driving change.
         </p>
 
-        <div class="pad relative flex my-32">
-          <div class="w-1/2">
-            <h4 class="text-xs text-gray-500 uppercase font-extralight tracking-widest">What we love</h4>
-            <h2 class="text-xl font-medium text-primary-500 pb-8">Turning Complex Problems Into Action</h2>
-            <div class="intro-text text-sm my-2 pl-4 border-l-2 border-gray-500">
-              <p class="pad max-w-prose">
-                From ideation to execution, our multidisciplinary approach weaves together the latest tech
-                with strategic design thinking.
-              </p>
+        <HomepageCaseStudy />
 
-              <p class="pad max-w-prose">
-                Whether it's uncovering trends in huge datasets or crafting intuitive experiences, our work is focused on
-                pushing the envelope of what's possible.
-              </p>
-            </div>
-          </div>
-          <div class="intro-images-wrapper w-3/6 grid grid-cols-1 grid-rows-1 relative p-12">
-            <img src="/our-work-images/unhcr.png" alt="" class="intro-image row-start-1 col-start-1 w-full rounded-sm" />
-            <img src="/our-work-images/themargin.png" alt=""
-              class="intro-image row-start-1 col-start-1 w-full rounded-sm absolute translate-x-10 translate-y-10 hover:translate-x-11 hover:translate-y-11 transition-transform" />
-          </div>
-        </div>
+        <HomepageCaseStudy />
+
+        <HomepageCaseStudy />
 
         <p class="pad text-lg mt-6 max-w-prose text-balance">
           We harness the power of over 30 collective years of data visualization
           and prototyping expertise from our founding members.
-          <NuxtLink class="underline dark:text-white" to="/members">
+          <NuxtLink class="underline dark:text-stone-200" to="/members">
             <img src="/member-headshots/curran-headshot.png"
-              class="w-4 h-4 rounded-full inline-block mr-1 border border-white" alt="Curran" />
+              class="w-4 h-4 rounded-full inline-block mr-1 border border-stone-200" alt="Curran" />
             <img src="/member-headshots/ej-headshot.png"
-              class="w-4 h-4 rounded-full inline-block mr-1 border border-white" alt="EJ" />
+              class="w-4 h-4 rounded-full inline-block mr-1 border border-stone-200" alt="EJ" />
             <img src="/member-headshots/israel-headshot.png"
-              class="w-4 h-4 rounded-full inline-block mr-1 border border-white" alt="Israel" />
+              class="w-4 h-4 rounded-full inline-block mr-1 border border-stone-200" alt="Israel" />
             <img src="/member-headshots/ian-headshot.png"
-              class="w-4 h-4 rounded-full inline-block mr-1 border border-white" alt="Ian" />
+              class="w-4 h-4 rounded-full inline-block mr-1 border border-stone-200" alt="Ian" />
             <img src="/member-headshots/sam-headshot.png"
-              class="w-4 h-4 rounded-full inline-block mr-1 border border-white" alt="Sam" />
+              class="w-4 h-4 rounded-full inline-block mr-1 border border-stone-200" alt="Sam" />
             <!-- <img src="/member-headshots/elena-headshot.png"
-              class="w-4 h-4 rounded-full inline-block mr-1 border border-white" alt="Elena" /> -->
+              class="w-4 h-4 rounded-full inline-block mr-1 border border-stone-200" alt="Elena" /> -->
           </NuxtLink>
           We've extended our capabilities to include product development,
           artificial intelligence, and other cutting-edge technologies.
@@ -67,6 +52,13 @@
 
           <p ref="zeroToSixty" class="text-5xl lg:w-8/12 leading-tight">
             Bringing your ideas from 0 to 60<span class="text-primary-500">.</span>
+
+
+          </p>
+
+          <p class="text-red-500 uppercase">
+            We should have a timelapse animation here that shows: sketch to design to finalized website in a 30 second
+            loop
           </p>
 
           <!-- now use flexbox to make a 3-wide of these sections -->
@@ -129,7 +121,7 @@
           </div>
         </div>
 
-        <p class="pad text-lg mt-6 max-w-prose text-balance">
+        <!-- <p class="pad text-lg mt-6 max-w-prose text-balance">
           Our diverse backgrounds enable us to approach projects from multiple
           perspectives. We've had the privilege of working with renowned
           organizations such as GitHub, NBC News, The Washington Post, CBS News,
@@ -144,39 +136,40 @@
           <strong class="text-orange">Room 302 Studio</strong> is your trusted
           collaborator. Let's work together to transform your ideas into tangible
           solutions that make a lasting difference in the world.
-        </p>
+        </p> -->
       </div>
 
       <!-- we are gonna use mouseX and mousY and some basic CSS transforms to make it so the div is always "looking" at the mouse -->
 
       <div
-        class="callout-section bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-800 my-24 py-24 px-12 text-2xl lg:text-6xl text-balance"
+        class="callout-section bg-primary-600/90 text-stone-50 dark:bg-primary-500/70  my-24 py-24 px-12 text-2xl lg:text-6xl text-balance rounded-md shadow-sm backdrop-blur-sm"
         ref="sayHello">
         <h3 class="m-0 p-0 py-4 leading-tight text-center">
           Say hello:
           <a href="mailto:studio@room302.studio"
-            class="font-bold underline dark:text-stone-900 hover:text-primary-500 transition-colors duration-200 dark:hover:text-primary-700">
+            class="font-bold underline  transition-colors duration-200 dark:hover:text-primary-700">
             <span class="">studio</span><span class="">@room302.studio</span></a>
         </h3>
       </div>
 
 
-      <div class="p-3 md:p-5 text-lg dark:text-white leading-relaxed max-w-xl mx-auto">
-        <h2 class="text-orange text-2xl leading-tight py-8">
+      <div class="p-3 md:p-5 text-lg dark:text-stone-200 leading-relaxed max-w-xl mx-auto">
+        <h2 class="text-stone-600 dark:text-stone-400 font-bold text-2xl leading-tight py-8">
           Available for collaboration
         </h2>
-        <p>
+        <p class="py-4 leading-loose">
           Beyond traditional client services,
-          <strong class="text-orange">Room 302 Studio</strong> serves as a dynamic
+          the studio serves as a dynamic
           digital workspace, uniting creators to collectively build and grow. We
-          champion personal projects, contribute to open-source initiatives, and
+          build personal projects, contribute to open-source initiatives, and
           engage in impactful pro-bono work.
         </p>
 
-        <p>
-          By joining our collaborative network, gain exclusive early access to
-          resources, partake in stimulating discussions, and contribute to
-          projects that make a significant impact.
+        <p class="py-4 leading-loose">
+          We host livestreams where we learn tools together, show and tell our projects, and create educational tools to
+          help others learn and grow. We
+          are always looking for new collaborators of all skill levels and backgrounds to join us in our mission to make
+          the world a better place.
         </p>
 
         <iframe src="https://discord.com/widget?id=932719842522443928&theme=dark" width="100%" height="320"
@@ -189,11 +182,13 @@
         class="callout-section bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-800 my-24 py-12 lg:py-24 px-16 lg:px-12 rounded-sm shadow-lg">
 
         <p class=" text-5xl lg:w-8/12 leading-tight">
-          Meet Coach Artie, our <span class="text-primary-500">AI</span> Studio Assistant
+          Meet <a href="http://coachartiebot.com"
+            class="text-primary-500 underline hover:text-primary-700 transition-all">Coach
+            Artie</a>, our AI Studio Assistant
         </p>
 
         <!-- now use flexbox to make a 3-wide of these sections -->
-        <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-400 text-sm">
+        <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-400 dark:text-stone-500 text-sm">
           <div class="callout-section-item my-4 lg:w-1/3">
             <UIcon name="i-pixelarticons-user" class="w-12 h-12 mb-4" />
             <div>
@@ -219,7 +214,8 @@
             <div>
               <!-- <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Testimonials</h4> -->
               <p class="text-balance lg:mr-4">
-                Our members praise Artie for transforming ideas into tangible results and providing invaluable support in
+                Our members praise Artie for transforming ideas into tangible results and providing invaluable support
+                in
                 crunch time, making it a staple in our creative toolkit.
               </p>
             </div>

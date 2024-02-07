@@ -14,7 +14,7 @@
             <h4 class="text-lg leading-tight mb-4 text-stone-300 dark:text-stone-700 font-bold  text-balance">
               <!-- New icon for data integration -->
               <UIcon name="i-material-symbols-table-rows-narrow-outline" />
-              Data-Driven
+              Data-Driven Process
             </h4>
             <p class="pr-8">
               We weave data into all of the work that we do. We try to harness these insights to sculpt solutions that are
@@ -44,7 +44,7 @@
             <h4 class="text-lg leading-tight mb-4 text-stone-300 dark:text-stone-700 font-bold text-balance">
               <!-- New icon for collaboration -->
               <UIcon name="i-material-symbols-group-work-outline" />
-              Collaborative Environment
+              Emphasizing Collaboration
             </h4>
             <p class="pr-8">
               Our online space emphasizes collaboration, where like-minded people can gather and turn their ideas
@@ -60,6 +60,7 @@
       <!-- quote -->
       <div class="w-1/3 pr-4 md:pr-8 text-xl md:text-2xl font-light text-balance">
         Joy-driven development is the future of work.
+        <UIcon name="i-svg-spinners-wind-toy" />
       </div>
 
 
