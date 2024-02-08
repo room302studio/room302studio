@@ -1,32 +1,44 @@
 <template>
   <main class="pt-16 p-4">
     <ContentQuery path="/blog/" :sort="{ date: -1 }" v-slot="{ data }">
-      <div class="">
-        <UCard v-for="article in data" :key="article._path" :class="[
+      <div class="flex">
+        <div v-for="article in data" :key="article._path" :class="[
           article.hidden ? 'hidden' : '',
-          'my-4 md:py-4 lg:my-8 align-middle',
+          'my-4 lg:my-8 p-2 align-middle w-1/2 lg:w-1/3',
         ]">
-          <div class="flex justify-between">
+          <div class="rounded-lg  bg-zinc-100">
             <ContentQuery :path="article._path" v-slot="{ data, toc }" find="one">
+              <div class="w-full cover h-32 bg-cover bg-center rounded" v-if="data.image" :style="{
+                'background-image': `url(${data.image})`,
+              }">
+
+              </div>
+              <div class="p-8">
+                <div v-if="article.date" class="monospace text-zinc-400 text-xs">
+                  {{ formatDate(new Date(article.date)) }}
+                </div>
+
+                <NuxtLink :to="article._path" style="overflow-wrap: break-word"
+                  class="pr-4 text-xl leading-tight font-semibold text-zinc-700">
+                  {{ article.title }}
+                </NuxtLink>
+
+                <div class="text-zinc-600 text-sm font-light pt-4" v-if="data.description">
+                  {{ data.description }}
+                </div>
+
+                <NuxtLink :to="article._path" class="text-primary-500 mt-4 block">
+                  Read post
+                </NuxtLink>
 
 
-              <NuxtLink :to="article._path" style="overflow-wrap: break-word"
-                class="pr-4 text-2xl md:text-3xl lg:text-4xl">
-                {{ article.title }}
+              </div>
 
-                <span v-if="article.author" class="mr-1 opacity-50 block md:inline-block text-lg lg:text-xl">
-                  by {{ article.author }}
-                </span>
-              </NuxtLink>
-
-              <span v-if="article.date" class="monospace opacity-30">
-                {{ formatDate(new Date(article.date)) }}
-              </span>
 
 
             </ContentQuery>
           </div>
-        </UCard>
+        </div>
       </div>
     </ContentQuery>
   </main>
@@ -36,7 +48,7 @@
 // import anime from "animejs/lib/anime.es.js";
 import { timeFormat } from "d3-time-format";
 
-const formatDate = timeFormat("%B %d, %Y");
+const formatDate = timeFormat("%m.%d.%y");
 
 </script>
 <style></style>

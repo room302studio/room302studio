@@ -13,15 +13,15 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "@vueuse/nuxt",
     "@nuxt/ui",
-    'nuxt-gtag',
-    '@tresjs/nuxt',
+    "nuxt-gtag",
+    "@tresjs/nuxt",
     [
       "@nuxtjs/google-fonts",
       {
         families: {
-          Rubik: [300, 400, 500, 700],
+          Rubik: [300, 400, 500, 600, 700, 800],
           "Source Code Pro": [400, 700],
-          "IBM Plex Sans": [400, 500, 600, 700],
+          "IBM Plex Sans": [300, 400, 500, 600, 700, 800],
         },
       },
     ],
@@ -30,13 +30,13 @@ export default defineNuxtConfig({
     // documentDriven: true,
   },
   ui: {
-    icons: 'all'
+    icons: "all",
   },
   gtag: {
-    id: 'G-6XGQNYZQMC',
+    id: "G-6XGQNYZQMC",
   },
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
+    pageTransition: { name: "page", mode: "out-in" },
     head: {
       title: "Room 302 Studio",
       meta: [
@@ -68,5 +68,4 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
   },
-  
 });

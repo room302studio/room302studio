@@ -1,6 +1,5 @@
 <template>
-  <main class="f4 lh-copy prose dark:prose-invert">
-    <!-- big hero image -->
+  <main class="f4 lh-copy prose dark:prose-invert mx-auto">
     <div v-if="data?.image" :style="{
       backgroundImage: `url(${data.image})`,
     }" class="min-h-96 bg-cover bg-center rounded-lg shadow-md">
@@ -8,10 +7,10 @@
     </div>
 
     <!-- project metadata -->
-    <div class="flex">
+    <div class="flex mb-8">
       <div class="w-1/2">
-        <h4 class="text-gray-400 uppercase text-xs font-medium">Project Description</h4>
-        <p>
+        <h4 class="text-gray-400 uppercase text-xs font-medium">Project Brief</h4>
+        <p class="monospace text-xs tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2">
           {{ data?.description }}
         </p>
       </div>
@@ -19,21 +18,21 @@
       <div class="w-1/2 flex">
         <div class="w-1/3">
           <h4 class="text-gray-400 uppercase text-xs font-medium">Client</h4>
-          <p>
+          <p class="monospace text-xs tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2">
             {{ data?.client }}
           </p>
         </div>
 
         <div class="w-1/3">
           <h4 class="text-gray-400 uppercase text-xs font-medium">Services</h4>
-          <p>
+          <p class="monospace text-xs tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2">
             {{ data?.role }}
           </p>
         </div>
 
         <div class="w-1/3">
           <h4 class="text-gray-400 uppercase text-xs font-medium">Technology</h4>
-          <p>
+          <p class="monospace text-xs tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2">
             {{ data?.technology }}
           </p>
         </div>
@@ -54,12 +53,14 @@
 
     <!-- make a related work section (just 3 random client works -->
     <section class="w-full">
+
+      <UDivider class="my-8 md:my-12 lg:my-24" />
       <h4 class="my-8">Related Work</h4>
       <!-- make 3x3 grid of the projects in cards -->
-      <div class="projects grid grid-cols-3 gap-4">
+      <div class="projects grid grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8">
         <div v-for="project in clientWork" :key="project.title" :project="project"
-          class="hover:shadow-lg transition-all flex rounded-lg bg-zinc-100 ">
-          <div class="flex-1 min-w-24">
+          class="hover:shadow-lg transition-all flex rounded-lg bg-stone-100 min-h-32">
+          <div class="flex-1 min-w-24" v-if="project.image">
             <!-- Assuming you have an image url 'backgroundUrl' -->
             <div class="h-full bg-cover bg-center" :style="{ backgroundImage: `url(${project.image})` }"></div>
           </div>
@@ -68,10 +69,6 @@
             <NuxtLink :to="project._path" class="tracking-wide leading-snug no-underline">
               {{ project.title }}
             </NuxtLink>
-
-            <!-- <UButton :to="project._path" class="mt-4" color="gray">
-              View Project
-            </UBUtton> -->
           </div>
         </div>
       </div>
