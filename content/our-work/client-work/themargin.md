@@ -1,7 +1,8 @@
 ---
 title: "Mapping Environmental Justice"
 client: "The Margin"
-description: "Brief description of the case study"
+brief: "Tell the stories of environmental justice through interactive maps and visualizations"
+description: "In a series examining environmental justice's impact on different communities, we created interactive scroll-powered maps and visualizations for The Margin's five inaugural stories."
 date: "2022-01-01"
 image: "/path/to/feature/image.jpg"
 url: "https://themargin.us/"

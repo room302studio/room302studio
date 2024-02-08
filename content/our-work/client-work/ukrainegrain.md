@@ -1,8 +1,12 @@
 ---
-title: "The Plotline: Ukraine Grain"
-description: "Brief description of the case study"
+title: "Ukraine Grain"
+client: "The Plotline"
+brief: "Analyze the impact of the war in Ukraine on global food supply"
+description: "In partnership with Earthrise Media for The Plotline, we undertook the mission of translating the complexities of agricultural supply chains into an interactive tool for both experts and the general public."
+role: 'Storytelling'
+technology: 'D3, QGIS, Mapbox'
 date: "2022-01-01"
-image: "/our-work-images/unhcr.png"
+image: "/our-work-images/ukrainegrain/001_introimage.png"
 url: "https://stories.theplotline.org/ukr-grain/"
 tags: ["dataviz", "interactive", "mapping", "nonprofit"]
 --- 
@@ -12,6 +16,11 @@ In the wake of the conflict in Ukraine, the world faced a looming crisis — the
 **Understanding and Translating Data**
 
 The foundation of this project was the data — detailed agricultural figures provided by the Ukrainian government. The data came in Ukrainian, a language barrier that posed our first challenge. Accuracy in translation was paramount, as the integrity of the entire project hinged on the reliability of this data.
+
+<img class="w-1/2 inline-block" src="/our-work-images/ukrainegrain/004_insetmap.png" alt="Ukraine Grain Data" />
+
+<img class="w-1/2 inline-block" src="/our-work-images/ukrainegrain/005_insetmap2.png" alt="Ukraine Grain Data" />
+
 
 **Designing the Interactive Experience**
 

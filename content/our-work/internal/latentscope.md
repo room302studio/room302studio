@@ -1,6 +1,6 @@
 ---
 title: "LatentScope"
-description: "Brief description of the case study"
+description: "A tool for mapping and understanding latent space in AI models"
 date: "2022-01-01"
 image: "/our-work-images/themargin.png"
 ---
