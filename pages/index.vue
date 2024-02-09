@@ -85,20 +85,22 @@
 
         <div class="callout-section my-24 px-12 text-2xl lg:text-6xl text-balance backdrop-blur-sm md:flex"
           ref="sayHello">
-          <div class="w-full md:w-1/2 lg:w-2/3 pb-16 md:py-0">
+          <div class="w-full md:w-1/2 xl:w-2/3 pb-16 md:py-0">
             <h3 class="text-3xl">Say hello:</h3>
 
-            <div class="intro-text text-lg my-2 border-l-2 text-gray-700 border-gray-500">
-              <p class="pl-4 max-w-prose leading-relaxed">
-                Lorem ipsum
-                <a href="mailto:studio@room302.studio"
-                  class="font-bold underline transition-colors duration-200 dark:hover:text-primary-700">
-                  <span class="">studio</span><span class="">@room302.studio</span></a>
+            <div class="intro-text text-lg my-2 border-l-2 text-gray-700 border-gray-500 max-w-md">
+              <p class="pl-4  leading-relaxed">
+                Fancy a chat about creative puzzles or technological wonders? Our team at Room 302 Studio is all ears!
+                Email us at <a href="mailto:studio@room302.studio"
+                  class="font-bold text-primary-500 underline transition-colors duration-200 dark:hover:text-primary-700">
+                  <span class="">studio</span><span class="">@room302.studio</span></a>, and while you're here, subscribe
+                to our newsletter for your regular dose of inspiration.
+
               </p>
             </div>
           </div>
 
-          <div class="w-full md:w-1/2 lg:w-1/3">
+          <div class="w-full md:w-1/2 xl:w-1/3">
             <MailchimpSignupForm />
           </div>
         </div>

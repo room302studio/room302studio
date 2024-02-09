@@ -17,10 +17,10 @@
           <NuxtLink to="/our-work" :class="linkClasses" :active-class="activeClasses">Work
           </NuxtLink>
         </li>
-        <li>
+        <!-- <li>
           <NuxtLink to="/events" :class="linkClasses" :active-class="activeClasses">Events
           </NuxtLink>
-        </li>
+        </li> -->
         <li>
           <NuxtLink to="/blog" :class="linkClasses" :active-class="activeClasses">Blog
           </NuxtLink>
