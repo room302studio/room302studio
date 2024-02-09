@@ -8,7 +8,7 @@
           that guides concepts from ideation to implementation<span class="text-primary-500">.</span>
         </p>
 
-        <p class="pad text-lg mt-6 text-balance text-stone-700 dark:text-stone-400">
+        <p class="pad text-lg mt-6 text-balance text-stone-700 dark:text-stone-400 max-w-screen-lg">
           Innovation is at the heart of everything we do. Our collaborations
           span startups, mature companies, non-profits, and news organizations.
           We provide the tools, expertise, and collaborative environment needed
