@@ -1,13 +1,14 @@
 <template>
-  <div class="min-h-screen">
-
+  <div class="min-h-screen pad">
     <!-- some paragraphs explaining the difference between our internal and client work -->
     <h1 class="text-6xl font-light mb-8">Our Work</h1>
     <p class="text-lg mt-6 max-w-lg text-balance">
-      At Room 302 Studio, our work is all about innovation with impact. Whether we're collaborating with mission-driven
-      clients or building our own open-source platforms, each project is a step towards a better future. Our
-      portfolio spans environmental activism to artificial intelligence, all crafted with passion and purpose– and this is
-      just the stuff we are allowed to show you.
+      At Room 302 Studio, our work is all about innovation with impact. Whether
+      we're collaborating with mission-driven clients or building our own
+      open-source platforms, each project is a step towards a better future. Our
+      portfolio spans environmental activism to artificial intelligence, all
+      crafted with passion and purpose– and this is just the stuff we are
+      allowed to show you.
     </p>
 
     <!-- Filter buttons for categories -->
@@ -19,7 +20,6 @@
         </span>
       </div>
     </section> -->
-
 
     <section class="my-12 lg:my-24">
       <h2 class="text-4xl my-8">Client Work</h2>
@@ -36,11 +36,13 @@
             <NuxtLink :to="project._path" class="text-lg font-normal tracking-wide leading-tight text-stone-700 flex-1">
               {{ project.title }}
             </NuxtLink>
-            <p class="text-xs text-stone-800 tracking-wider font-semibold my-1">{{ project.client }}</p>
+            <p class="text-xs text-stone-800 tracking-wider font-semibold my-1">
+              {{ project.client }}
+            </p>
 
-            <p class="text-xs text-stone-500 leading-normal font-light">{{ project.role }}</p>
-
-
+            <p class="text-xs text-stone-500 leading-normal font-light">
+              {{ project.role }}
+            </p>
 
             <!-- <UButton :to="project._path" class="mt-4" color="gray">
               View Project
@@ -49,7 +51,6 @@
         </div>
       </div>
     </section>
-
 
     <section class="mt-24 lg:mt-36">
       <h2 class="text-4xl my-8">Internal Projects</h2>
@@ -66,8 +67,9 @@
             <NuxtLink :to="project._path" class="text-lg font-bold tracking-wide leading-tight text-stone-800">
               {{ project.title }}
             </NuxtLink>
-            <p class="text-sm text-stone-600 leading-normal">{{ project.description }}</p>
-
+            <p class="text-sm text-stone-600 leading-normal">
+              {{ project.description }}
+            </p>
 
             <!-- <UButton :to="project._path" class="mt-4" color="gray">
               View Project
@@ -76,8 +78,6 @@
         </div>
       </div>
     </section>
-
-
 
     <!-- <section>
       <h2 class="text-4xl my-8">Client Work</h2>
@@ -91,62 +91,61 @@
 </template>
 
 <script setup>
-
 const categories = [
   {
-    name: 'All',
-    slug: 'all',
+    name: "All",
+    slug: "all",
   },
   {
     name: "Environment & Climate",
     slug: "environment",
   },
   {
-    name: 'News Organizations',
-    slug: 'news',
+    name: "News Organizations",
+    slug: "news",
   },
   {
-    name: 'Nonprofits',
-    slug: 'nonprofits',
+    name: "Nonprofits",
+    slug: "nonprofits",
   },
   {
-    name: 'AI',
-    slug: 'ai',
+    name: "AI",
+    slug: "ai",
   },
+];
 
-]
+const activeWorkFilter = ref("all");
 
-const activeWorkFilter = ref('all')
-
-const filteredWork = ref([])
+const filteredWork = ref([]);
 const filterWorkTo = (category) => {
-  activeWorkFilter.value = category
+  activeWorkFilter.value = category;
   filteredWork.value = internalWork.filter((project) => {
-    return project.categories.includes(category)
-  })
-}
+    return project.categories.includes(category);
+  });
+};
 
 watch(activeWorkFilter, (newVal) => {
-  if (newVal === 'all') {
-    filteredWork.value = internalWork
+  if (newVal === "all") {
+    filteredWork.value = internalWork;
   } else {
     filteredWork.value = internalWork.filter((project) => {
-      return project.categories.includes(newVal)
-    })
+      return project.categories.includes(newVal);
+    });
   }
-})
+});
 
 // use the default layout
 definePageMeta({
   layout: "default",
-})
+});
 
-const { data: clientWork } = await useAsyncData("content/our-work/client-work", () =>
-  queryContent("our-work/client-work").find(),
+const { data: clientWork } = await useAsyncData(
+  "content/our-work/client-work",
+  () => queryContent("our-work/client-work").find(),
 );
 
-const { data: internalWork } = await useAsyncData("content/our-work/internal-work", () =>
-  queryContent("our-work/internal").find(),
+const { data: internalWork } = await useAsyncData(
+  "content/our-work/internal-work",
+  () => queryContent("our-work/internal").find(),
 );
-
 </script>
