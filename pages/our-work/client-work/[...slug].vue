@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="pad prose">
+    <div class="pt-8 prose">
       <ContentRenderer :value="data">
         <template #empty>
           <div>
