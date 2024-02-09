@@ -1,7 +1,11 @@
 <template>
   <div class="member flex flex-col md:flex-row items-center">
     <div class="p-2">
-      <img :src="headshot" :alt="name" class="rounded-lg shadow-md md:mr-4 w-full object-cover" />
+      <img
+        :src="headshot"
+        :alt="name"
+        class="rounded-lg shadow-md md:mr-4 w-full object-cover"
+      />
 
       <h3 class="text-specialorange-500 my-0 pt-2 text-md font-semibold">
         {{ name }}
@@ -20,7 +24,10 @@
       <!-- <UButton @click="showBio = !showBio" class="mt-4" color="gray">
         {{ showBio ? "Hide" : "Show" }} Bio
       </UButton> -->
-      <div class="member-bio max-w-prose prose dark:prose-dark dark:text-white" v-show="showBio">
+      <div
+        class="member-bio max-w-prose prose dark:prose-dark dark:text-white"
+        v-show="showBio"
+      >
         <slot />
       </div>
     </div>
@@ -47,5 +54,5 @@ const props = defineProps({
   },
 });
 
-const showBio = ref(false)
+const showBio = ref(false);
 </script>

@@ -1,14 +1,15 @@
 <template>
-  <main id="blog-content" class="measure-wide f4 lh-copy prose dark:prose-invert p-4 md:p-10 lg:p-14">
+  <main
+    id="blog-content"
+    class="measure-wide f4 lh-copy prose dark:prose-invert p-4 md:p-10 lg:p-14"
+  >
     <span class="text-primary-500 uppercase tracking-wider">Blog</span>
     <!-- <ContentDoc /> -->
     <ContentRenderer :value="data">
       <template #empty>
         <p class="f4 lh-copy">We couldn't find this blog post.</p>
 
-        <UButton to="/blog" class="mt-4">
-          Back to blog
-        </UButton>
+        <UButton to="/blog" class="mt-4"> Back to blog </UButton>
       </template>
     </ContentRenderer>
   </main>

@@ -11,6 +11,10 @@ useHead({
 });
 </script>
 <style>
+.pad {
+  @apply p-8 lg:p-12;
+}
+
 /* h1,
 h2,
 h3,
@@ -79,7 +83,6 @@ body {
 .page-enter-from {
   /* transform: translate3d(0, 100%, 0); */
   /* transform: translate3d(-5, 0, 0) skewX(-15deg); */
-
 }
 
 .page-leave-to {
