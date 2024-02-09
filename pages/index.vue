@@ -48,24 +48,23 @@
         </p>
 
         <div
-          class="callout-section bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-800 my-24 py-12 lg:py-24 px-16 lg:px-12 rounded-sm shadow-lg">
+          class="relative overflow-hidden callout-section text-stone-50 my-24 py-12 lg:py-24 px-16 lg:px-12 rounded-sm shadow-lg">
+          <video class="absolute top-0 left-0 w-full h-full object-cover -z-10 rounded-lg shadow-lg" autoplay loop muted
+            playsinline>
+            <source src="https://res.cloudinary.com/ejf/video/upload/v1707429688/Comp_2_1_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
 
-          <p ref="zeroToSixty" class="text-5xl lg:w-8/12 leading-tight">
-            Bringing your ideas from 0 to 60<span class="text-primary-500">.</span>
 
-
-          </p>
-
-          <p class="text-red-500 uppercase">
-            We should have a timelapse animation here that shows: sketch to design to finalized website in a 30 second
-            loop
+          <p ref="zeroToSixty" class="z-10 text-5xl lg:w-5/12 leading-tight text-balance">
+            Bringing your ideas from 0 to 60<span class="z-10 text-primary-500">.</span>
           </p>
 
           <!-- now use flexbox to make a 3-wide of these sections -->
-          <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-400 text-sm">
+          <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-300 text-sm">
             <div class="callout-section-item my-4 lg:w-1/3">
               <div>
-                <h4 class="text-lg leading-tight mb-4 text-stone-300 dark:text-stone-700 font-bold monospace">
+                <h4 class="text-lg leading-tight mb-4 text-stone-300 font-bold monospace">
                   <UIcon name="i-material-symbols-light:speed-rounded" />
                   Fast-paced prototyping
                 </h4>
@@ -79,7 +78,7 @@
             <div class="callout-section-item my-4 lg:w-1/3">
 
               <div>
-                <h4 class="text-lg leading-tight mb-4 text-stone-300 dark:text-stone-700 font-bold monospace">
+                <h4 class="text-lg leading-tight mb-4 text-stone-300 font-bold monospace">
                   <UIcon name="i-material-symbols-light:insert-chart-outline" /> Rooted in data
                 </h4>
                 <p class="pr-8">
@@ -91,7 +90,7 @@
 
             <div class="callout-section-item my-4 lg:w-1/3">
               <div>
-                <h4 class="text-lg leading-tight mb-4 text-stone-300 dark:text-stone-700 font-bold monospace">
+                <h4 class="text-lg leading-tight mb-4 text-stone-300 font-bold monospace">
                   <UIcon name="i-fa6-solid-hammer" />
                   Willing to bleed
                 </h4>
@@ -105,7 +104,7 @@
 
             <!-- <div class="callout-section-item my-4 lg:w-1/3">
             <div>
-              <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">
+              <h4 class="text-stone-300 font-bold monospace">
                 <UIcon name="i-fa6-solid-hammer" class="w-12 h-12" />
                 Focused on impact
               </h4>
@@ -154,7 +153,7 @@
 
 
       <div class="p-3 md:p-5 text-lg dark:text-stone-200 leading-relaxed max-w-xl mx-auto">
-        <h2 class="text-stone-600 dark:text-stone-400 font-bold text-2xl leading-tight py-8">
+        <h2 class="text-stone-600 dark:text-stone-300 font-bold text-2xl leading-tight py-8">
           Available for collaboration
         </h2>
         <p class="py-4 leading-loose">
@@ -188,11 +187,11 @@
         </p>
 
         <!-- now use flexbox to make a 3-wide of these sections -->
-        <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-400 dark:text-stone-500 text-sm">
+        <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-300 dark:text-stone-500 text-sm">
           <div class="callout-section-item my-4 lg:w-1/3">
             <UIcon name="i-pixelarticons-user" class="w-12 h-12 mb-4" />
             <div>
-              <!-- <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Enhancing our collaborations</h4> -->
+              <!-- <h4 class="text-stone-300 font-bold monospace">Enhancing our collaborations</h4> -->
               <p class=" text-balance lg:mr-4">
                 Artie, Room 302 Studio's AI, helps organize our teamwork in Discord, using his unique capabilities to
                 support every stage of our creative process and give us more time to focus on what matters.
