@@ -48,5 +48,20 @@
 import { timeFormat } from "d3-time-format";
 
 const formatDate = timeFormat("%m.%d.%y");
+
+useHead({
+  title: "Room 302 Studio Blog",
+})
+
+useSeoMeta({
+  title: "Room 302 Studio Blog",
+  description: "Room 302 Studio Blog",
+  ogTitle: "Room 302 Studio Blog",
+  ogDescription: "Room 302 Studio Blog",
+  ogImage: "https://room302studio.com/og-image.jpg",
+  ogUrl: "https://room302studio.com/blog",
+  twitterTitle: "Room 302 Studio Blog",
+  twitterDescription: "Room 302 Studio Blog",
+})
 </script>
 <style></style>

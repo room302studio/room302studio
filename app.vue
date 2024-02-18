@@ -6,9 +6,10 @@
   </NuxtLayout>
 </template>
 <script setup>
-useHead({
-  title: "Room 302 Studio",
-});
+// useHead({
+//   title: "Room 302 Studio",
+//   lang: "en",
+// });
 </script>
 <style>
 .pad {

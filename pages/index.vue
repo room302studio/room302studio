@@ -67,7 +67,7 @@
                 </p>
               </div>
 
-              <UButton variant="ghost" class="pl-5 py-8">
+              <UButton variant="ghost" class="pl-5 py-8" to="our-work/client-work/themargin">
                 Explore this project
                 <UIcon name="i-heroicons-arrow-right-16-solid" />
               </UButton>
@@ -98,7 +98,7 @@
                 </p>
               </div>
 
-              <UButton variant="ghost" class="pl-5 py-8">
+              <UButton variant="ghost" class="pl-5 py-8" to="our-work/client-work/ukrainegrain">
                 Explore this project
                 <UIcon name="i-heroicons-arrow-right-16-solid" />
               </UButton>
@@ -311,6 +311,15 @@ onMounted(() => {
 
 });
 
+useSeoMeta({
+  title: 'Room 302 Studio',
+  description: 'We are a bespoke innovation lab that guides concepts from ideation to implementation.',
+  ogDescription: 'We are a bespoke innovation lab that guides concepts from ideation to implementation.',
+  url: 'https://room302.studio',
+  ogImage: '/twitter-image.jpg',
+  twitterImage: '/twitter-image.jpg',
+
+})
 
 </script>
 <style scoped lang="scss">
