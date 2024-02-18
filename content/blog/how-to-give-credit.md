@@ -1,15 +1,13 @@
 ---
-dek: In which we do what is right by being clear about the contributions each member of the team brings to a project
 inprogress: true
 date: 2023-09-03T14:18:33-04:00
 modified: 2023-12-17T19:08:46-05:00
 tags: howto process
 author: EJ Fox
 authorEmail: ejfox@room302.studio
-image: "/our-work-images/themargin.png"
 ---
 
-## How To Give Credit
+# How To Give Credit
 
 There was a maxim I once heard as a teenager and have valued ever since: **give credit, take blame**.
 
@@ -20,8 +18,6 @@ Different fields have their own ways of doing it, and we can learn from these di
 In cinema, the focus is often on key roles the audience values like directors and lead actors. Academia has a nuanced system; the order of authors can indicate the level of contribution. Journalism uses bylines, putting the lead reporter's name first, and crediting photographers and graphics producers in captions next to their work, but almost never crediting Editors.
 
 Looking across industry and history, let's find insights into how to properly acknowledge the work of others.
-
-![The Margin](https://placehold.co/600x400)
 
 If you care to look, your music streaming app doesn't just tell you the Artist who released the track; it tells you who's strumming the guitar, who's hitting the drums, and who's tweaking the soundboard. Streaming sites get a lot wrong when it comes to compensation, but in this one area, they are a model for an approach to proper credit, even if the media is distributed long after it was created, in ways the authors could have never predicted.
 

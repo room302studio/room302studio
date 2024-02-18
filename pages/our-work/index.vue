@@ -23,9 +23,8 @@
 
     <section class="my-12 lg:my-24">
       <h2 class="text-4xl my-8">Client Work</h2>
-      <!-- make 3x3 grid of the projects in cards -->
       <div class="projects text-sm leading-tight grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-32">
-        <div v-for="project in clientWork" :key="project.title" :project="project"
+        <div v-for="project in clientWork" :key="project.title" :project="project" @click="navigateTo(project._path)"
           class="hover:shadow-lg transition-all flex rounded-lg bg-stone-100 dark:bg-stone-900">
           <div class="flex-1 min-w-24">
             <!-- Assuming you have an image url 'backgroundUrl' -->
@@ -33,20 +32,17 @@
           </div>
 
           <div class="flex-1 flex p-4 justify-between flex-col">
-            <NuxtLink :to="project._path" class="text-lg font-normal tracking-wide leading-tight text-stone-700 flex-1">
+            <NuxtLink :to="project._path"
+              class="text-lg font-normal tracking-wide leading-tight text-stone-700 dark:text-stone-300 flex-1">
               {{ project.title }}
             </NuxtLink>
-            <p class="text-xs text-stone-800 tracking-wider font-semibold my-1">
+            <p class="text-xs text-stone-800 dark:text-stone-200 tracking-wider font-semibold my-1">
               {{ project.client }}
             </p>
 
             <p class="text-xs text-stone-500 leading-normal font-light">
               {{ project.role }}
             </p>
-
-            <!-- <UButton :to="project._path" class="mt-4" color="gray">
-              View Project
-            </UBUtton> -->
           </div>
         </div>
       </div>
@@ -54,7 +50,6 @@
 
     <section class="mt-24 lg:mt-36">
       <h2 class="text-4xl my-8">Internal Projects</h2>
-      <!-- make 3x3 grid of the projects in cards -->
       <div class="projects text-sm leading-tight grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-32">
         <div v-for="project in internalWork" :key="project.title" :project="project"
           class="hover:shadow-lg transition-all flex rounded-lg bg-stone-100 dark:bg-stone-900">
@@ -64,16 +59,17 @@
           </div>
 
           <div class="flex-1 p-4">
-            <NuxtLink :to="project._path" class="text-lg font-bold tracking-wide leading-tight text-stone-800">
+            <NuxtLink :to="project._path"
+              class="text-lg font-bold tracking-wide leading-tight text-stone-800 dark:text-stone-200">
               {{ project.title }}
             </NuxtLink>
-            <p class="text-sm text-stone-600 leading-normal">
+            <p class="text-sm text-stone-600 dark:text-stone-400 leading-normal">
               {{ project.description }}
             </p>
 
-            <!-- <UButton :to="project._path" class="mt-4" color="gray">
+            <UButton :to="project._path" class="mt-4" color="gray">
               View Project
-            </UBUtton> -->
+            </UBUtton>
           </div>
         </div>
       </div>

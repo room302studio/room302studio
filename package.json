@@ -25,6 +25,7 @@
     "@tresjs/core": "^3.6.0",
     "@tresjs/nuxt": "^2.0.1",
     "@tresjs/post-processing": "^0.7.0",
+    "@vueuse/components": "^10.7.2",
     "@vueuse/motion": "^2.0.0",
     "@vueuse/nuxt": "^9.13.0",
     "animejs": "^3.2.1",

@@ -8,7 +8,8 @@
           that guides concepts from ideation to implementation<span class="text-primary-500">.</span>
         </p>
 
-        <p class="pad text-lg mt-6 text-balance text-stone-700 dark:text-stone-400 max-w-screen-lg">
+        <p class="pad text-lg mt-6 text-balance text-stone-700 dark:text-stone-400 max-w-screen-lg" ref="introGraf1"
+          id="introGraf1" v-intersection-observer="animatePushIn">
           Innovation is at the heart of everything we do. Our collaborations
           span startups, mature companies, non-profits, and news organizations.
           We provide the tools, expertise, and collaborative environment needed
@@ -19,7 +20,8 @@
         </p>
 
         <div class="case-study">
-          <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0">
+          <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0"
+            v-intersection-observer="animatePushIn">
             <div class="w-full md:w-7/12">
               <h4 class="font-medium text-gray-500 tex uppercase text-base pb-2">
                 The Margin
@@ -34,22 +36,23 @@
                 </p>
               </div>
 
-              <UButton variant="ghost" class="pl-5 py-8">
+              <UButton variant="ghost" class="pl-5 py-8" to="our-work/client-work/coralreefs">
                 Explore this project
                 <UIcon name="i-heroicons-arrow-right-16-solid" />
               </UButton>
             </div>
             <div class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12">
               <img src="/our-work-images/reef-2.jpg" alt=""
-                class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-y-5 md:drop-shadow-xl py-2 md:py-0" />
+                class="intro-image border border-gray-100 dark:border-gray-900 row-start-1 col-start-1 w-full rounded-lg md:translate-y-5 md:drop-shadow-xl py-2 md:py-0" />
               <img src="/our-work-images/reef-1.jpg" alt=""
-                class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-x-5 md:drop-shadow-xl py-2 md:py-0 hidden md:block" />
+                class="intro-image border border-gray-100 dark:border-gray-900 row-start-1 col-start-1 w-full rounded-lg md:translate-x-5 md:drop-shadow-xl py-2 md:py-0 hidden md:block" />
             </div>
           </div>
         </div>
 
         <div class="case-study">
-          <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0">
+          <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0"
+            v-intersection-observer="animatePushIn">
             <div class="w-full md:w-7/12">
               <h4 class="font-medium text-gray-500 tex uppercase text-base pb-2">
                 The Margin
@@ -71,9 +74,9 @@
             </div>
             <div class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12">
               <img src="/our-work-images/margin-2.jpg" alt=""
-                class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-y-5 md:drop-shadow-xl py-2 md:py-0" />
+                class="intro-image border border-gray-100 dark:border-gray-900 row-start-1 col-start-1 w-full rounded-lg md:translate-y-5 md:drop-shadow-xl py-2 md:py-0" />
               <img src="/our-work-images/margin-1.jpg" alt=""
-                class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-x-5 md:drop-shadow-xl py-2 md:py-0 hidden md:block" />
+                class="intro-image border border-gray-100 dark:border-gray-900 row-start-1 col-start-1 w-full rounded-lg md:translate-x-5 md:drop-shadow-xl py-2 md:py-0 hidden md:block" />
             </div>
           </div>
         </div>
@@ -102,9 +105,9 @@
             </div>
             <div class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12">
               <img src="/our-work-images/ukraine-2.jpg" alt=""
-                class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-y-5 md:drop-shadow-xl py-2 md:py-0" />
+                class="intro-image border border-gray-100 dark:border-gray-900 row-start-1 col-start-1 w-full rounded-lg md:translate-y-5 md:drop-shadow-xl py-2 md:py-0" />
               <img src="/our-work-images/ukraine-1.jpg" alt=""
-                class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-x-5 md:drop-shadow-xl py-2 md:py-0 hidden md:block" />
+                class="intro-image border border-gray-100 dark:border-gray-900 row-start-1 col-start-1 w-full rounded-lg md:translate-x-5 md:drop-shadow-xl py-2 md:py-0 hidden md:block" />
             </div>
           </div>
         </div>
@@ -175,7 +178,7 @@
           <div class="w-full md:w-1/2 xl:w-2/3 pb-16 md:py-0">
             <h3 class="text-3xl">Say hello:</h3>
 
-            <div class="intro-text text-lg my-2 border-l-2 text-gray-700 border-gray-500 max-w-md">
+            <div class="intro-text text-lg my-2 border-l-2 text-gray-700 dark:text-gray-400 border-gray-500 max-w-md">
               <p class="pl-4  leading-relaxed">
                 Fancy a chat about creative puzzles or technological wonders? Our team at Room 302 Studio is all ears!
                 Email us at <a href="mailto:studio@room302.studio"
@@ -192,8 +195,7 @@
           </div>
         </div>
 
-        <div
-          class="pad callout-section bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-800 my-24 py-12 md:rounded-sm shadow-lg">
+        <div class="pad callout-section bg-stone-900 text-stone-50 dark:bg-stone-800 my-24 py-12 md:rounded-sm shadow-lg">
           <p class="text-5xl lg:w-8/12 leading-tight">
             Meet
             <a href="http://coachartiebot.com"
@@ -202,13 +204,15 @@
           </p>
 
           <!-- now use flexbox to make a 3-wide of these sections -->
-          <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-300 dark:text-stone-500 text-sm">
+          <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-300  text-sm">
             <div class="callout-section-item my-4 md:w-1/3">
               <UIcon name="i-pixelarticons-user" class="w-12 h-12 mb-4" />
               <div>
                 <!-- <h4 class="text-stone-300 font-bold monospace">Enhancing our collaborations</h4> -->
                 <p class="text-balance pr-3 lg:mr-4">
-                  Artie, Room 302 Studio's AI, helps organize our teamwork in
+                  Artie, Room 302 Studio's <a href="https://github.com/room302studio/coachartie" class="underline">open
+                    source</a> AI, helps
+                  organize our teamwork in
                   Discord, using his unique capabilities to support every stage of
                   our creative process and give us more time to focus on what
                   matters.
@@ -245,7 +249,7 @@
             <h2 class="text-stone-600 dark:text-stone-300 font-medium text-4xl leading-tight py-8">
               Available for collaboration
             </h2>
-            <div class="border-l-2 pl-4">
+            <div class="border-l-2 pl-4 dark:text-stone-400">
               <p class="leading-loose">
                 Beyond traditional client services, the studio serves as a dynamic
                 digital workspace, uniting creators to collectively build and
@@ -274,7 +278,41 @@
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import { vIntersectionObserver } from '@vueuse/components'
+
+import { animate, createAnimatable, stagger } from "~/anime.esm.min.js";
+
+function animatePushIn(e) {
+  // console.log('animatePushIn')
+  // console.log(e)
+  // const targetEl = e[0].target
+  // console.log(targetEl)
+
+  const targetMap = e.map((el) => el.target)
+
+  animate(
+    targetMap, {
+
+    keyframes: [
+      { x: '-20px', scale: 0.999 }, // duration = (4000 / 5 = 800)
+
+      { scale: 1.005 },
+      // { x: '17rem', rotate: 180, scale: .5 }, // duration = (4000 / 5 = 800)
+      { y: 0, x: 0, scale: 1 }
+    ],
+    duration: 1666,
+    // ease: 'inOutQuad',
+    loop: false
+  });
+}
+
+onMounted(() => {
+
+});
+
+
+</script>
 <style scoped lang="scss">
 p {
   text-wrap: balance;

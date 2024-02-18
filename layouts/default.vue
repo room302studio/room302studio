@@ -2,49 +2,25 @@
   <div class="">
     <!-- background texture image, full-width at the top of the page behind everything -->
 
-    <img
-      :src="['/bg_texture.png']"
-      alt=""
-      class="absolute top-0 left-0 w-full -z-10 pointer-events-none dark:hidden"
-    />
+    <img :src="['/bg_texture.png']" alt="" class="absolute top-0 left-0 w-full -z-10 pointer-events-none dark:hidden" />
 
     <div class="absolute -z-10 left-0 top-0 pointer-events-none">
-      <TresCanvas
-        window-size
-        alpha
-        shadows
-        class="pointer-events-none"
-        style="pointer-events: none !important"
-      >
-        <TresPerspectiveCamera
-          ref="cam"
-          :position="[cameraPosition.x, cameraPosition.y, cameraPosition.z]"
-          :fov="50"
-          :near="0.4"
-          :far="1000"
-        />
+      <TresCanvas window-size alpha shadows class="pointer-events-none" style="pointer-events: none !important">
+        <TresPerspectiveCamera ref="cam" :position="[cameraPosition.x, cameraPosition.y, cameraPosition.z]" :fov="50"
+          :near="0.4" :far="1000" />
 
         <!-- add some subtle ambient lights -->
         <TresAmbientLight :intensity="0.5" :position="[0, 0, 0]" />
 
         <!-- add a directional light to cast shadows -->
-        <TresDirectionalLight
-          :position="lightPosition"
-          :intensity="20"
-          color="#fff"
-        />
+        <TresDirectionalLight :position="lightPosition" :intensity="20" color="#fff" />
 
-        <TresGroup
-          :rotation="[
-            sphereGroupRotation.x,
-            sphereGroupRotation.y,
-            sphereGroupRotation.z,
-          ]"
-        >
-          <TresMesh
-            v-for="sphere in spheres"
-            :position="[sphere.x, sphere.y, sphere.z]"
-          >
+        <TresGroup :rotation="[
+          sphereGroupRotation.x,
+          sphereGroupRotation.y,
+          sphereGroupRotation.z,
+        ]">
+          <TresMesh v-for="sphere in spheres" :position="[sphere.x, sphere.y, sphere.z]">
             <TresSphereGeometry :args="[sphere.size]" />
             <TresMeshBasicMaterial :color="sphere.color" />
           </TresMesh>
@@ -53,11 +29,7 @@
         <TresAmbientLight :intensity="0.5" :position="[0, 0, 0]" />
         />
 
-        <TresDirectionalLight
-          :position="[-10, -10, 3]"
-          :intensity="20"
-          color="#fff"
-        />
+        <TresDirectionalLight :position="[-10, -10, 3]" :intensity="20" color="#fff" />
         >
 
         <EffectComposer>
@@ -74,7 +46,7 @@
 </template>
 
 <script setup>
-import { animate, createAnimatable, stagger } from "~/anime.esm.js";
+import { animate, createAnimatable, stagger } from "~/anime.esm.min.js";
 import { TresCanvas, useLoader, extend } from "@tresjs/core";
 import { createNoise3D } from "simplex-noise";
 import {
