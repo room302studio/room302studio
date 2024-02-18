@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="pt-8 prose">
+    <div class="pt-8 prose dark:prose-invert">
       <ContentRenderer :value="data">
         <template #empty>
           <div>
@@ -62,13 +62,13 @@
       <!-- make 3x3 grid of the projects in cards -->
       <div class="projects grid grid-cols-2 gap-4 lg:gap-8">
         <div v-for="project in clientWork" :key="project.title" :project="project"
-          class="hover:shadow-lg transition-all flex rounded-lg bg-stone-100 min-h-32">
+          class="hover:shadow-lg transition-all flex rounded-lg bg-stone-100 text-stone-700 min-h-32">
           <div class="flex-1 min-w-24" v-if="project.image">
             <!-- Assuming you have an image url 'backgroundUrl' -->
             <div class="h-full bg-cover bg-center" :style="{ backgroundImage: `url(${project.image})` }"></div>
           </div>
 
-          <div class="flex-1 p-4">
+          <div class="flex-1 p-4 text-2xl leading-relaxed flex flex-row items-center">
             <NuxtLink :to="project._path" class="tracking-wide leading-snug no-underline">
               {{ project.title }}
             </NuxtLink>

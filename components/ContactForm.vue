@@ -1,5 +1,5 @@
 <template>
-  <form name="contact" netlify>
+  <form name="contact" netlify action="/contact-success" method="POST" data-netlify="true">
     <input type="hidden" name="form-name" value="contact">
     <div class="my-8">
       <h4 class="font-light text-xs py-1 pl-1">Name</h4>

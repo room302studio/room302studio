@@ -5,7 +5,8 @@ brief: "Tell the stories of coral reefs through interactive maps and visualizati
 description: "We partnered with the Wildlife Conservation Society on an interesting and vital challenge: to bring to light the resilience of certain coral reefs in the throes of climate change."
 role: 'UX / UI Ideation'
 date: "2022-01-01"
-image: "/path/to/feature/image.jpg"
+technology: 'Nuxt, Figma, Mapbox'
+image: "/our-work-images/reef-1.jpg"
 tags: ["dataviz", "interactive", "mapping", "nonprofit"]
 url: ""
 ---

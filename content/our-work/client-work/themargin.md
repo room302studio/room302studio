@@ -4,7 +4,8 @@ client: "The Margin"
 brief: "Tell the stories of environmental justice through interactive maps and visualizations"
 description: "In a series examining environmental justice's impact on different communities, we created interactive scroll-powered maps and visualizations for The Margin's five inaugural stories."
 date: "2022-01-01"
-image: "/path/to/feature/image.jpg"
+technology: 'D3, QGIS, Mapbox'
+image: "/our-work-images/margin-1.jpg"
 url: "https://themargin.us/"
 tags: ["dataviz", "interactive", "mapping", "nonprofit"]
 ---
