@@ -18,11 +18,98 @@
           cutting-edge technologies, and driving change.
         </p>
 
-        <HomepageCaseStudy />
+        <div class="case-study">
+          <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0">
+            <div class="w-full md:w-7/12">
+              <h4 class="font-medium text-gray-500 tex uppercase text-base pb-2">
+                The Margin
+              </h4>
+              <h2 class="font-medium text-5xl text-primary-500 pb-8">
+                Mapping Resilience
+              </h2>
+              <div class="intro-text text-lg my-2 border-l-2 text-gray-700 border-gray-500 dark:text-stone-400">
+                <p class="pl-4 max-w-prose leading-relaxed">
+                  We partnered with the Wildlife Conservation Society on an interesting and vital challenge: to bring to
+                  light the resilience of certain coral reefs in the throes of climate change.
+                </p>
+              </div>
 
-        <HomepageCaseStudy />
+              <UButton variant="ghost" class="pl-5 py-8">
+                Explore this project
+                <UIcon name="i-heroicons-arrow-right-16-solid" />
+              </UButton>
+            </div>
+            <div class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12">
+              <img src="/our-work-images/reef-2.jpg" alt=""
+                class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-y-5 md:drop-shadow-xl py-2 md:py-0" />
+              <img src="/our-work-images/reef-1.jpg" alt=""
+                class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-x-5 md:drop-shadow-xl py-2 md:py-0 hidden md:block" />
+            </div>
+          </div>
+        </div>
 
-        <HomepageCaseStudy />
+        <div class="case-study">
+          <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0">
+            <div class="w-full md:w-7/12">
+              <h4 class="font-medium text-gray-500 tex uppercase text-base pb-2">
+                The Margin
+              </h4>
+              <h2 class="font-medium text-5xl text-primary-500 pb-8">
+                Visualizing Environmental Justice
+              </h2>
+              <div class="intro-text text-lg my-2 border-l-2 text-gray-700 border-gray-500 dark:text-stone-400">
+                <p class="pl-4 max-w-prose leading-relaxed">
+                  In a series examining environmental justice's impact on different communities, we created interactive
+                  scroll-powered maps and visualizations for The Margin's five inaugural stories.
+                </p>
+              </div>
+
+              <UButton variant="ghost" class="pl-5 py-8">
+                Explore this project
+                <UIcon name="i-heroicons-arrow-right-16-solid" />
+              </UButton>
+            </div>
+            <div class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12">
+              <img src="/our-work-images/margin-2.jpg" alt=""
+                class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-y-5 md:drop-shadow-xl py-2 md:py-0" />
+              <img src="/our-work-images/margin-1.jpg" alt=""
+                class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-x-5 md:drop-shadow-xl py-2 md:py-0 hidden md:block" />
+            </div>
+          </div>
+        </div>
+
+        <div class="case-study">
+          <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0">
+            <div class="w-full md:w-7/12">
+              <h4 class="font-medium text-gray-500 tex uppercase text-base pb-2">
+                The Plotline
+              </h4>
+              <h2 class="font-medium text-5xl text-primary-500 pb-8">
+                Ukraine Grain's Global Impact
+              </h2>
+              <div class="intro-text text-lg my-2 border-l-2 text-gray-700 border-gray-500 dark:text-stone-400">
+                <p class="pl-4 max-w-prose leading-relaxed">
+                  In partnership with Earthrise Media for The Plotline, we undertook the mission of translating the
+                  complexities of agricultural supply chains into an interactive tool for both experts and the general
+                  public.
+                </p>
+              </div>
+
+              <UButton variant="ghost" class="pl-5 py-8">
+                Explore this project
+                <UIcon name="i-heroicons-arrow-right-16-solid" />
+              </UButton>
+            </div>
+            <div class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12">
+              <img src="/our-work-images/ukraine-2.jpg" alt=""
+                class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-y-5 md:drop-shadow-xl py-2 md:py-0" />
+              <img src="/our-work-images/ukraine-1.jpg" alt=""
+                class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-x-5 md:drop-shadow-xl py-2 md:py-0 hidden md:block" />
+            </div>
+          </div>
+        </div>
+
+
 
         <div class="px-4 md:px-8">
           <div
@@ -196,5 +283,9 @@ p {
 .light #circle path {
   fill: #999 !important;
   opacity: 0.2;
+}
+
+.case-study .pad {
+  @apply p-2 md:p-8 lg:p-12;
 }
 </style>
