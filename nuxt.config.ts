@@ -1,5 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  devtools: {
+    enabled: true,
+  },
   ssr: false,
   nitro: {
     prerender: {
@@ -39,32 +42,8 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
     head: {
       title: "Room 302 Studio",
-      meta: [
-        { charset: "utf-8" },
-        { name: "title", content: "Room 302 Studio" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
-        {
-          hid: "description",
-          name: "description",
-          content:
-            "An innovative and creative space where people collaborate on projects and cultivate ideas.",
-        },
-        { property: "og:title", content: "Room 302 Studio" },
-        {
-          property: "og:description",
-          content:
-            "An innovative and creative studio where people collaborate on projects and cultivate ideas.",
-        },
-        { property: "og:type", content: "website" },
-        { property: "og:url", content: "https://room302.studio" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: "Room 302 Studio" },
-        {
-          name: "twitter:description",
-          content:
-            "An innovative and creative space where people collaborate on projects and cultivate ideas.",
-        },
-      ],
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
   },
