@@ -7,32 +7,32 @@
     </div>
 
     <!-- project metadata -->
-    <div class="flex mt-4 mb-8">
-      <div class="w-1/2">
+    <div class="md:flex mt-4 mb-8">
+      <div class="mb-6 md:w-1/2">
         <h4 class="text-gray-400 uppercase font-medium">
           Project Brief
         </h4>
-        <p class="tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2 lg:pr-8 text-2xl leading-relaxed">
+        <p class="tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2 lg:pr-8 md:text-2xl leading-relaxed">
           {{ data?.description }}
         </p>
       </div>
 
-      <div class="w-1/2 flex">
-        <div class="w-1/3">
+      <div class="md:w-1/2 md:flex">
+        <div class="mb-6 w-1/3">
           <h4 class="text-gray-400 uppercase font-medium">Client</h4>
           <p class="monospace tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2">
             {{ data?.client }}
           </p>
         </div>
 
-        <div class="w-1/3">
+        <div class="mb-6 md:w-1/3">
           <h4 class="text-gray-400 uppercase font-medium">Services</h4>
           <p class="monospace tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2">
             {{ data?.role }}
           </p>
         </div>
 
-        <div class="w-1/3">
+        <div class="mb-6 md:w-1/3">
           <h4 class="text-gray-400 uppercase font-medium">
             Technology
           </h4>
@@ -60,9 +60,9 @@
       <UDivider class="my-8 md:my-12 lg:my-24" />
       <h4 class="my-8">Related Work</h4>
       <!-- make 3x3 grid of the projects in cards -->
-      <div class="projects grid grid-cols-2 gap-4 lg:gap-8">
+      <div class="projects md:grid md:grid-cols-2 gap-4 lg:gap-8">
         <div v-for="project in clientWork" :key="project.title" :project="project"
-          class="hover:shadow-lg transition-all flex rounded-lg bg-stone-100 text-stone-700 min-h-32">
+          class="hover:shadow-lg transition-all flex rounded-lg bg-stone-100 text-stone-700 min-h-32 mb-6 md:mb-0">
           <div class="flex-1 min-w-24" v-if="project.image">
             <!-- Assuming you have an image url 'backgroundUrl' -->
             <div class="h-full bg-cover bg-center" :style="{ backgroundImage: `url(${project.image})` }"></div>

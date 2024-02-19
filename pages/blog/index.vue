@@ -1,10 +1,10 @@
 <template>
   <main class="pt-16 p-4">
     <ContentQuery path="/blog/" :sort="{ date: -1 }" v-slot="{ data }">
-      <div class="flex">
+      <div class="md:flex">
         <div v-for="article in data" :key="article._path" :class="[
           article.hidden ? 'hidden' : '',
-          'my-4 lg:my-8 p-2 align-middle w-1/2 lg:w-1/3',
+          'my-4 lg:my-8 p-2 align-middle md:w-1/2 lg:w-1/3',
         ]">
           <div class="rounded-lg bg-zinc-100 min-h-64">
             <ContentQuery :path="article._path" v-slot="{ data, toc }" find="one">
@@ -31,9 +31,9 @@
                   {{ data.description }}
                 </div>
 
-                <NuxtLink :to="article._path" class="text-primary-500 mt-4 block">
+                <UButton :to="article._path" class="mt-4" color="black">
                   Read post
-                </NuxtLink>
+                </UButton>
               </div>
             </ContentQuery>
           </div>

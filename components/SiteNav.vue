@@ -39,12 +39,12 @@
 
     <!-- Mobile menu -->
     <transition name="fade">
-      <div v-show="isOpen" class="bg-gray-800 min-h-screen fixed top-0 left-0 w-full z-20 px-4">
-        <div class="flex">
+      <div v-show="isOpen" class="bg-gray-800/70 backdrop-blur-md min-h-screen fixed top-0 left-0 w-full z-20 px-4">
+        <div class="flex my-10">
           <Logo class="text-center max-w-24 md:w-16 md:h-16 lg:h-24 lg:w-24 mx-auto md:mx-0" />
 
           <!-- Hamburger menu -->
-          <div @click="isOpen = !isOpen" class="py-10 bloc md:hidden">
+          <div @click="isOpen = !isOpen" class="py-8 bloc md:hidden">
             <UIcon name="i-heroicons-x-mark-16-solid" class="text-primary-500 w-8 h-8" />
           </div>
         </div>
@@ -76,6 +76,8 @@
 </template>
 
 <script setup>
+import { useRoute } from "vue-router";
+const route = useRoute();
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 const breakpoints = useBreakpoints(breakpointsTailwind)
 
@@ -86,6 +88,14 @@ const activeClasses =
   "border-primary-500 text-gray-700 font-semibold tracking-widest";
 
 let isOpen = ref(false);
+
+// if we are on a mobile screen, when the route changes, closey the mobile menu
+watch(route, () => {
+  console.log(breakpoints.sm.value, breakpoints.md.value)
+  if (breakpoints.smallerOrEqual('md')) {
+    isOpen.value = false;
+  }
+});
 </script>
 
 <style scoped>
@@ -102,5 +112,18 @@ let isOpen = ref(false);
 
 #site-nav a:active {
   transform: scale(0.9);
+}
+
+/* animations to fade in and out the mobile menu */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.33s;
+  filter: blur(0);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  filter: blur(5px);
 }
 </style>
