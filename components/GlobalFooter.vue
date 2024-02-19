@@ -1,6 +1,6 @@
 <template>
   <div class="bg-stone-900 text-stone-50 dark:bg-stone-800 py-8">
-    <div class="my-12 py-6 lg:py-24 px-16 lg:px-12">
+    <div class="md:my-12 md:py-6 lg:py-24 px-8 md:px-16 lg:px-12">
       <p ref="creativeHub" class="text-5xl lg:w-8/12 leading-tight">
         Building <span class="text-primary-500">elegant utilities</span> for
         good.
@@ -56,7 +56,7 @@
     </div>
 
     <!-- include a little sitemap / verbose navigation and a motivational quote -->
-    <div class="lg:py-18 px-16 lg:px-12 md:flex">
+    <div class="lg:py-18 px-8 md:px-16 lg:px-12 md:flex">
       <!-- quote -->
       <div class="w-full md:w-1/3 pr-4 md:pr-8 text-xl md:text-2xl font-light text-balance pb-16 md:py-0">
         Joy-driven development is the future of work.
@@ -64,7 +64,7 @@
       </div>
 
       <div class="sitemap-section-item md:flex w-full">
-        <div class="md:w-1/3 pb-10 md:py-0">
+        <div class="md:w-1/3 pb-4 md:pb-10 md:py-0">
           <h4 class="text-stone-500 tracking-widest font-semibold">
             Work with us
           </h4>
@@ -78,7 +78,7 @@
           </ul>
         </div>
 
-        <div class="md:w-1/3 pb-10 md:py-0">
+        <div class="md:w-1/3 pb-4 md:pb-10 md:py-0">
           <h4 class="text-stone-500 tracking-widest font-semibold">
             Learn More
           </h4>
@@ -95,7 +95,7 @@
           </ul>
         </div>
 
-        <div class="md:w-1/3 pb-10 md:py-0">
+        <div class="md:w-1/3 pb-4 md:pb-10 md:py-0">
           <h4 class="text-stone-500 tracking-widest font-semibold">
             Get Involved
           </h4>

@@ -5,7 +5,9 @@
         <p class="pad text-4xl md:text-5xl lg:w-8/12 text-stone-600 dark:text-stone-200 text-balance leading-snug">
           We are a bespoke
           <span class="text-stone-800 dark:text-stone-200">innovation lab</span>
-          that guides concepts from ideation to implementation<span class="text-primary-500">.</span>
+          that guides concepts from ideation to implementation<span :style="{
+            color: dotColor
+          }">.</span>
         </p>
 
         <p class="pad text-lg mt-6 text-balance text-stone-700 dark:text-stone-400 max-w-screen-lg" ref="introGraf1"
@@ -175,11 +177,11 @@
 
         <div class="callout-section my-24 px-12 text-2xl lg:text-6xl text-balance backdrop-blur-sm md:flex"
           ref="sayHello">
-          <div class="w-full md:w-1/2 xl:w-2/3 pb-16 md:py-0">
+          <div class="w-full md:w-1/2 xl:w-2/3 pb-16 md:py-0 pr-4">
             <h3 class="text-3xl">Say hello:</h3>
 
             <div class="intro-text text-lg my-2 border-l-2 text-gray-700 dark:text-gray-400 border-gray-500 max-w-md">
-              <p class="pl-4  leading-relaxed">
+              <p class="pl-4 pr-6 leading-relaxed">
                 Fancy a chat about creative puzzles or technological wonders? Our team at Room 302 Studio is all ears!
                 Email us at <a href="mailto:studio@room302.studio"
                   class="font-bold text-primary-500 underline transition-colors duration-200 dark:hover:text-primary-700">
@@ -195,8 +197,9 @@
           </div>
         </div>
 
-        <div class="pad callout-section bg-stone-900 text-stone-50 dark:bg-stone-800 my-24 py-12 md:rounded-sm shadow-lg">
-          <p class="text-5xl lg:w-8/12 leading-tight">
+        <div
+          class="pad callout-section bg-stone-900 text-stone-50 dark:bg-stone-800/80 backdrop-blur-sm my-24 py-12 md:rounded-sm shadow-lg">
+          <p class="text-3xl md:text-5xl lg:w-8/12 leading-loose md:leading-tight">
             Meet
             <a href="http://coachartiebot.com"
               class="text-primary-500 underline hover:text-primary-700 transition-all">Coach Artie</a>, our AI Studio
@@ -281,7 +284,7 @@
 <script setup>
 import { vIntersectionObserver } from '@vueuse/components'
 
-import { animate, createAnimatable, stagger } from "~/anime.esm.min.js";
+import { animate, createAnimatable, createTimeline, createTimer, stagger, utils } from "~/anime.esm.min.js";
 
 function animatePushIn(e) {
   // console.log('animatePushIn')
@@ -295,19 +298,32 @@ function animatePushIn(e) {
     targetMap, {
 
     keyframes: [
-      { x: '-20px', scale: 0.999 }, // duration = (4000 / 5 = 800)
+      { x: '-2px', scale: 0.999 }, // duration = (4000 / 5 = 800)
 
       { scale: 1.005 },
       // { x: '17rem', rotate: 180, scale: .5 }, // duration = (4000 / 5 = 800)
       { y: 0, x: 0, scale: 1 }
     ],
-    duration: 1666,
+    duration: 300,
     // ease: 'inOutQuad',
+    playbackEase: 'inOutQuad',
     loop: false
   });
 }
 
+const dotColor = ref(null)
+
 onMounted(() => {
+  animate(dotColor, {
+    keyframes: [
+      { value: 'hsl(0, 100%, 100%)' },
+      // orange
+      { value: 'hsl(12, 91%, 60%)' }
+    ],
+    duration: 7000,
+    alternate: true,
+    loop: true,
+  });
 
 });
 

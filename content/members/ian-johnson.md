@@ -1,7 +1,7 @@
 ---
 name: Ian Johnson
 authorEmail: ian@room302.studio
-role: Founding Member & Principal
+role: Founding Member
 photo: '/member-headshots/ian-headshot.png'
 sabbatical: true
 ---
