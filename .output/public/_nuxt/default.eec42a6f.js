@@ -1,0 +1,1 @@
+import{_ as o,c as s,W as t,o as r}from"./entry.3883dc74.js";const n={},c={class:"max-w-none prose dark:prose-invert"};function a(e,_){return r(),s("section",c,[t(e.$slots,"default")])}const d=o(n,[["render",a]]);export{d as default};
