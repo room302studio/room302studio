@@ -1,0 +1,1 @@
+import{_ as o,c as s,W as r,o as t}from"./entry.3883dc74.js";const c={},a={class:"pa2 pa5-l measure-wide-l"};function n(e,l){return t(),s("section",a,[r(e.$slots,"default")])}const d=o(c,[["render",n]]);export{d as default};
