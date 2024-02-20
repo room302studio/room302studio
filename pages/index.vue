@@ -284,7 +284,7 @@
 <script setup>
 import { vIntersectionObserver } from '@vueuse/components'
 
-import { animate, createAnimatable, createTimeline, createTimer, stagger, utils } from "~/anime.esm.min.js";
+import { animate, createAnimatable, createTimeline, createTimer, stagger, utils } from "~/anime.esm.js";
 
 function animatePushIn(e) {
   // console.log('animatePushIn')

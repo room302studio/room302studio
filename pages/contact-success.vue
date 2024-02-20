@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { animate, createAnimatable, stagger } from "~/anime.esm.min.js";
+import { animate, createAnimatable, stagger } from "~/anime.esm.js";
 
 function animatePushIn(e) {
   // console.log('animatePushIn')
