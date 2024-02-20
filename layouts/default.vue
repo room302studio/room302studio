@@ -32,8 +32,8 @@
         </EffectComposer>
       </TresCanvas>
     </div>
-    <SiteNav />
-    <div class="">
+    <SiteNav class="max-w-screen-2xl mx-auto" />
+    <div class="max-w-screen-2xl mx-auto">
       <slot />
     </div>
     <GlobalFooter />

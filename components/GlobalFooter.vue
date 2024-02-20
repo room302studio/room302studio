@@ -1,6 +1,6 @@
 <template>
   <div class="bg-stone-900 text-stone-50 dark:bg-stone-800 py-8">
-    <div class="md:my-12 md:py-6 lg:py-24 px-8 md:px-16 lg:px-12">
+    <div class="md:my-12 md:py-6 lg:py-24 px-8 md:px-16 lg:px-12 max-w-screen-2xl mx-auto">
       <p ref="creativeHub" class="text-5xl lg:w-8/12 leading-tight">
         Building <span class="text-primary-500">elegant utilities</span> for
         good.
@@ -56,7 +56,7 @@
     </div>
 
     <!-- include a little sitemap / verbose navigation and a motivational quote -->
-    <div class="lg:py-18 px-8 md:px-16 lg:px-12 md:flex">
+    <div class="lg:py-18 px-8 md:px-16 lg:px-12 md:flex max-w-screen-2xl mx-auto">
       <!-- quote -->
       <div class="w-full md:w-1/3 pr-4 md:pr-8 text-xl md:text-2xl font-light text-balance pb-16 md:py-0">
         Joy-driven development is the future of work.
