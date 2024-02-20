@@ -1,10 +1,11 @@
 <template>
-  <form name="contact" class="my-16" netlify method="POST" data-netlify="true" @submit.prevent="handleSubmit">
+  <form data-netlify="true" name="contact" method="POST" class="my-16" netlify @submit.prevent="handleSubmit">
     <UModal v-model="showModal" class="min-h-96 min-w-96">
       <UCard>
         <p>{{ message }}</p>
       </UCard>
     </UModal>
+
     <input type="hidden" name="form-name" value="contact">
     <div class="my-8">
       <h4 class="font-light text-xs py-1 pl-1">Name</h4>
@@ -178,7 +179,8 @@ const handleSubmit = async (event) => {
   try {
     const response = await fetch('/', { // Ensure this matches Netlify's expected endpoint
       method: 'POST',
-      body: formData, // Pass formData directly
+      // body: formData, // Pass formData directly
+      body: new URLSearchParams(formData).toString(),
     });
 
     if (response.ok) {
