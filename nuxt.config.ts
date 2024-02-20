@@ -29,6 +29,9 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  routeRules: {
+    "/contact": { prerender: true },
+  },
   content: {
     // documentDriven: true,
   },
