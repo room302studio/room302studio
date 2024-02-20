@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="max-w-screen-2xl mx-auto">
     <SiteNav class="" />
     <div class="p-8">
       <slot />
