@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   // devtools: {
   //   enabled: true,
   // },
-  // ssr: false,
+  ssr: false,
   // nitro: {
   //   prerender: {
   //     crawlLinks: true,
