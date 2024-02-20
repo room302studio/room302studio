@@ -48,6 +48,12 @@ export default defineNuxtConfig({
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      script: [
+        {
+          src: "https://js.hsforms.net/forms/v2.js",
+          defer: true,
+        },
+      ],
     },
   },
 });
