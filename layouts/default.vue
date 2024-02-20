@@ -41,7 +41,7 @@
 </template>
 
 <script setup>
-import { animate, createAnimatable, stagger } from "~/anime.esm.min.js";
+import { animate, createAnimatable, stagger } from "~/anime.esm.js";
 import { TresCanvas, useLoader, extend } from "@tresjs/core";
 import { createNoise3D } from "simplex-noise";
 import {
