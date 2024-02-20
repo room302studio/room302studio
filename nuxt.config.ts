@@ -4,12 +4,12 @@ export default defineNuxtConfig({
   //   enabled: true,
   // },
   // ssr: false,
-  nitro: {
-    prerender: {
-      crawlLinks: true,
-      failOnError: false,
-    },
-  },
+  // nitro: {
+  //   prerender: {
+  //     crawlLinks: true,
+  //     failOnError: false,
+  //   },
+  // },
   modules: [
     // '@vueuse/motion/nuxt',
     "@nuxt/content",
@@ -29,9 +29,9 @@ export default defineNuxtConfig({
       },
     ],
   ],
-  routeRules: {
-    "/contact": { prerender: true },
-  },
+  // routeRules: {
+  //   "/contact": { prerender: true },
+  // },
   content: {
     // documentDriven: true,
   },
