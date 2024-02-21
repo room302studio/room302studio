@@ -292,23 +292,23 @@ function animatePushIn(e) {
   // const targetEl = e[0].target
   // console.log(targetEl)
 
-  const targetMap = e.map((el) => el.target)
+  // const targetMap = e.map((el) => el.target)
 
-  animate(
-    targetMap, {
+  // animate(
+  //   targetMap, {
 
-    keyframes: [
-      { x: '-2px', scale: 0.999 }, // duration = (4000 / 5 = 800)
+  //   keyframes: [
+  //     { x: '-2px', scale: 0.999 }, // duration = (4000 / 5 = 800)
 
-      { scale: 1.005 },
-      // { x: '17rem', rotate: 180, scale: .5 }, // duration = (4000 / 5 = 800)
-      { y: 0, x: 0, scale: 1 }
-    ],
-    duration: 300,
-    // ease: 'inOutQuad',
-    playbackEase: 'inOutQuad',
-    loop: false
-  });
+  //     { scale: 1.005 },
+  //     // { x: '17rem', rotate: 180, scale: .5 }, // duration = (4000 / 5 = 800)
+  //     { y: 0, x: 0, scale: 1 }
+  //   ],
+  //   duration: 300,
+  //   // ease: 'inOutQuad',
+  //   playbackEase: 'inOutQuad',
+  //   loop: false
+  // });
 }
 
 const dotColor = ref(null)
