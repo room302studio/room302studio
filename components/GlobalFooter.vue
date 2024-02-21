@@ -59,7 +59,7 @@
     <div class="lg:py-18 px-8 md:px-16 lg:px-12 md:flex max-w-screen-2xl mx-auto">
       <!-- quote -->
       <div class="w-full md:w-1/3 pr-4 md:pr-8 text-xl md:text-2xl font-light text-balance pb-16 md:py-0">
-        Joy-driven development is the future of work.
+        Pleasure in the job puts perfection in the work.
         <UIcon name="i-svg-spinners-wind-toy" />
       </div>
 
