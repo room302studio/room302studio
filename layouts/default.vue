@@ -54,6 +54,9 @@ import {
   Vignette,
 } from "@tresjs/post-processing";
 
+const appConfig = useAppConfig()
+import { theme } from '#tailwind-config'
+
 const cameraPosition = ref({ x: 0, y: 0, z: 1 });
 const cam = shallowRef(null);
 const sphereGroupRotation = ref({ x: 0, y: 0, z: 0 });
@@ -71,8 +74,10 @@ const initSpheres = () => {
 
   for (let i = 0; i < numSpheres; i++) {
 
-    const color = Math.random() > 0.98 ? '#ff6600' : '#444'
+    // const color = Math.random() > 0.98 ? '#ff6600' : '#444'
     // const color = "#999";
+
+    const color = Math.random() > 0.98 ? theme.colors[appConfig.ui.primary][500] : "#444";
 
     const { z: randomZ } = getRandom3DPosition(i);
 

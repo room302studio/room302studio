@@ -30,10 +30,16 @@
             Members
           </NuxtLink>
         </li>
+
+        <li>
+          <NuxtLink to="/livestreams" :class="linkClasses" :active-class="activeClasses">
+            Livestreams
+          </NuxtLink>
+        </li>
       </ul>
 
       <div class="hidden md:block">
-        <UButton to="/contact" color="orange"> Contact Us </UButton>
+        <UButton to="/contact" color="primary"> Contact Us </UButton>
       </div>
     </div>
 
@@ -67,6 +73,12 @@
           <li class="my-4">
             <NuxtLink to="/members" :class="linkClasses" :active-class="activeClasses">
               Members
+            </NuxtLink>
+          </li>
+
+          <li class="my-4">
+            <NuxtLink to="/livestreams" :class="linkClasses" :active-class="activeClasses">
+              Livestreams
             </NuxtLink>
           </li>
         </ul>
