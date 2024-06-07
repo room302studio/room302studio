@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // devtools: {
-  //   enabled: true,
-  // },
+  devtools: {
+    enabled: false,
+  },
   ssr: false,
   // nitro: {
   //   prerender: {
@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     "@nuxt/ui",
     "nuxt-gtag",
     "@tresjs/nuxt",
+    "@nuxtjs/supabase",
     [
       "@nuxtjs/google-fonts",
       {
@@ -29,6 +30,13 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  supabase: {
+    redirectOptions: {
+      login: "/login",
+      callback: "/confirm",
+      exclude: ["/", "/*", "/**/*"],
+    },
+  },
   // routeRules: {
   //   "/contact": { prerender: true },
   // },
@@ -40,6 +48,9 @@ export default defineNuxtConfig({
   },
   gtag: {
     id: "G-6XGQNYZQMC",
+  },
+  tailwindcss: {
+    exposeConfig: true,
   },
   app: {
     pageTransition: { name: "page", mode: "out-in" },
