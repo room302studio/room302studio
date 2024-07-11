@@ -9,16 +9,17 @@
         <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-1 lg:p-4" v-for="livestream in livestreams" :key="livestream.id"
           v-show="livestream.confirmed">
 
-          <UCard>
+          <!-- <UCard>
             <NuxtLink :to="`/livestreams/${livestream.id}`" class="text-blue-500 hover:underline">
               <h3>{{ livestream.title }}</h3>
             </NuxtLink>
             <UBadge v-if="!livestream.confirmed" color="primary" variant="outline">Unconfirmed</UBadge>
             <p>{{ livestream.description }}</p>
             <p>{{ streamStartNiceTimeFormat(livestream.start_time) }}</p>
-            <!-- show relative time -->
             <p v-if="livestream.confirmed">Going live in {{ timeRelativeToNow(livestream.start_time) }}</p>
-          </UCard>
+          </UCard> -->
+
+          <LivestreamCard :livestream="livestream" />
         </div>
       </section>
     </div>
