@@ -25,11 +25,11 @@
           <NuxtLink to="/blog" :class="linkClasses" :active-class="activeClasses">Blog
           </NuxtLink>
         </li>
-        <li>
+        <!-- <li>
           <NuxtLink to="/members" :class="linkClasses" :active-class="activeClasses">
             Members
           </NuxtLink>
-        </li>
+        </li> -->
       </ul>
 
       <div class="hidden md:block">
@@ -64,11 +64,11 @@
             <NuxtLink to="/blog" :class="linkClasses" :active-class="activeClasses">Blog
             </NuxtLink>
           </li>
-          <li class="my-4">
+          <!-- <li class="my-4">
             <NuxtLink to="/members" :class="linkClasses" :active-class="activeClasses">
               Members
             </NuxtLink>
-          </li>
+          </li> -->
         </ul>
       </div>
     </transition>

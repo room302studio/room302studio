@@ -10,6 +10,66 @@
           }">.</span>
         </p>
 
+
+        <div class="px-4 md:px-8">
+          <div
+            class="relative overflow-hidden callout-section text-stone-50 my-24 py-12 lg:py-24 px-4 md:px-16 md:rounded-sm md:shadow-lg">
+            <video class="absolute top-0 left-0 w-full h-full object-cover -z-10 md:rounded-lg md:shadow-lg bg-black"
+              autoplay loop muted playsinline>
+              <source src="https://res.cloudinary.com/ejf/video/upload/v1707429688/Comp_2_1_1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            <p ref="zeroToSixty" class="z-10 text-5xl lg:w-5/12 leading-tight text-balance font-semibold">
+              Bringing your ideas from 0 to 60<span class="z-10 text-primary-500">.</span>
+            </p>
+
+            <!-- now use flexbox to make a 3-wide of these sections -->
+            <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-300 text-sm">
+              <div class="callout-section-item my-4 lg:w-1/3">
+                <div>
+                  <h4 class="text-lg leading-tight mb-4 text-stone-300 font-bold">
+                    <UIcon name="i-material-symbols-light:speed-rounded" />
+                    Fast-paced prototyping
+                  </h4>
+                  <p class="pr-8">
+                    We know the best way to make a great ideas is to iterate. A
+                    lot. Our focus on rapid prototyping lets us get further,
+                    faster, and make sure we're building the right thing.
+                  </p>
+                </div>
+              </div>
+              <div class="callout-section-item my-4 lg:w-1/3">
+                <div>
+                  <h4 class="text-lg leading-tight mb-4 text-stone-300 font-bold">
+                    <UIcon name="i-material-symbols-light:insert-chart-outline" />
+                    Rooted in data
+                  </h4>
+                  <p class="pr-8">
+                    Our studio has a deep background in data visualization and
+                    analysis. We use data both to inform our product decisions,
+                    as well as incorporating data into the DNA of our products.
+                  </p>
+                </div>
+              </div>
+
+              <div class="callout-section-item my-4 lg:w-1/3">
+                <div>
+                  <h4 class="text-lg leading-tight mb-4 text-stone-300 font-bold">
+                    <UIcon name="i-fa6-solid-hammer" />
+                    Willing to bleed
+                  </h4>
+                  <p class="pr-8">
+                    Part of being on the cutting edge is being willing to take
+                    risks. We're not afraid to try new things, explore uncharted
+                    territory, and push the boundaries of what's possible.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <p class="pad text-lg mt-6 text-balance text-stone-700 dark:text-stone-400 max-w-screen-lg" ref="introGraf1"
           id="introGraf1" v-intersection-observer="animatePushIn">
           Innovation is at the heart of everything we do. Our collaborations
@@ -116,64 +176,6 @@
 
 
 
-        <div class="px-4 md:px-8">
-          <div
-            class="relative overflow-hidden callout-section text-stone-50 my-24 py-12 lg:py-24 px-4 md:px-16 md:rounded-sm md:shadow-lg">
-            <video class="absolute top-0 left-0 w-full h-full object-cover -z-10 md:rounded-lg md:shadow-lg bg-black"
-              autoplay loop muted playsinline>
-              <source src="https://res.cloudinary.com/ejf/video/upload/v1707429688/Comp_2_1_1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-
-            <p ref="zeroToSixty" class="z-10 text-5xl lg:w-5/12 leading-tight text-balance font-semibold">
-              Bringing your ideas from 0 to 60<span class="z-10 text-primary-500">.</span>
-            </p>
-
-            <!-- now use flexbox to make a 3-wide of these sections -->
-            <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-300 text-sm">
-              <div class="callout-section-item my-4 lg:w-1/3">
-                <div>
-                  <h4 class="text-lg leading-tight mb-4 text-stone-300 font-bold">
-                    <UIcon name="i-material-symbols-light:speed-rounded" />
-                    Fast-paced prototyping
-                  </h4>
-                  <p class="pr-8">
-                    We know the best way to make a great ideas is to iterate. A
-                    lot. Our focus on rapid prototyping lets us get further,
-                    faster, and make sure we're building the right thing.
-                  </p>
-                </div>
-              </div>
-              <div class="callout-section-item my-4 lg:w-1/3">
-                <div>
-                  <h4 class="text-lg leading-tight mb-4 text-stone-300 font-bold">
-                    <UIcon name="i-material-symbols-light:insert-chart-outline" />
-                    Rooted in data
-                  </h4>
-                  <p class="pr-8">
-                    Our studio has a deep background in data visualization and
-                    analysis. We use data both to inform our product decisions,
-                    as well as incorporating data into the DNA of our products.
-                  </p>
-                </div>
-              </div>
-
-              <div class="callout-section-item my-4 lg:w-1/3">
-                <div>
-                  <h4 class="text-lg leading-tight mb-4 text-stone-300 font-bold">
-                    <UIcon name="i-fa6-solid-hammer" />
-                    Willing to bleed
-                  </h4>
-                  <p class="pr-8">
-                    Part of being on the cutting edge is being willing to take
-                    risks. We're not afraid to try new things, explore uncharted
-                    territory, and push the boundaries of what's possible.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <div class="callout-section my-24 px-12 text-2xl lg:text-6xl text-balance backdrop-blur-sm md:flex"
           ref="sayHello">
@@ -185,7 +187,8 @@
                 Fancy a chat about creative puzzles or technological wonders? Our team at Room 302 Studio is all ears!
                 Email us at <a href="mailto:studio@room302.studio"
                   class="font-bold text-primary-500 underline transition-colors duration-200 dark:hover:text-primary-700">
-                  <span class="">studio</span><span class="">@room302.studio</span></a>, and while you're here, subscribe
+                  <span class="">studio</span><span class="">@room302.studio</span></a>, and while you're here,
+                subscribe
                 to our newsletter for your regular dose of inspiration.
 
               </p>
