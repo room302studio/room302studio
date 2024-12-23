@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "our-work/client-work/apnews-2024.md",
+                "file": "blog/discord-community.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "apnews-2024"
+              "title": "discord-community"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "our-work/client-work/apnews-2024.md",
+                "file": "blog/discord-community.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for apnews-2024"
+              "title": "Backlinks for discord-community"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "our-work/client-work/apnews-2024.md",
+                "file": "blog/discord-community.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from apnews-2024"
+              "title": "Outgoing links from discord-community"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "our-work/client-work/apnews-2024.md"
+                "file": "blog/discord-community.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of apnews-2024"
+              "title": "Outline of discord-community"
             }
           }
         ]
@@ -164,7 +164,13 @@
   },
   "active": "03ac7a8e97ef60aa",
   "lastOpenFiles": [
-    "our-work/client-work/coralreefs.md",
-    "our-work/client-work/apnews-2024.md"
+    "blog/state-of-the-studio-2024.md",
+    "blog/discord-community.md",
+    "our-work/internal/coachartie.md",
+    "our-work/internal/issuebuilder.md",
+    "blog/how-to-give-credit.md",
+    "our-work/internal/Untitled.md",
+    "our-work/client-work/apnews-2024.md",
+    "our-work/client-work/coralreefs.md"
   ]
 }
