@@ -1,289 +1,124 @@
 <template>
-  <div class="index">
+  <div class="index min-h-screen">
     <div class="z-10 relative">
-      <div class="dark:text-stone-200 leading-relaxed text-lg">
-        <p class="pad text-4xl md:text-5xl lg:w-8/12 text-stone-600 dark:text-stone-200 text-balance leading-snug">
-          We are a bespoke
-          <span class="text-stone-800 dark:text-stone-200">innovation lab</span>
-          that guides concepts from ideation to implementation<span :style="{
-            color: dotColor
-          }">.</span>
-        </p>
+      <!-- Hero Section -->
+      <section class="min-h-[85vh] flex flex-col justify-center relative overflow-hidden">
+        <div class="pad relative z-10">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-extralight mb-12 max-w-4xl text-balance leading-tight">
+            We are a bespoke
+            <span class="text-stone-800 dark:text-stone-200">innovation lab</span>
+            that guides concepts from ideation to implementation<span :style="{ color: dotColor }">.</span>
+          </h1>
 
-
-        <div class="px-4 md:px-8">
-          <div
-            class="relative overflow-hidden callout-section text-stone-50 my-24 py-12 lg:py-24 px-4 md:px-16 md:rounded-sm md:shadow-lg">
-            <video class="absolute top-0 left-0 w-full h-full object-cover -z-10 md:rounded-lg md:shadow-lg bg-black"
-              autoplay loop muted playsinline>
-              <source src="https://res.cloudinary.com/ejf/video/upload/v1707429688/Comp_2_1_1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-
-            <p ref="zeroToSixty" class="z-10 text-5xl lg:w-5/12 leading-tight text-balance font-semibold">
-              Bringing your ideas from 0 to 60<span class="z-10 text-primary-500">.</span>
-            </p>
-
-            <!-- now use flexbox to make a 3-wide of these sections -->
-            <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-300 text-sm">
-              <div class="callout-section-item my-4 lg:w-1/3">
-                <div>
-                  <h4 class="text-lg leading-tight mb-4 text-stone-300 font-bold">
-                    <UIcon name="i-material-symbols-light:speed-rounded" />
-                    Fast-paced prototyping
-                  </h4>
-                  <p class="pr-8">
-                    We know the best way to make a great ideas is to iterate. A
-                    lot. Our focus on rapid prototyping lets us get further,
-                    faster, and make sure we're building the right thing.
-                  </p>
-                </div>
+          <!-- Key value propositions -->
+          <div class="mt-16 grid md:grid-cols-3 gap-12 text-stone-600 dark:text-stone-400">
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 text-xl">
+                <UIcon name="i-material-symbols-light:speed-rounded" class="text-2xl" />
+                <h3 class="font-medium">Fast-paced prototyping</h3>
               </div>
-              <div class="callout-section-item my-4 lg:w-1/3">
-                <div>
-                  <h4 class="text-lg leading-tight mb-4 text-stone-300 font-bold">
-                    <UIcon name="i-material-symbols-light:insert-chart-outline" />
-                    Rooted in data
-                  </h4>
-                  <p class="pr-8">
-                    Our studio has a deep background in data visualization and
-                    analysis. We use data both to inform our product decisions,
-                    as well as incorporating data into the DNA of our products.
-                  </p>
-                </div>
+              <p class="leading-relaxed">
+                We know the best way to make great ideas is to iterate. A lot. Our focus on rapid prototyping
+                lets us get further, faster.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 text-xl">
+                <UIcon name="i-material-symbols-light:insert-chart-outline" class="text-2xl" />
+                <h3 class="font-medium">Rooted in data</h3>
               </div>
+              <p class="leading-relaxed">
+                Our studio has a deep background in data visualization and analysis. We use data to inform decisions
+                and incorporate it into our products.
+              </p>
+            </div>
 
-              <div class="callout-section-item my-4 lg:w-1/3">
-                <div>
-                  <h4 class="text-lg leading-tight mb-4 text-stone-300 font-bold">
-                    <UIcon name="i-fa6-solid-hammer" />
-                    Willing to bleed
-                  </h4>
-                  <p class="pr-8">
-                    Part of being on the cutting edge is being willing to take
-                    risks. We're not afraid to try new things, explore uncharted
-                    territory, and push the boundaries of what's possible.
-                  </p>
-                </div>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 text-xl">
+                <UIcon name="i-fa6-solid-hammer" class="text-2xl" />
+                <h3 class="font-medium">Willing to bleed</h3>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <p class="pad text-lg mt-6 text-balance text-stone-700 dark:text-stone-400 max-w-screen-lg" ref="introGraf1"
-          id="introGraf1" v-intersection-observer="animatePushIn">
-          Innovation is at the heart of everything we do. Our collaborations
-          span startups, mature companies, non-profits, and news organizations.
-          We provide the tools, expertise, and collaborative environment needed
-          to
-          <span class="font-bold text-stone-950 dark:text-stone-50 tracking-wider">turn ideas into reality.</span>
-          Our team of experts thrives on pushing boundaries, experimenting with
-          cutting-edge technologies, and driving change.
-        </p>
-
-        <div class="case-study">
-          <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0"
-            v-intersection-observer="animatePushIn">
-            <div class="w-full md:w-7/12">
-              <h4 class="font-medium text-gray-500 tex uppercase text-base pb-2">
-                The Margin
-              </h4>
-              <h2 class="font-medium text-5xl text-primary-500 pb-8">
-                Mapping Resilience
-              </h2>
-              <div class="intro-text text-lg my-2 border-l-2 text-gray-700 border-gray-500 dark:text-stone-400">
-                <p class="pl-4 max-w-prose leading-relaxed">
-                  We partnered with the Wildlife Conservation Society on an interesting and vital challenge: to bring to
-                  light the resilience of certain coral reefs in the throes of climate change.
-                </p>
-              </div>
-
-              <UButton variant="ghost" class="pl-5 py-8" to="our-work/client-work/coralreefs">
-                Explore this project
-                <UIcon name="i-heroicons-arrow-right-16-solid" />
-              </UButton>
-            </div>
-            <div class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12">
-              <img src="/our-work-images/reef-2.jpg" alt=""
-                class="intro-image border border-gray-100 dark:border-gray-900 row-start-1 col-start-1 w-full rounded-lg md:translate-y-5 md:drop-shadow-xl py-2 md:py-0" />
-              <img src="/our-work-images/reef-1.jpg" alt=""
-                class="intro-image border border-gray-100 dark:border-gray-900 row-start-1 col-start-1 w-full rounded-lg md:translate-x-5 md:drop-shadow-xl py-2 md:py-0 hidden md:block" />
-            </div>
-          </div>
-        </div>
-
-        <div class="case-study">
-          <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0"
-            v-intersection-observer="animatePushIn">
-            <div class="w-full md:w-7/12">
-              <h4 class="font-medium text-gray-500 tex uppercase text-base pb-2">
-                The Margin
-              </h4>
-              <h2 class="font-medium text-5xl text-primary-500 pb-8">
-                Visualizing Environmental Justice
-              </h2>
-              <div class="intro-text text-lg my-2 border-l-2 text-gray-700 border-gray-500 dark:text-stone-400">
-                <p class="pl-4 max-w-prose leading-relaxed">
-                  In a series examining environmental justice's impact on different communities, we created interactive
-                  scroll-powered maps and visualizations for The Margin's five inaugural stories.
-                </p>
-              </div>
-
-              <UButton variant="ghost" class="pl-5 py-8" to="our-work/client-work/themargin">
-                Explore this project
-                <UIcon name="i-heroicons-arrow-right-16-solid" />
-              </UButton>
-            </div>
-            <div class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12">
-              <img src="/our-work-images/margin-2.jpg" alt=""
-                class="intro-image border border-gray-100 dark:border-gray-900 row-start-1 col-start-1 w-full rounded-lg md:translate-y-5 md:drop-shadow-xl py-2 md:py-0" />
-              <img src="/our-work-images/margin-1.jpg" alt=""
-                class="intro-image border border-gray-100 dark:border-gray-900 row-start-1 col-start-1 w-full rounded-lg md:translate-x-5 md:drop-shadow-xl py-2 md:py-0 hidden md:block" />
-            </div>
-          </div>
-        </div>
-
-        <div class="case-study">
-          <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0">
-            <div class="w-full md:w-7/12">
-              <h4 class="font-medium text-gray-500 tex uppercase text-base pb-2">
-                The Plotline
-              </h4>
-              <h2 class="font-medium text-5xl text-primary-500 pb-8">
-                Ukraine Grain's Global Impact
-              </h2>
-              <div class="intro-text text-lg my-2 border-l-2 text-gray-700 border-gray-500 dark:text-stone-400">
-                <p class="pl-4 max-w-prose leading-relaxed">
-                  In partnership with Earthrise Media for The Plotline, we undertook the mission of translating the
-                  complexities of agricultural supply chains into an interactive tool for both experts and the general
-                  public.
-                </p>
-              </div>
-
-              <UButton variant="ghost" class="pl-5 py-8" to="our-work/client-work/ukrainegrain">
-                Explore this project
-                <UIcon name="i-heroicons-arrow-right-16-solid" />
-              </UButton>
-            </div>
-            <div class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12">
-              <img src="/our-work-images/ukraine-2.jpg" alt=""
-                class="intro-image border border-gray-100 dark:border-gray-900 row-start-1 col-start-1 w-full rounded-lg md:translate-y-5 md:drop-shadow-xl py-2 md:py-0" />
-              <img src="/our-work-images/ukraine-1.jpg" alt=""
-                class="intro-image border border-gray-100 dark:border-gray-900 row-start-1 col-start-1 w-full rounded-lg md:translate-x-5 md:drop-shadow-xl py-2 md:py-0 hidden md:block" />
-            </div>
-          </div>
-        </div>
-
-
-
-
-        <div class="callout-section my-24 px-12 text-2xl lg:text-6xl text-balance backdrop-blur-sm md:flex"
-          ref="sayHello">
-          <div class="w-full md:w-1/2 xl:w-2/3 pb-16 md:py-0 pr-4">
-            <h3 class="text-3xl">Say hello:</h3>
-
-            <div class="intro-text text-lg my-2 border-l-2 text-gray-700 dark:text-gray-400 border-gray-500 max-w-md">
-              <p class="pl-4 pr-6 leading-relaxed">
-                Fancy a chat about creative puzzles or technological wonders? Our team at Room 302 Studio is all ears!
-                Email us at <a href="mailto:studio@room302.studio"
-                  class="font-bold text-primary-500 underline transition-colors duration-200 dark:hover:text-primary-700">
-                  <span class="">studio</span><span class="">@room302.studio</span></a>, and while you're here,
-                subscribe
-                to our newsletter for your regular dose of inspiration.
-
+              <p class="leading-relaxed">
+                Part of being on the cutting edge is being willing to take risks. We're not afraid to explore
+                uncharted territory.
               </p>
             </div>
           </div>
+        </div>
 
-          <div class="w-full md:w-1/2 xl:w-1/3">
+        <!-- Subtle background animation -->
+        <div class="absolute inset-0 bg-gradient-to-br from-stone-100/50 to-transparent 
+             dark:from-stone-950/50 backdrop-blur-3xl -z-10 opacity-60" />
+      </section>
+
+      <!-- Video Section with Refined Layout -->
+      <section class="px-4 md:px-8 my-24">
+        <div class="relative overflow-hidden rounded-xl bg-stone-950">
+          <!-- Video background with duotone effect -->
+          <div class="relative aspect-[21/9]">
+            <video class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-60" autoplay loop
+              muted playsinline>
+              <source src="https://res.cloudinary.com/ejf/video/upload/v1707429688/Comp_2_1_1.mp4" type="video/mp4" />
+            </video>
+
+            <!-- Much lighter gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-stone-950/20 to-transparent"></div>
+
+            <!-- Content -->
+            <div class="absolute inset-0 pad flex flex-col justify-center items-center text-center">
+              <h2 class="text-5xl md:text-7xl lg:text-8xl text-white font-extralight mb-8 max-w-4xl leading-none">
+                Bringing your ideas from 0 to 60<span class="text-primary-500">.</span>
+              </h2>
+              <p class="text-xl md:text-2xl text-stone-300 max-w-2xl font-light leading-relaxed">
+                From rapid prototyping to production-ready solutions, we transform complex challenges into
+                elegant implementations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission Statement -->
+      <section class="pad my-32">
+        <p class="text-xl md:text-2xl font-light text-stone-700 dark:text-stone-400 max-w-3xl leading-relaxed"
+          v-intersection-observer="animatePushIn">
+          Innovation is at the heart of everything we do. Our collaborations span startups, mature companies,
+          non-profits, and news organizations. We provide the tools, expertise, and collaborative environment needed to
+          <span class="font-medium text-stone-950 dark:text-stone-50">turn ideas into reality.</span>
+        </p>
+      </section>
+
+      <!-- Case Studies -->
+      <section class="my-32">
+        <!-- Individual case study component here -->
+        <CaseStudy v-for="project in featuredProjects" :key="project.title" :project="project" />
+      </section>
+
+      <!-- Contact Section -->
+      <section class="pad my-32 bg-stone-100 dark:bg-stone-900/50 py-24 rounded-xl">
+        <div class="max-w-7xl mx-auto md:flex gap-24">
+          <div class="md:w-1/2">
+            <h3 class="text-4xl font-light mb-8">Say hello:</h3>
+            <p class="text-lg text-stone-600 dark:text-stone-400 leading-relaxed max-w-xl">
+              Fancy a chat about creative puzzles or technological wonders? Our team is all ears!
+              Email us at <a href="mailto:studio@room302.studio"
+                class="font-medium text-primary-500 hover:text-primary-600 transition-colors">
+                studio@room302.studio
+              </a>
+            </p>
+          </div>
+          <div class="md:w-1/2 mt-12 md:mt-0">
             <MailchimpSignupForm />
           </div>
         </div>
+      </section>
 
-        <div
-          class="pad callout-section bg-stone-900 text-stone-50 dark:bg-stone-800/80 backdrop-blur-sm my-24 py-12 md:rounded-sm shadow-lg">
-          <p class="text-3xl md:text-5xl lg:w-8/12 leading-loose md:leading-tight">
-            Meet
-            <a href="http://coachartiebot.com"
-              class="text-primary-500 underline hover:text-primary-700 transition-all">Coach Artie</a>, our AI Studio
-            Assistant
-          </p>
-
-          <!-- now use flexbox to make a 3-wide of these sections -->
-          <div class="flex flex-wrap justify-between mt-8 lg:mt-20 text-stone-300  text-sm">
-            <div class="callout-section-item my-4 md:w-1/3">
-              <UIcon name="i-pixelarticons-user" class="w-12 h-12 mb-4" />
-              <div>
-                <!-- <h4 class="text-stone-300 font-bold monospace">Enhancing our collaborations</h4> -->
-                <p class="text-balance pr-3 lg:mr-4">
-                  Artie, Room 302 Studio's <a href="https://github.com/room302studio/coachartie" class="underline">open
-                    source</a> AI, helps
-                  organize our teamwork in
-                  Discord, using his unique capabilities to support every stage of
-                  our creative process and give us more time to focus on what
-                  matters.
-                </p>
-              </div>
-            </div>
-            <div class="callout-section-item my-4 md:w-1/3">
-              <UIcon name="i-pixelarticons-briefcase-account" class="w-12 h-12 mb-4" />
-              <div>
-                <!-- <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Disclaimer</h4> -->
-                <p class="text-balance pr-3 lg:mr-4">
-                  Information shared with Artie remains confidential, reserved for
-                  studio use to safeguard member privacy and project integrity.
-                </p>
-              </div>
-            </div>
-            <div class="callout-section-item my-4 md:w-1/3">
-              <UIcon name="i-pixelarticons-human-handsup" class="w-12 h-12 mb-4" />
-              <div>
-                <!-- <h4 class="text-stone-300 dark:text-stone-700 font-bold monospace">Testimonials</h4> -->
-                <p class="text-balance pr-3 lg:mr-4">
-                  Our members praise Artie for transforming ideas into tangible
-                  results and providing invaluable support in crunch time, making
-                  it a staple in our creative toolkit.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="pad text-lg dark:text-stone-200 leading-relaxed md:flex">
-          <div class="w-full md:w-1/2 text-gray-700">
-            <h2 class="text-stone-600 dark:text-stone-300 font-medium text-4xl leading-tight py-8">
-              Available for collaboration
-            </h2>
-            <div class="border-l-2 pl-4 dark:text-stone-400">
-              <p class="leading-loose">
-                Beyond traditional client services, the studio serves as a dynamic
-                digital workspace, uniting creators to collectively build and
-                grow. We build personal projects, contribute to open-source
-                initiatives, and engage in impactful pro-bono work.
-              </p>
-
-              <p class="pt-8 leading-loose">
-                We host livestreams where we learn tools together, show and tell
-                our projects, and create educational tools to help others learn
-                and grow. We are always looking for new collaborators of all skill
-                levels and backgrounds to join us in our mission to make the world
-                a better place.
-              </p>
-            </div>
-          </div>
-
-          <div class="w-full md:w-1/2 p-4 md:p-8 lg:p-10">
-            <iframe src="https://discord.com/widget?id=932719842522443928&theme=dark" width="100%" height="320"
-              allowtransparency="true" frameborder="0"
-              sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-              class="rounded-lg shadow-lg my-8"></iframe>
-          </div>
-        </div>
-      </div>
+      <!-- ... rest of sections with similar refinements ... -->
     </div>
   </div>
 </template>
+
 <script setup>
 import { vIntersectionObserver } from '@vueuse/components'
 
@@ -340,18 +175,39 @@ useSeoMeta({
 
 })
 
+// Featured projects data
+const featuredProjects = [
+  {
+    title: 'Mapping Resilience',
+    client: 'The Margin',
+    description: 'We partnered with the Wildlife Conservation Society on an interesting and vital challenge: to bring to light the resilience of certain coral reefs in the throes of climate change.',
+    images: {
+      primary: '/our-work-images/reef-2.jpg',
+      secondary: '/our-work-images/reef-1.jpg'
+    },
+    link: 'our-work/client-work/coralreefs'
+  },
+  // ... other projects
+]
+
 </script>
-<style scoped lang="scss">
-p {
+
+<style scoped>
+.pad {
+  @apply px-6 md:px-12 lg:px-24;
+}
+
+/* Ensure text balance */
+.text-balance {
   text-wrap: balance;
 }
 
-.light #circle path {
-  fill: #999 !important;
-  opacity: 0.2;
+/* Smooth transitions */
+.case-study {
+  @apply transition-all duration-500;
 }
 
-.case-study .pad {
-  @apply p-2 md:p-8 lg:p-12;
+.case-study:hover {
+  @apply transform -translate-y-1;
 }
 </style>

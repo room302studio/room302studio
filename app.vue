@@ -90,4 +90,33 @@ body {
   /* transform: translate3d(0, -100%, 0); */
   /* transform: translate3d(5, 0, 0) skewX(15deg); */
 }
+
+/* Global transition classes */
+.fade-move,
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.fade-leave-active {
+  position: absolute;
+}
+
+/* Smooth page transitions */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.5s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
 </style>
