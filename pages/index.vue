@@ -2,44 +2,45 @@
   <div class="index min-h-screen">
     <div class="z-10 relative">
       <!-- Hero Section -->
-      <section class="min-h-[85vh] flex flex-col justify-center relative overflow-hidden">
+      <section class="min-h-[75vh] md:min-h-[85vh] flex flex-col justify-center relative overflow-hidden">
         <div class="pad relative z-10">
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-extralight mb-12 max-w-4xl text-balance leading-tight">
+          <h1
+            class="text-4xl md:text-6xl lg:text-7xl font-extralight mb-8 md:mb-12 max-w-4xl text-balance leading-tight">
             We are a bespoke
             <span class="text-stone-800 dark:text-stone-200">innovation lab</span>
             that guides concepts from ideation to implementation<span :style="{ color: dotColor }">.</span>
           </h1>
 
           <!-- Key value propositions -->
-          <div class="mt-16 grid md:grid-cols-3 gap-12 text-stone-600 dark:text-stone-400">
-            <div class="space-y-4">
-              <div class="flex items-center gap-3 text-xl">
-                <UIcon name="i-material-symbols-light:speed-rounded" class="text-2xl" />
+          <div class="mt-8 md:mt-16 grid md:grid-cols-3 gap-8 md:gap-12 text-stone-600 dark:text-stone-400">
+            <div class="space-y-3 md:space-y-4">
+              <div class="flex items-center gap-3 text-lg md:text-xl">
+                <UIcon name="i-material-symbols-light:speed-rounded" class="text-xl md:text-2xl" />
                 <h3 class="font-medium">Fast-paced prototyping</h3>
               </div>
-              <p class="leading-relaxed">
+              <p class="leading-relaxed text-sm md:text-base">
                 We know the best way to make great ideas is to iterate. A lot. Our focus on rapid prototyping
                 lets us get further, faster.
               </p>
             </div>
 
-            <div class="space-y-4">
-              <div class="flex items-center gap-3 text-xl">
-                <UIcon name="i-material-symbols-light:insert-chart-outline" class="text-2xl" />
+            <div class="space-y-3 md:space-y-4">
+              <div class="flex items-center gap-3 text-lg md:text-xl">
+                <UIcon name="i-material-symbols-light:insert-chart-outline" class="text-xl md:text-2xl" />
                 <h3 class="font-medium">Rooted in data</h3>
               </div>
-              <p class="leading-relaxed">
+              <p class="leading-relaxed text-sm md:text-base">
                 Our studio has a deep background in data visualization and analysis. We use data to inform decisions
                 and incorporate it into our products.
               </p>
             </div>
 
-            <div class="space-y-4">
-              <div class="flex items-center gap-3 text-xl">
-                <UIcon name="i-fa6-solid-hammer" class="text-2xl" />
+            <div class="space-y-3 md:space-y-4">
+              <div class="flex items-center gap-3 text-lg md:text-xl">
+                <UIcon name="i-fa6-solid-hammer" class="text-xl md:text-2xl" />
                 <h3 class="font-medium">Willing to bleed</h3>
               </div>
-              <p class="leading-relaxed">
+              <p class="leading-relaxed text-sm md:text-base">
                 Part of being on the cutting edge is being willing to take risks. We're not afraid to explore
                 uncharted territory.
               </p>
@@ -53,10 +54,10 @@
       </section>
 
       <!-- Video Section with Refined Layout -->
-      <section class="px-4 md:px-8 my-24">
+      <section class="px-4 md:px-8 my-12 md:my-24">
         <div class="relative overflow-hidden rounded-xl bg-stone-950">
           <!-- Video background with duotone effect -->
-          <div class="relative aspect-[21/9]">
+          <div class="relative aspect-[16/9] md:aspect-[21/9]">
             <video class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-60" autoplay loop
               muted playsinline>
               <source src="https://res.cloudinary.com/ejf/video/upload/v1707429688/Comp_2_1_1.mp4" type="video/mp4" />
@@ -67,10 +68,11 @@
 
             <!-- Content -->
             <div class="absolute inset-0 pad flex flex-col justify-center items-center text-center">
-              <h2 class="text-5xl md:text-7xl lg:text-8xl text-white font-extralight mb-8 max-w-4xl leading-none">
+              <h2
+                class="text-4xl md:text-7xl lg:text-8xl text-white font-extralight mb-4 md:mb-8 max-w-4xl leading-none">
                 Bringing your ideas from 0 to 60<span class="text-primary-500">.</span>
               </h2>
-              <p class="text-xl md:text-2xl text-stone-300 max-w-2xl font-light leading-relaxed">
+              <p class="text-lg md:text-2xl text-stone-300 max-w-2xl font-light leading-relaxed px-4">
                 From rapid prototyping to production-ready solutions, we transform complex challenges into
                 elegant implementations.
               </p>
@@ -80,8 +82,8 @@
       </section>
 
       <!-- Mission Statement -->
-      <section class="pad my-32">
-        <p class="text-xl md:text-2xl font-light text-stone-700 dark:text-stone-400 max-w-3xl leading-relaxed"
+      <section class="pad my-16 md:my-32">
+        <p class="text-lg md:text-2xl font-light text-stone-700 dark:text-stone-400 max-w-3xl leading-relaxed"
           v-intersection-observer="animatePushIn">
           Innovation is at the heart of everything we do. Our collaborations span startups, mature companies,
           non-profits, and news organizations. We provide the tools, expertise, and collaborative environment needed to
@@ -96,11 +98,11 @@
       </section>
 
       <!-- Contact Section -->
-      <section class="pad my-32 bg-stone-100 dark:bg-stone-900/50 py-24 rounded-xl">
-        <div class="max-w-7xl mx-auto md:flex gap-24">
-          <div class="md:w-1/2">
-            <h3 class="text-4xl font-light mb-8">Say hello:</h3>
-            <p class="text-lg text-stone-600 dark:text-stone-400 leading-relaxed max-w-xl">
+      <section class="pad my-16 md:my-32 bg-stone-100 dark:bg-stone-900/50 py-12 md:py-24 rounded-xl">
+        <div class="max-w-7xl mx-auto md:flex gap-12 md:gap-24">
+          <div class="md:w-1/2 mb-8 md:mb-0">
+            <h3 class="text-3xl md:text-4xl font-light mb-4 md:mb-8">Say hello:</h3>
+            <p class="text-base md:text-lg text-stone-600 dark:text-stone-400 leading-relaxed max-w-xl">
               Fancy a chat about creative puzzles or technological wonders? Our team is all ears!
               Email us at <a href="mailto:studio@room302.studio"
                 class="font-medium text-primary-500 hover:text-primary-600 transition-colors">
@@ -108,7 +110,7 @@
               </a>
             </p>
           </div>
-          <div class="md:w-1/2 mt-12 md:mt-0">
+          <div class="md:w-1/2">
             <MailchimpSignupForm />
           </div>
         </div>

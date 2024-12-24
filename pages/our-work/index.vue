@@ -1,12 +1,12 @@
 <template>
   <div class="min-h-screen relative">
     <!-- Hero section with subtle animation -->
-    <section class="py-32 relative overflow-hidden">
+    <section class="py-16 md:py-32 relative overflow-hidden">
       <div class="pad relative z-10">
-        <h1 class="text-8xl font-extralight mb-12 tracking-tight">
+        <h1 class="text-6xl md:text-8xl font-extralight mb-8 md:mb-12 tracking-tight">
           Our Work
         </h1>
-        <p class="text-xl font-light max-w-2xl leading-relaxed text-balance relative">
+        <p class="text-lg md:text-xl font-light max-w-2xl leading-relaxed text-balance relative">
           At Room 302 Studio, our work is all about innovation with impact. Whether
           we're collaborating with mission-driven clients or building our own
           open-source platforms, each project is a step towards a better future.
@@ -19,31 +19,30 @@
     </section>
 
     <!-- Client Work Section -->
-    <section class="pad py-24 relative">
-      <h2 class="text-5xl font-extralight mb-16">Client Work</h2>
+    <section class="pad py-12 md:py-24 relative">
+      <h2 class="text-4xl md:text-5xl font-extralight mb-8 md:mb-16">Client Work</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
         <div v-for="project in clientWork" :key="project.title" class="group relative">
-          <NuxtLink :to="project._path" class="block relative rounded-xl overflow-hidden transform 
-                          transition-all duration-500 hover:scale-[1.02]" :custom-key="project._path">
-            <!-- Project Image with transition preparation -->
-            <div class="aspect-[4/3] relative" :key="`image-${project._path}`">
+          <NuxtLink :to="project._path" class="block relative rounded-lg md:rounded-xl overflow-hidden transform 
+                          transition-all duration-500 hover:scale-[1.02]">
+            <!-- Project Image -->
+            <div class="aspect-[3/2] md:aspect-[4/3] relative">
               <img :src="project.image" :alt="project.title"
                 class="object-cover w-full h-full transition-transform duration-500" />
               <div class="absolute inset-0 bg-gradient-to-t 
-                          from-black/90 via-black/50 to-transparent
-                          transition-opacity duration-500" />
+                          from-black/90 via-black/50 to-transparent" />
             </div>
 
-            <!-- Project Info with fade transition prep -->
-            <div class="absolute bottom-0 left-0 right-0 p-8 transition-all duration-500">
-              <h3 class="text-2xl font-light text-white mb-2 drop-shadow-lg">
+            <!-- Project Info -->
+            <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+              <h3 class="text-xl md:text-2xl font-light text-white mb-2 drop-shadow-lg">
                 {{ project.title }}
               </h3>
-              <p class="text-sm text-white/90 font-light mb-1 drop-shadow-md tracking-wide">
+              <p class="text-xs md:text-sm text-white/90 font-light mb-1 drop-shadow-md tracking-wide">
                 {{ project.client }}
               </p>
-              <p class="text-sm text-white/80 font-light drop-shadow-md tracking-wide">
+              <p class="text-xs md:text-sm text-white/80 font-light drop-shadow-md tracking-wide">
                 {{ project.role }}
               </p>
             </div>
@@ -53,11 +52,11 @@
     </section>
 
     <!-- Internal Projects Section -->
-    <section class="pad py-24 relative bg-stone-100 dark:bg-stone-900/50">
-      <h2 class="text-5xl font-extralight mb-16">Internal Projects</h2>
+    <section class="pad py-12 md:py-24 relative bg-stone-100 dark:bg-stone-900/50">
+      <h2 class="text-4xl md:text-5xl font-extralight mb-8 md:mb-16">Internal Projects</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-        <div v-for="project in internalWork" :key="project.title" class="group relative bg-white dark:bg-stone-800 rounded-xl p-8
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+        <div v-for="project in internalWork" :key="project.title" class="group relative bg-white dark:bg-stone-800 rounded-lg md:rounded-xl p-6 md:p-8
                     transform transition-all duration-500 hover:scale-[1.02]
                     hover:shadow-2xl hover:shadow-stone-950/10">
           <NuxtLink :to="project._path" class="block">
