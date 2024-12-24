@@ -1,88 +1,106 @@
 <template>
-  <div class="min-h-screen pad">
-    <!-- some paragraphs explaining the difference between our internal and client work -->
-    <h1 class="text-6xl font-light mb-8">Our Work</h1>
-    <p class="text-lg mt-6 max-w-lg text-balance">
-      At Room 302 Studio, our work is all about innovation with impact. Whether
-      we're collaborating with mission-driven clients or building our own
-      open-source platforms, each project is a step towards a better future. Our
-      portfolio spans environmental activism to artificial intelligence, all
-      crafted with passion and purpose– and this is just the stuff we are
-      allowed to show you.
-    </p>
-
-    <!-- Filter buttons for categories -->
-    <!-- <section class="flex justify-end mt-8">
-      <div v-for="category in categories" :key="category.slug" class="inline-block mr-4">
-        <span @click="filterWorkTo(category.slug)" class="mt-4 py-2 px-4 bg-zinc-100 rounded-lg font-light"
-          :color="activeWorkFilter === category.slug ? 'orange' : 'gray'" variant="solid">
-          {{ category.name }}
-        </span>
+  <div class="min-h-screen relative">
+    <!-- Hero section with subtle animation -->
+    <section class="py-32 relative overflow-hidden">
+      <div class="pad relative z-10">
+        <h1 class="text-8xl font-extralight mb-12 tracking-tight">
+          Our Work
+        </h1>
+        <p class="text-xl font-light max-w-2xl leading-relaxed text-balance relative">
+          At Room 302 Studio, our work is all about innovation with impact. Whether
+          we're collaborating with mission-driven clients or building our own
+          open-source platforms, each project is a step towards a better future.
+          <span class="text-stone-500">This is just the stuff we are allowed to show you.</span>
+        </p>
       </div>
-    </section> -->
+      <!-- Ambient background element -->
+      <div class="absolute inset-0 bg-gradient-to-br from-stone-100/50 to-transparent dark:from-stone-950/50 
+           backdrop-blur-3xl -z-10 opacity-60" />
+    </section>
 
-    <section class="my-12 lg:my-24">
-      <h2 class="text-4xl my-8">Client Work</h2>
-      <div class="projects text-sm leading-tight grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-32">
-        <div v-for="project in clientWork" :key="project.title" :project="project" @click="navigateTo(project._path)"
-          class="hover:shadow-lg transition-all flex rounded-lg bg-stone-100 dark:bg-stone-900">
-          <div class="flex-1 min-w-24">
-            <!-- Assuming you have an image url 'backgroundUrl' -->
-            <div class="h-full bg-cover bg-center" :style="{ backgroundImage: `url(${project.image})` }"></div>
-          </div>
+    <!-- Client Work Section -->
+    <section class="pad py-24 relative">
+      <h2 class="text-5xl font-extralight mb-16">Client Work</h2>
 
-          <div class="flex-1 flex p-4 justify-between flex-col">
-            <NuxtLink :to="project._path"
-              class="text-lg font-normal tracking-wide leading-tight text-stone-700 dark:text-stone-300 flex-1">
-              {{ project.title }}
-            </NuxtLink>
-            <p class="text-xs text-stone-800 dark:text-stone-200 tracking-wider font-semibold my-1">
-              {{ project.client }}
-            </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div v-for="project in clientWork" :key="project.title" class="group relative">
+          <NuxtLink :to="project._path" class="block relative rounded-xl overflow-hidden transform 
+                          transition-all duration-500 hover:scale-[1.02]" :custom-key="project._path">
+            <!-- Project Image with transition preparation -->
+            <div class="aspect-[4/3] relative" :key="`image-${project._path}`">
+              <img :src="project.image" :alt="project.title"
+                class="object-cover w-full h-full transition-transform duration-500" />
+              <div class="absolute inset-0 bg-gradient-to-t 
+                          from-black/90 via-black/50 to-transparent
+                          transition-opacity duration-500" />
+            </div>
 
-            <p class="text-xs text-stone-500 leading-normal font-light">
-              {{ project.role }}
-            </p>
-          </div>
+            <!-- Project Info with fade transition prep -->
+            <div class="absolute bottom-0 left-0 right-0 p-8 transition-all duration-500">
+              <h3 class="text-2xl font-light text-white mb-2 drop-shadow-lg">
+                {{ project.title }}
+              </h3>
+              <p class="text-sm text-white/90 font-light mb-1 drop-shadow-md tracking-wide">
+                {{ project.client }}
+              </p>
+              <p class="text-sm text-white/80 font-light drop-shadow-md tracking-wide">
+                {{ project.role }}
+              </p>
+            </div>
+          </NuxtLink>
         </div>
       </div>
     </section>
 
-    <section class="mt-24 lg:mt-36">
-      <h2 class="text-4xl my-8">Internal Projects</h2>
-      <div class="projects text-sm leading-tight grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 min-h-32">
-        <div v-for="project in internalWork" :key="project.title" :project="project"
-          class="hover:shadow-lg transition-all flex rounded-lg bg-stone-100 dark:bg-stone-900">
-          <div class="flex-1 min-w-24">
-            <!-- Assuming you have an image url 'backgroundUrl' -->
-            <div class="h-full bg-cover bg-center" :style="{ backgroundImage: `url(${project.image})` }"></div>
-          </div>
+    <!-- Internal Projects Section -->
+    <section class="pad py-24 relative bg-stone-100 dark:bg-stone-900/50">
+      <h2 class="text-5xl font-extralight mb-16">Internal Projects</h2>
 
-          <div class="flex-1 p-4">
-            <NuxtLink :to="project._path"
-              class="text-lg font-bold tracking-wide leading-tight text-stone-800 dark:text-stone-200">
-              {{ project.title }}
-            </NuxtLink>
-            <p class="text-sm text-stone-600 dark:text-stone-400 leading-normal">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div v-for="project in internalWork" :key="project.title" class="group relative bg-white dark:bg-stone-800 rounded-xl p-8
+                    transform transition-all duration-500 hover:scale-[1.02]
+                    hover:shadow-2xl hover:shadow-stone-950/10">
+          <NuxtLink :to="project._path" class="block">
+            <!-- Image container with fallback -->
+            <div v-if="project.image" class="aspect-[16/9] mb-6 overflow-hidden rounded-lg">
+              <img :src="project.image" :alt="project.title" class="object-cover w-full h-full" />
+            </div>
+
+            <!-- Fallback design when no image -->
+            <div v-else
+              class="aspect-[16/9] mb-6 rounded-lg bg-gradient-to-br 
+                        from-stone-200 to-stone-100 dark:from-stone-700 dark:to-stone-800
+                        flex items-center justify-center overflow-hidden group-hover:scale-[1.02] transition-transform">
+              <div class="relative w-full h-full p-8 flex items-center justify-center">
+                <!-- Abstract decorative elements -->
+                <div class="absolute inset-0 opacity-10">
+                  <div
+                    class="absolute top-0 left-0 w-32 h-32 rounded-full bg-current transform -translate-x-16 -translate-y-16">
+                  </div>
+                  <div
+                    class="absolute bottom-0 right-0 w-48 h-48 rounded-full bg-current transform translate-x-24 translate-y-24">
+                  </div>
+                </div>
+
+                <!-- Project type or category indicator -->
+                <span class="text-sm uppercase tracking-wider text-stone-600 dark:text-stone-400 font-light">
+                  {{ project.type || 'Internal Project' }}
+                </span>
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-light mb-3">{{ project.title }}</h3>
+            <p class="text-stone-600 dark:text-stone-400 text-sm leading-relaxed mb-6">
               {{ project.description }}
             </p>
 
-            <UButton :to="project._path" class="mt-4" color="gray">
-              View Project
-            </UBUtton>
-          </div>
+            <UButton color="gray" variant="ghost" class="group-hover:translate-x-2 transition-transform">
+              View Project →
+            </UButton>
+          </NuxtLink>
         </div>
       </div>
     </section>
-
-    <!-- <section>
-      <h2 class="text-4xl my-8">Client Work</h2>
-      <UCard v-for="post in clientWork" :key="post.slug" :post="post" class="mb-6" v-show="post._path !== '/client-work'">
-        <NuxtLink :to="post._path">
-          <h1>{{ post.title }}</h1>
-        </NuxtLink>
-      </UCard>
-    </section> -->
   </div>
 </template>
 
@@ -133,6 +151,7 @@ watch(activeWorkFilter, (newVal) => {
 // use the default layout
 definePageMeta({
   layout: "default",
+  scrollToTop: true
 });
 
 const { data: clientWork } = await useAsyncData(
@@ -145,3 +164,9 @@ const { data: internalWork } = await useAsyncData(
   () => queryContent("our-work/internal").find(),
 );
 </script>
+
+<style scoped>
+.pad {
+  @apply px-6 md:px-12 lg:px-24;
+}
+</style>
