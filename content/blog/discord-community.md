@@ -6,6 +6,7 @@ authorEmail: ejfox@room302.studio
 ---
 # Room 302 Studio Discord Community Structure
 
+
 ## Access Levels
 
 ### Public Access (Guest Role)

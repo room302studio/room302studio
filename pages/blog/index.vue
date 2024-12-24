@@ -1,54 +1,52 @@
 <template>
-  <main class="pt-16 p-4">
-    <ContentQuery path="/blog/" :sort="{ date: -1 }" v-slot="{ data }">
-      <div class="md:flex">
-        <div v-for="article in data" :key="article._path" :class="[
-          article.hidden ? 'hidden' : '',
-          'my-4 lg:my-8 p-2 align-middle md:w-1/2 lg:w-1/3',
-        ]">
-          <div class="rounded-lg bg-zinc-100 min-h-64">
-            <ContentQuery :path="article._path" v-slot="{ data, toc }" find="one">
-              <div class="w-full cover h-32 bg-cover bg-center rounded" v-if="data.image" :style="{
-                'background-image': `url(${data.image})`,
-              }"></div>
-              <div class="p-8">
-                <div v-if="article.date" class="monospace text-zinc-400 text-xs">
-                  {{ formatDate(new Date(article.date)) }}
-                </div>
+  <main class="min-h-screen px-4 py-24 bg-white dark:bg-zinc-900">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="sr-only">Room 302 Studio Blog</h1>
 
+      <ContentQuery path="/blog/" :sort="{ date: -1 }" v-slot="{ data }">
+        <div class="space-y-16 md:space-y-24">
+          <div v-for="article in data" :key="article._path" :class="[article.hidden ? 'hidden' : '']">
+            <div class="group">
+              <ContentQuery :path="article._path" v-slot="{ data }" find="one">
+                <NuxtLink :to="article._path"
+                  class="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-xl">
+                  <div class="space-y-6">
+                    <div v-if="data.image"
+                      class="aspect-[21/9] w-full bg-cover bg-center rounded-xl ring-1 ring-inset ring-zinc-900/10 dark:ring-white/10 overflow-hidden">
+                      <div
+                        class="w-full h-full bg-cover bg-center transform transition duration-700 group-hover:scale-105"
+                        :style="{ 'background-image': `url(${data.image})` }">
+                      </div>
+                    </div>
 
+                    <div class="space-y-4">
+                      <h2
+                        class="text-2xl md:text-3xl font-bold tracking-tight text-zinc-900 dark:text-white group-hover:text-orange-500 dark:group-hover:text-orange-400 transition-colors duration-200">
+                        {{ article.title }}
+                      </h2>
 
-                <NuxtLink :to="article._path" style="overflow-wrap: break-word"
-                  class="pr-4 text-xl leading-tight font-semibold text-zinc-700">
-                  {{ article.title }}
+                      <div class="text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                        {{ data.description || ' ' }}
+                      </div>
+
+                      <div class="inline-flex items-center text-sm font-semibold text-orange-500 dark:text-orange-400">
+                        Read article
+                        <div
+                          class="i-heroicons-arrow-right-20-solid w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                      </div>
+                    </div>
+                  </div>
                 </NuxtLink>
-
-                <div v-if="article.author" class="text-zinc-600 text-xs">
-                  {{ article.author }}
-                </div>
-
-                <div class="text-zinc-600 text-sm font-light pt-4" v-if="data.description">
-                  {{ data.description }}
-                </div>
-
-                <UButton :to="article._path" class="mt-4" color="black">
-                  Read post
-                </UButton>
-              </div>
-            </ContentQuery>
+              </ContentQuery>
+            </div>
           </div>
         </div>
-      </div>
-    </ContentQuery>
+      </ContentQuery>
+    </div>
   </main>
 </template>
+
 <script setup lang="ts">
-// import { countPhotos, filterStrongTags } from '~/helpers'
-// import anime from "animejs/lib/anime.es.js";
-import { timeFormat } from "d3-time-format";
-
-const formatDate = timeFormat("%m.%d.%y");
-
 useHead({
   title: "Room 302 Studio Blog",
 })
@@ -64,4 +62,3 @@ useSeoMeta({
   twitterDescription: "Room 302 Studio Blog",
 })
 </script>
-<style></style>
