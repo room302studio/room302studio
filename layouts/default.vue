@@ -2,13 +2,14 @@
   <div class="">
     <!-- background texture image, full-width at the top of the page behind everything -->
 
-    <img :src="['/bg_texture.png']" alt="" class="absolute top-0 left-0 w-full -z-10 pointer-events-none dark:hidden" />
+    <img :src="['/bg_texture.png']" alt=""
+      class="absolute top-0 left-0 w-full -z-10 pointer-events-none dark:hidden opacity-40" />
 
     <div class="absolute -z-10 left-0 top-0 pointer-events-none">
-      <TresCanvas window-size alpha shadows class="pointer-events-none opacity-50"
+      <TresCanvas window-size alpha shadows class="pointer-events-none opacity-40 dark:opacity-80"
         style="pointer-events: none !important">
-        <TresPerspectiveCamera ref="cam" :position="[cameraPosition.x, cameraPosition.y, cameraPosition.z]" :fov="50"
-          :near="0.4" :far="1000" />
+        <TresPerspectiveCamera ref="cam" :position="[cameraPosition.x, cameraPosition.y, cameraPosition.z]"
+          :lookAt="[cameraTarget.x, cameraTarget.y, cameraTarget.z]" :fov="45" :near="0.4" :far="1000" />
 
         <!-- add some subtle ambient lights -->
         <!-- <TresAmbientLight :intensity="0.5" :position="[0, 0, 0]" /> -->
@@ -21,9 +22,9 @@
           sphereGroupRotation.y,
           sphereGroupRotation.z,
         ]">
-          <TresMesh v-for="sphere in spheres" :position="[sphere.x, sphere.y, sphere.z]">
+          <TresMesh v-for="sphere in spheres" :key="sphere.id" :position="[sphere.x, sphere.y, sphere.z]">
             <TresSphereGeometry :args="[sphere.size]" />
-            <TresMeshBasicMaterial :color="sphere.color" :opacity="0.5" />
+            <TresMeshBasicMaterial :color="sphere.color" :opacity="1" transparent={false} />
           </TresMesh>
         </TresGroup>
 
@@ -53,8 +54,13 @@ import {
   Pixelation,
   Vignette,
 } from "@tresjs/post-processing";
+import { useDark } from "@vueuse/core";
+import { useRoute } from "vue-router";
 
+const isDark = useDark();
+const pixelationAmount = ref(0);
 const cameraPosition = ref({ x: 0, y: 0, z: 1 });
+const cameraTarget = ref({ x: 0, y: 0, z: 0 });
 const cam = shallowRef(null);
 const sphereGroupRotation = ref({ x: 0, y: 0, z: 0 });
 const noise3D = createNoise3D();
@@ -62,37 +68,9 @@ const spheres = ref([]);
 const { onLoop } = useRenderLoop();
 const { y } = useWindowScroll();
 const { x: mouseX, y: mouseY } = useMouse();
-import { useRoute } from "vue-router";
 const route = useRoute();
 
-// Initialize spheres at 0,0,0
-const initSpheres = () => {
-  const numSpheres = 150; // Number of spheres to generate
-
-  for (let i = 0; i < numSpheres; i++) {
-
-    const color = Math.random() > 0.98 ? '#ff6600' : '#444'
-    // const color = "#999";
-
-    const { z: randomZ } = getRandom3DPosition(i);
-
-    // place the spheres in huge grid with the center at 0,0
-    const gridAmt = 25;
-    const gridPad = 0.5;
-    const gridOffset = (gridAmt * gridPad) / 2;
-    const x = 5 + (i % gridAmt) * gridPad - gridOffset;
-    const y = Math.floor(i / gridAmt) * gridPad - gridOffset + 8;
-    // const z = -20 + (i % gridAmt) * gridPad - gridOffset;
-    const z = randomZ
-    const size = 0.04;
-    // const size = Math.sqrt(z) * 5;
-
-    // spheres.value.push({ x: 0, y: 0, z: 0, size, color });
-    spheres.value.push({ x, y, z, size, color });
-  }
-};
-
-
+// Add the missing getRandom3DPosition function
 const getRandom3DPosition = (index) => {
   const multiplier = 50;
   const x = noise3D(Math.random(), Math.random(), index) * multiplier;
@@ -102,77 +80,276 @@ const getRandom3DPosition = (index) => {
   return { x, y, z };
 };
 
-let camAnimation;
-onMounted(() => {
-  initSpheres();
+// Simplified config
+const config = {
+  spheres: {
+    count: 720,
+    baseSize: 0.004,
+    variantSize: 0.015,
+    baseColor: '#333333',
+    darkModeBaseColor: '#888888',
+    accentColor: '#ff6600',
+    accentFrequency: 0.04,
+    gridSize: 40,
+    gridPadding: 0.5,
+  },
+  camera: {
+    default: { x: 0, y: 0, z: 2 }, // Safe default position
+    mouseInfluence: 0.0003
+  },
+  animation: {
+    durations: {
+      transition: 1000,
+      formation: 800,
+      mouseMove: 200,
+      scroll: 100
+    },
+    easings: {
+      transition: 'cubicBezier(0.4, 0, 0.2, 1)',
+      formation: 'cubicBezier(0.4, 0, 0.2, 1)',
+      mouseMove: 'cubicBezier(0.4, 0, 0.2, 1)',
+      scroll: 'cubicBezier(0.4, 0, 0.2, 1)',
+    },
+    scroll: {
+      sensitivity: 0.0001,
+      maxTilt: 0.1,
+      cameraLift: 0.05,
+      rotationFactor: 0.3
+    }
+  }
+}
 
-  camAnimation = createAnimatable(cameraPosition.value, {
-    x: 0,
-    y: 0,
-    z: 0,
-    duration: 3200,
-    ease: "out(10)",
+// Initialize spheres with dark mode awareness
+const initSpheres = () => {
+  const { gridSize, gridPadding } = config.spheres;
+  const gridOffset = (gridSize * gridPadding) / 2;
+
+  for (let i = 0; i < config.spheres.count; i++) {
+    const isAccent = Math.random() < config.spheres.accentFrequency;
+    const baseColor = isDark.value ? config.spheres.darkModeBaseColor : config.spheres.baseColor;
+    const color = isAccent ? config.spheres.accentColor : baseColor;
+
+    // More random initial positioning
+    const noise = getRandom3DPosition(i);
+    const x = ((i % gridSize) * gridPadding - gridOffset) + noise.x * 0.3;
+    const y = (Math.floor(i / gridSize) * gridPadding - gridOffset) + noise.y * 0.3;
+    const z = noise.z;
+
+    // Smaller size variation
+    const sizeVariation = noise3D(x, y, z) * config.spheres.variantSize;
+    const size = config.spheres.baseSize + (isAccent ? sizeVariation * 1.5 : sizeVariation);
+
+    spheres.value.push({
+      id: `sphere-${i}`,
+      x, y, z,
+      size,
+      color,
+      initialY: y,
+    });
+  }
+};
+
+// Add formation calculations
+const getFormation = (i, total, type = 'grid') => {
+  const t = i / total;
+
+  switch (type) {
+    case 'contact':
+      // Create a perfect square grid
+      const contactGridSize = Math.ceil(Math.sqrt(total));
+      const spacing = 0.15;
+      const row = Math.floor(i / contactGridSize);
+      const col = i % contactGridSize;
+      const offset = (contactGridSize * spacing) / 2;
+
+      // Add subtle wave motion based on position
+      const waveX = Math.sin(row * 0.5 + col * 0.3) * 0.02;
+      const waveY = Math.cos(col * 0.4 + row * 0.2) * 0.02;
+
+      return {
+        x: (col * spacing - offset) + waveX,
+        y: -(row * spacing - offset) + waveY,
+        z: 0.5 + Math.sin(row * col * 0.1) * 0.1 // Subtle depth variation
+      };
+
+    case 'circle':
+      // Create multiple rings with golden ratio spacing
+      const phi = (1 + Math.sqrt(5)) / 2;
+      const ringIndex = Math.floor(i / 50); // Groups of 50 spheres per ring
+      const ringRadius = 0.3 + (ringIndex * 0.2); // Increasing radius for each ring
+
+      // Spiral angle based on golden ratio
+      const angle = (i * phi * Math.PI * 2) % (Math.PI * 2);
+
+      // Add some vertical displacement using noise
+      const heightNoise = noise3D(Math.cos(angle), Math.sin(angle), ringIndex) * 0.2;
+
+      // Add subtle radial variation
+      const radiusNoise = noise3D(Math.sin(angle), Math.cos(angle), ringIndex) * 0.05;
+
+      return {
+        x: Math.cos(angle) * (ringRadius + radiusNoise),
+        y: Math.sin(angle) * (ringRadius + radiusNoise) + heightNoise,
+        z: -ringIndex * 0.1 + heightNoise // Gradual depth change
+      };
+
+    case 'grid':
+    default:
+      // Return to original grid position
+      const { gridSize, gridPadding } = config.spheres;
+      const gridOffset = (gridSize * gridPadding) / 2;
+      const noise = getRandom3DPosition(i);
+
+      return {
+        x: ((i % gridSize) * gridPadding - gridOffset) + noise.x * 0.3,
+        y: (Math.floor(i / gridSize) * gridPadding - gridOffset) + noise.y * 0.3,
+        z: noise.z
+      };
+  }
+};
+
+// Add subtle continuous animation
+const animateScene = () => {
+  spheres.value.forEach((sphere, i) => {
+    if (route.name === 'contact') {
+      // Subtle floating animation for contact grid
+      const row = Math.floor(i / Math.sqrt(spheres.value.length));
+      const col = i % Math.sqrt(spheres.value.length);
+
+      sphere.z += Math.sin(Date.now() * 0.001 + row * col * 0.1) * 0.0001;
+    }
+  });
+};
+
+// Enhanced route transition
+watch(route, (newRoute) => {
+  const { durations, easings } = config.animation;
+  let formation = 'grid';
+  if (newRoute.name === 'our-work') formation = 'circle';
+  if (newRoute.name === 'contact') formation = 'contact';
+
+  // Camera positions with subtle variations
+  const cameraZ = {
+    grid: 2,
+    circle: 3,
+    contact: 2.5 + Math.sin(Date.now() * 0.001) * 0.1
+  }[formation];
+
+  const cameraY = {
+    grid: 0,
+    circle: 0.5,
+    contact: 0.2
+  }[formation];
+
+  // Staggered sphere animations
+  spheres.value.forEach((sphere, i) => {
+    const position = getFormation(i, spheres.value.length, formation);
+    const staggerDelay = i * 2; // 2ms delay between each sphere
+    const randomOffset = Math.random() * 100; // Add some randomness
+
+    animate(sphere, {
+      ...position,
+      duration: durations.formation,
+      delay: staggerDelay + randomOffset,
+      easing: 'spring(1, 90, 10, 0)', // Springy motion
+    });
+
+    // Subtle size pulse on transition
+    animate(sphere, {
+      size: sphere.size * (1 + Math.sin(i * 0.1) * 0.1),
+      duration: 600,
+      delay: staggerDelay,
+      direction: 'alternate',
+      easing: 'easeInOutQuad',
+    });
   });
 
-
-});
-
-
-// watch the route and when it changes, push the spheres around a bit
-// watch(route, (newRoute, oldRoute) => {
-//   distributeSpheresRandomly();
-// });
-
-const pixelationAmount = ref(0);
-
-// watch the route and when it changes, animate the pixelation up and down
-watch(route, (newRoute, oldRoute) => {
-  // animate the pixelation up and down
-  animate(pixelationAmount, {
-    keyframes: {
-      '0%': { value: 0 },
-      '50%': { value: 32 },
-      '100%': { value: 0 },
-    },
-    ease: "inOutQuad",
-    duration: 700
-  })
-
-  // get the current camera Y position
-  const currentY = camAnimation.y();
-  // spin the camera around vertically too
-  camAnimation.y(currentY + 0.5);
-});
-
-// watch the scroll and animate the camera using the scroll position
-watch(y, (newY, oldY) => {
-  // animate the camera position based on the scroll position
-  camAnimation.y(newY * 0.00025);
-});
-
-
-// make the pixelation decrease as the y increases
-// const pixelationAmount = computed(() => {
-//   // return 22 - y.value / 75
-//   return 0;
-// });
-
-onLoop(({ delta, elapsed }) => {
-  // slowly rotate the sphere group on the x axis
-  sphereGroupRotation.value = {
-    y: elapsed / 250,
+  // Smooth camera transition
+  animate(cameraPosition.value, {
+    z: cameraZ,
     x: 0,
-    z: 0,
-  };
+    y: cameraY,
+    duration: durations.transition * 1.2,
+    easing: 'spring(1, 80, 10, 0)',
+  });
+});
 
-  // cameraPosition.value = {
-  //   x: cameraPosition.value.x + 0.001,
-  //   y: cameraPosition.value.y + 0.001 * Math.sin(elapsed / 1000),
-  //   z: -elapsed / 25,
-  // };
+// Enhanced mouse interaction
+const handleMouseMovement = () => {
+  const { durations, easings } = config.animation;
+  const normalizedX = (mouseX.value / window.innerWidth - 0.5) * 2;
+  const normalizedY = (mouseY.value / window.innerHeight - 0.5) * 2;
 
+  // Add subtle sphere reaction to mouse
+  if (route.name === 'contact') {
+    spheres.value.forEach((sphere, i) => {
+      const distance = Math.sqrt(
+        Math.pow(sphere.x - normalizedX, 2) +
+        Math.pow(sphere.y - normalizedY, 2)
+      );
 
+      if (distance < 0.5) {
+        animate(sphere, {
+          z: 0.5 + (0.5 - distance) * 0.2,
+          duration: 400,
+          easing: 'easeOutQuad',
+        });
+      }
+    });
+  }
 
+  // Smooth camera follow
+  animate(cameraPosition.value, {
+    x: normalizedX * config.camera.mouseInfluence,
+    y: -normalizedY * config.camera.mouseInfluence,
+    duration: durations.mouseMove,
+    easing: 'spring(1, 90, 10, 0)',
+  });
+};
+
+// Add back scroll animation with new config
+watch(y, (newY) => {
+  const { durations, easings, scroll } = config.animation;
+
+  animate(cameraPosition.value, {
+    y: -newY * scroll.sensitivity + scroll.cameraLift,
+    z: 2 + Math.abs(newY * scroll.sensitivity * 0.2),
+    duration: durations.scroll,
+    easing: easings.scroll,
+  });
+
+  // Very subtle target adjustment
+  animate(cameraTarget.value, {
+    y: -newY * scroll.sensitivity * 0.1,
+    duration: durations.scroll,
+    easing: easings.scroll,
+  });
+
+  // Gentler rotation
+  animate(sphereGroupRotation.value, {
+    y: newY * scroll.sensitivity * scroll.rotationFactor,
+    duration: durations.scroll,
+    easing: easings.scroll,
+  });
+});
+
+// Add this near your other route watchers
+watch(
+  () => route.fullPath,
+  (newPath, oldPath) => {
+    // Only force scroll on blog routes to avoid interfering with other animations
+    if (newPath.includes('/blog') || oldPath?.includes('/blog')) {
+      window.scrollTo({
+        top: 0,
+        behavior: newPath.includes('/blog/') ? 'instant' : 'smooth'
+      });
+    }
+  }
+);
+
+onMounted(() => {
+  initSpheres();
+  useEventListener('mousemove', handleMouseMovement);
 });
 </script>
 

@@ -32,6 +32,26 @@ useSeoMeta({
 })
 
 useContentHead(data)
+
+onMounted(() => {
+  // Ensure we start at the top when entering a blog post
+  window.scrollTo({
+    top: 0,
+    behavior: 'instant' // Use instant for blog posts to avoid content jumping
+  });
+});
+
+// Also watch route changes within blog posts
+const router = useRouter();
+watch(
+  () => router.currentRoute.value.fullPath,
+  () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'instant'
+    });
+  }
+);
 </script>
 <style lang="scss">
 #blog-content img {

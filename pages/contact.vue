@@ -1,5 +1,5 @@
 <template>
-  <main class="min-h-screen bg-white dark:bg-zinc-900">
+  <main class="min-h-screen">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
       <div class="space-y-16 md:space-y-24">
         <!-- Email Section -->

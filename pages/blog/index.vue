@@ -1,5 +1,5 @@
 <template>
-  <main class="min-h-screen px-4 py-24 bg-white dark:bg-zinc-900">
+  <main class="min-h-screen px-4 py-24 bg-white/20 dark:bg-zinc-900/20">
     <div class="max-w-3xl mx-auto">
       <h1 class="sr-only">Room 302 Studio Blog</h1>
 
@@ -47,6 +47,22 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+import { watch } from 'vue';
+
+const router = useRouter();
+
+// Watch route changes to scroll to top
+watch(
+  () => router.currentRoute.value.fullPath,
+  () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+);
+
 useHead({
   title: "Room 302 Studio Blog",
 })

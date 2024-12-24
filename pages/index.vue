@@ -93,8 +93,7 @@
 
       <!-- Case Studies -->
       <section class="my-32">
-        <!-- Individual case study component here -->
-        <CaseStudy v-for="project in featuredProjects" :key="project.title" :project="project" />
+        <HomepageCaseStudy v-for="project in featuredProjects" :key="project.title" :project="project" />
       </section>
 
       <!-- Contact Section -->
@@ -125,6 +124,7 @@
 import { vIntersectionObserver } from '@vueuse/components'
 
 import { animate, createAnimatable, createTimeline, createTimer, stagger, utils } from "~/anime.esm.js";
+import HomepageCaseStudy from '~/components/HomepageCaseStudy.vue'
 
 function animatePushIn(e) {
   // console.log('animatePushIn')
