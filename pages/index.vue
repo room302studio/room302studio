@@ -13,66 +13,73 @@
 
           <!-- Key value propositions -->
           <div class="mt-8 md:mt-16 grid md:grid-cols-3 gap-8 md:gap-12 text-stone-600 dark:text-stone-400">
-            <div class="space-y-3 md:space-y-4">
-              <div class="flex items-center gap-3 text-lg md:text-xl">
-                <UIcon name="i-material-symbols-light:speed-rounded" class="text-xl md:text-2xl" />
-                <h3 class="font-medium">Fast-paced prototyping</h3>
+            <div class="space-y-4 md:space-y-6">
+              <div class="flex items-start gap-4">
+                <UIcon name="i-material-symbols-light:speed-rounded"
+                  class="text-2xl md:text-3xl text-primary-500 mt-1" />
+                <div>
+                  <h3 class="font-medium text-lg md:text-xl text-stone-800 dark:text-stone-200">Fast-paced prototyping
+                  </h3>
+                  <p class="leading-relaxed text-sm md:text-base mt-2">
+                    We know the best way to make great ideas is to iterate. A lot. Our focus on rapid prototyping
+                    lets us get further, faster.
+                  </p>
+                </div>
               </div>
-              <p class="leading-relaxed text-sm md:text-base">
-                We know the best way to make great ideas is to iterate. A lot. Our focus on rapid prototyping
-                lets us get further, faster.
-              </p>
             </div>
 
-            <div class="space-y-3 md:space-y-4">
-              <div class="flex items-center gap-3 text-lg md:text-xl">
-                <UIcon name="i-material-symbols-light:insert-chart-outline" class="text-xl md:text-2xl" />
-                <h3 class="font-medium">Rooted in data</h3>
+            <div class="space-y-4 md:space-y-6">
+              <div class="flex items-start gap-4">
+                <UIcon name="i-material-symbols-light:insert-chart-outline"
+                  class="text-2xl md:text-3xl text-primary-500 mt-1" />
+                <div>
+                  <h3 class="font-medium text-lg md:text-xl text-stone-800 dark:text-stone-200">Rooted in data</h3>
+                  <p class="leading-relaxed text-sm md:text-base mt-2">
+                    Our studio has a deep background in data visualization and analysis. We use data to inform decisions
+                    and incorporate it into our products.
+                  </p>
+                </div>
               </div>
-              <p class="leading-relaxed text-sm md:text-base">
-                Our studio has a deep background in data visualization and analysis. We use data to inform decisions
-                and incorporate it into our products.
-              </p>
             </div>
 
-            <div class="space-y-3 md:space-y-4">
-              <div class="flex items-center gap-3 text-lg md:text-xl">
-                <UIcon name="i-fa6-solid-hammer" class="text-xl md:text-2xl" />
-                <h3 class="font-medium">Willing to bleed</h3>
+            <div class="space-y-4 md:space-y-6">
+              <div class="flex items-start gap-4">
+                <UIcon name="i-fa6-solid-hammer" class="text-2xl md:text-3xl text-primary-500 mt-1" />
+                <div>
+                  <h3 class="font-medium text-lg md:text-xl text-stone-800 dark:text-stone-200">Willing to bleed</h3>
+                  <p class="leading-relaxed text-sm md:text-base mt-2">
+                    Part of being on the cutting edge is being willing to take risks. We're not afraid to explore
+                    uncharted territory.
+                  </p>
+                </div>
               </div>
-              <p class="leading-relaxed text-sm md:text-base">
-                Part of being on the cutting edge is being willing to take risks. We're not afraid to explore
-                uncharted territory.
-              </p>
             </div>
           </div>
         </div>
 
-        <!-- Subtle background animation -->
-        <div class="absolute inset-0 bg-gradient-to-br from-stone-100/50 to-transparent 
-             dark:from-stone-950/50 backdrop-blur-3xl -z-10 opacity-60" />
+        <!-- Simplified background -->
+        <div class="absolute inset-0 bg-stone-50 dark:bg-stone-950 -z-10" />
       </section>
 
-      <!-- Video Section with Refined Layout -->
-      <section class="px-4 md:px-8 my-12 md:my-24">
-        <div class="relative overflow-hidden rounded-xl bg-stone-950">
-          <!-- Video background with duotone effect -->
-          <div class="relative aspect-[16/9] md:aspect-[21/9]">
-            <video class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-60" autoplay loop
-              muted playsinline>
+      <!-- Video Section -->
+      <section class="my-24 md:my-48 -mx-8 md:-mx-12 lg:-mx-32">
+        <div class="relative overflow-hidden w-screen relative left-1/2 right-1/2 -translate-x-1/2">
+          <div class="relative min-h-[80vh] py-24 md:py-32">
+            <video class="absolute inset-0 w-full h-full object-cover opacity-90" autoplay loop muted playsinline>
               <source src="https://res.cloudinary.com/ejf/video/upload/v1707429688/Comp_2_1_1.mp4" type="video/mp4" />
             </video>
 
-            <!-- Much lighter gradient overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/40 via-stone-950/20 to-transparent"></div>
+            <!-- Very subtle overlay just for text readability -->
+            <div class="absolute inset-0 bg-black/30"></div>
 
-            <!-- Content -->
-            <div class="absolute inset-0 pad flex flex-col justify-center items-center text-center">
+            <!-- Content - still contained -->
+            <div
+              class="absolute inset-0 flex flex-col justify-center items-center text-center container mx-auto px-8 md:px-12 lg:px-32">
               <h2
-                class="text-4xl md:text-7xl lg:text-8xl text-white font-extralight mb-4 md:mb-8 max-w-4xl leading-none">
+                class="text-5xl md:text-8xl lg:text-9xl text-white font-extralight mb-8 md:mb-12 max-w-6xl leading-none">
                 Bringing your ideas from 0 to 60<span class="text-primary-500">.</span>
               </h2>
-              <p class="text-lg md:text-2xl text-stone-300 max-w-2xl font-light leading-relaxed px-4">
+              <p class="text-xl md:text-3xl text-stone-200 max-w-3xl font-light leading-relaxed">
                 From rapid prototyping to production-ready solutions, we transform complex challenges into
                 elegant implementations.
               </p>
@@ -196,7 +203,7 @@ const featuredProjects = [
 
 <style scoped>
 .pad {
-  @apply px-6 md:px-12 lg:px-24;
+  @apply px-8 md:px-12 lg:px-32 py-12 md:py-16;
 }
 
 /* Ensure text balance */

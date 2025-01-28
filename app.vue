@@ -13,7 +13,7 @@
 </script>
 <style>
 .pad {
-  @apply p-8 lg:p-12;
+  @apply px-8 md:px-12 lg:px-32;
 }
 
 /* h1,

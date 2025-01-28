@@ -34,7 +34,7 @@
       </TresCanvas>
     </div>
     <SiteNav class="max-w-screen-2xl mx-auto" />
-    <div class="max-w-screen-2xl mx-auto">
+    <div class="max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-32">
       <slot />
     </div>
     <GlobalFooter />
