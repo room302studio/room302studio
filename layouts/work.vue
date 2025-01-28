@@ -1,10 +1,10 @@
 <template>
   <main class="max-w-screen-2xl mx-auto">
     <SiteNav class="" />
-    <div class="relative">
+    <div class="relative px-8 md:px-12 lg:px-32">
       <slot />
 
-      <UButton to="/our-work" class="fixed bottom-8 right-8 z-50" color="primary" variant="solid">
+      <UButton to="/our-work" class="fixed bottom-12 right-12 z-50" color="primary" variant="solid">
         ← Back to work
       </UButton>
     </div>
