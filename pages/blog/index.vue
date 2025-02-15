@@ -6,7 +6,7 @@
       <ContentQuery path="/blog/" :sort="{ date: -1 }" v-slot="{ data }">
         <div class="space-y-16 md:space-y-24">
           <div v-for="article in data" :key="article._path" :class="[article.hidden ? 'hidden' : '']">
-            <div class="group">
+            <div class="group min-h-32">
               <ContentQuery :path="article._path" v-slot="{ data }" find="one">
                 <NuxtLink :to="article._path"
                   class="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 rounded-xl">
@@ -27,12 +27,6 @@
 
                       <div class="text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
                         {{ data.description || ' ' }}
-                      </div>
-
-                      <div class="inline-flex items-center text-sm font-semibold text-orange-500 dark:text-orange-400">
-                        Read article
-                        <div
-                          class="i-heroicons-arrow-right-20-solid w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                       </div>
                     </div>
                   </div>
