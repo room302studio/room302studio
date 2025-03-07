@@ -211,7 +211,7 @@
       <p class="text-lg text-stone-700 dark:text-stone-400 max-w-2xl mx-auto mb-8">
         Let's collaborate to explore possibilities and create something amazing together.
       </p>
-      <UButton to="/contact" size="lg" class="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3">
+      <UButton to="/contact" size="lg" color="primary" class="px-8 py-3">
         Get in touch
         <UIcon name="i-heroicons-arrow-right" class="ml-2" />
       </UButton>

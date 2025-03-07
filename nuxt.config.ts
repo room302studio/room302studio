@@ -15,7 +15,6 @@ export default defineNuxtConfig({
     "@nuxt/content",
     "@nuxt/ui",
     "@vueuse/nuxt",
-    "@nuxt/ui",
     "nuxt-gtag",
     "@tresjs/nuxt",
     [
@@ -34,9 +33,6 @@ export default defineNuxtConfig({
   // },
   content: {
     // documentDriven: true,
-  },
-  ui: {
-    icons: "all",
   },
   gtag: {
     id: "G-6XGQNYZQMC",

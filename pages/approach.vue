@@ -7,8 +7,8 @@
           <p class="text-lg text-stone-600 dark:text-stone-400 mb-8">
             We've moved our approach information to our comprehensive process page.
           </p>
-          <UButton to="/process" class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2">
-            Go to Process Page
+          <UButton to="/process" color="primary" class="px-6 py-2">
+            Learn about our process
           </UButton>
         </div>
       </div>

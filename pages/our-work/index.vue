@@ -103,9 +103,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref, onUnmounted } from 'vue'
-import { animate, stagger } from "~/anime.esm.js";
-import { usePreferredReducedMotion } from '@vueuse/core'
+import { onMounted, ref } from 'vue'
 
 const categories = [
   {
@@ -131,7 +129,6 @@ const categories = [
 ];
 
 const activeWorkFilter = ref("all");
-const prefersReducedMotion = usePreferredReducedMotion();
 
 const filteredWork = ref([]);
 const filterWorkTo = (category) => {
@@ -168,37 +165,12 @@ const { data: internalWork } = await useAsyncData(
 );
 
 onMounted(() => {
-  // Skip animations if user prefers reduced motion
-  if (prefersReducedMotion.value === 'reduce') {
-    document.querySelectorAll('.hero-title, .hero-subtitle, .section-title').forEach(el => {
+  // Make all elements visible immediately
+  document.querySelectorAll('.hero-title, .hero-subtitle, .section-title').forEach(el => {
+    if (el) {
       el.style.opacity = '1';
       el.style.transform = 'none';
-    });
-    return;
-  }
-
-  // Animate hero elements on page load
-  animate('.hero-title', {
-    opacity: [0, 1],
-    translateY: ['30px', '0px'],
-    duration: 800,
-    easing: 'easeOutQuint',
-  });
-
-  animate('.hero-subtitle', {
-    opacity: [0, 1],
-    translateY: ['30px', '0px'],
-    delay: 200,
-    duration: 800,
-    easing: 'easeOutQuint',
-  });
-
-  animate('.section-title', {
-    opacity: [0, 1],
-    translateY: ['20px', '0px'],
-    duration: 800,
-    delay: 300,
-    easing: 'easeOutQuint',
+    }
   });
 });
 </script>
@@ -208,10 +180,12 @@ onMounted(() => {
   @apply px-6 md:px-12 lg:px-24 xl:px-32;
 }
 
+/* Make all elements visible by default */
 .hero-title,
 .hero-subtitle,
 .section-title {
-  opacity: 0;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* Smooth hover transitions */
@@ -221,7 +195,7 @@ onMounted(() => {
 
 /* Subtle animation for images */
 img {
-  @apply transition-all duration-700 will-change-transform;
+  @apply transition-all duration-700;
 }
 
 /* Enhance text readability */

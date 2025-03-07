@@ -121,7 +121,7 @@
         <!-- Main content -->
         <div class="prose dark:prose-invert prose-lg prose-stone mx-auto 
                     prose-headings:font-light prose-p:font-light
-                    prose-a:text-orange-500 hover:prose-a:text-orange-400
+                    prose-a:text-primary-500 hover:prose-a:text-primary-400
                     prose-img:rounded-lg prose-img:shadow-lg">
           <ContentRenderer v-if="data" :value="data">
             <template #empty>

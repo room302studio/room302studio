@@ -6,45 +6,7 @@
 </template>
 
 <script setup>
-import { animate, createAnimatable, stagger } from "~/anime.esm.js";
-
-function animatePushIn(e) {
-  // console.log('animatePushIn')
-  // console.log(e)
-  // const targetEl = e[0].target
-  // console.log(targetEl)
-
-  const targetMap = e.map((el) => el.target)
-
-
-}
-
-onMounted(() => {
-  animate(
-    '#thanks h1', {
-
-    rotate: [-10, 10],
-    duration: 10000,
-    // ease: 'inOutQuad',
-    loop: true,
-    alternate: true,
-  });
-
-  animate(
-    '#thanks p', {
-    keyframes: [
-
-      { translateY: 10 },
-      { translateY: -10 },
-      { translateY: 0 },
-    ],
-    duration: 1000,
-    // ease: 'inOutQuad',
-    ease: 'linear',
-
-    loop: false
-  });
-});
+// Simple component, no script needed
 </script>
 
 <style scoped></style>

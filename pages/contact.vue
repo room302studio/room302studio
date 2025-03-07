@@ -12,7 +12,7 @@
           </p>
 
           <a href="mailto:studio@room302.studio"
-            class="inline-block px-8 py-4 text-lg md:text-xl bg-orange-500 hover:bg-orange-600 dark:bg-orange-400 dark:hover:bg-orange-500 text-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
+            class="inline-block px-8 py-4 text-lg md:text-xl bg-primary-500 hover:bg-primary-600 dark:bg-primary-400 dark:hover:bg-primary-500 text-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
             studio@room302.studio
           </a>
 
