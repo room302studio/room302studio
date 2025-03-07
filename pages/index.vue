@@ -1,10 +1,7 @@
 <template>
-  <div class="index min-h-screen" @mousemove="updateCursorPosition">
+  <div class="index min-h-screen">
     <!-- Page transition overlay -->
     <div class="page-transition-overlay" :class="{ 'active': isPageTransitioning }"></div>
-
-    <!-- Custom cursor -->
-    <div class="custom-cursor" :style="cursorStyle" v-if="!isMobile"></div>
 
     <div class="z-10 relative">
       <!-- Hero Section -->
@@ -25,8 +22,8 @@
             </p>
 
             <div class="flex flex-col sm:flex-row gap-6 mt-8">
-              <UButton to="/our-work"
-                class="hero-btn primary-btn bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 text-lg rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] hover:shadow-lg">
+              <UButton to="/our-work" color="primary"
+                class="hero-btn primary-btn px-8 py-4 text-lg rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] hover:shadow-lg">
                 See our work
                 <UIcon name="i-heroicons-arrow-right"
                   class="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
@@ -79,12 +76,34 @@
 
         <!-- Subtle grid pattern overlay -->
         <div class="absolute inset-0 bg-grid opacity-5 dark:opacity-10 -z-5"></div>
+      </section>
 
-        <!-- Scroll indicator -->
-        <div class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center">
-          <span
-            class="text-xs uppercase tracking-widest text-stone-400 dark:text-stone-500 mb-2 opacity-80">Scroll</span>
-          <div class="w-px h-12 bg-gradient-to-b from-stone-300 to-transparent dark:from-stone-700"></div>
+      <!-- Video Section - Moved up to follow hero section -->
+      <section class="my-24 md:my-32 -mx-8 md:-mx-12 lg:-mx-32">
+        <div class="relative overflow-hidden w-screen relative left-1/2 right-1/2 -translate-x-1/2">
+          <div class="relative min-h-[80vh] py-24 md:py-32">
+            <video class="absolute inset-0 w-full h-full object-cover opacity-90" autoplay loop muted playsinline>
+              <source src="https://res.cloudinary.com/ejf/video/upload/v1707429688/Comp_2_1_1.mp4" type="video/mp4" />
+            </video>
+
+            <!-- Enhanced overlay with gradient -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/30"></div>
+
+            <!-- Content - still contained -->
+            <div
+              class="absolute inset-0 flex flex-col justify-center items-center text-center container mx-auto px-8 md:px-12 lg:px-32">
+              <div class="overflow-hidden">
+                <h2
+                  class="text-5xl md:text-8xl lg:text-9xl text-white font-extralight mb-8 md:mb-12 max-w-6xl leading-none video-heading">
+                  Bringing your ideas from 0 to 60<span class="text-primary-500">.</span>
+                </h2>
+              </div>
+              <p class="text-xl md:text-3xl text-stone-200 max-w-3xl font-light leading-relaxed video-text">
+                From rapid prototyping to production-ready solutions, we transform complex challenges into
+                elegant implementations.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -155,40 +174,11 @@
         </div>
       </section>
 
-      <!-- Video Section -->
-      <section class="my-24 md:my-48 -mx-8 md:-mx-12 lg:-mx-32">
-        <div class="relative overflow-hidden w-screen relative left-1/2 right-1/2 -translate-x-1/2">
-          <div class="relative min-h-[80vh] py-24 md:py-32">
-            <video class="absolute inset-0 w-full h-full object-cover opacity-90" autoplay loop muted playsinline>
-              <source src="https://res.cloudinary.com/ejf/video/upload/v1707429688/Comp_2_1_1.mp4" type="video/mp4" />
-            </video>
-
-            <!-- Enhanced overlay with gradient -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/30"></div>
-
-            <!-- Content - still contained -->
-            <div
-              class="absolute inset-0 flex flex-col justify-center items-center text-center container mx-auto px-8 md:px-12 lg:px-32">
-              <div class="overflow-hidden">
-                <h2
-                  class="text-5xl md:text-8xl lg:text-9xl text-white font-extralight mb-8 md:mb-12 max-w-6xl leading-none video-heading">
-                  Bringing your ideas from 0 to 60<span class="text-primary-500">.</span>
-                </h2>
-              </div>
-              <p class="text-xl md:text-3xl text-stone-200 max-w-3xl font-light leading-relaxed video-text">
-                From rapid prototyping to production-ready solutions, we transform complex challenges into
-                elegant implementations.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Mission Statement -->
       <section class="pad my-16 md:my-32">
         <div class="overflow-hidden">
-          <p class="text-lg md:text-2xl font-light text-stone-700 dark:text-stone-400 max-w-3xl leading-relaxed mission-text"
-            v-intersection-observer="animateMissionText">
+          <p
+            class="text-lg md:text-2xl font-light text-stone-700 dark:text-stone-400 max-w-3xl leading-relaxed mission-text">
             Innovation is at the heart of everything we do. Our collaborations span startups, established companies,
             non-profits, and news organizations. We provide the tools, expertise, and environment needed
             to
@@ -227,9 +217,8 @@
 
       <!-- Case Studies -->
       <section class="my-32">
-        <div class="case-studies-container">
+        <div class="case-studies-container space-y-16 md:space-y-32">
           <HomepageCaseStudy v-for="(project, index) in featuredProjects" :key="project.title" :project="project"
-            v-intersection-observer="{ handler: (entries) => animateCaseStudy(entries, index), rootMargin: '-100px' }"
             class="case-study-item" />
         </div>
       </section>
@@ -254,73 +243,13 @@
           </div>
         </div>
       </section>
-
-      <!-- ... rest of sections with similar refinements ... -->
     </div>
   </div>
 </template>
 
 <script setup>
-import { vIntersectionObserver } from '@vueuse/components'
-import { animate, createAnimatable, createTimeline, createTimer, stagger, utils } from "~/anime.esm.js";
 import HomepageCaseStudy from '~/components/HomepageCaseStudy.vue'
-import { useWindowSize } from '@vueuse/core'
 import { useRouter } from 'vue-router'
-
-// Create an alias for stagger to match the code
-const anime = { stagger };
-
-function animateMissionText(entries) {
-  if (entries[0].isIntersecting) {
-    animate(
-      entries[0].target, {
-      translateY: ['10px', '0px'],
-      duration: 800,
-      easing: 'easeOutQuad',
-    }
-    );
-  }
-}
-
-function animateCaseStudy(entries, index) {
-  if (entries[0].isIntersecting) {
-    animate(
-      entries[0].target, {
-      translateY: ['20px', '0px'],
-      duration: 800,
-      easing: 'easeOutQuad',
-      delay: index * 150, // Stagger effect
-    }
-    );
-  }
-}
-
-function animatePushIn(e) {
-  // Keeping the commented code for reference
-}
-
-const dotColor = ref(null)
-
-// Custom cursor
-const cursorPosition = ref({ x: 0, y: 0 })
-const cursorStyle = computed(() => {
-  return {
-    transform: `translate(${cursorPosition.value.x}px, ${cursorPosition.value.y}px)`,
-  }
-})
-
-const { width } = useWindowSize()
-const isMobile = computed(() => width.value < 768)
-
-function updateCursorPosition(e) {
-  // Animate cursor with a slight delay for smooth following effect
-  animate(cursorPosition.value, {
-    x: e.clientX,
-    y: e.clientY,
-    duration: 800,
-    easing: 'spring(1, 80, 10, 0)',
-  });
-}
 
 // Page transition
 const isPageTransitioning = ref(false)
@@ -329,8 +258,6 @@ const router = useRouter()
 router.beforeEach((to, from, next) => {
   if (to.path !== from.path) {
     isPageTransitioning.value = true
-
-    // Delay navigation slightly to allow for transition
     setTimeout(() => {
       next()
     }, 300)
@@ -340,98 +267,18 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach(() => {
-  // Reset transition state after navigation
   setTimeout(() => {
     isPageTransitioning.value = false
   }, 500)
 })
 
 onMounted(() => {
-  // Make all text fully visible immediately
-  document.querySelectorAll('.hero-text, .hero-subtitle, .hero-btn, .value-prop, .value-icon, .what-we-do-item').forEach(el => {
-    el.style.opacity = '1';
-    el.style.transform = 'none';
-  });
-
-  // Animate the dot color
-  animate(dotColor, {
-    keyframes: [
-      { value: 'hsl(0, 100%, 100%)' },
-      // orange
-      { value: 'hsl(12, 91%, 60%)' }
-    ],
-    duration: 7000,
-    alternate: true,
-    loop: true,
-  });
-
-  // Only animate elements if user doesn't prefer reduced motion
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    // Hero text animation - start from already visible
-    animate('.hero-text', {
-      translateY: ['10px', '0px'],
-      duration: 1000,
-      easing: 'easeOutQuad',
-    });
-
-    // Hero subtitle animation - start from already visible
-    animate('.hero-subtitle', {
-      translateY: ['10px', '0px'],
-      duration: 800,
-      delay: 200,
-      easing: 'easeOutQuad',
-    });
-
-    // Value props animation with stagger - start from already visible
-    animate('.value-prop', {
-      translateY: ['10px', '0px'],
-      duration: 800,
-      delay: stagger(150, { start: 400 }),
-      easing: 'easeOutQuad',
-    });
-
-    // What we do items animation - start from already visible
-    animate('.what-we-do-item', {
-      translateY: ['10px', '0px'],
-      duration: 800,
-      delay: stagger(100),
-      easing: 'easeOutQuad',
-    });
-
-    // Value icons subtle animation - start from already visible
-    animate('.value-icon', {
-      scale: [0.9, 1],
-      duration: 600,
-      delay: stagger(200, { start: 300 }),
-      easing: 'spring(1, 80, 10, 0)',
-    });
-  }
-
-  // Initialize cursor position
-  if (process.client && !isMobile.value) {
-    document.addEventListener('mousemove', (e) => {
-      cursorPosition.value = { x: e.clientX, y: e.clientY }
-    }, { once: true })
-  }
-
-  // Animate scroll indicator
-  animate('.scroll-indicator', {
-    opacity: [0, 1],
-    translateY: ['10px', '0px'],
-    duration: 1000,
-    delay: 1000,
-    easing: 'easeOutQuad',
-  });
-
-  // Subtle bounce animation for scroll indicator
-  animate('.scroll-indicator div', {
-    translateY: ['0px', '8px'],
-    opacity: [1, 0.5],
-    duration: 1500,
-    delay: 1500,
-    direction: 'alternate',
-    loop: true,
-    easing: 'easeInOutQuad',
+  // Make all elements visible immediately
+  document.querySelectorAll('.hero-text, .hero-subtitle, .hero-btn, .value-prop, .value-icon, .what-we-do-item, .approach-card, .case-study-item, .contact-heading, .contact-text, .contact-form, .video-heading, .video-text, .mission-text').forEach(el => {
+    if (el) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    }
   });
 });
 
@@ -458,26 +305,9 @@ const featuredProjects = [
   },
   // ... other projects
 ]
-
 </script>
 
 <style scoped>
-/* Remove the preload animation that's causing issues */
-/* .hero-text,
-.hero-subtitle,
-.hero-btn,
-.value-prop,
-.value-icon,
-.what-we-do-item {
-  animation: textPreload 0s var(--text-preload-delay) forwards !important;
-}
-
-@keyframes textPreload {
-  to {
-    opacity: 0.01;
-  }
-} */
-
 .pad {
   @apply px-8 md:px-12 lg:px-32 py-12 md:py-16;
 }
@@ -537,111 +367,23 @@ const featuredProjects = [
   transition: all 0.3s ease;
 }
 
-/* Initial state for animations - MAKE VISIBLE BY DEFAULT */
+/* Make everything visible by default */
 .hero-text,
 .hero-subtitle,
 .hero-btn,
 .value-prop,
 .value-icon,
-.what-we-do-item {
-  opacity: 1;
-  transform: none;
-}
-
-/* Remove the fadeIn animation that's causing issues */
-/* @keyframes fadeIn {
-  0% {
-    opacity: 0.01;
-  }
-
-  100% {
-    opacity: 1;
-  }
-} */
-
-/* Fallback for users with reduced motion preferences */
-@media (prefers-reduced-motion) {
-
-  .hero-text,
-  .hero-subtitle,
-  .hero-btn,
-  .value-prop,
-  .value-icon,
-  .what-we-do-item {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-  }
-}
-
-/* Remove the ensureVisibility animation that's causing issues */
-/* .hero-text,
-.hero-subtitle,
-.hero-btn,
-.value-prop,
-.value-icon,
-.what-we-do-item {
-  animation: ensureVisibility 0s 1s forwards;
-}
-
-@keyframes ensureVisibility {
-  to {
-    opacity: 1;
-    transform: none;
-  }
-} */
-
-/* Refined hover states */
-a {
-  @apply transition-all duration-300;
-}
-
-/* Case study refinements */
-.case-studies-container {
-  @apply space-y-16 md:space-y-32;
-}
-
-.case-study-item {
-  @apply relative;
-}
-
-/* Custom cursor */
-.custom-cursor {
-  @apply fixed w-6 h-6 rounded-full bg-primary-500/20 backdrop-blur-sm pointer-events-none z-50 mix-blend-difference;
-  top: -12px;
-  left: -12px;
-  transform: translate(0, 0);
-  will-change: transform;
-}
-
-/* Make links and interactive elements show the cursor pointer */
-a,
-button,
-.interactive {
-  @apply cursor-pointer;
-}
-
-/* Hide custom cursor on mobile */
-@media (max-width: 768px) {
-
-  a,
-  button,
-  .interactive {
-    @apply cursor-pointer;
-  }
-}
-
-/* Scroll indicator */
-.scroll-indicator {
-  @apply transition-opacity duration-500;
-  opacity: 0;
-}
-
-/* Hide scroll indicator when scrolling down */
-@media (min-height: 700px) {
-  .scroll-indicator {
-    @apply md:block;
-  }
+.what-we-do-item,
+.mission-text,
+.approach-card,
+.case-study-item,
+.contact-heading,
+.contact-text,
+.contact-form,
+.video-heading,
+.video-text {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 /* Page transition overlay */
@@ -651,15 +393,6 @@ button,
 
 .page-transition-overlay.active {
   @apply opacity-100;
-}
-
-/* What We Actually Do section */
-.mt-16.md\:mt-24.bg-stone-100 {
-  @apply shadow-sm transition-all duration-500;
-}
-
-.mt-16.md\:mt-24.bg-stone-100:hover {
-  @apply shadow-md;
 }
 
 /* Approach cards */
@@ -685,6 +418,10 @@ button,
 }
 
 .secondary-btn:hover {
+  @apply text-primary-500;
+}
+
+.value-icon {
   @apply text-primary-500;
 }
 </style>

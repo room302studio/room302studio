@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-import colors from "tailwindcss/colors";
-
-module.exports = {
+export default {
+  content: [],
   theme: {
     // colors: {
     //   transparent: 'transparent',
@@ -12,20 +11,22 @@ module.exports = {
     // },
     extend: {
       colors: {
-        specialorange: {
-          50: "hsl(10, 86%, 97%)",
-          100: "hsl(12, 100%, 94%)",
-          200: "hsl(12, 100%, 89%)",
-          300: "hsl(12, 100%, 82%)",
-          400: "hsl(12, 97%, 71%)",
-          500: "hsl(12, 91%, 60%)",
-          600: "hsl(12, 78%, 50%)",
-          700: "hsl(12, 79%, 42%)",
-          800: "hsl(11, 76%, 35%)",
-          900: "hsl(11, 68%, 31%)",
-          950: "hsl(11, 80%, 15%)",
+        // Define a custom orange color that matches the logo's #E17055
+        primary: {
+          50: "#fef2f0",
+          100: "#fde6e1",
+          200: "#fbd0c7",
+          300: "#f7b0a0",
+          400: "#f28a72",
+          500: "#e17055", // This is the exact color from the logo
+          600: "#d45a3e",
+          700: "#b14730",
+          800: "#913c2b",
+          900: "#783629",
+          950: "#411a14",
         },
       },
     },
   },
+  plugins: [],
 };

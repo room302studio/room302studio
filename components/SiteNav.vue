@@ -17,12 +17,16 @@
           <NuxtLink to="/our-work" :class="linkClasses" :active-class="activeClasses">Work</NuxtLink>
         </li>
         <li>
+          <NuxtLink to="/process" :class="linkClasses" :active-class="activeClasses">Process</NuxtLink>
+        </li>
+        <li>
           <NuxtLink to="/blog" :class="linkClasses" :active-class="activeClasses">Blog</NuxtLink>
         </li>
       </ul>
 
       <div class="hidden md:block">
-        <UButton to="/contact" color="orange" class="text-lg px-8 py-3 tracking-wide"> Contact Us </UButton>
+        <UButton to="/contact" class="text-lg px-8 py-3 tracking-wide">
+          Contact Us </UButton>
       </div>
     </div>
 
@@ -45,10 +49,13 @@
             <NuxtLink to="/our-work" :class="mobileLinkClasses" :active-class="mobileActiveClasses">Work</NuxtLink>
           </li>
           <li>
+            <NuxtLink to="/process" :class="mobileLinkClasses" :active-class="mobileActiveClasses">Process</NuxtLink>
+          </li>
+          <li>
             <NuxtLink to="/blog" :class="mobileLinkClasses" :active-class="mobileActiveClasses">Blog</NuxtLink>
           </li>
           <li class="pt-12">
-            <UButton to="/contact" color="orange" class="text-2xl px-12 py-4 tracking-wider">Contact Us</UButton>
+            <UButton to="/contact" class="text-2xl px-12 py-4 tracking-wider">Contact Us</UButton>
           </li>
         </ul>
       </div>
@@ -63,13 +70,13 @@ import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 const breakpoints = useBreakpoints(breakpointsTailwind)
 
 const linkClasses =
-  "no-underline border-b-2 border-transparent transition text-lg lg:text-xl text-gray-500 dark:text-gray-300 duration-300 font-light tracking-widest hover:text-orange-500 dark:hover:text-orange-400";
+  "no-underline border-b-2 border-transparent transition text-lg lg:text-xl text-gray-500 dark:text-gray-300 duration-300 font-light tracking-widest hover:text-primary-500 dark:hover:text-primary-500";
 
 const activeClasses =
   "border-primary-500 text-gray-900 dark:text-white font-medium";
 
 const mobileLinkClasses =
-  "no-underline border-b-2 border-transparent transition text-7xl text-gray-200 duration-300 font-light tracking-widest hover:text-orange-500";
+  "no-underline border-b-2 border-transparent transition text-7xl text-gray-200 duration-300 font-light tracking-widest hover:text-primary-500";
 
 const mobileActiveClasses =
   "border-primary-500 text-white font-normal";

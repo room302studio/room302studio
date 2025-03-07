@@ -1,5 +1,5 @@
 <template>
-  <div class="case-study" v-intersection-observer="{ handler: handleIntersection, rootMargin: '-100px' }">
+  <div class="case-study">
     <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0">
       <div class="w-full md:w-7/12">
         <h4 class="font-medium text-gray-500 uppercase text-sm tracking-wider pb-2 client-name">
@@ -46,53 +46,24 @@
             class="ml-2 transform transition-transform duration-300 group-hover:translate-x-1" />
         </UButton>
       </div>
-      <div
-        class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12 parallax-container">
+      <div class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12">
         <img :src="project.images.primary" alt=""
-          class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-y-5 md:drop-shadow-xl py-2 md:py-0 transition-all duration-500 hover:scale-[1.02] primary-image parallax-element"
-          :style="{ transform: `translateY(${parallaxOffset}px)` }" />
+          class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg py-2 md:py-0 transition-all duration-500 hover:scale-[1.02] primary-image" />
         <img :src="project.images.secondary" alt=""
-          class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg md:translate-x-5 md:drop-shadow-xl py-2 md:py-0 hidden md:block transition-all duration-500 hover:scale-[1.02] secondary-image parallax-element-reverse"
-          :style="{ transform: `translateX(${parallaxOffset * 0.7}px)` }" />
+          class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg py-2 md:py-0 hidden md:block transition-all duration-500 hover:scale-[1.02] secondary-image" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { vIntersectionObserver } from '@vueuse/components'
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref } from 'vue'
 
 const props = defineProps({
   project: {
     type: Object,
     required: true
   }
-})
-
-const parallaxOffset = ref(0)
-const isInView = ref(false)
-
-function handleIntersection(entries) {
-  isInView.value = entries[0].isIntersecting
-}
-
-function handleScroll() {
-  if (!isInView.value) return
-
-  // Get the scroll position
-  const scrollPosition = window.scrollY
-
-  // Calculate a subtle parallax effect
-  parallaxOffset.value = scrollPosition * 0.05
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
@@ -123,22 +94,5 @@ onUnmounted(() => {
 
 .intro-image {
   @apply transform transition-all duration-500 ease-out;
-}
-
-.case-study:hover .primary-image {
-  @apply md:translate-y-3 md:drop-shadow-2xl;
-}
-
-.case-study:hover .secondary-image {
-  @apply md:translate-x-7 md:drop-shadow-2xl;
-}
-
-.parallax-container {
-  @apply overflow-hidden;
-}
-
-.parallax-element,
-.parallax-element-reverse {
-  @apply will-change-transform;
 }
 </style>
