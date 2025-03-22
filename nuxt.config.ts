@@ -10,6 +10,9 @@ export default defineNuxtConfig({
   //     failOnError: false,
   //   },
   // },
+  devServer: {
+    port: 3030,
+  },
   modules: [
     // '@vueuse/motion/nuxt',
     "@nuxt/content",
@@ -21,10 +24,21 @@ export default defineNuxtConfig({
       "@nuxtjs/google-fonts",
       {
         families: {
-          Rubik: [300, 400, 500, 600, 700, 800],
-          "Source Code Pro": [400, 700],
-          "IBM Plex Sans": [300, 400, 500, 600, 700, 800],
+          // Primary sans-serif
+          "IBM Plex Sans": {
+            wght: [300, 400, 500, 700],
+          },
+          // Signature monospace font - our differentiator
+          "IBM Plex Mono": [400, 500],
+          // Serif for occasional accent
+          Fraunces: {
+            wght: [300, 500, 700],
+          },
         },
+        display: "swap",
+        prefetch: true,
+        preconnect: true,
+        preload: true,
       },
     ],
   ],

@@ -44,45 +44,48 @@
     </div>
 
     <!-- Rest of the content -->
-    <div class="pad mt-12" :class="{ 'opacity-0': !isImageLoaded, 'opacity-100': isImageLoaded }">
+    <div class="pad mt-24 mb-32" :class="{ 'opacity-0': !isImageLoaded, 'opacity-100': isImageLoaded }">
       <!-- project metadata -->
-      <div class="md:flex mt-4 mb-8">
-        <div class="mb-6 md:w-1/2">
+      <div class="md:flex mt-8 mb-16">
+        <div class="mb-8 md:w-1/2">
           <h4 class="text-gray-400 uppercase font-medium">
             Project Brief
           </h4>
-          <p class="tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2 lg:pr-8 md:text-2xl leading-relaxed">
+          <p class="tracking-tight text-gray-700 dark:text-gray-300 pt-2 mt-2 pr-2 lg:pr-8 md:text-2xl leading-relaxed">
             {{ data?.description }}
           </p>
         </div>
 
         <div class="md:w-1/2 md:flex">
-          <div class="mb-6 w-1/3">
+          <div class="mb-8 w-1/3">
             <h4 class="text-gray-400 uppercase font-medium">Client</h4>
-            <p class="monospace tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2">
+            <p class="monospace tracking-tight text-gray-700 dark:text-gray-300 pt-2 mt-2 pr-2">
               {{ data?.client }}
             </p>
           </div>
 
-          <div class="mb-6 md:w-1/3">
+          <div class="mb-8 md:w-1/3">
             <h4 class="text-gray-400 uppercase font-medium">Services</h4>
-            <p class="monospace tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2">
+            <p class="monospace tracking-tight text-gray-700 dark:text-gray-300 pt-2 mt-2 pr-2">
               {{ data?.role }}
             </p>
           </div>
 
-          <div class="mb-6 md:w-1/3">
+          <div class="mb-8 md:w-1/3">
             <h4 class="text-gray-400 uppercase font-medium">
               Technology
             </h4>
-            <p class="monospace tracking-tight text-gray-700 dark:text-gray-300 pt-0 mt-0 pr-2">
+            <p class="monospace tracking-tight text-gray-700 dark:text-gray-300 pt-2 mt-2 pr-2">
               {{ data?.technology }}
             </p>
           </div>
         </div>
       </div>
 
-      <div class="pt-8 prose dark:prose-invert">
+      <div class="pt-12 pb-16 prose dark:prose-invert 
+                 prose-headings:mt-16 prose-headings:mb-8
+                 prose-p:my-8 prose-img:my-16
+                 prose-lg max-w-3xl">
         <ContentRenderer :value="data">
           <template #empty>
             <div>
@@ -96,12 +99,12 @@
 
       <!-- make a related work section (just 3 random client works -->
       <section class="w-full">
-        <UDivider class="my-8 md:my-12 lg:my-24" />
-        <h4 class="my-8">Related Work</h4>
+        <UDivider class="my-16 md:my-24 lg:my-32" />
+        <h4 class="my-12 text-2xl">Related Work</h4>
         <!-- make 3x3 grid of the projects in cards -->
-        <div class="projects md:grid md:grid-cols-2 gap-4 lg:gap-8">
+        <div class="projects md:grid md:grid-cols-2 gap-8 lg:gap-12">
           <div v-for="project in clientWork" :key="project.title" :project="project"
-            class="hover:shadow-lg transition-all flex rounded-lg bg-stone-100 text-stone-700 min-h-32 mb-6 md:mb-0">
+            class="hover:shadow-lg transition-all flex rounded-lg bg-stone-100 text-stone-700 min-h-32 mb-8 md:mb-0">
             <div class="flex-1 min-w-24" v-if="project.image">
               <!-- Assuming you have an image url 'backgroundUrl' -->
               <div class="h-full bg-cover bg-center" :style="{ backgroundImage: `url(${project.image})` }"></div>
@@ -192,6 +195,36 @@ const data = computed(() => {
 <style scoped>
 .pad {
   @apply px-6 md:px-12 lg:px-24;
+}
+
+/* Additional spacing for prose content */
+:deep(.prose) {
+  @apply mb-20;
+}
+
+:deep(.prose h2) {
+  @apply text-3xl mt-20 mb-8;
+}
+
+:deep(.prose h3) {
+  @apply text-2xl mt-16 mb-6;
+}
+
+:deep(.prose ul),
+:deep(.prose ol) {
+  @apply my-8 space-y-4;
+}
+
+:deep(.prose li) {
+  @apply mb-3;
+}
+
+:deep(.prose img) {
+  @apply my-16 rounded-lg shadow-lg;
+}
+
+:deep(.prose blockquote) {
+  @apply my-12 pl-6 border-l-4 border-stone-300 dark:border-stone-700 italic;
 }
 
 /* Page Transition */

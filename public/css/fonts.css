@@ -1,0 +1,157 @@
+/* Typography System for Room 302 Studio */
+
+/* Inter for primary sans-serif */
+@font-face {
+  font-family: 'Inter Variable';
+  src: url('/fonts/Inter-Variable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Fraunces for serif accents */
+@font-face {
+  font-family: 'Fraunces Variable';
+  src: url('/fonts/Fraunces-Variable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-variation-settings: 'SOFT' 0, 'WONK' 0;
+}
+
+/* Font Variables */
+:root {
+  /* Primary Typography */
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-serif: Fraunces, Georgia, serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  
+  /* Weight presets */
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+  
+  /* Letter spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+}
+
+/* Base font utilities */
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: -0.03em;
+}
+
+/* Weight utilities */
+.weight-thin {
+  font-weight: var(--font-weight-thin);
+}
+
+.weight-extralight {
+  font-weight: var(--font-weight-extralight);
+}
+
+.weight-light {
+  font-weight: var(--font-weight-light);
+}
+
+.weight-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.weight-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.weight-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.weight-extrabold {
+  font-weight: var(--font-weight-extrabold);
+}
+
+.weight-black {
+  font-weight: var(--font-weight-black);
+}
+
+/* Enhanced heading styles */
+.font-heading {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-light);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.1;
+}
+
+/* Signature accent text with IBM Plex Mono */
+.font-signature {
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.03em;
+}
+
+/* Serif accent text */
+.font-accent {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Balanced text blocks */
+.text-balanced {
+  text-wrap: balance;
+}
+
+/* Enhanced quote styling */
+.quote {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-light);
+  font-style: italic;
+  position: relative;
+}
+
+.quote::before {
+  content: '"';
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-bold);
+  font-size: 2em;
+  color: rgba(var(--color-primary-500), 0.4);
+  position: absolute;
+  left: -0.6em;
+  top: -0.2em;
+}
+
+/* Button with signature mono style */
+.btn-mono {
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+/* Utility class for mono accents */
+.accent-mono {
+  font-family: var(--font-mono);
+  font-weight: var(--font-weight-medium);
+} 
