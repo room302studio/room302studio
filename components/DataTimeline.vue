@@ -191,10 +191,12 @@ defineEmits(['node-click']);
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-color);
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   text-align: center;
   width: max-content;
   max-width: 120px;
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
 }
 
 .node-label.above {
@@ -217,7 +219,7 @@ defineEmits(['node-click']);
   font-size: 0.75rem;
   color: var(--text-secondary);
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, color 0.3s ease;
   text-align: center;
   width: max-content;
   max-width: 120px;
@@ -239,11 +241,26 @@ defineEmits(['node-click']);
   font-weight: 600;
   font-size: 0.875rem;
   color: var(--primary-color);
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
 }
 
 .data-label {
   font-size: 0.75rem;
   color: var(--text-secondary);
+}
+
+/* Hover effects - more subtle */
+.timeline-node:hover .node-marker {
+  border-color: var(--secondary-color);
+}
+
+.timeline-node:hover .node-inner {
+  background-color: var(--secondary-color);
+}
+
+.timeline-node:hover .node-label {
+  color: var(--secondary-color);
 }
 
 /* Annotations */

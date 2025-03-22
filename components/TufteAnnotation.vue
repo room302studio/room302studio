@@ -39,7 +39,8 @@ defineProps({
 .tufte-annotation {
   position: relative;
   margin: 1.5rem 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
+  line-height: 1.6;
 }
 
 .annotation-content {
@@ -54,6 +55,7 @@ defineProps({
   color: var(--color-primary-500, #3b82f6);
   margin-bottom: 0.25rem;
   font-weight: 500;
+  font-family: var(--font-mono);
 }
 
 .annotation-value {
@@ -62,6 +64,8 @@ defineProps({
   line-height: 1.2;
   margin-bottom: 0.5rem;
   color: var(--color-stone-800, #292524);
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
 }
 
 .dark .annotation-value {
@@ -73,6 +77,7 @@ defineProps({
   line-height: 1.4;
   color: var(--color-stone-600, #57534e);
   font-weight: 400;
+  font-family: var(--font-sans);
 }
 
 .dark .annotation-description {

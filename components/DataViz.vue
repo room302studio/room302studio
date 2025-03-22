@@ -149,7 +149,7 @@ const linePath = computed(() => {
 <style scoped>
 /* Base styles */
 .data-viz-component {
-  font-family: 'Inter', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   --primary-color: var(--color-primary-500, #3b82f6);
   --secondary-color: var(--color-primary-300, #93c5fd);
   --grid-color: rgba(120, 120, 120, 0.1);
@@ -329,5 +329,12 @@ const linePath = computed(() => {
     transform: translate(-50%, -50%) scale(1);
     opacity: var(--opacity, 0.8);
   }
+}
+
+.data-viz-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 </style>

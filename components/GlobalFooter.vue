@@ -70,39 +70,52 @@
           </h4>
           <ul class="list-none">
             <li>
-              <NuxtLink to="/contact/" class="text-primary-500">Contact us</NuxtLink>
+              <NuxtLink to="/contact/" class="hover:text-primary-500 transition duration-200"
+                :class="{ 'text-primary-500 font-medium': $route.path.startsWith('/contact') }">Contact us</NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/contact/">Free consultation</NuxtLink>
+              <NuxtLink to="/contact/" class="hover:text-primary-500 transition duration-200"
+                :class="{ 'text-primary-500 font-medium': $route.path.startsWith('/contact') }">Free consultation
+              </NuxtLink>
             </li>
           </ul>
         </div>
 
         <div class="md:w-1/3 pb-4 md:pb-10 md:py-0">
           <h4 class="text-stone-500 tracking-widest font-semibold">
-            Learn More
+            Solutions
           </h4>
           <ul class="list-none">
             <li>
-              <NuxtLink to="/blog/">Blog</NuxtLink>
+              <NuxtLink to="/for-ceos/" class="hover:text-primary-500 transition duration-200"
+                :class="{ 'text-primary-500 font-medium': $route.path.startsWith('/for-ceos') }">For CEOs & CTOs
+              </NuxtLink>
             </li>
-            <!-- <li>
-              <NuxtLink to="/process/">Process</NuxtLink>
-            </li> -->
-            <!-- <li>
-              <NuxtLink to="/process/">Services</NuxtLink>
-            </li> -->
+            <li>
+              <NuxtLink to="/for-data-analysts/" class="hover:text-primary-500 transition duration-200"
+                :class="{ 'text-primary-500 font-medium': $route.path.startsWith('/for-data-analysts') }">For Data Teams
+              </NuxtLink>
+            </li>
+            <li>
+              <NuxtLink to="/process/" class="hover:text-primary-500 transition duration-200"
+                :class="{ 'text-primary-500 font-medium': $route.path.startsWith('/process') }">Our Process</NuxtLink>
+            </li>
           </ul>
         </div>
 
         <div class="md:w-1/3 pb-4 md:pb-10 md:py-0">
           <h4 class="text-stone-500 tracking-widest font-semibold">
-            Get Involved
+            Explore
           </h4>
           <ul class="list-none">
-            <li><a href="https://discord.gg/QMg7pZgkxK">Join the Discord</a></li>
-            <!-- <li><a href="#">Sign up for Updates</a></li> -->
-            <!-- <li><a href="#">See upcoming events</a></li> -->
+            <li>
+              <NuxtLink to="/blog/" class="hover:text-primary-500 transition duration-200"
+                :class="{ 'text-primary-500 font-medium': $route.path.startsWith('/blog') }">Blog</NuxtLink>
+            </li>
+            <li>
+              <a href="https://discord.gg/QMg7pZgkxK" class="hover:text-primary-500 transition duration-200">Join the
+                Discord</a>
+            </li>
           </ul>
         </div>
       </div>

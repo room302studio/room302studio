@@ -5,18 +5,20 @@
 </template>
 
 <style>
+/* Remove or fix any @import statements that might be here */
+
 :root {
   color-scheme: light dark;
 }
 
 body {
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .monospace {
-  font-family: "Source Code Pro", monospace;
+  font-family: var(--font-mono);
 }
 
 .text-balance {
