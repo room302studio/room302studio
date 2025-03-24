@@ -192,10 +192,7 @@
                 </h2>
                 <p class="content-text mb-content-spacing">
                   We build 4 little tools in the time it takes most teams to write their tickets. Our secret? A
-                  high-velocity loop of <span class="font-mono">iterate → prototype → test</span> → iterate again. Each
-                  cycle compounds our
-                  understanding and brings
-                  us closer to the perfect solution.
+                  high-velocity loop and an armory of honed tools.
                 </p>
 
                 <!-- Restored data annotation -->
