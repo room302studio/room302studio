@@ -30,6 +30,8 @@
 </template>
 
 <script setup>
+import { useOgMetadata } from '~/composables/useOgMetadata'
+
 useHead({
   title: "Contact Room 302 Studio",
 })
@@ -39,9 +41,20 @@ useSeoMeta({
   description: "Get in touch with Room 302 Studio. Email us to start a conversation about your project.",
   ogTitle: "Contact Room 302 Studio",
   ogDescription: "Get in touch with Room 302 Studio. Email us to start a conversation about your project.",
-  ogImage: "https://room302studio.com/og-image.jpg",
-  ogUrl: "https://room302studio.com/contact",
+  ogUrl: "https://room302.studio/contact",
+  ogImage: "https://room302.studio/og/contact.png",
+  ogType: "website",
+  twitterCard: "summary_large_image",
+  twitterImage: "https://room302.studio/og/contact.png",
+  twitterTitle: "Contact Room 302 Studio",
+  twitterDescription: "Get in touch with Room 302 Studio. Email us to start a conversation about your project."
 })
+
+// Set up OG metadata for the contact page
+useOgMetadata(
+  'Contact Us',
+  'Get in touch with Room 302 Studio. Email us to start a conversation about your project.'
+)
 </script>
 
 <style scoped>

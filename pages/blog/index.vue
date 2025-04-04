@@ -1,6 +1,6 @@
 <template>
   <main class="min-h-screen py-36 md:py-48 bg-stone-50/50 dark:bg-stone-900/80">
-    <div class="max-w-5xl mx-auto px-8 md:px-12">
+    <div class="max-w-5xl mx-auto pad">
       <!-- Blog header section -->
       <header class="mb-24 md:mb-32">
         <div class="font-mono text-primary-500 uppercase tracking-wide text-sm mb-4">Room 302 — Blog</div>
@@ -131,6 +131,10 @@ useSeoMeta({
 </script>
 
 <style scoped>
+.pad {
+  @apply px-8 md:px-12 lg:px-32;
+}
+
 .font-fraunces {
   font-family: 'Fraunces', serif;
   font-weight: 300;

@@ -31,9 +31,10 @@
     "animejs": "^3.2.1",
     "confetti-js": "^0.0.18",
     "d3-time-format": "^4.1.0",
+    "html2canvas": "^1.4.1",
     "nuxt-gtag": "^1.1.2",
     "nuxt-use-motion": "^2.0.0-beta.11",
-    "simplex-noise": "^4.0.1",
+    "simplex-noise": "^4.0.3",
     "tachyons": "^4.12.0",
     "three": "^0.160.0",
     "tweakpane": "^4.0.3"

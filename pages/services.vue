@@ -220,9 +220,26 @@
 </template>
 
 <script setup>
+import { useOgMetadata } from '~/composables/useOgMetadata'
+
+// Set up OG metadata for the services page
+useOgMetadata(
+  'Innovation Services',
+  'We help you see the future by exploring possibilities, nurturing ideas, and bringing them to life with care and expertise.'
+)
+
 useSeoMeta({
   title: 'Our Services | Room 302 Studio',
   description: 'We help you see the future by exploring possibilities, nurturing ideas, and bringing them to life with care and expertise.',
+  ogTitle: 'Our Services | Room 302 Studio',
+  ogDescription: 'We help you see the future by exploring possibilities, nurturing ideas, and bringing them to life with care and expertise.',
+  ogUrl: 'https://room302.studio/services',
+  ogImage: 'https://room302.studio/og/services.png',
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterImage: 'https://room302.studio/og/services.png',
+  twitterTitle: 'Our Services | Room 302 Studio',
+  twitterDescription: 'We help you see the future by exploring possibilities, nurturing ideas, and bringing them to life with care and expertise.'
 })
 </script>
 

@@ -1,10 +1,10 @@
 <template>
   <div id="site-nav" class="text-center w-full align-middle justify-between z-10 tracking-wider">
-    <div class="flex md:space-x-16 lg:space-x-24 items-center p-8 md:p-12 lg:px-32">
-      <Logo class="text-center max-w-24 md:w-16 md:h-16 lg:h-24 lg:w-24 mx-auto md:mx-0" />
+    <div class="flex md:space-x-16 lg:space-x-24 items-center justify-center p-8 md:p-12 lg:px-32">
+      <Logo class="text-center max-w-24 md:w-16 md:h-16 lg:h-24 lg:w-24" />
 
       <!-- Hamburger menu -->
-      <div @click="isOpen = !isOpen" class="py-10 bloc md:hidden">
+      <div @click="isOpen = !isOpen" class="absolute left-8 md:hidden">
         <UIcon name="i-heroicons-queue-list-16-solid" class="text-primary-500 w-12 h-12" />
       </div>
 
@@ -21,9 +21,10 @@
         </li>
       </ul>
 
-      <div class="hidden md:block">
+      <div class="hidden md:block absolute right-8 lg:right-32">
         <UButton to="/contact" class="text-lg leading-none px-4 py-2 tracking-wide font-mono">
-          Contact Us
+          <span class="hidden lg:inline">Contact Us</span>
+          <UIcon name="i-heroicons-envelope-16-solid" class="lg:hidden w-6 h-6" />
         </UButton>
       </div>
     </div>
@@ -51,7 +52,8 @@
           </li>
           <li class="pt-12">
             <UButton to="/contact" class="text-xl px-10 py-3 tracking-wider font-mono">
-              Contact Us
+              <span class="hidden lg:inline">Contact Us</span>
+              <UIcon name="i-heroicons-envelope-16-solid" class="lg:hidden w-8 h-8" />
             </UButton>
           </li>
         </ul>

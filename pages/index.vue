@@ -24,7 +24,8 @@
             <div class="button-group">
               <!-- Primary Contact Button -->
               <UButton ref="primaryBtn" to="/contact" color="primary" class="hero-btn primary-btn font-mono"
-                @mouseenter="primaryBtnHover = true" @mouseleave="primaryBtnHover = false">
+                @mouseenter="primaryBtnHover = true" @mouseleave="primaryBtnHover = false"
+                aria-label="Contact Room 302 Studio">
                 <!-- Spotlight effect -->
                 <span v-if="primaryBtnHover" class="btn-spotlight" :style="{
                   left: `${primaryX - primaryBtn?.offsetLeft}px`,
@@ -36,7 +37,8 @@
 
               <!-- Secondary Button -->
               <UButton ref="secondaryBtn" to="/our-work" variant="ghost" class="hero-btn secondary-btn font-mono"
-                @mouseenter="secondaryBtnHover = true" @mouseleave="secondaryBtnHover = false">
+                @mouseenter="secondaryBtnHover = true" @mouseleave="secondaryBtnHover = false"
+                aria-label="View our work">
                 <!-- Spotlight effect -->
                 <span v-if="secondaryBtnHover" class="btn-spotlight secondary" :style="{
                   left: `${secondaryX - secondaryBtn?.offsetLeft}px`,
@@ -121,6 +123,19 @@
         </div>
       </section>
 
+
+      <!-- Case Studies Section -->
+      <section class="case-studies-section">
+        <div class="case-studies-container">
+          <div v-for="(project, index) in featuredProjects" :key="project.title"
+            :ref="el => { if (el) caseStudyRefs[index] = el }" class="case-study-item"
+            @mouseenter="caseStudyHoverStates[index] = true" @mouseleave="caseStudyHoverStates[index] = false">
+            <HomepageCaseStudy :project="project" />
+          </div>
+        </div>
+      </section>
+
+
       <!-- Profile Cards Section -->
       <section class="profiles-section">
         <div class="container">
@@ -131,7 +146,6 @@
                 <div class="card-header-gradient"></div>
                 <div class="card-title-wrapper">
                   <h3 class="card-title">
-                    <UIcon name="i-openmoji-skunk" class="card-title-icon" />
                     <span>Skunkworks for hire</span>
                   </h3>
                 </div>
@@ -170,8 +184,7 @@
                 <div class="card-header-gradient"></div>
                 <div class="card-title-wrapper">
                   <h3 class="card-title">
-                    <UIcon name="i-fluent-lightbulb-filament-48-filled" class="card-title-icon" />
-                    <span>Unlock insights</span>
+                    <span>Unlock your data</span>
                   </h3>
                 </div>
               </div>
@@ -202,17 +215,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Case Studies Section -->
-      <section class="case-studies-section">
-        <div class="case-studies-container">
-          <div v-for="(project, index) in featuredProjects" :key="project.title"
-            :ref="el => { if (el) caseStudyRefs[index] = el }" class="case-study-item"
-            @mouseenter="caseStudyHoverStates[index] = true" @mouseleave="caseStudyHoverStates[index] = false">
-            <HomepageCaseStudy :project="project" />
           </div>
         </div>
       </section>
@@ -256,6 +258,7 @@
 import HomepageCaseStudy from '~/components/HomepageCaseStudy.vue'
 import { useRouter } from 'vue-router'
 import { useIntersectionObserver, usePointer, useScroll } from '@vueuse/core'
+import { useOgMetadata } from '~/composables/useOgMetadata'
 
 // Page transition
 const isPageTransitioning = ref(false)
@@ -343,14 +346,11 @@ onMounted(() => {
   document.head.appendChild(meta)
 });
 
-useSeoMeta({
-  title: 'Room 302 Studio',
-  description: 'We are an innovation lab that turns concepts into reality.',
-  ogDescription: 'We are an innovation lab that turns concepts into reality.',
-  url: 'https://room302.studio',
-  ogImage: '/twitter-image.jpg',
-  twitterImage: '/twitter-image.jpg',
-})
+// Set up OG metadata for the home page
+useOgMetadata(
+  'Room 302 Studio',
+  'We are an innovation lab that turns concepts into reality.'
+)
 
 // Featured projects data
 const featuredProjects = [
@@ -575,23 +575,24 @@ const featuredProjects = [
 }
 
 .profile-card {
-  @apply bg-white dark:bg-stone-900 rounded-xl shadow-sm transition-all duration-300 overflow-hidden;
+  @apply bg-white dark:bg-stone-950 rounded-xl shadow-sm transition-all duration-300 overflow-hidden p-4 sm:p-0;
 }
 
 .card-header {
-  @apply h-20 sm:h-24 bg-stone-100 dark:bg-stone-800 relative overflow-hidden;
+  /* @apply min-h-16 bg-stone-100 dark:bg-stone-800 relative overflow-hidden; */
+  @apply bg-primary-500 text-white relative min-h-16;
 }
 
 .card-header-gradient {
-  @apply absolute inset-0 bg-gradient-to-t from-white dark:from-stone-900 to-transparent;
+  @apply absolute inset-0 bg-gradient-to-t from-white dark:from-stone-950 to-transparent;
 }
 
 .card-title-wrapper {
-  @apply absolute inset-0 flex items-center px-4 sm:px-6;
+  @apply absolute inset-0 flex items-center px-4 sm:px-6 py-0;
 }
 
 .card-title {
-  @apply text-xl sm:text-2xl text-stone-800 dark:text-white flex items-center;
+  @apply text-xl sm:text-2xl flex items-center py-2;
 }
 
 .card-title-icon {

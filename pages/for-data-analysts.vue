@@ -109,31 +109,6 @@
     <!-- Technology Showcase -->
     <TechnologyShowcase title="Data Technologies We Use" type="data" :showAndMore="true" />
 
-    <!-- Visualization Showcase -->
-    <section class="pad my-24 md:my-32">
-      <h2 class="text-3xl md:text-4xl font-light mb-12 text-stone-800 dark:text-stone-200 text-center">Visualizations
-        That Tell Stories</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-stone-50 dark:bg-stone-900/50 p-6 rounded-lg overflow-hidden">
-          <img src="/our-work-images/reef-1.jpg" alt="Data Visualization Example"
-            class="rounded-lg w-full h-48 object-cover mb-4" />
-          <h3 class="font-medium text-xl text-primary-500 mb-2">Interactive Dashboards</h3>
-          <p class="text-stone-700 dark:text-stone-400">
-            We create custom dashboards that provide real-time insights into your key metrics, allowing for data
-            exploration and discovery.
-          </p>
-        </div>
-        <div class="bg-stone-50 dark:bg-stone-900/50 p-6 rounded-lg overflow-hidden">
-          <img src="/our-work-images/reef-2.jpg" alt="Data Visualization Example"
-            class="rounded-lg w-full h-48 object-cover mb-4" />
-          <h3 class="font-medium text-xl text-primary-500 mb-2">Complex Data Simplification</h3>
-          <p class="text-stone-700 dark:text-stone-400">
-            We transform complex datasets into clear, intuitive visualizations that make patterns and trends immediately
-            visible.
-          </p>
-        </div>
-      </div>
-    </section>
 
     <!-- Testimonial Section -->
     <!-- 
