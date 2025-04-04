@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Room 302 OG Image Generator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .og-container {
+      width: 1200px;
+      height: 630px;
+      background: linear-gradient(135deg, #1a1a1a, #4a3aff);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 60px;
+      box-sizing: border-box;
+    }
+
+    .title {
+      font-size: 72px;
+      font-weight: 300;
+      margin: 0 0 20px 0;
+      text-align: center;
+    }
+
+    .subtitle {
+      font-size: 36px;
+      opacity: 0.8;
+      margin: 0;
+      text-align: center;
+    }
+
+    .grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.2;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="og-container">
+    <div class="grid"></div>
+    <h1 class="title">Room 302 Studio</h1>
+    <p class="subtitle" id="page-name">Home</p>
+  </div>
+  <script>
+    // Get page name from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const page = urlParams.get('page') || 'Home';
+    document.getElementById('page-name').textContent = page.charAt(0).toUpperCase() + page.slice(1);
+  </script>
+</body>
+
+</html>
