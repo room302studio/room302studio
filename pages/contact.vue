@@ -4,21 +4,25 @@
       <div class="space-y-16 md:space-y-24">
         <!-- Email Section -->
         <div class="text-center space-y-8">
-          <h1 class="text-4xl md:text-5xl font-light tracking-tight text-zinc-900 dark:text-white">
+          <div class="font-mono text-primary-500 uppercase tracking-wide text-sm mb-6">Room 302 — Contact</div>
+          <h1
+            class="text-4xl md:text-5xl xl:text-6xl font-heading font-light tracking-tight text-stone-800 dark:text-stone-200 mb-8">
             Get in touch
           </h1>
-          <p class="text-lg md:text-xl text-zinc-600 dark:text-zinc-300 font-light tracking-wide max-w-2xl mx-auto">
-            Have a project in mind? Want to collaborate? Just want to say hi?
+          <p
+            class="text-lg md:text-xl text-stone-600 dark:text-stone-400 font-light tracking-wide max-w-2xl mx-auto mb-12">
+            <span class="font-serif italic">Have a project in mind?</span> Want to collaborate? Just want to say hi?
           </p>
 
-          <a href="mailto:studio@room302.studio"
-            class="inline-block px-8 py-4 text-lg md:text-xl bg-orange-500 hover:bg-orange-600 dark:bg-orange-400 dark:hover:bg-orange-500 text-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
-            studio@room302.studio
-          </a>
+          <div class="flex flex-col items-center space-y-8">
+            <MonoButton as="a" to="mailto:studio@room302.studio" primary large class="py-4 px-8 text-xl">
+              studio@room302.studio
+            </MonoButton>
 
-          <p class="text-base text-zinc-500 dark:text-zinc-400 font-light">
-            We'll get back to you as soon as possible.
-          </p>
+            <p class="text-base text-stone-500 dark:text-stone-400 font-light max-w-md">
+              We'll get back to you as soon as possible, typically within 24 hours on business days.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -26,6 +30,8 @@
 </template>
 
 <script setup>
+import { useOgMetadata } from '~/composables/useOgMetadata'
+
 useHead({
   title: "Contact Room 302 Studio",
 })
@@ -35,7 +41,36 @@ useSeoMeta({
   description: "Get in touch with Room 302 Studio. Email us to start a conversation about your project.",
   ogTitle: "Contact Room 302 Studio",
   ogDescription: "Get in touch with Room 302 Studio. Email us to start a conversation about your project.",
-  ogImage: "https://room302studio.com/og-image.jpg",
-  ogUrl: "https://room302studio.com/contact",
+  ogUrl: "https://room302.studio/contact",
+  ogImage: "https://room302.studio/og/contact.png",
+  ogType: "website",
+  twitterCard: "summary_large_image",
+  twitterImage: "https://room302.studio/og/contact.png",
+  twitterTitle: "Contact Room 302 Studio",
+  twitterDescription: "Get in touch with Room 302 Studio. Email us to start a conversation about your project."
 })
+
+// Set up OG metadata for the contact page
+useOgMetadata(
+  'Contact Us',
+  'Get in touch with Room 302 Studio. Email us to start a conversation about your project.'
+)
 </script>
+
+<style scoped>
+.font-heading {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  letter-spacing: -0.025em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+  font-weight: 300;
+}
+</style>

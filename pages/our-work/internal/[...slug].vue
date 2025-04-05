@@ -85,15 +85,15 @@
     </div>
 
     <!-- Content section -->
-    <div class="pad" :class="{
+    <div class="pad pt-16 pb-32" :class="{
       'opacity-0': data?.image && !isImageLoaded,
       'opacity-100': !data?.image || isImageLoaded
     }">
       <!-- Project metadata -->
       <div class="max-w-measure mx-auto">
-        <div class="md:flex mt-12 mb-16 gap-12">
-          <div class="mb-6 md:w-2/3">
-            <h4 class="text-stone-400 uppercase font-medium mb-4 tracking-wider text-sm">
+        <div class="md:flex mt-16 mb-24 gap-16">
+          <div class="mb-12 md:w-2/3">
+            <h4 class="text-stone-400 uppercase font-medium mb-6 tracking-wider text-sm">
               Project Overview
             </h4>
             <p class="text-stone-700 dark:text-stone-300 text-xl md:text-2xl font-light leading-relaxed">
@@ -101,16 +101,16 @@
             </p>
           </div>
 
-          <div class="md:w-1/3 space-y-8">
+          <div class="md:w-1/3 space-y-12">
             <div>
-              <h4 class="text-stone-400 uppercase font-medium mb-2 tracking-wider text-sm">Technology</h4>
+              <h4 class="text-stone-400 uppercase font-medium mb-4 tracking-wider text-sm">Technology</h4>
               <p class="monospace text-stone-700 dark:text-stone-300 leading-relaxed">
                 {{ data?.technology }}
               </p>
             </div>
 
             <div>
-              <h4 class="text-stone-400 uppercase font-medium mb-2 tracking-wider text-sm">Status</h4>
+              <h4 class="text-stone-400 uppercase font-medium mb-4 tracking-wider text-sm">Status</h4>
               <p class="monospace text-stone-700 dark:text-stone-300 leading-relaxed">
                 {{ data?.status || 'In Development' }}
               </p>
@@ -121,8 +121,10 @@
         <!-- Main content -->
         <div class="prose dark:prose-invert prose-lg prose-stone mx-auto 
                     prose-headings:font-light prose-p:font-light
-                    prose-a:text-orange-500 hover:prose-a:text-orange-400
-                    prose-img:rounded-lg prose-img:shadow-lg">
+                    prose-a:text-primary-500 hover:prose-a:text-primary-400
+                    prose-img:rounded-lg prose-img:shadow-lg
+                    prose-headings:mt-16 prose-headings:mb-8
+                    prose-p:my-8 prose-img:my-16">
           <ContentRenderer v-if="data" :value="data">
             <template #empty>
               <p>No content available for this project.</p>
@@ -183,6 +185,36 @@ const data = computed(() => {
 <style scoped>
 .pad {
   @apply px-6 md:px-12 lg:px-24;
+}
+
+/* Additional spacing for prose content */
+:deep(.prose) {
+  @apply mb-20;
+}
+
+:deep(.prose h2) {
+  @apply text-3xl mt-20 mb-8;
+}
+
+:deep(.prose h3) {
+  @apply text-2xl mt-16 mb-6;
+}
+
+:deep(.prose ul),
+:deep(.prose ol) {
+  @apply my-8 space-y-4;
+}
+
+:deep(.prose li) {
+  @apply mb-3;
+}
+
+:deep(.prose img) {
+  @apply my-16 rounded-lg shadow-lg;
+}
+
+:deep(.prose blockquote) {
+  @apply my-12 pl-6 border-l-4 border-stone-300 dark:border-stone-700 italic;
 }
 
 @keyframes scroll-pulse {
