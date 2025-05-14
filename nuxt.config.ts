@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   //   },
   // },
   devServer: {
-    port: 3030,
+    port: 3302,
   },
   modules: [
     // '@vueuse/motion/nuxt',
