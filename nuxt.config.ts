@@ -57,6 +57,12 @@ export default defineNuxtConfig({
       title: "Room 302 Studio",
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
+      meta: [
+        {
+          'http-equiv': 'Content-Security-Policy',
+          content: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://umami.tools.ejfox.com https://js.hsforms.net; connect-src 'self' https://umami.tools.ejfox.com;"
+        }
+      ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
         {
