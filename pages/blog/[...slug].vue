@@ -41,6 +41,26 @@
             {{ data.readingTime }} min read
           </div>
         </div>
+
+        <!-- Social sharing buttons -->
+        <div class="flex items-center gap-3 mt-6">
+          <span class="text-xs uppercase tracking-wider text-stone-400 dark:text-stone-500 font-mono mr-2">Share</span>
+          <button @click="shareToTwitter"
+            class="p-2 text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-200 transition-colors rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800"
+            aria-label="Share on Twitter">
+            <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-4 h-4" />
+          </button>
+          <button @click="shareToLinkedIn"
+            class="p-2 text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-200 transition-colors rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800"
+            aria-label="Share on LinkedIn">
+            <UIcon name="i-heroicons-share" class="w-4 h-4" />
+          </button>
+          <button @click="copyLinkToClipboard"
+            class="p-2 text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-200 transition-colors rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800"
+            aria-label="Copy link">
+            <UIcon :name="linkCopied ? 'i-heroicons-check' : 'i-heroicons-link'" class="w-4 h-4" />
+          </button>
+        </div>
       </div>
 
       <!-- Content renderer with fallback -->
@@ -58,6 +78,89 @@
       </ContentRenderer>
     </article>
 
+    <!-- Author bio card -->
+    <div v-if="data && (data.author || data.authorEmail)" class="max-w-3xl mx-auto px-6 md:px-8 mt-16">
+      <div class="border-t border-stone-200 dark:border-stone-800 pt-12">
+        <div class="flex items-start gap-6">
+          <!-- Avatar placeholder -->
+          <div class="flex-shrink-0 w-16 h-16 rounded-full bg-stone-200 dark:bg-stone-800 flex items-center justify-center">
+            <UIcon name="i-heroicons-user" class="w-8 h-8 text-stone-400 dark:text-stone-600" />
+          </div>
+
+          <!-- Author info -->
+          <div class="flex-grow">
+            <div class="text-sm uppercase tracking-wider text-stone-400 dark:text-stone-500 font-mono mb-2">Written by</div>
+            <h3 class="text-xl font-light text-stone-800 dark:text-stone-200 mb-2 font-fraunces">{{ data.author }}</h3>
+            <a v-if="data.authorEmail" :href="`mailto:${data.authorEmail}`"
+              class="text-sm text-stone-500 dark:text-stone-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-mono">
+              {{ data.authorEmail }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related posts section -->
+    <div v-if="relatedPosts && relatedPosts.length > 0" class="max-w-3xl mx-auto px-6 md:px-8 mt-20">
+      <div class="border-t border-stone-200 dark:border-stone-800 pt-16">
+        <h2 class="text-sm uppercase tracking-wider text-stone-400 dark:text-stone-500 font-mono mb-10">Related Reading</h2>
+        <div class="grid gap-8 md:grid-cols-2">
+          <NuxtLink v-for="post in relatedPosts" :key="post._path" :to="post._path"
+            class="group block p-6 rounded-lg border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 hover:shadow-lg transition-all duration-300">
+            <div class="text-xs uppercase tracking-wider text-stone-400 dark:text-stone-500 font-mono mb-3">
+              {{ formatDate(post.date) }}
+            </div>
+            <h3 class="text-lg font-light text-stone-800 dark:text-stone-200 mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors font-fraunces">
+              {{ post.title }}
+            </h3>
+            <p v-if="post.description" class="text-sm text-stone-600 dark:text-stone-400 line-clamp-2">
+              {{ post.description }}
+            </p>
+          </NuxtLink>
+        </div>
+      </div>
+    </div>
+
+    <!-- Previous/Next navigation -->
+    <nav v-if="prevPost || nextPost" class="max-w-3xl mx-auto px-6 md:px-8 mt-20 mb-16">
+      <div class="border-t border-stone-200 dark:border-stone-800 pt-16">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Previous post -->
+          <NuxtLink v-if="prevPost" :to="prevPost._path"
+            class="group block p-6 rounded-lg border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 hover:shadow-lg transition-all duration-300">
+            <div class="flex items-center text-xs uppercase tracking-wider text-stone-400 dark:text-stone-500 font-mono mb-4">
+              <UIcon name="i-heroicons-arrow-long-left" class="w-4 h-4 mr-2 transition-transform duration-300 group-hover:-translate-x-1" />
+              <span>Previous</span>
+            </div>
+            <h3 class="text-lg font-light text-stone-800 dark:text-stone-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors font-fraunces">
+              {{ prevPost.title }}
+            </h3>
+            <div class="text-xs text-stone-500 dark:text-stone-400 font-mono mt-2">
+              {{ formatDate(prevPost.date) }}
+            </div>
+          </NuxtLink>
+
+          <!-- Empty space if no previous post -->
+          <div v-else></div>
+
+          <!-- Next post -->
+          <NuxtLink v-if="nextPost" :to="nextPost._path"
+            class="group block p-6 rounded-lg border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 hover:shadow-lg transition-all duration-300 text-right">
+            <div class="flex items-center justify-end text-xs uppercase tracking-wider text-stone-400 dark:text-stone-500 font-mono mb-4">
+              <span>Next</span>
+              <UIcon name="i-heroicons-arrow-long-right" class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+            </div>
+            <h3 class="text-lg font-light text-stone-800 dark:text-stone-200 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors font-fraunces">
+              {{ nextPost.title }}
+            </h3>
+            <div class="text-xs text-stone-500 dark:text-stone-400 font-mono mt-2">
+              {{ formatDate(nextPost.date) }}
+            </div>
+          </NuxtLink>
+        </div>
+      </div>
+    </nav>
+
     <!-- Reading progress indicator -->
     <div class="fixed top-0 left-0 right-0 h-1 bg-stone-200 dark:bg-stone-800 z-20">
       <div class="h-full bg-stone-400 dark:bg-stone-600 transition-all duration-150"
@@ -73,10 +176,70 @@ definePageMeta({
 });
 
 const route = useRoute();
+const router = useRouter();
 const readingProgress = ref(0);
+const linkCopied = ref(false);
 
 const { data } = await useAsyncData(async () => {
   return queryContent("blog", route.params.slug[0]).findOne();
+});
+
+// Get all blog posts sorted by date
+const { data: allPosts } = await useAsyncData('all-blog-posts', async () => {
+  return queryContent("blog")
+    .where({ hidden: { $ne: true }, inprogress: { $ne: true } })
+    .sort({ date: -1 })
+    .find();
+});
+
+// Find previous and next posts
+const currentIndex = computed(() => {
+  if (!allPosts.value || !data.value) return -1;
+  return allPosts.value.findIndex(post => post._path === data.value._path);
+});
+
+const prevPost = computed(() => {
+  if (currentIndex.value === -1 || currentIndex.value === 0) return null;
+  return allPosts.value[currentIndex.value - 1];
+});
+
+const nextPost = computed(() => {
+  if (currentIndex.value === -1 || currentIndex.value === allPosts.value.length - 1) return null;
+  return allPosts.value[currentIndex.value + 1];
+});
+
+// Find related posts based on tags
+const relatedPosts = computed(() => {
+  if (!data.value || !allPosts.value) return [];
+
+  const currentTags = data.value.tags ? data.value.tags.split(' ') : [];
+  if (currentTags.length === 0) {
+    // If no tags, return most recent posts
+    return allPosts.value
+      .filter(post => post._path !== data.value._path)
+      .slice(0, 2);
+  }
+
+  // Score posts by tag overlap
+  const scoredPosts = allPosts.value
+    .filter(post => post._path !== data.value._path)
+    .map(post => {
+      const postTags = post.tags ? post.tags.split(' ') : [];
+      const overlap = currentTags.filter(tag => postTags.includes(tag)).length;
+      return { post, score: overlap };
+    })
+    .filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score);
+
+  // If we have related posts, return top 2-3
+  if (scoredPosts.length > 0) {
+    return scoredPosts.slice(0, Math.min(3, scoredPosts.length)).map(item => item.post);
+  }
+
+  // Otherwise return most recent posts
+  return allPosts.value
+    .filter(post => post._path !== data.value._path)
+    .slice(0, 2);
 });
 
 // Format date in a more readable format
@@ -89,6 +252,34 @@ const formatDate = (dateString) => {
     day: 'numeric',
     year: 'numeric'
   }).format(date);
+};
+
+// Social sharing functions
+const shareToTwitter = () => {
+  if (!data.value) return;
+  const url = `https://room302studio.com${data.value._path}`;
+  const text = data.value.title;
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+};
+
+const shareToLinkedIn = () => {
+  if (!data.value) return;
+  const url = `https://room302studio.com${data.value._path}`;
+  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank');
+};
+
+const copyLinkToClipboard = async () => {
+  if (!data.value) return;
+  const url = `https://room302studio.com${data.value._path}`;
+  try {
+    await navigator.clipboard.writeText(url);
+    linkCopied.value = true;
+    setTimeout(() => {
+      linkCopied.value = false;
+    }, 2000);
+  } catch (err) {
+    console.error('Failed to copy link:', err);
+  }
 };
 
 // Calculate reading progress
@@ -139,7 +330,6 @@ onBeforeUnmount(() => {
 });
 
 // Also watch route changes within blog posts
-const router = useRouter();
 watch(
   () => router.currentRoute.value.fullPath,
   () => {
