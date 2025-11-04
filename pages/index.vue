@@ -1,7 +1,10 @@
 <template>
   <div class="index min-h-screen">
     <!-- Page transition overlay -->
-    <div class="page-transition-overlay" :class="{ 'active': isPageTransitioning }"></div>
+    <div
+      class="page-transition-overlay"
+      :class="{ active: isPageTransitioning }"
+    ></div>
 
     <div class="z-10 relative">
       <!-- Hero Section -->
@@ -11,71 +14,115 @@
             <h1 class="hero-title font-fraunces">
               <span class="block font-fraunces-regular">We are an</span>
               innovation lab
-              <span class="block mt-2 font-fraunces-regular">that turns
-                <em class="font-fraunces-black-italic text-primary-300 dark:text-primary-700">concepts</em>
-                into <em class="font-fraunces-black-italic text-primary-500">reality.</em>
+              <span class="block mt-2 font-fraunces-regular"
+                >that turns
+                <em
+                  class="font-fraunces-black-italic text-primary-300 dark:text-primary-700"
+                  >concepts</em
+                >
+                into
+                <em class="font-fraunces-black-italic text-primary-500"
+                  >reality.</em
+                >
               </span>
             </h1>
 
             <p class="hero-subtitle">
-              If your team is struggling to validate and market something quickly, we can help you forge a path forward.
+              If your team is struggling to validate and market something
+              quickly, we can help you forge a path forward.
             </p>
 
             <div class="button-group">
               <!-- Primary Contact Button -->
-              <UButton ref="primaryBtn" to="/contact" color="primary" class="hero-btn primary-btn font-mono"
-                @mouseenter="primaryBtnHover = true" @mouseleave="primaryBtnHover = false"
-                aria-label="Contact Room 302 Studio">
+              <UButton
+                ref="primaryBtn"
+                to="/contact"
+                color="primary"
+                class="hero-btn primary-btn font-mono"
+                @mouseenter="primaryBtnHover = true"
+                @mouseleave="primaryBtnHover = false"
+                aria-label="Contact Room 302 Studio"
+              >
                 <!-- Spotlight effect -->
-                <span v-if="primaryBtnHover" class="btn-spotlight" :style="{
-                  left: `${primaryX - primaryBtn?.offsetLeft}px`,
-                  top: `${primaryY - primaryBtn?.offsetTop}px`,
-                }" />
+                <span
+                  v-if="primaryBtnHover"
+                  class="btn-spotlight"
+                  :style="{
+                    left: `${primaryX - primaryBtn?.offsetLeft}px`,
+                    top: `${primaryY - primaryBtn?.offsetTop}px`,
+                  }"
+                />
                 Contact Us
                 <UIcon name="i-heroicons-arrow-right" class="btn-icon" />
               </UButton>
 
               <!-- Secondary Button -->
-              <UButton ref="secondaryBtn" to="/our-work" variant="ghost" class="hero-btn secondary-btn font-mono"
-                @mouseenter="secondaryBtnHover = true" @mouseleave="secondaryBtnHover = false"
-                aria-label="View our work">
+              <UButton
+                ref="secondaryBtn"
+                to="/our-work"
+                variant="ghost"
+                class="hero-btn secondary-btn font-mono"
+                @mouseenter="secondaryBtnHover = true"
+                @mouseleave="secondaryBtnHover = false"
+                aria-label="View our work"
+              >
                 <!-- Spotlight effect -->
-                <span v-if="secondaryBtnHover" class="btn-spotlight secondary" :style="{
-                  left: `${secondaryX - secondaryBtn?.offsetLeft}px`,
-                  top: `${secondaryY - secondaryBtn?.offsetTop}px`,
-                }" />
+                <span
+                  v-if="secondaryBtnHover"
+                  class="btn-spotlight secondary"
+                  :style="{
+                    left: `${secondaryX - secondaryBtn?.offsetLeft}px`,
+                    top: `${secondaryY - secondaryBtn?.offsetTop}px`,
+                  }"
+                />
                 See our work
               </UButton>
             </div>
           </div>
 
           <!-- Value Propositions -->
-          <div ref="valuePropsRef" class="value-props" :class="{ 'visible': valuePropsVisible }">
-            <div v-for="(_, index) in 3" :key="index" class="value-prop"
-              :style="{ 'transition-delay': `${index * 150}ms` }">
+          <div
+            ref="valuePropsRef"
+            class="value-props"
+            :class="{ visible: valuePropsVisible }"
+          >
+            <div
+              v-for="(_, index) in 3"
+              :key="index"
+              class="value-prop"
+              :style="{ 'transition-delay': `${index * 150}ms` }"
+            >
               <!-- Value prop content -->
               <template v-if="index === 0">
-                <UIcon name="i-material-symbols-light:speed-rounded" class="value-icon" />
+                <UIcon
+                  name="i-material-symbols-light:speed-rounded"
+                  class="value-icon"
+                />
                 <h3 class="value-title">Fast-paced prototyping</h3>
                 <p class="value-text">
-                  We know the best way to make great ideas is to iterate. A lot. Our focus on rapid prototyping
-                  lets us get further, faster.
+                  We know the best way to make great ideas is to iterate. A lot.
+                  Our focus on rapid prototyping lets us get further, faster.
                 </p>
               </template>
               <template v-else-if="index === 1">
-                <UIcon name="i-material-symbols-light:insert-chart-outline" class="value-icon" />
+                <UIcon
+                  name="i-material-symbols-light:insert-chart-outline"
+                  class="value-icon"
+                />
                 <h3 class="value-title">Rooted in data</h3>
                 <p class="value-text">
-                  We have a deep background in data visualization and analysis, and our core processes use data to
-                  inform all our decisions along the way.
+                  We have a deep background in data visualization and analysis,
+                  and our core processes use data to inform all our decisions
+                  along the way.
                 </p>
               </template>
               <template v-else>
                 <UIcon name="i-fa6-solid-hammer" class="value-icon" />
                 <h3 class="value-title">Fearless exploration</h3>
                 <p class="value-text">
-                  Part of being on the cutting edge is being willing to take risks. We're not afraid to explore
-                  uncharted territory with you; it's what we do best.
+                  Part of being on the cutting edge is being willing to take
+                  risks. We're not afraid to explore uncharted territory with
+                  you; it's what we do best.
                 </p>
               </template>
             </div>
@@ -93,7 +140,10 @@
           <div class="video-wrapper">
             <!-- Video -->
             <video class="full-video" autoplay loop muted playsinline>
-              <source src="https://res.cloudinary.com/ejf/video/upload/v1707429688/Comp_2_1_1.mp4" type="video/mp4" />
+              <source
+                src="https://res.cloudinary.com/ejf/video/upload/v1707429688/Comp_2_1_1.mp4"
+                type="video/mp4"
+              />
             </video>
 
             <!-- Overlay -->
@@ -107,13 +157,15 @@
                     <h2 class="video-title font-fraunces-black">
                       Bringing your ideas from
                       <span class="font-fraunces-black-italic">0</span> to
-                      <span class="font-fraunces-black-italic">60</span><span>.</span>
+                      <span class="font-fraunces-black-italic">60</span
+                      ><span>.</span>
                     </h2>
                   </div>
                   <div class="video-description-col">
                     <p class="video-description">
-                      From rapid prototyping to scalable solutions, we transform complex challenges into
-                      elegant implementations faster than you think.
+                      From rapid prototyping to scalable solutions, we transform
+                      complex challenges into elegant implementations faster
+                      than you think.
                     </p>
                   </div>
                 </div>
@@ -123,18 +175,25 @@
         </div>
       </section>
 
-
       <!-- Case Studies Section -->
       <section class="case-studies-section">
         <div class="case-studies-container">
-          <div v-for="(project, index) in featuredProjects" :key="project.title"
-            :ref="el => { if (el) caseStudyRefs[index] = el }" class="case-study-item"
-            @mouseenter="caseStudyHoverStates[index] = true" @mouseleave="caseStudyHoverStates[index] = false">
+          <div
+            v-for="(project, index) in featuredProjects"
+            :key="project.title"
+            :ref="
+              (el) => {
+                if (el) caseStudyRefs[index] = el;
+              }
+            "
+            class="case-study-item"
+            @mouseenter="caseStudyHoverStates[index] = true"
+            @mouseleave="caseStudyHoverStates[index] = false"
+          >
             <HomepageCaseStudy :project="project" />
           </div>
         </div>
       </section>
-
 
       <!-- Profile Cards Section -->
       <section class="profiles-section">
@@ -152,17 +211,23 @@
               </div>
               <div class="card-body">
                 <p class="card-description">
-                  Need to test and validate a prototype quickly? We help you overcome stakeholder politics and get to
-                  market faster.
+                  Need to test and validate a prototype quickly? We help you
+                  overcome stakeholder politics and get to market faster.
                 </p>
                 <ul class="card-features">
                   <li class="feature-item">
                     <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>Visualize multiple possible futures for your product</span>
+                    <span
+                      >Visualize multiple possible futures for your
+                      product</span
+                    >
                   </li>
                   <li class="feature-item">
                     <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>Bring stakeholders together with tangible prototypes</span>
+                    <span
+                      >Bring stakeholders together with tangible
+                      prototypes</span
+                    >
                   </li>
                   <li class="feature-item">
                     <UIcon name="i-heroicons-check" class="feature-icon" />
@@ -172,7 +237,10 @@
                 <div class="card-action">
                   <UButton to="/for-ceos" class="card-button group">
                     Learn more
-                    <UIcon name="i-heroicons-arrow-right" class="button-arrow" />
+                    <UIcon
+                      name="i-heroicons-arrow-right"
+                      class="button-arrow"
+                    />
                   </UButton>
                 </div>
               </div>
@@ -190,8 +258,9 @@
               </div>
               <div class="card-body">
                 <p class="card-description">
-                  Drowning in data but starving for insights? We transform complex data into actionable visualizations
-                  that tell a story for internal stakeholders or your customers.
+                  Drowning in data but starving for insights? We transform
+                  complex data into actionable visualizations that tell a story
+                  for internal stakeholders or your customers.
                 </p>
                 <ul class="card-features">
                   <li class="feature-item">
@@ -200,17 +269,26 @@
                   </li>
                   <li class="feature-item">
                     <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>Find patterns in complex datasets through visualization</span>
+                    <span
+                      >Find patterns in complex datasets through
+                      visualization</span
+                    >
                   </li>
                   <li class="feature-item">
                     <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>Create reusable tools that deliver consistent value for your team</span>
+                    <span
+                      >Create reusable tools that deliver consistent value for
+                      your team</span
+                    >
                   </li>
                 </ul>
                 <div class="card-action">
                   <UButton to="/for-data-analysts" class="card-button group">
                     Learn more
-                    <UIcon name="i-heroicons-arrow-right" class="button-arrow" />
+                    <UIcon
+                      name="i-heroicons-arrow-right"
+                      class="button-arrow"
+                    />
                   </UButton>
                 </div>
               </div>
@@ -230,7 +308,8 @@
               </h3>
 
               <p class="contact-description">
-                We turn concepts into reality for organizations that need results.
+                We turn concepts into reality for organizations that need
+                results.
               </p>
             </div>
 
@@ -243,8 +322,10 @@
               </div>
 
               <p class="contact-alternative">
-                or email us directly at <a href="mailto:studio@room302.studio"
-                  class="contact-email">studio@room302.studio</a>
+                or email us directly at
+                <a href="mailto:studio@room302.studio" class="contact-email"
+                  >studio@room302.studio</a
+                >
               </p>
             </div>
           </div>
@@ -255,178 +336,214 @@
 </template>
 
 <script setup>
-import HomepageCaseStudy from '~/components/HomepageCaseStudy.vue'
-import { useRouter } from 'vue-router'
-import { useIntersectionObserver, usePointer, useScroll } from '@vueuse/core'
-import { useOgMetadata } from '~/composables/useOgMetadata'
+import HomepageCaseStudy from "~/components/HomepageCaseStudy.vue";
+import { useRouter } from "vue-router";
+import { useIntersectionObserver, usePointer, useScroll } from "@vueuse/core";
+import { useOgMetadata } from "~/composables/useOgMetadata";
 
 // Page transition
-const isPageTransitioning = ref(false)
-const router = useRouter()
+const isPageTransitioning = ref(false);
+const router = useRouter();
 
 router.beforeEach((to, from, next) => {
   if (to.path !== from.path) {
-    isPageTransitioning.value = true
+    isPageTransitioning.value = true;
     setTimeout(() => {
-      next()
-    }, 300)
+      next();
+    }, 300);
   } else {
-    next()
+    next();
   }
-})
+});
 
 router.afterEach(() => {
   setTimeout(() => {
-    isPageTransitioning.value = false
-  }, 500)
-})
+    isPageTransitioning.value = false;
+  }, 500);
+});
 
 // Scroll-Triggered Value Propositions Reveal
-const valuePropsRef = ref(null)
-const valuePropsVisible = ref(false)
+const valuePropsRef = ref(null);
+const valuePropsVisible = ref(false);
 
-useIntersectionObserver(valuePropsRef, ([{ isIntersecting }]) => {
-  if (isIntersecting) {
-    valuePropsVisible.value = true
-  }
-}, { threshold: 0.2 })
+useIntersectionObserver(
+  valuePropsRef,
+  ([{ isIntersecting }]) => {
+    if (isIntersecting) {
+      valuePropsVisible.value = true;
+    }
+  },
+  { threshold: 0.2 },
+);
 
 // Hero Button Hover Spotlight
-const primaryBtn = ref(null)
-const secondaryBtn = ref(null)
-const primaryBtnHover = ref(false)
-const secondaryBtnHover = ref(false)
+const primaryBtn = ref(null);
+const secondaryBtn = ref(null);
+const primaryBtnHover = ref(false);
+const secondaryBtnHover = ref(false);
 
 const { x: primaryX, y: primaryY } = usePointer({
   target: primaryBtn,
-})
+});
 
 const { x: secondaryX, y: secondaryY } = usePointer({
   target: secondaryBtn,
-})
+});
 
 // Parallax Video Section
-const { y: scrollY } = useScroll()
-const videoSectionRef = ref(null)
+const { y: scrollY } = useScroll();
+const videoSectionRef = ref(null);
 
 // Compute parallax effect based on scroll position
 const videoParallax = computed(() => {
-  if (!videoSectionRef.value) return {}
+  if (!videoSectionRef.value) return {};
 
-  const rect = videoSectionRef.value.getBoundingClientRect()
-  const elementCenter = rect.top + rect.height / 2
-  const viewportCenter = window.innerHeight / 2
-  const distance = elementCenter - viewportCenter
+  const rect = videoSectionRef.value.getBoundingClientRect();
+  const elementCenter = rect.top + rect.height / 2;
+  const viewportCenter = window.innerHeight / 2;
+  const distance = elementCenter - viewportCenter;
 
   // Calculate percentage for parallax effect (limited range)
-  const parallaxFactor = Math.min(Math.max(-15, distance * 0.05), 15)
+  const parallaxFactor = Math.min(Math.max(-15, distance * 0.05), 15);
 
   return {
     transform: `translateY(${parallaxFactor}px)`,
-  }
-})
+  };
+});
 
 // Case Study Hover Effect
-const caseStudyRefs = ref([])
-const caseStudyHoverStates = ref([false, false, false]) // Pre-initialize with false values
+const caseStudyRefs = ref([]);
+const caseStudyHoverStates = ref([false, false, false]); // Pre-initialize with false values
 
 onMounted(() => {
   // Make all elements visible immediately
-  document.querySelectorAll('.hero-text, .hero-subtitle, .hero-btn, .value-prop, .value-icon, .what-we-do-item, .approach-card, .case-study-item, .contact-heading, .contact-text, .contact-form, .video-heading, .video-text').forEach(el => {
-    if (el) {
-      el.style.opacity = '1';
-      el.style.transform = 'none';
-    }
-  });
+  document
+    .querySelectorAll(
+      ".hero-text, .hero-subtitle, .hero-btn, .value-prop, .value-icon, .what-we-do-item, .approach-card, .case-study-item, .contact-heading, .contact-text, .contact-form, .video-heading, .video-text",
+    )
+    .forEach((el) => {
+      if (el) {
+        el.style.opacity = "1";
+        el.style.transform = "none";
+      }
+    });
 
   // Add theme-color meta tag for browser chrome color
-  const meta = document.createElement('meta')
-  meta.name = 'theme-color'
-  meta.content = '#f5f5f4' // Default to light stone color
-  document.head.appendChild(meta)
+  const meta = document.createElement("meta");
+  meta.name = "theme-color";
+  meta.content = "#f5f5f4"; // Default to light stone color
+  document.head.appendChild(meta);
 });
 
 // Set up OG metadata for the home page
 useOgMetadata(
-  'Room 302 Studio',
-  'We are an innovation lab that turns concepts into reality.'
-)
+  "Room 302 Studio",
+  "We are an innovation lab that turns concepts into reality.",
+);
 
 // Featured projects data
 const featuredProjects = [
   {
-    title: 'Mapping Resilience',
-    client: 'The Margin',
-    description: 'When the Wildlife Conservation Society needed to visualize critical environmental data quickly, we delivered an interactive experience that transformed complex datasets into a compelling narrative about coral reef resilience.',
+    title: "Mapping Resilience",
+    client: "The Margin",
+    description:
+      "When the Wildlife Conservation Society needed to visualize critical environmental data quickly, we delivered an interactive experience that transformed complex datasets into a compelling narrative about coral reef resilience.",
     images: {
-      primary: '/our-work-images/reef-2.jpg',
-      secondary: '/our-work-images/reef-1.jpg'
+      primary: "/our-work-images/reef-2.jpg",
+      secondary: "/our-work-images/reef-1.jpg",
     },
-    link: 'our-work/client-work/coralreefs',
+    link: "our-work/client-work/coralreefs",
     valueAdd: [
       {
-        icon: 'i-heroicons-globe-americas',
-        text: 'We developed interactive maps to visualize ecosystem resilience across the globe.'
+        icon: "i-heroicons-globe-americas",
+        text: "We developed interactive maps to visualize ecosystem resilience across the globe.",
       },
       {
-        icon: 'i-fluent-lightbulb-filament-48-filled',
-        text: 'Complex scientific datasets were transformed into accessible visual narratives for policymakers.'
+        icon: "i-fluent-lightbulb-filament-48-filled",
+        text: "Complex scientific datasets were transformed into accessible visual narratives for policymakers.",
       },
       {
-        icon: 'i-heroicons-presentation-chart-line',
-        text: 'The visualization supported WCS advocacy efforts with clear, actionable insights.'
-      }
-    ]
+        icon: "i-heroicons-presentation-chart-line",
+        text: "The visualization supported WCS advocacy efforts with clear, actionable insights.",
+      },
+    ],
   },
   {
-    title: 'Ukraine Grain',
-    client: 'The Plotline',
-    description: 'Facing tight deadlines and challenging data sources, we built an interactive visualization that cut through bureaucratic barriers to clearly show how Ukraine\'s war impacts global food security, helping stakeholders make informed decisions.',
+    title: "Ukraine Grain",
+    client: "The Plotline",
+    description:
+      "Facing tight deadlines and challenging data sources, we built an interactive visualization that cut through bureaucratic barriers to clearly show how Ukraine's war impacts global food security, helping stakeholders make informed decisions.",
     images: {
-      primary: '/our-work-images/ukrainegrain.png',
-      secondary: '/our-work-images/ukraine.jpg'
+      primary: "/our-work-images/ukrainegrain.png",
+      secondary: "/our-work-images/ukraine.jpg",
     },
-    link: 'our-work/client-work/ukrainegrain',
+    link: "our-work/client-work/ukrainegrain",
     valueAdd: [
       {
-        icon: 'i-heroicons-clock',
-        text: 'Against a tight deadline, we rapidly assembled disparate data sources into coherent visualizations.'
+        icon: "i-heroicons-clock",
+        text: "Against a tight deadline, we rapidly assembled disparate data sources into coherent visualizations.",
       },
       {
-        icon: 'i-heroicons-map',
-        text: 'We mapped critical supply chain disruptions to illustrate global food security implications.'
+        icon: "i-heroicons-map",
+        text: "We mapped critical supply chain disruptions to illustrate global food security implications.",
       },
       {
-        icon: 'i-heroicons-eye',
-        text: 'The visualization brought clarity to a complex geopolitical situation for key decision-makers.'
-      }
-    ]
+        icon: "i-heroicons-eye",
+        text: "The visualization brought clarity to a complex geopolitical situation for key decision-makers.",
+      },
+    ],
   },
   {
-    title: 'Election 2024',
-    client: 'Associated Press',
-    description: 'Serving as a pinch hitter for AP\'s award-nominated VoteCast team, our founder integrated with their existing talent to support the development of real-time visualizations that helped millions understand complex voter data from 120,000+ respondents on election night.',
+    title: "Election 2024",
+    client: "Associated Press",
+    description:
+      "Serving as a pinch hitter for AP's award-nominated VoteCast team, our founder integrated with their existing talent to support the development of real-time visualizations that helped millions understand complex voter data from 120,000+ respondents on election night.",
     images: {
-      primary: '/our-work-images/ap1.png',
-      secondary: '/our-work-images/ap2.png'
+      primary: "/our-work-images/ap1.png",
+      secondary: "/our-work-images/ap2.png",
     },
-    link: 'our-work/client-work/apnews-2024',
+    link: "our-work/client-work/apnews-2024",
     valueAdd: [
       {
-        icon: 'i-heroicons-bolt',
-        text: 'We integrated seamlessly with AP\'s team to deliver real-time visualizations under extreme pressure.'
+        icon: "i-heroicons-bolt",
+        text: "We integrated seamlessly with AP's team to deliver real-time visualizations under extreme pressure.",
       },
       {
-        icon: 'i-heroicons-document-chart-bar',
-        text: 'Our work helped translate complex polling data from 120,000+ respondents into accessible insights.'
+        icon: "i-heroicons-document-chart-bar",
+        text: "Our work helped translate complex polling data from 120,000+ respondents into accessible insights.",
       },
       {
-        icon: 'i-heroicons-users',
-        text: 'Millions of viewers relied on our visualizations to understand emerging electoral patterns.'
-      }
-    ]
-  }
-]
+        icon: "i-heroicons-users",
+        text: "Millions of viewers relied on our visualizations to understand emerging electoral patterns.",
+      },
+    ],
+  },
+  {
+    title: "Subway Builder",
+    client: "Colin Miller / Room 302 Studio",
+    description:
+      "From concept to launch, we incubated studio member Colin Miller's ambitious transit simulation game. Through hands-on UX iteration, engineering management, and community building, we helped transform a broken subway commute frustration into a hyperrealistic game that uses Census data to simulate millions of commuters across 26 cities.",
+    images: {
+      primary: "/our-work-images/subway-builder-1.jpg",
+      secondary: "/our-work-images/subway-builder-2.jpg",
+    },
+    link: "our-work/internal/subway-builder",
+    valueAdd: [
+      {
+        icon: "i-heroicons-sparkles",
+        text: "We iterated on UX design and gameplay mechanics, ensuring complex transit data remained accessible and engaging.",
+      },
+      {
+        icon: "i-heroicons-code-bracket",
+        text: "Our engineering management established sustainable workflows and realistic roadmaps that scaled with the project's ambition.",
+      },
+      {
+        icon: "i-heroicons-user-group",
+        text: "We built and moderated the Discord community, creating feedback loops between Colin and early adopters while onboarding additional developers.",
+      },
+    ],
+  },
+];
 </script>
 
 <style scoped>
@@ -473,12 +590,12 @@ const featuredProjects = [
 
 .btn-spotlight {
   @apply absolute inline-block rounded-full h-[1px] w-[1px] pointer-events-none;
-  boxShadow: 0 0 25px 0.6rem rgba(255, 255, 255, 0.2);
+  boxshadow: 0 0 25px 0.6rem rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.15);
 }
 
 .btn-spotlight.secondary {
-  boxShadow: 0 0 20px 0.5rem rgba(255, 255, 255, 0.15);
+  boxshadow: 0 0 20px 0.5rem rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.1);
 }
 
@@ -583,10 +700,11 @@ const featuredProjects = [
   @apply bg-primary-500 text-white relative min-h-16;
 }
 
+/*
 .card-header-gradient {
-  @apply absolute inset-0 bg-gradient-to-t from-white dark:from-stone-950 to-transparent;
+   @apply absolute inset-0 bg-gradient-to-t from-white dark:from-stone-950 to-transparent;
 }
-
+*/
 .card-title-wrapper {
   @apply absolute inset-0 flex items-center px-4 sm:px-6 py-0;
 }
@@ -716,26 +834,26 @@ const featuredProjects = [
 
 /* Font definitions */
 .font-fraunces {
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
 }
 
 .font-fraunces-regular {
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
   font-weight: 300;
 }
 
 .font-fraunces-black {
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
   font-weight: 700;
 }
 
 .font-fraunces-black-italic {
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
   font-weight: 700;
   font-style: italic;
 }
 
 .font-mono {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
 }
 </style>
