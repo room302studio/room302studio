@@ -3,7 +3,15 @@
     <div class="max-w-5xl mx-auto pad">
       <!-- Blog header section -->
       <header class="mb-24 md:mb-32">
-        <div class="font-mono text-primary-500 uppercase tracking-wide text-sm mb-4">Room 302 — Blog</div>
+        <div class="flex items-center justify-between mb-4">
+          <div class="font-mono text-primary-500 uppercase tracking-wide text-sm">Room 302 — Blog</div>
+          <a href="/rss.xml" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-stone-400 dark:text-stone-500 hover:text-stone-600 dark:hover:text-stone-400 transition-colors font-mono group"
+            title="Subscribe via RSS">
+            <UIcon name="i-heroicons-rss" class="w-4 h-4 group-hover:animate-pulse" />
+            <span>RSS Feed</span>
+          </a>
+        </div>
         <h1
           class="font-fraunces text-5xl md:text-6xl xl:text-7xl font-light mb-10 text-stone-800 dark:text-stone-200 tracking-tight">
           Blog
@@ -15,8 +23,57 @@
       </header>
 
       <ContentQuery path="/blog/" :sort="{ date: -1 }" v-slot="{ data }">
+        <!-- Featured posts section -->
+        <div v-if="featuredPosts(data).length > 0" class="mb-40 md:mb-48">
+          <div class="mb-12 flex items-center gap-3">
+            <UIcon name="i-heroicons-star" class="w-5 h-5 text-primary-500" />
+            <h2 class="text-sm uppercase tracking-wider text-stone-400 dark:text-stone-500 font-mono">Featured</h2>
+          </div>
+          <div class="grid md:grid-cols-2 gap-12">
+            <div v-for="article in featuredPosts(data)" :key="article._path" class="group">
+              <div class="max-w-3xl mx-auto">
+                <ContentQuery :path="article._path" v-slot="{ data: articleData }" find="one">
+                  <NuxtLink :to="article._path"
+                    class="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-xl transition-all hover:translate-y-[-2px] duration-300">
+                    <div class="space-y-6">
+                      <div v-if="articleData.image"
+                        class="aspect-[16/9] w-full bg-cover bg-center rounded-xl ring-2 ring-inset ring-primary-500/30 overflow-hidden group-hover:ring-primary-500/50 transition-all duration-300">
+                        <div class="w-full h-full bg-cover bg-center group-hover:scale-[1.05] transition-transform duration-500"
+                          :style="{ 'background-image': `url(${articleData.image})` }">
+                        </div>
+                      </div>
+
+                      <div class="space-y-4">
+                        <div class="font-mono text-xs uppercase tracking-wider text-stone-400 dark:text-stone-500">
+                          {{ formatDate(article.date) }}
+                        </div>
+                        <h3
+                          class="font-fraunces text-2xl md:text-3xl font-light tracking-tight text-stone-800 dark:text-stone-200 leading-snug group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
+                          {{ article.title }}
+                        </h3>
+                        <p v-if="articleData.description"
+                          class="text-sm md:text-base text-stone-600 dark:text-stone-400 leading-relaxed font-light">
+                          {{ articleData.description }}
+                        </p>
+                      </div>
+                    </div>
+                  </NuxtLink>
+                </ContentQuery>
+              </div>
+            </div>
+          </div>
+
+          <!-- Divider after featured posts -->
+          <div class="mt-32 md:mt-40 flex items-center justify-center">
+            <div class="w-24 h-px bg-stone-200 dark:bg-stone-800"></div>
+            <div class="mx-8 text-stone-300 dark:text-stone-700 font-fraunces text-2xl">&#10022;</div>
+            <div class="w-24 h-px bg-stone-200 dark:bg-stone-800"></div>
+          </div>
+        </div>
+
+        <!-- Regular posts -->
         <div class="space-y-32 md:space-y-40">
-          <div v-for="(article, index) in data" :key="article._path" :class="[article.hidden ? 'hidden' : '']"
+          <div v-for="(article, index) in regularPosts(data)" :key="article._path" :class="[article.hidden ? 'hidden' : '']"
             class="article-item group">
             <div class="max-w-3xl mx-auto">
               <ContentQuery :path="article._path" v-slot="{ data }" find="one">
@@ -169,6 +226,16 @@ const parseTagsArray = (tags: string | string[]) => {
 
   // If tags is a string, split by spaces
   return tags.split(/\s+/).filter(tag => tag.length > 0);
+};
+
+// Get featured posts (posts with featured: true in frontmatter)
+const featuredPosts = (posts: any[]) => {
+  return posts.filter(post => post.featured === true && !post.hidden && !post.inprogress);
+};
+
+// Get regular (non-featured) posts
+const regularPosts = (posts: any[]) => {
+  return posts.filter(post => post.featured !== true && !post.hidden && !post.inprogress);
 };
 
 const metaDescription = "Innovation lab insights: rapid prototyping, data visualization mastery, and our 0-60 approach to building the future.";
