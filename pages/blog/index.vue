@@ -10,43 +10,57 @@
         </h1>
         <p
           class="text-lg md:text-xl text-stone-600 dark:text-stone-400 max-w-2xl tracking-wide leading-relaxed font-light">
-          Thoughts, processes, and ideas from Room 302 Studio.
+          Innovation lab insights: rapid prototyping, data visualization mastery, and our 0-60 approach to building the future.
         </p>
       </header>
 
       <ContentQuery path="/blog/" :sort="{ date: -1 }" v-slot="{ data }">
         <div class="space-y-32 md:space-y-40">
           <div v-for="(article, index) in data" :key="article._path" :class="[article.hidden ? 'hidden' : '']"
-            class="article-item">
+            class="article-item group">
             <div class="max-w-3xl mx-auto">
               <ContentQuery :path="article._path" v-slot="{ data }" find="one">
                 <NuxtLink :to="article._path"
-                  class="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-xl transition-all">
+                  class="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 rounded-xl transition-all hover:translate-y-[-2px] duration-300">
                   <div class="space-y-10">
-                    <!-- Date display with subtle icon -->
+                    <!-- Metadata: Date, Author, Read Time -->
                     <div
-                      class="font-mono text-sm uppercase tracking-wider text-stone-500 dark:text-stone-400 flex items-center">
-                      <UIcon name="i-heroicons-calendar"
-                        class="text-stone-400/50 dark:text-stone-500/50 mr-3 text-xs" />
-                      {{ formatDate(article.date) }}
-                      <span v-if="article.category"
-                        class="ml-4 text-primary-500 dark:text-primary-500 flex items-center">
-                        <UIcon name="i-heroicons-hashtag"
-                          class="text-primary-500/50 dark:text-primary-500/50 mr-1 text-xs" />
-                        {{ article.category }}
+                      class="font-mono text-sm uppercase tracking-wider text-stone-500 dark:text-stone-400 flex flex-wrap items-center gap-x-6 gap-y-2">
+                      <div class="flex items-center">
+                        <UIcon name="i-heroicons-calendar"
+                          class="text-stone-400/50 dark:text-stone-500/50 mr-2 text-xs" />
+                        {{ formatDate(article.date) }}
+                      </div>
+                      <div v-if="article.author" class="flex items-center">
+                        <UIcon name="i-heroicons-user"
+                          class="text-stone-400/50 dark:text-stone-500/50 mr-2 text-xs" />
+                        {{ article.author }}
+                      </div>
+                      <div v-if="data.body" class="flex items-center text-stone-400 dark:text-stone-500">
+                        <UIcon name="i-heroicons-clock"
+                          class="text-stone-400/50 dark:text-stone-500/50 mr-2 text-xs" />
+                        {{ calculateReadTime(data.body) }} min read
+                      </div>
+                    </div>
+
+                    <!-- Tags -->
+                    <div v-if="article.tags" class="flex flex-wrap gap-2">
+                      <span v-for="tag in parseTagsArray(article.tags)" :key="tag"
+                        class="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wide bg-primary-500/10 text-primary-600 dark:bg-primary-500/20 dark:text-primary-400 ring-1 ring-inset ring-primary-500/20 dark:ring-primary-500/30">
+                        {{ tag }}
                       </span>
                     </div>
 
                     <div v-if="data.image"
-                      class="aspect-[21/9] w-full bg-cover bg-center rounded-xl ring-1 ring-inset ring-stone-900/10 dark:ring-white/10 overflow-hidden">
-                      <div class="w-full h-full bg-cover bg-center"
+                      class="aspect-[21/9] w-full bg-cover bg-center rounded-xl ring-1 ring-inset ring-stone-900/10 dark:ring-white/10 overflow-hidden group-hover:ring-primary-500/20 transition-all duration-300">
+                      <div class="w-full h-full bg-cover bg-center group-hover:scale-[1.02] transition-transform duration-300"
                         :style="{ 'background-image': `url(${data.image})` }">
                       </div>
                     </div>
 
                     <div class="space-y-6 max-w-prose">
                       <h2
-                        class="font-fraunces text-3xl md:text-4xl font-light tracking-tight text-stone-800 dark:text-stone-200 leading-snug">
+                        class="font-fraunces text-3xl md:text-4xl font-light tracking-tight text-stone-800 dark:text-stone-200 leading-snug group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
                         {{ article.title }}
                       </h2>
 
@@ -57,10 +71,10 @@
 
                       <!-- Read more link with subtle icon -->
                       <div
-                        class="pt-8 font-mono text-primary-500 dark:text-primary-500 text-sm group-hover:text-primary-500/80 dark:group-hover:text-primary-500/80 transition-colors duration-300">
+                        class="pt-8 font-mono text-primary-500 dark:text-primary-500 text-sm group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
                         <span>Read more</span>
                         <span
-                          class="ml-2 text-primary-500/70 group-hover:text-primary-500 transition-colors duration-300">→</span>
+                          class="ml-2 text-primary-500/70 group-hover:text-primary-600 group-hover:translate-x-1 inline-block transition-all duration-300">→</span>
                       </div>
                     </div>
                   </div>
@@ -77,6 +91,25 @@
           </div>
         </div>
       </ContentQuery>
+
+      <!-- Newsletter Signup CTA -->
+      <section class="mt-40 md:mt-48 mb-32">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="mb-12">
+            <div class="font-mono text-primary-500 uppercase tracking-wide text-sm mb-6">Stay Updated</div>
+            <h2
+              class="font-fraunces text-3xl md:text-4xl xl:text-5xl font-light mb-6 text-stone-800 dark:text-stone-200 tracking-tight">
+              Join our mailing list
+            </h2>
+            <p class="text-base md:text-lg text-stone-600 dark:text-stone-400 max-w-xl mx-auto leading-relaxed font-light tracking-wide">
+              Get updates on new tools, experiments, and insights from our innovation lab. We share what we're building, lessons learned, and the occasional behind-the-scenes look at our process.
+            </p>
+          </div>
+          <div class="max-w-xl mx-auto">
+            <MailchimpSignupForm />
+          </div>
+        </div>
+      </section>
 
       <div class="mt-32 flex justify-center">
         <MonoButton to="/" primary large>Back to home</MonoButton>
@@ -114,19 +147,45 @@ const formatDate = (dateString: string) => {
   });
 };
 
+// Calculate read time based on word count (average 200 words/min)
+const calculateReadTime = (content: any) => {
+  if (!content) return 0;
+
+  // Extract text content from the markdown body
+  const text = JSON.stringify(content);
+  const wordCount = text.split(/\s+/).length;
+  const readTime = Math.ceil(wordCount / 200);
+
+  return readTime;
+};
+
+// Parse tags from frontmatter (handles both string and array formats)
+const parseTagsArray = (tags: string | string[]) => {
+  if (!tags) return [];
+
+  if (Array.isArray(tags)) {
+    return tags;
+  }
+
+  // If tags is a string, split by spaces
+  return tags.split(/\s+/).filter(tag => tag.length > 0);
+};
+
+const metaDescription = "Innovation lab insights: rapid prototyping, data visualization mastery, and our 0-60 approach to building the future.";
+
 useHead({
   title: "Journal | Room 302 Studio",
 })
 
 useSeoMeta({
   title: "Journal | Room 302 Studio",
-  description: "Thoughts, processes, and ideas from Room 302 Studio.",
+  description: metaDescription,
   ogTitle: "Journal | Room 302 Studio",
-  ogDescription: "Thoughts, processes, and ideas from Room 302 Studio.",
+  ogDescription: metaDescription,
   ogImage: "https://room302studio.com/og-image.jpg",
   ogUrl: "https://room302studio.com/blog",
   twitterTitle: "Journal | Room 302 Studio",
-  twitterDescription: "Thoughts, processes, and ideas from Room 302 Studio.",
+  twitterDescription: metaDescription,
 })
 </script>
 
