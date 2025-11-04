@@ -1,4 +1,5 @@
 ---
+hidden: true
 inprogress: true
 date: 2024-12-23T14:18:33-04:00
 tags: behindthescenes studio
