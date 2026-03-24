@@ -3,14 +3,12 @@
     <!-- Hero Section -->
     <section class="hero-section relative py-16 md:py-32 overflow-hidden">
       <div class="pad relative z-10">
-        <h1 class="text-5xl md:text-7xl font-extralight mb-8 md:mb-12 tracking-tight text-balance">
-          <span class="block">The Room 302 Toolkit:</span>
-          <span class="text-primary-500 font-light">Visualization Instruments</span>
-          <span class="block">for Complex Systems</span>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-8 md:mb-12 tracking-tight text-balance">
+          Our Toolkit
         </h1>
         <p
-          class="text-lg md:text-2xl font-light max-w-3xl leading-relaxed text-balance text-stone-700 dark:text-stone-400">
-          Crafted for those who navigate digital complexity. Each tool reveals patterns invisible to the naked eye.
+          class="text-lg md:text-xl font-light max-w-3xl leading-relaxed text-balance text-stone-700 dark:text-stone-400">
+          The tools and technologies we use across our projects.
         </p>
       </div>
       <!-- Subtle topographic background pattern -->

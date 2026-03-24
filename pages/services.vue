@@ -3,11 +3,11 @@
     <!-- Hero section -->
     <section class="py-16 md:py-32 relative overflow-hidden">
       <div class="pad relative z-10">
-        <h1 class="text-6xl md:text-8xl font-extralight mb-8 md:mb-12 tracking-tight">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-8 md:mb-12 tracking-tight">
           Our Services
         </h1>
         <p
-          class="text-lg md:text-2xl font-light max-w-3xl leading-relaxed text-balance relative text-stone-700 dark:text-stone-400">
+          class="text-lg md:text-xl font-light max-w-3xl leading-relaxed text-balance relative text-stone-700 dark:text-stone-400">
           We help teams go from idea to working product. Data visualization, interactive tools, rapid prototyping — whatever the project needs.
         </p>
       </div>
@@ -153,7 +153,7 @@
 
     <!-- Our Process -->
     <section class="pad py-16 md:py-24 bg-stone-100 dark:bg-stone-900/70 rounded-xl">
-      <h2 class="text-4xl md:text-5xl font-extralight mb-12 md:mb-16 text-stone-800 dark:text-stone-200">Our Process
+      <h2 class="text-3xl md:text-4xl font-light mb-12 md:mb-16 text-stone-800 dark:text-stone-200">Our Process
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">

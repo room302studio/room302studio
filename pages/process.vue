@@ -12,14 +12,12 @@
           <div class="md:w-3/4 mb-16 md:mb-0">
             <div class="font-mono text-primary-500 uppercase tracking-wide text-sm mb-4">Room 302 — Process</div>
             <h1
-              class="font-heading text-6xl md:text-7xl xl:text-8xl font-light mb-12 md:mb-16 tracking-tight hero-title">
+              class="font-heading text-5xl md:text-6xl lg:text-7xl font-light mb-12 md:mb-16 tracking-tight hero-title">
               Our Process
             </h1>
             <p
-              class="text-lg md:text-xl xl:text-2xl font-light max-w-3xl leading-relaxed text-balance relative text-stone-700 dark:text-stone-400 hero-subtitle">
-              <span class="font-mono text-stone-800 dark:text-stone-300">"Rapid innovation with intention"</span>—we
-              work at the
-              intersection of speed and quality, turning complex data into elegant, usable tools.
+              class="text-lg md:text-xl font-light max-w-3xl leading-relaxed text-balance relative text-stone-700 dark:text-stone-400 hero-subtitle">
+              How we go from first conversation to shipped product. We move fast and show work constantly.
             </p>
           </div>
         </div>

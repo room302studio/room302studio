@@ -6,18 +6,18 @@
         <div class="overflow-hidden max-w-5xl mx-auto">
           <div class="mb-4 flex items-center">
             <UIcon name="i-heroicons-building-office" class="text-primary-500 w-8 h-8 mr-2" />
-            <h4 class="uppercase tracking-widest text-primary-500 font-medium">For CEOs & CTOs</h4>
+            <h4 class="text-sm font-mono uppercase tracking-wide text-primary-500">For CEOs & CTOs</h4>
           </div>
 
           <h1
-            class="text-4xl md:text-6xl lg:text-7xl font-extralight mb-10 md:mb-12 text-balance leading-tight tracking-tight hero-text">
+            class="text-5xl md:text-6xl lg:text-7xl font-light mb-10 md:mb-12 text-balance leading-tight tracking-tight hero-text">
             <span class="block">Test and validate your</span>
             <span class="text-primary-500 font-light">product prototype</span>
             <span class="block mt-2">without the politics.</span>
           </h1>
 
           <p
-            class="text-xl md:text-2xl font-light text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed mb-12 hero-subtitle">
+            class="text-lg md:text-xl font-light text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed mb-12 hero-subtitle">
             It's hard to get prototypes built at target companies with multiple stakeholders. We help you validate if
             your product will resonate with your target market.
           </p>

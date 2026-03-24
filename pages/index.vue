@@ -130,83 +130,48 @@
       </section>
 
 
-      <!-- Profile Cards Section -->
-      <section class="profiles-section">
+      <!-- How We Work Section -->
+      <section class="py-24 md:py-32">
         <div class="container">
-          <div class="profile-cards">
-            <!-- CEO/CTO Card -->
-            <div class="profile-card">
-              <div class="card-header">
-                <div class="card-header-gradient"></div>
-                <div class="card-title-wrapper">
-                  <h3 class="card-title">
-                    <span>Skunkworks for hire</span>
-                  </h3>
-                </div>
-              </div>
-              <div class="card-body">
-                <p class="card-description">
-                  Got an idea that needs to exist? A prototype that'll make the pitch real? We'll build it with you — and we move fast because there's no bureaucracy between you and us.
-                </p>
-                <ul class="card-features">
-                  <li class="feature-item">
-                    <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>Working prototypes, not slide decks</span>
-                  </li>
-                  <li class="feature-item">
-                    <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>You talk to the people building it</span>
-                  </li>
-                  <li class="feature-item">
-                    <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>We've done this for newsrooms, NGOs, and indie creators</span>
-                  </li>
-                </ul>
-                <div class="card-action">
-                  <UButton to="/for-ceos" class="card-button group">
-                    Learn more
-                    <UIcon name="i-heroicons-arrow-right" class="button-arrow" />
-                  </UButton>
-                </div>
-              </div>
-            </div>
+          <div class="grid md:grid-cols-2 gap-8 md:gap-12">
 
-            <!-- Data Analyst Card -->
-            <div class="profile-card">
-              <div class="card-header">
-                <div class="card-header-gradient"></div>
-                <div class="card-title-wrapper">
-                  <h3 class="card-title">
-                    <span>Make your data land</span>
-                  </h3>
-                </div>
+            <NuxtLink to="/for-ceos"
+              class="group block p-8 md:p-10 rounded-xl border border-stone-200 dark:border-stone-800 hover:border-primary-500/50 dark:hover:border-primary-500/50 transition-all duration-300">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-2 h-2 rounded-full bg-primary-500"></div>
+                <h3 class="text-sm font-mono uppercase tracking-wider text-stone-500 dark:text-stone-400">Prototyping</h3>
               </div>
-              <div class="card-body">
-                <p class="card-description">
-                  You've got a dataset that should be telling a story but isn't yet. We build the interactive — the map, the dashboard, the scrollytelling piece — that makes people actually get it.
-                </p>
-                <ul class="card-features">
-                  <li class="feature-item">
-                    <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>D3, Mapbox, WebGL — we pick what fits</span>
-                  </li>
-                  <li class="feature-item">
-                    <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>Tested under election-night pressure</span>
-                  </li>
-                  <li class="feature-item">
-                    <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>Environmental science, elections, global supply chains</span>
-                  </li>
-                </ul>
-                <div class="card-action">
-                  <UButton to="/for-data-analysts" class="card-button group">
-                    Learn more
-                    <UIcon name="i-heroicons-arrow-right" class="button-arrow" />
-                  </UButton>
-                </div>
+              <h4 class="text-2xl md:text-3xl font-light mb-4 text-stone-800 dark:text-stone-200 group-hover:text-primary-500 transition-colors">
+                Skunkworks for hire
+              </h4>
+              <p class="text-stone-600 dark:text-stone-400 leading-relaxed mb-8">
+                Got an idea that needs to exist? We'll build it with you — working prototypes, not slide decks. You talk directly to the people making the thing.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">Newsrooms</span>
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">NGOs</span>
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">Indie creators</span>
               </div>
-            </div>
+            </NuxtLink>
+
+            <NuxtLink to="/for-data-analysts"
+              class="group block p-8 md:p-10 rounded-xl border border-stone-200 dark:border-stone-800 hover:border-primary-500/50 dark:hover:border-primary-500/50 transition-all duration-300">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-2 h-2 rounded-full bg-primary-500"></div>
+                <h3 class="text-sm font-mono uppercase tracking-wider text-stone-500 dark:text-stone-400">Data visualization</h3>
+              </div>
+              <h4 class="text-2xl md:text-3xl font-light mb-4 text-stone-800 dark:text-stone-200 group-hover:text-primary-500 transition-colors">
+                Make your data land
+              </h4>
+              <p class="text-stone-600 dark:text-stone-400 leading-relaxed mb-8">
+                You've got a dataset that should be telling a story but isn't yet. We build the map, the dashboard, the scrollytelling piece — whatever makes people actually get it.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">D3 / Mapbox / WebGL</span>
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">Election-night tested</span>
+              </div>
+            </NuxtLink>
+
           </div>
         </div>
       </section>
@@ -608,75 +573,7 @@ const featuredProjects = [
   @apply text-xl md:text-2xl lg:text-3xl text-stone-200 font-light leading-relaxed;
 }
 
-/* Profile Cards */
-.profiles-section {
-  @apply my-24 md:my-32 py-8;
-}
-
-.profile-cards {
-  @apply grid md:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-12;
-}
-
-.profile-card {
-  @apply bg-white dark:bg-stone-950 rounded-xl shadow-sm transition-all duration-300 overflow-hidden p-4 sm:p-0;
-}
-
-.card-header {
-  /* @apply min-h-16 bg-stone-100 dark:bg-stone-800 relative overflow-hidden; */
-  @apply bg-primary-500 text-white relative min-h-16;
-}
-
-.card-header-gradient {
-  @apply absolute inset-0 bg-gradient-to-t from-white dark:from-stone-950 to-transparent;
-}
-
-.card-title-wrapper {
-  @apply absolute inset-0 flex items-center px-4 sm:px-6 py-0;
-}
-
-.card-title {
-  @apply text-xl sm:text-2xl flex items-center py-2;
-}
-
-.card-title-icon {
-  @apply text-stone-700 dark:text-stone-300 w-5 h-5 sm:w-6 sm:h-6 mr-2;
-}
-
-.card-body {
-  @apply p-4 sm:p-6;
-}
-
-.card-description {
-  @apply text-stone-700 dark:text-stone-300 mb-3 sm:mb-4 text-sm sm:text-base;
-}
-
-.card-features {
-  @apply mb-4 sm:mb-6 text-xs sm:text-sm text-stone-600 dark:text-stone-400 space-y-1 sm:space-y-2;
-}
-
-.feature-item {
-  @apply flex items-start;
-}
-
-.feature-icon {
-  @apply text-stone-700 dark:text-stone-300 mt-0.5 mr-1.5 sm:mt-1 sm:mr-2 flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5;
-}
-
-.card-action {
-  @apply flex items-center justify-between;
-}
-
-.card-button {
-  @apply text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2;
-}
-
-.button-arrow {
-  @apply ml-1 transition-transform duration-300 w-4 h-4 sm:w-5 sm:h-5;
-}
-
-.card-button:hover .button-arrow {
-  @apply translate-x-1;
-}
+/* Profile Cards - removed, using inline Tailwind now */
 
 /* Case Studies */
 .case-studies-section {

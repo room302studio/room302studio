@@ -6,20 +6,18 @@
         <div class="overflow-hidden max-w-5xl mx-auto">
           <div class="mb-4 flex items-center">
             <UIcon name="i-heroicons-chart-bar" class="text-primary-500 w-8 h-8 mr-2" />
-            <h4 class="uppercase tracking-widest text-primary-500 font-medium">For Data Analysts</h4>
+            <h4 class="text-sm font-mono uppercase tracking-wide text-primary-500">For Data Teams</h4>
           </div>
 
           <h1
-            class="text-4xl md:text-6xl lg:text-7xl font-extralight mb-10 md:mb-12 text-balance leading-tight tracking-tight hero-text">
-            <span class="block">Transform your data into</span>
-            <span class="text-primary-500 font-light">actionable insights</span>
-            <span class="block mt-2">that your team can use.</span>
+            class="text-5xl md:text-6xl lg:text-7xl font-light mb-10 md:mb-12 text-balance leading-tight tracking-tight hero-text">
+            <span class="block">Turn your data into</span>
+            <span class="text-primary-500">something people get.</span>
           </h1>
 
           <p
-            class="text-xl md:text-2xl font-light text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed mb-12 hero-subtitle">
-            Understanding your existing data shouldn't require a PhD. We help you make sense of your data and visualize
-            it in ways that drive decisions.
+            class="text-lg md:text-xl font-light text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed mb-12 hero-subtitle">
+            You've got the data. We build the visualization that makes it click — for your team, your stakeholders, or the public.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-6 mt-8">

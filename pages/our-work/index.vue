@@ -36,7 +36,7 @@
       <div class="absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay"></div>
 
       <div class="pad relative z-10">
-        <h1 class="text-7xl md:text-9xl font-extralight tracking-tight hero-title relative">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight hero-title relative">
           <span class="block overflow-hidden leading-none">
             Our Work
             <span class="absolute -bottom-3 left-0 w-16 h-1 bg-primary-500"></span>
@@ -45,7 +45,7 @@
 
         <div class="mt-12 md:mt-16 flex flex-col md:flex-row md:items-center gap-8 md:gap-12 hero-subtitle">
           <!-- Left column with main text -->
-          <p class="text-xl md:text-2xl font-light max-w-lg md:max-w-2xl leading-relaxed">
+          <p class="text-lg md:text-xl font-light max-w-lg md:max-w-2xl leading-relaxed">
             Selected projects from our portfolio for creative coding, data visualization, and interactive digital
             experiences.
           </p>
@@ -64,7 +64,7 @@
 
     <!-- Client Work Section with enhanced card design -->
     <section class="pad py-20 md:py-32 relative">
-      <h2 class="text-5xl md:text-6xl font-extralight mb-16 md:mb-24 section-title relative inline-block">
+      <h2 class="text-3xl md:text-4xl font-light mb-16 md:mb-24 section-title relative inline-block">
         Client Work
         <span class="absolute -bottom-3 left-0 w-12 h-0.5 bg-primary-500/70"></span>
       </h2>
@@ -135,7 +135,7 @@
 
     <!-- Internal Projects Section with improved card design -->
     <section class="pad py-20 md:py-32 relative bg-stone-100 dark:bg-stone-900/50">
-      <h2 class="text-5xl md:text-6xl font-extralight mb-16 md:mb-24 section-title relative inline-block">
+      <h2 class="text-3xl md:text-4xl font-light mb-16 md:mb-24 section-title relative inline-block">
         Internal Projects
         <span class="absolute -bottom-3 left-0 w-12 h-0.5 bg-primary-500/70"></span>
       </h2>

@@ -26,7 +26,7 @@
           <!-- Hero section with subtle animation -->
           <section class="py-20 md:py-32 relative overflow-hidden">
             <div class="max-w-4xl mx-auto px-6 md:px-10 relative z-10">
-              <h1 class="text-5xl md:text-7xl font-extralight mb-6 md:mb-8 tracking-tight flex items-center gap-4">
+              <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-6 md:mb-8 tracking-tight flex items-center gap-4">
                 <UIcon name="i-heroicons-beaker" class="text-primary-500 text-3xl md:text-4xl opacity-80" />
                 <span class="text-stone-800 dark:text-stone-200">{{ data[0].title }}</span>
               </h1>
