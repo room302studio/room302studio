@@ -1,36 +1,30 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // devtools: {
-  //   enabled: true,
-  // },
-  ssr: false,
-  // nitro: {
-  //   prerender: {
-  //     crawlLinks: true,
-  //     failOnError: false,
-  //   },
-  // },
+  ssr: true,
+  nitro: {
+    prerender: {
+      crawlLinks: false,
+      routes: [],
+      failOnError: false,
+    },
+  },
   devServer: {
     port: 3302,
   },
   modules: [
-    // '@vueuse/motion/nuxt',
     "@nuxt/content",
+    "@nuxt/image",
     "@nuxt/ui",
     "@vueuse/nuxt",
-    "nuxt-gtag",
-    "@tresjs/nuxt",
+    "@nuxtjs/sitemap",
     [
       "@nuxtjs/google-fonts",
       {
         families: {
-          // Primary sans-serif
           "IBM Plex Sans": {
             wght: [300, 400, 500, 700],
           },
-          // Signature monospace font - our differentiator
           "IBM Plex Mono": [400, 500],
-          // Serif for occasional accent
           Fraunces: {
             wght: [300, 500, 700],
           },
@@ -42,41 +36,40 @@ export default defineNuxtConfig({
       },
     ],
   ],
-  // routeRules: {
-  //   "/contact": { prerender: true },
-  // },
-  content: {
-    // documentDriven: true,
+  site: {
+    url: "https://room302.studio",
+    name: "Room 302 Studio",
   },
-  gtag: {
-    id: "G-6XGQNYZQMC",
+  sitemap: {
+    strictNuxtContentPaths: true,
   },
+  icon: {
+    serverBundle: 'local',
+  },
+  content: {},
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
-      title: "Room 302 Studio",
+      title: "Room 302 Studio — Data Visualization & Interactive Studio",
+      htmlAttrs: {
+        lang: "en",
+      },
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
       meta: [
         {
-          'http-equiv': 'Content-Security-Policy',
-          content: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://umami.tools.ejfox.com https://js.hsforms.net; connect-src 'self' https://umami.tools.ejfox.com;"
-        }
+          name: "description",
+          content:
+            "Room 302 Studio builds data visualizations, interactive tools, and prototypes. We've made election graphics for the AP, mapped coral reefs for WCS, and supported a studio member's indie game covered by Fast Company.",
+        },
+        {
+          "http-equiv": "Content-Security-Policy",
+          content:
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://umami.tools.ejfox.com; connect-src 'self' https://umami.tools.ejfox.com;",
+        },
       ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        {
-          rel: "alternate",
-          type: "application/rss+xml",
-          title: "Room 302 Studio RSS Feed",
-          href: "/rss.xml",
-        },
-      ],
-      script: [
-        {
-          src: "https://js.hsforms.net/forms/v2.js",
-          defer: true,
-        },
       ],
     },
   },

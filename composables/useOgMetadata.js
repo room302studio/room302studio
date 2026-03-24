@@ -31,7 +31,7 @@ export const useOgMetadata = (pageName, description = null) => {
   // Page-specific description or default
   const metaDescription =
     description ||
-    "Room 302 Studio - Innovation lab that turns concepts into reality.";
+    "Room 302 Studio — Data visualization and interactive studio. We build maps, graphics, and tools that turn complex data into something people understand.";
 
   // Set page metadata with useHead composable
   useHead({

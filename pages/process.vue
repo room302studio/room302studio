@@ -282,11 +282,10 @@
     <section class="section-spacing text-center">
       <div class="content-container">
         <h2 class="font-heading text-3xl md:text-4xl xl:text-5xl font-light mb-8 text-stone-800 dark:text-stone-200">
-          Ready to move at
-          lightspeed?
+          Have a project in mind?
         </h2>
         <p class="text-lg md:text-xl text-stone-700 dark:text-stone-400 max-w-2xl mx-auto mb-16 xl:mb-20">
-          Let's create something that makes your team feel empowered and your competitors wonder how you did it.
+          Tell us what you're working on. We'll figure out how we can help.
         </p>
         <MonoButton to="/contact" primary large>
           Let's do this
@@ -306,7 +305,7 @@ import TufteGrid from '~/components/TufteGrid.vue'
 
 useSeoMeta({
   title: 'Our Process | Room 302 Studio',
-  description: "We're hackers for good, moving at lightspeed to build tools that transform how your team works.",
+  description: "How we work — from first conversation to shipped product. Research, prototype, iterate, deliver.",
 })
 
 // Track scroll progress

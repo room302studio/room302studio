@@ -77,7 +77,7 @@
             <!-- Project image with gradient overlay -->
             <NuxtLink :to="project._path" class="block relative">
               <div class="aspect-[16/9] relative">
-                <img :src="project.image" :alt="project.title"
+                <NuxtImg :src="project.image" :alt="project.title" width="800" quality="80" format="webp" loading="lazy"
                   class="object-cover w-full h-full transition-all duration-1000 group-hover:scale-105 brightness-[0.85] group-hover:brightness-100" />
 
                 <!-- Enhanced gradient overlay -->
@@ -147,7 +147,8 @@
           <NuxtLink :to="project._path" class="block">
             <!-- Project image with enhanced hover effects -->
             <div v-if="project.image" class="aspect-[16/9] mb-8 overflow-hidden rounded-xl">
-              <img :src="project.image" :alt="project.title" class="object-cover w-full h-full transition-all duration-700 group-hover:scale-105 
+              <NuxtImg :src="project.image" :alt="project.title" width="600" quality="80" format="webp" loading="lazy"
+                  class="object-cover w-full h-full transition-all duration-700 group-hover:scale-105
                   brightness-95 group-hover:brightness-100" />
             </div>
 
@@ -254,6 +255,14 @@ definePageMeta({
   layout: "default",
   scrollToTop: true
 });
+
+useHead({ title: 'Our Work — Room 302 Studio' })
+useSeoMeta({
+  title: 'Our Work — Room 302 Studio',
+  description: 'Selected projects from Room 302 Studio — data visualization, interactive maps, and tools for the AP, Wildlife Conservation Society, The Plotline, and more.',
+  ogTitle: 'Our Work — Room 302 Studio',
+  ogDescription: 'Selected projects from Room 302 Studio — data visualization, interactive maps, and tools for the AP, Wildlife Conservation Society, The Plotline, and more.',
+})
 
 const { data: clientWork } = await useAsyncData(
   "content/our-work/client-work",

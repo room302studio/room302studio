@@ -114,7 +114,7 @@ useSeoMeta({
   description: () => data.value?.description || 'Read the latest articles from Room 302 Studio',
   ogTitle: () => data.value?.title ? `${data.value.title} | Room 302 Studio Blog` : 'Blog | Room 302 Studio',
   ogDescription: () => data.value?.description || 'Read the latest articles from Room 302 Studio',
-  ogImage: () => data.value?.image || 'https://room302studio.com/og-image.jpg',
+  ogImage: () => data.value?.image || 'https://room302.studio/og-image.jpg',
 });
 
 useContentHead(data);

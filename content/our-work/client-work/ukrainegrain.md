@@ -5,7 +5,7 @@ brief: "Analyze the impact of the war in Ukraine on global food supply"
 description: "In partnership with Earthrise Media for The Plotline, we undertook the mission of translating the complexities of agricultural supply chains into an interactive tool for both experts and the general public."
 role: 'Storytelling'
 technology: 'D3, QGIS, Mapbox'
-date: "2022-01-01"
+date: "2022-06-01"
 image: "/our-work-images/ukrainegrain/001_introimage.png"
 url: "https://stories.theplotline.org/ukr-grain/"
 tags: ["dataviz", "interactive", "mapping", "nonprofit"]
@@ -30,10 +30,10 @@ We developed a series of prototypes riffing on an interface that allowed users t
 
 To provide affordances for experts and novices alike, we introduced "shortcut" buttons, enabling scenarios like reducing all Eastern oblasts to a certain percentage with a single click. These shortcuts served as an educational tool, allowing users to quickly understand how varying degrees of conflict could affect global grain distribution.
 
-**Innovative Features for Enhanced Engagement**
+**Downstream effects**
 
-We wanted to take things a step further and explore the downstream effects of these changes. Connecting the Ukrainian data with COMTRADE information on global grain consumption, we enabled a real-time view of how alterations in Ukrainian output would impact different countries.
+We wanted to show what happens beyond Ukraine's borders. By connecting the Ukrainian agricultural data with COMTRADE information on global grain consumption, users could see in real time how changes in Ukrainian output would ripple through to different countries.
 
-**Collaborative Efforts for a Unified Message**
+**Working with The Plotline**
 
-Our collaboration with The Plotline's editorial team was crucial. The narratives they crafted around climate change and global agriculture needed to be supported and amplified by our visualizations, not overshadowed. Through a process of continuous iteration and feedback, we ensured that our interactive tool not only complemented but also deepened the impact of their storytelling.
+The Plotline's editorial team was writing the narrative around climate change and global agriculture. We worked closely with them to make sure the interactive tool supported their storytelling rather than competing with it — lots of back and forth to get that balance right.

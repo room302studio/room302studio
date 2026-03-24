@@ -1,7 +1,9 @@
 ---
+title: "Introducing room302.studio"
+description: "After ten years of data visualization contracting, I'm proud to introduce Room 302 Studio — a new data and prototyping studio focused on collaboration, joy, and making the world better."
 date: 2023-04-10T01:00:00-04:00
 modified: 2023-04-09T23:48:17-04:00
-tags: personal dataviz 
+tags: personal dataviz studio
 author: EJ Fox
 authorEmail: ejfox@room302.studio
 ---

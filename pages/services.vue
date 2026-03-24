@@ -8,9 +8,7 @@
         </h1>
         <p
           class="text-lg md:text-2xl font-light max-w-3xl leading-relaxed text-balance relative text-stone-700 dark:text-stone-400">
-          We help you see the future by exploring possibilities, nurturing ideas, and bringing them to life with care
-          and expertise.
-          <span class="text-primary-500">No hustle culture, just kind brilliance.</span>
+          We help teams go from idea to working product. Data visualization, interactive tools, rapid prototyping — whatever the project needs.
         </p>
       </div>
       <!-- Ambient background element -->
@@ -21,17 +19,15 @@
     <!-- Services grid -->
     <section class="pad pb-24">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        <!-- Innovation Midwifery -->
+        <!-- Prototyping -->
         <div
           class="service-card bg-stone-50 dark:bg-stone-900/50 p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
           <div class="flex items-center mb-6">
             <UIcon name="i-heroicons-light-bulb" class="text-4xl text-primary-500 mr-4" />
-            <h2 class="text-2xl md:text-3xl font-light text-stone-800 dark:text-stone-200">Innovation Midwifery</h2>
+            <h2 class="text-2xl md:text-3xl font-light text-stone-800 dark:text-stone-200">Prototyping & Development</h2>
           </div>
           <p class="text-stone-700 dark:text-stone-400 mb-6 leading-relaxed">
-            We nurture your ideas from conception to reality, providing the care and expertise needed for them to
-            flourish.
-            Our team brings unique perspectives to help your concept reach its full potential.
+            You have an idea or a rough concept. We turn it into a working prototype you can test, share, and build on.
           </p>
           <h3 class="text-lg font-medium text-primary-600 dark:text-primary-400 mb-3">How we help:</h3>
           <ul class="space-y-2 text-stone-700 dark:text-stone-400">
@@ -180,11 +176,10 @@
             <div
               class="w-12 h-12 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-500 font-medium text-xl mr-4">
               2</div>
-            <h3 class="text-xl font-medium text-stone-800 dark:text-stone-200">Nurture & Refine</h3>
+            <h3 class="text-xl font-medium text-stone-800 dark:text-stone-200">Build & Iterate</h3>
           </div>
           <p class="text-stone-700 dark:text-stone-400 leading-relaxed">
-            We carefully develop the most promising ideas through iterative refinement. Our team brings
-            unique perspectives to solve problems creatively while maintaining a focus on your goals.
+            We build working versions quickly and refine based on what we learn. Multiple rounds, constant feedback, getting closer each time.
           </p>
         </div>
 
@@ -225,21 +220,21 @@ import { useOgMetadata } from '~/composables/useOgMetadata'
 // Set up OG metadata for the services page
 useOgMetadata(
   'Innovation Services',
-  'We help you see the future by exploring possibilities, nurturing ideas, and bringing them to life with care and expertise.'
+  'Data visualization, interactive tools, and rapid prototyping for teams that need to ship.'
 )
 
 useSeoMeta({
   title: 'Our Services | Room 302 Studio',
-  description: 'We help you see the future by exploring possibilities, nurturing ideas, and bringing them to life with care and expertise.',
+  description: 'Data visualization, interactive tools, and rapid prototyping for teams that need to ship.',
   ogTitle: 'Our Services | Room 302 Studio',
-  ogDescription: 'We help you see the future by exploring possibilities, nurturing ideas, and bringing them to life with care and expertise.',
+  ogDescription: 'Data visualization, interactive tools, and rapid prototyping for teams that need to ship.',
   ogUrl: 'https://room302.studio/services',
   ogImage: 'https://room302.studio/og/services.png',
   ogType: 'website',
   twitterCard: 'summary_large_image',
   twitterImage: 'https://room302.studio/og/services.png',
   twitterTitle: 'Our Services | Room 302 Studio',
-  twitterDescription: 'We help you see the future by exploring possibilities, nurturing ideas, and bringing them to life with care and expertise.'
+  twitterDescription: 'Data visualization, interactive tools, and rapid prototyping for teams that need to ship.'
 })
 </script>
 

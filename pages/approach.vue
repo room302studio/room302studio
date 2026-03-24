@@ -5,7 +5,7 @@
         <div class="text-center">
           <h1 class="text-3xl md:text-4xl font-light mb-6">Redirecting to Our Process...</h1>
           <p class="text-lg text-stone-600 dark:text-stone-400 mb-8">
-            We've moved our approach information to our comprehensive process page.
+            We've moved our approach information to the process page.
           </p>
           <UButton to="/process" color="primary" class="px-6 py-2">
             Learn about our process

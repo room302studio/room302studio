@@ -123,8 +123,8 @@ useSeoMeta({
   description: "Thoughts, processes, and ideas from Room 302 Studio.",
   ogTitle: "Journal | Room 302 Studio",
   ogDescription: "Thoughts, processes, and ideas from Room 302 Studio.",
-  ogImage: "https://room302studio.com/og-image.jpg",
-  ogUrl: "https://room302studio.com/blog",
+  ogImage: "https://room302.studio/og-image.jpg",
+  ogUrl: "https://room302.studio/blog",
   twitterTitle: "Journal | Room 302 Studio",
   twitterDescription: "Thoughts, processes, and ideas from Room 302 Studio.",
 })

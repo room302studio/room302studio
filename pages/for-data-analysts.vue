@@ -136,10 +136,8 @@
     <!-- CTA Section -->
     <section class="pad my-24 md:my-32">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-light mb-6 text-stone-800 dark:text-stone-200">Ready to unlock the power of
-          your data?</h2>
-        <p class="text-xl text-stone-600 dark:text-stone-400 mb-10">Let's transform your raw data into actionable
-          insights that drive better decisions.</p>
+        <h2 class="text-3xl md:text-4xl font-light mb-6 text-stone-800 dark:text-stone-200">Got a dataset that needs to tell a story?</h2>
+        <p class="text-xl text-stone-600 dark:text-stone-400 mb-10">Tell us what you're working with and we'll figure out the best way to make it click.</p>
         <UButton to="/contact" color="primary" class="text-lg px-10 py-4">Contact Us</UButton>
       </div>
     </section>

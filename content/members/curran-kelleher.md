@@ -5,6 +5,6 @@ role: Founding Member & Principal
 photo: '/member-headshots/curran-headshot.png'
 ---
 
-Curran Kelleher is a data visualization expert and educator, committed to empowering others through sharing knowledge and creating cutting-edge tools. With experience at renowned organizations like Stamen and McKinsey, Curran brings a wealth of expertise to the table.
+Curran Kelleher is a data visualization expert and educator. He's worked at Stamen and McKinsey, and is well known in the dataviz community for his teaching — his YouTube tutorials have helped thousands of people learn D3.
 
-Recognized in the dataviz community for his high-quality educational content, Curran's passion for teaching is evident in every project he undertakes. As the creator of VizHub, a groundbreaking platform for creating and collaborating on D3 visualizations, he has transformed the way practitioners work and learn. Currently based in India, Curran continues to explore new horizons, challenging the boundaries of data visualization and inspiring others along the way.
+He created VizHub, a platform for creating and collaborating on D3 visualizations in the browser. Currently based in India, Curran is always working on something new at the intersection of visualization and education.

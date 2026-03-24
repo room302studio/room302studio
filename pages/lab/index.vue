@@ -261,8 +261,8 @@ useHead({
 useSeoMeta({
   title: "The Lab | Room 302 Studio",
   description: "Explore our experimental digital workbench with videos, prototypes, and visual explorations.",
-  ogImage: "https://room302studio.com/og-image.jpg",
-  ogUrl: "https://room302studio.com/lab",
+  ogImage: "https://room302.studio/og-image.jpg",
+  ogUrl: "https://room302.studio/lab",
 });
 
 interface LabItem {

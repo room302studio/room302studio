@@ -2,33 +2,31 @@
 title: "Mapping Resilience"
 client: "Wildlife Conservation Society"
 brief: "Tell the stories of coral reefs through interactive maps and visualizations"
-description: "We partnered with the Wildlife Conservation Society on an interesting and vital challenge: to bring to light the resilience of certain coral reefs in the throes of climate change."
+description: "Interactive maps for the Wildlife Conservation Society showing which coral reefs are surviving climate change — and why. Launched at NYC Climate Week 2023."
 role: 'UX / UI Ideation'
-date: "2022-01-01"
+date: "2023-09-01"
 technology: 'Nuxt, Figma, Mapbox'
 image: "/our-work-images/reef-1.jpg"
 tags: ["dataviz", "interactive", "mapping", "nonprofit"]
 url: ""
 ---
 
-We partnered with the Wildlife Conservation Society on an interesting and vital challenge: to bring to light the resilience of certain coral reefs in the throes of climate change. 
+The Wildlife Conservation Society had years of research showing that some coral reefs are actually surviving climate change better than others. They wanted to turn that data into something people could explore and understand.
 
-**From Research to Action**
+**The challenge**
 
-Our collaboration began at the intersection of science and digital storytelling. We dove into the Society's extensive research, a treasure trove of data revealing how some reefs are not just surviving but thriving against the odds. The challenge was twofold: to ensure each visualization remained true to the scientific rigor of the WCS's findings, and to translate this data into a format that would captivate and educate a diverse audience and inspire action.
+The science was solid but dense. We needed to stay true to the research while making it accessible to a wide audience — conservationists, policymakers, and people who just care about reefs. That meant getting the data right and making the interface inviting enough that people would actually spend time with it.
 
-**Crafting the Piece**
+**What we built**
 
-The design journey was as complex as the ecosystems we aimed to represent. How do you take robust scientific data and render it into an engaging, interactive digital canvas? Our team embarked on a design iteration odyssey, creating prototypes that would allow users to navigate through the resilience of coral reefs with intuitive ease. The result was an interactive map, an atlas of hope, detailing each reef's unique story of survival against climate change.
+An interactive map where users can explore individual reefs, see what makes them resilient, and understand the patterns across regions. We went through several rounds of prototyping, working closely with WCS scientists to make sure we weren't oversimplifying anything.
 
-**User Experience and Engagement**
+The interface supports both quick overviews and deep dives — you can get the big picture or select a specific reef and read its story.
 
-To foster an environment of learning and exploration, we implemented features that allowed for both deep dives and overviews. Users could select individual reefs, revealing a world of vibrant visuals and compelling stories about their survival strategies. The experience was layered, offering different paths of interaction to engage both the seasoned conservationist and the curious layperson.
+**The collaboration**
 
-**The Key Conservation Narrative**
+We iterated with WCS throughout. Their scientists reviewed every visualization for accuracy, and we adjusted the design based on how real users interacted with early prototypes. The back-and-forth kept the science honest and the UX approachable.
 
-Our endeavor went beyond mere data visualization; it was a combination of conservation narratives, with the WCS's scientific expertise and our storytelling background working in harmony. The iterative process, punctuated by feedback loops with the scientists and stakeholders ensured that our digital storytelling amplified the WCS's call for action without compromising on scientific integrity.
+**Launch**
 
-**Launch and Impact**
-
-Timed with NYC Climate Week, the interactive site made its debut, casting a spotlight on these resilient reefs. It served as an educational platform, igniting conversations among conservationists, policymakers, and the public, and serving as a digital clarion call to rally the global community around the vital cause of preserving our planet's coral reefs.
+The site launched during NYC Climate Week 2023, where it was used as part of WCS's advocacy work with policymakers and the conservation community.

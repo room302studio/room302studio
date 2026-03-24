@@ -16,9 +16,7 @@
               Data-Driven Process
             </h4>
             <p class="pr-8">
-              We weave data into all of the work that we do. We try to harness
-              these insights to sculpt solutions that are both elegant and
-              grounded in real-world testing.
+              Data is at the center of everything we build. We prototype fast, test with real users, and let the results guide what we make.
             </p>
           </div>
         </div>
@@ -65,7 +63,7 @@
 
       <div class="sitemap-section-item md:flex w-full">
         <div class="md:w-1/3 pb-4 md:pb-10 md:py-0">
-          <h4 class="text-stone-500 tracking-widest font-semibold">
+          <h4 class="text-stone-400 tracking-widest font-semibold">
             Work with us
           </h4>
           <ul class="list-none">
@@ -82,7 +80,7 @@
         </div>
 
         <div class="md:w-1/3 pb-4 md:pb-10 md:py-0">
-          <h4 class="text-stone-500 tracking-widest font-semibold">
+          <h4 class="text-stone-400 tracking-widest font-semibold">
             Solutions
           </h4>
           <ul class="list-none">
@@ -104,7 +102,7 @@
         </div>
 
         <div class="md:w-1/3 pb-4 md:pb-10 md:py-0">
-          <h4 class="text-stone-500 tracking-widest font-semibold">
+          <h4 class="text-stone-400 tracking-widest font-semibold">
             Explore
           </h4>
           <ul class="list-none">

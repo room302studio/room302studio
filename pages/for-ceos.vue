@@ -107,7 +107,7 @@
     </section>
 
     <!-- Technology Showcase -->
-    <TechnologyShowcase title="Technologies We Leverage" type="ceo" :showAndMore="false" />
+    <TechnologyShowcase title="Technologies We Use" type="ceo" :showAndMore="false" />
 
     <!-- Testimonial Section -->
     <!-- 

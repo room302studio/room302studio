@@ -1,5 +1,7 @@
 ---
-tags: studio
+title: "Room 302 Studio Discord Community Structure"
+description: "How we organize our Discord community with public, VIP, and builder access tiers."
+tags: studio community
 date: 2024-12-23T14:18:33-04:00
 author: EJ Fox
 authorEmail: ejfox@room302.studio
