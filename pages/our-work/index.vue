@@ -326,9 +326,7 @@ onMounted(() => {
 
 <style scoped>
 @reference "~/assets/css/main.css";
-.pad {
-  @apply px-6 md:px-12 lg:px-24 xl:px-32;
-}
+/* .pad now lives globally in assets/css/main.css */
 
 /* Grid background */
 .bg-grid {

@@ -41,3 +41,10 @@
   font-weight: 700;
   font-style: italic;
 }
+
+/* Shared horizontal container padding — one source so pages stop drifting
+   between px-6/lg:px-24 and px-8/lg:px-32. Components that need their own
+   (e.g. card padding) still override locally via scoped styles. */
+.pad {
+  @apply px-8 md:px-12 lg:px-32;
+}

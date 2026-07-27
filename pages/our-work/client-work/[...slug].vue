@@ -180,9 +180,7 @@ const data = computed(() => {
 
 <style scoped>
 @reference "~/assets/css/main.css";
-.pad {
-  @apply px-6 md:px-12 lg:px-24;
-}
+/* .pad now lives globally in assets/css/main.css */
 
 /* Additional spacing for prose content */
 :deep(.prose) {
