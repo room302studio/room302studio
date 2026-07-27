@@ -21,3 +21,23 @@
   --color-brand-900: #783629;
   --color-brand-950: #411a14;
 }
+
+/* Shared display-type (Fraunces) utilities — single source of truth so pages
+   don't redefine them with drifting weights. */
+.font-fraunces,
+.font-display {
+  font-family: var(--font-display);
+}
+.font-fraunces-regular {
+  font-family: var(--font-display);
+  font-weight: 300;
+}
+.font-fraunces-black {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+.font-fraunces-black-italic {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+}

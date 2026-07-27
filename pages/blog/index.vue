@@ -135,15 +135,4 @@ useSeoMeta({
 .pad {
   @apply px-8 md:px-12 lg:px-32;
 }
-
-.font-fraunces {
-  font-family: 'Fraunces', serif;
-  font-weight: 300;
-  letter-spacing: -0.025em;
-}
-
-.font-mono {
-  font-family: var(--font-mono);
-  letter-spacing: -0.01em;
-}
 </style>

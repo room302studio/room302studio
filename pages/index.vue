@@ -659,28 +659,5 @@ const featuredProjects = [
   @apply opacity-100;
 }
 
-/* Font definitions */
-.font-fraunces {
-  font-family: 'Fraunces', serif;
-}
-
-.font-fraunces-regular {
-  font-family: 'Fraunces', serif;
-  font-weight: 300;
-}
-
-.font-fraunces-black {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-}
-
-.font-fraunces-black-italic {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.font-mono {
-  font-family: 'IBM Plex Mono', monospace;
-}
+/* Fraunces display + mono utilities now live globally in assets/css/main.css */
 </style>
