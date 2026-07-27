@@ -2,13 +2,13 @@
   <div class="case-study">
     <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0">
       <div class="w-full md:w-7/12">
-        <h4 class="font-mono text-gray-500 uppercase text-sm tracking-wider pb-2 client-name">
+        <h4 class="font-mono text-stone-500 uppercase text-sm tracking-wider pb-2 client-name">
           {{ project.client }}
         </h4>
         <h2 class="font-medium text-4xl md:text-5xl text-stone-800 dark:text-stone-200 pb-6 md:pb-8 project-title">
           {{ project.title }}
         </h2>
-        <div class="intro-text text-lg my-2 border-l-2 text-gray-700 border-gray-500 dark:text-stone-400">
+        <div class="intro-text text-lg my-2 border-l-2 text-stone-700 border-stone-500 dark:text-stone-400">
           <p class="pl-4 max-w-prose leading-relaxed project-description">
             {{ project.description }}
           </p>
@@ -17,7 +17,7 @@
         <div class="value-add my-4 pl-4 max-w-prose">
           <h4 class="font-mono text-stone-600 dark:text-stone-400 text-sm uppercase tracking-wider mb-2">How We
             Brought This To Life</h4>
-          <ul class="space-y-2 text-sm text-gray-700 dark:text-stone-400">
+          <ul class="space-y-2 text-sm text-stone-700 dark:text-stone-400">
             <template v-if="project.valueAdd && project.valueAdd.length">
               <li v-for="(item, i) in project.valueAdd" :key="i" class="flex items-start">
                 <UIcon :name="item.icon || 'i-heroicons-light-bulb'"
@@ -52,10 +52,10 @@
       <div class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12">
         <img :src="project.images.primary" :alt="project.title + ' - ' + project.client"
           width="600" loading="lazy"
-          class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg py-2 md:py-0 transition-all duration-500 primary-image" />
+          class="intro-image border border-stone-100 row-start-1 col-start-1 w-full rounded-lg py-2 md:py-0 transition-all duration-500 primary-image" />
         <img :src="project.images.secondary" :alt="project.title + ' - detail'"
           width="600" loading="lazy"
-          class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg py-2 md:py-0 hidden md:block transition-all duration-500 secondary-image" />
+          class="intro-image border border-stone-100 row-start-1 col-start-1 w-full rounded-lg py-2 md:py-0 hidden md:block transition-all duration-500 secondary-image" />
       </div>
     </div>
   </div>

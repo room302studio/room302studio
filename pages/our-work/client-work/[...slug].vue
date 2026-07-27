@@ -48,34 +48,34 @@
       <!-- project metadata -->
       <div class="md:flex mt-8 mb-16">
         <div class="mb-8 md:w-1/2">
-          <h4 class="text-gray-400 uppercase font-medium">
+          <h4 class="text-stone-400 uppercase font-medium">
             Project Brief
           </h4>
-          <p class="tracking-tight text-gray-700 dark:text-gray-300 pt-2 mt-2 pr-2 lg:pr-8 md:text-2xl leading-relaxed">
+          <p class="tracking-tight text-stone-700 dark:text-stone-300 pt-2 mt-2 pr-2 lg:pr-8 md:text-2xl leading-relaxed">
             {{ data?.description }}
           </p>
         </div>
 
         <div class="md:w-1/2 md:flex">
           <div class="mb-8 w-1/3">
-            <h4 class="text-gray-400 uppercase font-medium">Client</h4>
-            <p class="monospace tracking-tight text-gray-700 dark:text-gray-300 pt-2 mt-2 pr-2">
+            <h4 class="text-stone-400 uppercase font-medium">Client</h4>
+            <p class="monospace tracking-tight text-stone-700 dark:text-stone-300 pt-2 mt-2 pr-2">
               {{ data?.client }}
             </p>
           </div>
 
           <div class="mb-8 md:w-1/3">
-            <h4 class="text-gray-400 uppercase font-medium">Services</h4>
-            <p class="monospace tracking-tight text-gray-700 dark:text-gray-300 pt-2 mt-2 pr-2">
+            <h4 class="text-stone-400 uppercase font-medium">Services</h4>
+            <p class="monospace tracking-tight text-stone-700 dark:text-stone-300 pt-2 mt-2 pr-2">
               {{ data?.role }}
             </p>
           </div>
 
           <div class="mb-8 md:w-1/3">
-            <h4 class="text-gray-400 uppercase font-medium">
+            <h4 class="text-stone-400 uppercase font-medium">
               Technology
             </h4>
-            <p class="monospace tracking-tight text-gray-700 dark:text-gray-300 pt-2 mt-2 pr-2">
+            <p class="monospace tracking-tight text-stone-700 dark:text-stone-300 pt-2 mt-2 pr-2">
               {{ data?.technology }}
             </p>
           </div>
