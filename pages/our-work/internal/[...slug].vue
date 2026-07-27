@@ -51,14 +51,6 @@
     <!-- Fallback hero for projects without images -->
     <div v-else class="w-full h-[60vh] max-h-[700px] relative bg-gradient-to-br 
                       from-stone-900 to-stone-800 dark:from-stone-950 dark:to-stone-900">
-      <div class="absolute inset-0 opacity-30">
-        <div class="absolute top-0 left-0 w-96 h-96 rounded-full bg-stone-700 blur-3xl 
-                    transform -translate-x-1/2 -translate-y-1/2">
-        </div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-stone-700 blur-3xl 
-                    transform translate-x-1/2 translate-y-1/2">
-        </div>
-      </div>
 
       <div class="relative h-full flex items-center justify-center">
         <div class="text-center p-12">

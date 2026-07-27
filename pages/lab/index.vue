@@ -33,9 +33,6 @@
                 {{ data[0].description }}
               </p>
             </div>
-            <!-- Enhanced ambient background element -->
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-stone-100/20 to-transparent dark:from-stone-950/20 backdrop-blur-3xl -z-10 opacity-60" />
           </section>
 
           <!-- Timeline with improved visual treatment -->

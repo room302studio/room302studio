@@ -11,9 +11,6 @@
           We help teams go from idea to working product. Data visualization, interactive tools, rapid prototyping — whatever the project needs.
         </p>
       </div>
-      <!-- Ambient background element -->
-      <div class="absolute inset-0 bg-gradient-to-br from-stone-100/50 to-transparent dark:from-stone-950/50 
-           backdrop-blur-3xl -z-10 opacity-60" />
     </section>
 
     <!-- Services grid -->

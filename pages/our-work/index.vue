@@ -12,7 +12,6 @@
             <NuxtLink :to="project.path"
               class="relative block rounded-full overflow-hidden bg-white dark:bg-stone-800 shadow-lg hover:shadow-xl transform transition-all duration-300 border-2 border-white dark:border-stone-700 hover:scale-110"
               :style="`width: ${stickerSizes[index % stickerSizes.length]}px; height: ${stickerSizes[index % stickerSizes.length]}px;`">
-              <div class="absolute inset-0 bg-noise opacity-10"></div>
               <img v-if="project.image" :src="project.image" :alt="project.title" class="w-full h-full object-cover" />
               <div v-else class="w-full h-full flex items-center justify-center bg-primary-100 dark:bg-primary-900/30">
                 <span class="text-xs font-bold text-primary-600 dark:text-primary-400">{{ project.title.substring(0, 2)
@@ -32,8 +31,6 @@
 
     <!-- Hero section -->
     <section class="py-24 md:py-40 relative overflow-hidden">
-      <!-- Subtle noise texture overlay -->
-      <div class="absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay"></div>
 
       <div class="pad relative z-10">
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight hero-title relative">
@@ -57,9 +54,6 @@
           </p>
         </div>
       </div>
-
-      <!-- Subtle grid pattern -->
-      <div class="absolute inset-0 bg-grid opacity-5 dark:opacity-10 -z-5"></div>
     </section>
 
     <!-- Client Work Section with enhanced card design -->

@@ -38,7 +38,6 @@
       <!-- Background elements -->
       <div
         class="absolute inset-0 bg-gradient-to-b from-stone-50 to-stone-100 dark:from-stone-950 dark:to-stone-900 -z-10" />
-      <div class="absolute inset-0 bg-grid opacity-5 dark:opacity-10 -z-5"></div>
     </section>
 
     <!-- Pain Points Section -->

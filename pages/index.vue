@@ -80,7 +80,6 @@
 
         <!-- Background elements -->
         <div class="hero-bg"></div>
-        <div class="hero-grid"></div>
       </section>
 
       <!-- Video Section -->
