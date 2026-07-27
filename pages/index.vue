@@ -43,14 +43,14 @@
       <h2>Selected work</h2>
       <table>
         <thead>
-          <tr><th class="mono">Year</th><th>Project</th><th>Client</th><th>Role</th></tr>
+          <tr><th class="mono">Year</th><th>Project</th><th>Client</th></tr>
         </thead>
         <tbody>
-          <tr><td class="mono">2025</td><td><NuxtLink to="/our-work/internal/subway-builder">Subway Builder</NuxtLink></td><td>Internal</td><td>Game / tools</td></tr>
-          <tr><td class="mono">2024</td><td><NuxtLink to="/our-work/client-work/apnews-2024">Election 2024</NuxtLink></td><td>Associated Press</td><td>Dataviz development</td></tr>
-          <tr><td class="mono">2024</td><td><NuxtLink to="/our-work/internal/issuebuilder">IssueBuilder</NuxtLink></td><td>Internal</td><td>AI / product</td></tr>
-          <tr><td class="mono">2023</td><td><NuxtLink to="/our-work/client-work/coralreefs">Mapping Resilience</NuxtLink></td><td>Wildlife Conservation Society</td><td>Interactive mapping</td></tr>
-          <tr><td class="mono">2023</td><td><NuxtLink to="/our-work/internal/coachartie">Coach Artie</NuxtLink></td><td>Internal</td><td>AI assistant</td></tr>
+          <tr><td class="mono">2025</td><td><NuxtLink to="/our-work/internal/subway-builder">Subway Builder</NuxtLink></td><td>Internal</td></tr>
+          <tr><td class="mono">2024</td><td><NuxtLink to="/our-work/client-work/apnews-2024">Election 2024</NuxtLink></td><td>Associated Press</td></tr>
+          <tr><td class="mono">2024</td><td><NuxtLink to="/our-work/internal/issuebuilder">IssueBuilder</NuxtLink></td><td>Internal</td></tr>
+          <tr><td class="mono">2023</td><td><NuxtLink to="/our-work/client-work/coralreefs">Mapping Resilience</NuxtLink></td><td>Wildlife Conservation Society</td></tr>
+          <tr><td class="mono">2023</td><td><NuxtLink to="/our-work/internal/coachartie">Coach Artie</NuxtLink></td><td>Internal</td></tr>
         </tbody>
       </table>
       <p><NuxtLink to="/our-work">All work →</NuxtLink></p>
