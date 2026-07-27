@@ -35,7 +35,6 @@
     "@nuxtjs/sitemap": "^8.3.0",
     "@vueuse/components": "^14.3.0",
     "@vueuse/nuxt": "^14.3.0",
-    "animejs": "^3.2.2",
     "d3-time-format": "^4.1.0",
     "html2canvas": "^1.4.1",
     "simplex-noise": "^4.0.3",

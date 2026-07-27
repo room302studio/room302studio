@@ -91,7 +91,7 @@
 
                 <!-- Restored data visualization -->
                 <div class="mt-16">
-                  <DataViz type="bar" title="Data sources integrated (TK average)" :isDarkMode="isDarkMode" />
+                  <DataViz type="bar" title="Data sources integrated" :isDarkMode="isDarkMode" />
                 </div>
               </div>
               <div class="md:w-1/2 md:pl-20 order-1 md:order-2 relative">
@@ -147,7 +147,7 @@
 
                 <!-- Restored data visualization -->
                 <div class="mt-16">
-                  <DataViz type="scatter" title="Solution viability matrix (TK concepts)"
+                  <DataViz type="scatter" title="Solution viability matrix"
                     :isDarkMode="isDarkMode" />
                 </div>
               </div>
