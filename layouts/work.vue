@@ -1,12 +1,12 @@
 <template>
-  <div class="min-h-screen bg-stone-50 dark:bg-stone-950">
-    <SiteNav class="max-w-screen-2xl mx-auto" />
-    <div class="max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-32">
+  <div>
+    <SiteNav />
+    <main class="page">
       <slot />
-      <UButton to="/our-work" color="primary" class="fixed bottom-12 right-12 z-50" variant="solid">
-        ← Back to work
-      </UButton>
-    </div>
+      <p class="row">
+        <NuxtLink to="/our-work" class="btn">← Back to work</NuxtLink>
+      </p>
+    </main>
     <GlobalFooter />
   </div>
 </template>

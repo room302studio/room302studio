@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   devServer: {
     port: 3302,
   },
-  css: ["~/assets/css/main.css"],
+  css: ["~/assets/css/main.css", "~/assets/css/academic.css"],
   modules: [
     "@nuxt/content",
     "@nuxt/ui",
