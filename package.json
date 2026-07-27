@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "room302-studio",
   "private": true,
   "scripts": {
     "build": "nuxt build",
