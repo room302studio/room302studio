@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div>
     <p><NuxtLink to="/our-work">← Work</NuxtLink></p>
 
     <template v-if="data">

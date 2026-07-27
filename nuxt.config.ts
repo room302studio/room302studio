@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   compatibilityDate: "2026-07-27",
   ssr: true,
+  // Native cross-page morphs via the View Transitions API (graceful cut where
+  // unsupported; the CSS below keeps the nav stable + honours reduced-motion).
+  experimental: { viewTransition: true },
   // Keep the flat root project structure (pages/, components/, etc. at root)
   // rather than moving everything under app/ for the Nuxt 4 default.
   srcDir: ".",
@@ -38,7 +41,8 @@ export default defineNuxtConfig({
     serverBundle: "local",
   },
   app: {
-    pageTransition: { name: "page", mode: "out-in" },
+    pageTransition: false,
+    layoutTransition: false,
     head: {
       title: "Room 302 Studio — Data Visualization & Interactive Studio",
       htmlAttrs: {

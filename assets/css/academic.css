@@ -171,22 +171,27 @@ label { display: block; font-weight: 700; margin-bottom: 0.375rem; }
 .prose img { margin: 2rem 0; }
 .prose a { text-decoration: underline; }
 
-/* ===== SCROLL REVEAL — one honest, subtle fade + rise per section =====
-   Hidden state only applies once the reveal plugin adds .reveal-active to
-   <html>, so no-JS / reduced-motion always render fully visible. The plugin
-   reveals above-the-fold items before hiding the rest, so there's no flash. */
+/* ===== INTER-PAGE TRANSITION (View Transitions API) ===== */
+/* The page content cross-fades with a hair of vertical push; the header is
+   named so it persists (stays rock-solid) while the content morphs beneath it.
+   Unsupported browsers cut instantly; reduced-motion gets no animation. */
+.site-header { view-transition-name: site-header; }
+
 @media (prefers-reduced-motion: no-preference) {
-  html.reveal-active .page section,
-  html.reveal-active [data-reveal] {
-    transition:
-      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.42s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
-  html.reveal-active .page section:not(.in),
-  html.reveal-active [data-reveal]:not(.in) {
-    opacity: 0;
-    transform: translateY(0.6rem);
-  }
+  ::view-transition-old(root) { animation-name: vt-out; }
+  ::view-transition-new(root) { animation-name: vt-in; }
+}
+@keyframes vt-out { to { opacity: 0; transform: translateY(-0.4rem); } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(0.7rem); } }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) { animation: none; }
 }
 
 /* ===== PRINT ===== */
