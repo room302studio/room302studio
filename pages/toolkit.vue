@@ -96,17 +96,17 @@
                 class="mt-4 bg-stone-50 dark:bg-stone-900/50 p-4 rounded-lg border border-stone-200 dark:border-stone-800">
                 <h4 class="text-sm font-medium text-stone-500 dark:text-stone-400 mb-2">Quick Access</h4>
                 <div class="flex flex-wrap gap-2">
-                  <UButton size="xs" variant="ghost" color="gray" :to="`/docs/${tool.slug}`"
+                  <UButton size="xs" variant="ghost" color="neutral" :to="`/docs/${tool.slug}`"
                     class="text-xs flex items-center">
                     <UIcon name="i-heroicons-document-text" class="mr-1" />
                     Documentation
                   </UButton>
-                  <UButton size="xs" variant="ghost" color="gray" :to="`/tutorials/${tool.slug}`"
+                  <UButton size="xs" variant="ghost" color="neutral" :to="`/tutorials/${tool.slug}`"
                     class="text-xs flex items-center">
                     <UIcon name="i-heroicons-academic-cap" class="mr-1" />
                     Tutorials
                   </UButton>
-                  <UButton size="xs" variant="ghost" color="gray" :to="`/pricing#${tool.slug}`"
+                  <UButton size="xs" variant="ghost" color="neutral" :to="`/pricing#${tool.slug}`"
                     class="text-xs flex items-center">
                     <UIcon name="i-heroicons-currency-dollar" class="mr-1" />
                     Pricing

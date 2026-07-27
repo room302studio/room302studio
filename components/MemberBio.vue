@@ -17,7 +17,7 @@
         }}</a>
       </h4>
 
-      <!-- <UButton @click="showBio = !showBio" class="mt-4" color="gray">
+      <!-- <UButton @click="showBio = !showBio" class="mt-4" color="neutral">
         {{ showBio ? "Hide" : "Show" }} Bio
       </UButton> -->
       <div class="member-bio max-w-prose prose dark:prose-dark dark:text-white" v-show="showBio">

@@ -3,13 +3,13 @@
     <!-- Floating project stickers that overlap sections -->
     <div class="relative z-30">
       <div class="absolute inset-0 pointer-events-none">
-        <div v-for="(project, index) in allProjects.slice(0, 8)" :key="'sticker-' + project._path" :class="[
+        <div v-for="(project, index) in allProjects.slice(0, 8)" :key="'sticker-' + project.path" :class="[
           'absolute pointer-events-auto',
-          hoverSticker === project._path ? 'scale-110 z-40' : 'z-30'
-        ]" :style="`${stickerPositions[index % stickerPositions.length]}`" @mouseenter="hoverSticker = project._path"
+          hoverSticker === project.path ? 'scale-110 z-40' : 'z-30'
+        ]" :style="`${stickerPositions[index % stickerPositions.length]}`" @mouseenter="hoverSticker = project.path"
           @mouseleave="hoverSticker = null">
           <div class="relative group">
-            <NuxtLink :to="project._path"
+            <NuxtLink :to="project.path"
               class="relative block rounded-full overflow-hidden bg-white dark:bg-stone-800 shadow-lg hover:shadow-xl transform transition-all duration-300 border-2 border-white dark:border-stone-700 hover:scale-110"
               :style="`width: ${stickerSizes[index % stickerSizes.length]}px; height: ${stickerSizes[index % stickerSizes.length]}px;`">
               <div class="absolute inset-0 bg-noise opacity-10"></div>
@@ -75,7 +75,7 @@
           <div
             class="relative rounded-2xl overflow-hidden transform transition-all duration-700 hover:scale-[1.02] shadow-lg hover:shadow-xl">
             <!-- Project image with gradient overlay -->
-            <NuxtLink :to="project._path" class="block relative">
+            <NuxtLink :to="project.path" class="block relative">
               <div class="aspect-[16/9] relative">
                 <NuxtImg :src="project.image" :alt="project.title" width="800" quality="80" format="webp" loading="lazy"
                   class="object-cover w-full h-full transition-all duration-1000 group-hover:scale-105 brightness-[0.85] group-hover:brightness-100" />
@@ -121,7 +121,7 @@
                 </p>
               </div>
 
-              <NuxtLink :to="project._path"
+              <NuxtLink :to="project.path"
                 class="inline-flex items-center text-primary-600 dark:text-primary-400 text-sm font-medium hover:text-primary-700 dark:hover:text-primary-300 transition-colors mt-2">
                 View Project
                 <UIcon name="i-heroicons-arrow-right"
@@ -144,7 +144,7 @@
         <div v-for="project in internalWork" :key="project.title" class="group relative bg-white dark:bg-stone-800 rounded-xl md:rounded-2xl p-8 md:p-10
             transform transition-all duration-500 hover:scale-[1.02]
             hover:shadow-2xl hover:shadow-stone-950/10">
-          <NuxtLink :to="project._path" class="block">
+          <NuxtLink :to="project.path" class="block">
             <!-- Project image with enhanced hover effects -->
             <div v-if="project.image" class="aspect-[16/9] mb-8 overflow-hidden rounded-xl">
               <NuxtImg :src="project.image" :alt="project.title" width="600" quality="80" format="webp" loading="lazy"
@@ -266,12 +266,12 @@ useSeoMeta({
 
 const { data: clientWork } = await useAsyncData(
   "content/our-work/client-work",
-  () => queryContent("our-work/client-work").find(),
+  () => queryCollection("clientWork").all(),
 );
 
 const { data: internalWork } = await useAsyncData(
   "content/our-work/internal-work",
-  () => queryContent("our-work/internal").find(),
+  () => queryCollection("internalWork").all(),
 );
 
 // Reference to the currently hovered sticker
@@ -325,6 +325,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
+@reference "~/assets/css/main.css";
 .pad {
   @apply px-6 md:px-12 lg:px-24 xl:px-32;
 }

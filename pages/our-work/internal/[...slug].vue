@@ -125,11 +125,7 @@
                     prose-img:rounded-lg prose-img:shadow-lg
                     prose-headings:mt-16 prose-headings:mb-8
                     prose-p:my-8 prose-img:my-16">
-          <ContentRenderer v-if="data" :value="data">
-            <template #empty>
-              <p>No content available for this project.</p>
-            </template>
-          </ContentRenderer>
+          <ContentRenderer v-if="data" :value="data" />
         </div>
       </div>
     </div>
@@ -167,22 +163,17 @@ onMounted(() => {
   onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 })
 
-const { data: internalWork } = await useAsyncData(
-  "content/our-work/internal",
-  () => queryContent("our-work/internal").find(),
+const { data } = await useAsyncData(
+  `internal-${route.params.slug[0]}`,
+  () =>
+    queryCollection("internalWork")
+      .path(`/our-work/internal/${route.params.slug[0]}`)
+      .first(),
 );
-
-const data = computed(() => {
-  if (!internalWork.value) return;
-  const slug = route.params.slug[0];
-  const item = internalWork.value.find(
-    (item) => item._path === `/our-work/internal/${slug}`,
-  );
-  return item;
-});
 </script>
 
 <style scoped>
+@reference "~/assets/css/main.css";
 .pad {
   @apply px-6 md:px-12 lg:px-24;
 }

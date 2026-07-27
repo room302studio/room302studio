@@ -239,6 +239,7 @@ useSeoMeta({
 </script>
 
 <style scoped>
+@reference "~/assets/css/main.css";
 .pad {
   @apply px-8 md:px-12 lg:px-32;
 }

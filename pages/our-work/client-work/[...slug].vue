@@ -86,20 +86,16 @@
                  prose-headings:mt-16 prose-headings:mb-8
                  prose-p:my-8 prose-img:my-16
                  prose-lg max-w-3xl">
-        <ContentRenderer :value="data">
-          <template #empty>
-            <div>
-              <p>We couldn't find this blog post.</p>
-
-              <UButton to="/" class="mt-4"> Back home </UButton>
-            </div>
-          </template>
-        </ContentRenderer>
+        <ContentRenderer v-if="data" :value="data" />
+        <div v-else>
+          <p>We couldn't find this project.</p>
+          <UButton to="/" class="mt-4"> Back home </UButton>
+        </div>
       </div>
 
       <!-- make a related work section (just 3 random client works -->
       <section class="w-full">
-        <UDivider class="my-16 md:my-24 lg:my-32" />
+        <USeparator class="my-16 md:my-24 lg:my-32" />
         <h4 class="my-12 text-2xl">Related Work</h4>
         <!-- make 3x3 grid of the projects in cards -->
         <div class="projects md:grid md:grid-cols-2 gap-8 lg:gap-12">
@@ -111,7 +107,7 @@
             </div>
 
             <div class="flex-1 p-4 text-2xl leading-relaxed flex flex-row items-center">
-              <NuxtLink :to="project._path" class="tracking-wide leading-snug no-underline">
+              <NuxtLink :to="project.path" class="tracking-wide leading-snug no-underline">
                 {{ project.title }}
               </NuxtLink>
             </div>
@@ -167,32 +163,23 @@ router.beforeEach((to, from, next) => {
 
 const route = useRoute();
 
-// const { data } = await useAsyncData(async () => {
-//   return queryContent("our-work/client-work", route.params.slug[0]).findOne();
-// });
-
 const { data: clientWork } = await useAsyncData(
   "content/our-work/client-work",
-  () => queryContent("our-work/client-work").find(),
+  () => queryCollection("clientWork").all(),
 );
 
-const { data: internalWork } = await useAsyncData(
-  "content/our-work/internal-work",
-  () => queryContent("our-work/internal").find(),
-);
-
-// make data a computed where we find the right client work item
+// find the current client work item from the list
 const data = computed(() => {
   if (!clientWork.value) return;
   const slug = route.params.slug[0];
-  const item = clientWork.value.find(
-    (item) => item._path === `/our-work/client-work/${slug}`,
+  return clientWork.value.find(
+    (item) => item.path === `/our-work/client-work/${slug}`,
   );
-  return item;
 });
 </script>
 
 <style scoped>
+@reference "~/assets/css/main.css";
 .pad {
   @apply px-6 md:px-12 lg:px-24;
 }

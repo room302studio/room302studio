@@ -438,6 +438,7 @@ const featuredProjects = [
 </script>
 
 <style scoped>
+@reference "~/assets/css/main.css";
 /* Base Layout */
 .container {
   @apply max-w-5xl mx-auto px-8 md:px-12 lg:px-32;
@@ -499,7 +500,11 @@ const featuredProjects = [
 }
 
 .hero-grid {
-  @apply absolute inset-0 bg-grid opacity-5 dark:opacity-10 -z-10;
+  @apply absolute inset-0 opacity-5 dark:opacity-10 -z-10;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 /* Value Props */

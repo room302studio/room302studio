@@ -434,6 +434,7 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+@reference "~/assets/css/main.css";
 /* Standardized spacing classes with more generous whitespace */
 .content-container {
   @apply px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-48 max-w-7xl mx-auto;

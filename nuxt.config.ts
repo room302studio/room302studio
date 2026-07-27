@@ -1,7 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2026-03-24',
+  compatibilityDate: "2026-07-27",
   ssr: true,
+  // Keep the flat root project structure (pages/, components/, etc. at root)
+  // rather than moving everything under app/ for the Nuxt 4 default.
+  srcDir: ".",
   nitro: {
     prerender: {
       crawlLinks: false,
@@ -12,42 +15,29 @@ export default defineNuxtConfig({
   devServer: {
     port: 3302,
   },
+  css: ["~/assets/css/main.css"],
   modules: [
     "@nuxt/content",
     "@nuxt/image",
     "@nuxt/ui",
+    "@nuxt/fonts",
     "@vueuse/nuxt",
     "@nuxtjs/sitemap",
-    [
-      "@nuxtjs/google-fonts",
-      {
-        families: {
-          "IBM Plex Sans": {
-            wght: [300, 400, 500, 700],
-          },
-          "IBM Plex Mono": [400, 500],
-          Fraunces: {
-            wght: [300, 500, 700],
-          },
-        },
-        display: "swap",
-        prefetch: true,
-        preconnect: true,
-        preload: true,
-      },
-    ],
   ],
+  fonts: {
+    families: [
+      { name: "IBM Plex Sans", provider: "google", weights: [300, 400, 500, 700] },
+      { name: "IBM Plex Mono", provider: "google", weights: [400, 500] },
+      { name: "Fraunces", provider: "google", weights: [300, 500, 700] },
+    ],
+  },
   site: {
     url: "https://room302.studio",
     name: "Room 302 Studio",
   },
-  sitemap: {
-    strictNuxtContentPaths: true,
-  },
   icon: {
-    serverBundle: 'local',
+    serverBundle: "local",
   },
-  content: {},
   app: {
     pageTransition: { name: "page", mode: "out-in" },
     head: {
@@ -69,9 +59,7 @@ export default defineNuxtConfig({
             "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://umami.tools.ejfox.com; connect-src 'self' https://umami.tools.ejfox.com;",
         },
       ],
-      link: [
-        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      ],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
   },
 });

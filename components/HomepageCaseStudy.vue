@@ -73,6 +73,7 @@ const props = defineProps({
 </script>
 
 <style scoped>
+@reference "~/assets/css/main.css";
 .pad {
   @apply p-2 md:p-8 lg:p-12;
 }
