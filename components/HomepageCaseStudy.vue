@@ -50,11 +50,11 @@
         </UButton>
       </div>
       <div class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12">
-        <NuxtImg :src="project.images.primary" :alt="project.title + ' - ' + project.client"
-          width="600" quality="80" format="webp" loading="lazy"
+        <img :src="project.images.primary" :alt="project.title + ' - ' + project.client"
+          width="600" loading="lazy"
           class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg py-2 md:py-0 transition-all duration-500 primary-image" />
-        <NuxtImg :src="project.images.secondary" :alt="project.title + ' - detail'"
-          width="600" quality="80" format="webp" loading="lazy"
+        <img :src="project.images.secondary" :alt="project.title + ' - detail'"
+          width="600" loading="lazy"
           class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg py-2 md:py-0 hidden md:block transition-all duration-500 secondary-image" />
       </div>
     </div>

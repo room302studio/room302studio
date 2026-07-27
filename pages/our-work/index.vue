@@ -77,7 +77,7 @@
             <!-- Project image with gradient overlay -->
             <NuxtLink :to="project.path" class="block relative">
               <div class="aspect-[16/9] relative">
-                <NuxtImg :src="project.image" :alt="project.title" width="800" quality="80" format="webp" loading="lazy"
+                <img :src="project.image" :alt="project.title" width="800" loading="lazy"
                   class="object-cover w-full h-full transition-all duration-1000 group-hover:scale-105 brightness-[0.85] group-hover:brightness-100" />
 
                 <!-- Enhanced gradient overlay -->
@@ -147,7 +147,7 @@
           <NuxtLink :to="project.path" class="block">
             <!-- Project image with enhanced hover effects -->
             <div v-if="project.image" class="aspect-[16/9] mb-8 overflow-hidden rounded-xl">
-              <NuxtImg :src="project.image" :alt="project.title" width="600" quality="80" format="webp" loading="lazy"
+              <img :src="project.image" :alt="project.title" width="600" loading="lazy"
                   class="object-cover w-full h-full transition-all duration-700 group-hover:scale-105
                   brightness-95 group-hover:brightness-100" />
             </div>
