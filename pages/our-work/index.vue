@@ -322,20 +322,6 @@ onMounted(() => {
 @reference "~/assets/css/main.css";
 /* .pad now lives globally in assets/css/main.css */
 
-/* Grid background */
-.bg-grid {
-  background-image: linear-gradient(to right, rgba(100, 100, 100, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(100, 100, 100, 0.1) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
-/* Noise texture */
-.bg-noise {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px 256px;
-}
-
 /* Animated elements */
 .hero-title,
 .hero-subtitle,

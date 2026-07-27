@@ -498,14 +498,6 @@ const featuredProjects = [
   @apply absolute inset-0 bg-gradient-to-b from-stone-50 to-stone-100 dark:from-stone-950 dark:to-stone-900 -z-10;
 }
 
-.hero-grid {
-  @apply absolute inset-0 opacity-5 dark:opacity-10 -z-10;
-  background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
 /* Value Props */
 .value-props {
   @apply mt-16 mb-24 md:mt-20 md:mb-32 grid md:grid-cols-3 gap-12 md:gap-16 text-stone-600 dark:text-stone-400 max-w-6xl mx-auto py-4 md:py-8;
@@ -567,10 +559,6 @@ const featuredProjects = [
 
 .video-title {
   @apply text-5xl md:text-7xl lg:text-8xl text-white leading-tight;
-}
-
-.video-description-col {
-  /* Empty for counterpart styling */
 }
 
 .video-description {
@@ -635,14 +623,6 @@ const featuredProjects = [
 
 .contact-email {
   @apply text-stone-700 dark:text-stone-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors underline-offset-4 hover:underline;
-}
-
-/* Typography */
-.bg-grid {
-  background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
 }
 
 .text-balance {

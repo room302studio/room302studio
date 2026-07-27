@@ -299,7 +299,6 @@ import { onMounted, ref, onUnmounted, computed } from 'vue'
 import DataViz from '~/components/DataViz.vue'
 import TufteAnnotation from '~/components/TufteAnnotation.vue'
 import DataTimeline from '~/components/DataTimeline.vue'
-import TufteGrid from '~/components/TufteGrid.vue'
 
 useSeoMeta({
   title: 'Our Process | Room 302 Studio',

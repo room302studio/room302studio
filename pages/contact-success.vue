@@ -8,5 +8,3 @@
 <script setup>
 // Simple component, no script needed
 </script>
-
-<style scoped></style>

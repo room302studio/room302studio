@@ -108,27 +108,6 @@
     <!-- Technology Showcase -->
     <TechnologyShowcase title="Technologies We Use" type="ceo" :showAndMore="false" />
 
-    <!-- Testimonial Section -->
-    <!-- 
-    <section class="pad my-24 md:my-32 bg-stone-100 dark:bg-stone-900/70 rounded-xl">
-      <div class="max-w-4xl mx-auto text-center">
-        <UIcon name="i-heroicons-chat-bubble-bottom-center-text" class="text-4xl text-primary-500/50 mb-6 mx-auto" />
-        <blockquote class="text-2xl md:text-3xl italic font-light text-stone-800 dark:text-stone-200 mb-8">
-          "I've been talking about this project for months. Room 302 Studio took our concept and turned it into a
-          working prototype in weeks. The output was awesome and worth every penny."
-        </blockquote>
-        <div class="flex items-center justify-center">
-          <div class="w-12 h-12 bg-primary-500/20 rounded-full flex items-center justify-center mr-4">
-            <UIcon name="i-heroicons-user-circle" class="text-2xl text-primary-500" />
-          </div>
-          <div class="text-left">
-            <p class="font-medium text-stone-800 dark:text-stone-200">CTO</p>
-            <p class="text-stone-600 dark:text-stone-400 text-sm">Series A Startup</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    -->
 
     <!-- CTA Section -->
     <section class="pad my-24 md:my-32">
@@ -197,9 +176,4 @@ router.afterEach(() => {
   @apply absolute -bottom-1 left-0 w-full h-px bg-primary-500/30;
 }
 
-.bg-grid {
-  background-image: linear-gradient(to right, rgba(100, 100, 100, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(100, 100, 100, 0.1) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
 </style>
