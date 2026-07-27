@@ -12,7 +12,7 @@
           <tr><th class="mono">Date</th><th>Title</th></tr>
         </thead>
         <tbody>
-          <tr v-for="article in articles" :key="article.path" v-show="!article.hidden">
+          <tr v-for="article in articles" :key="article.path">
             <td class="mono muted">{{ formatDate(article.date) }}</td>
             <td>
               <NuxtLink :to="article.path">{{ article.title }}</NuxtLink>
@@ -31,7 +31,7 @@ const { data: articles } = await useAsyncData("blog-index", () =>
   queryCollection("blog").order("date", "DESC").all()
 );
 
-const formatDate = (dateString: string) => {
+const formatDate = (dateString?: string) => {
   if (!dateString) return '';
 
   const date = new Date(dateString);

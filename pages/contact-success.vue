@@ -1,10 +1,12 @@
 <template>
-  <div class="flex flex-col items-center justify-center h-screen" id="thanks">
-    <h1 class="text-4xl lg:text-8xl text-center font-bold">Thank you for reaching out!</h1>
-    <p class="text-lg mt-32">We'll be in touch soon.</p>
-  </div>
+  <section id="thanks">
+    <p class="eyebrow">Room 302 Studio</p>
+    <h1>Thank you for reaching out</h1>
+    <p class="measure">We'll be in touch soon.</p>
+    <p><NuxtLink to="/" class="btn">Back home</NuxtLink></p>
+  </section>
 </template>
 
 <script setup>
-// Simple component, no script needed
+useSeoMeta({ title: "Thanks — Room 302 Studio" });
 </script>
