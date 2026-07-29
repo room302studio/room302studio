@@ -6,9 +6,6 @@ technology: "Node.js, Supabase, Claude, MCP, Discord.js"
 tags: ["ai", "tools", "internal"]
 url: "https://coachartiebot.com"
 ---
-
-# Coach Artie
-
 Coach Artie is Room 302 Studio's AI assistant, built to be an integrated part of our daily studio life. What started as a Discord bot powered by GPT-4 has evolved into an autonomous agent with its own memory, scheduling, and multi-platform capabilities.
 
 ## v2: Model Context Protocol

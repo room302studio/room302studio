@@ -7,9 +7,6 @@ tags: ["game", "simulation", "transit", "data-driven", "interactive"]
 url: "https://www.subwaybuilder.com"
 creator: "Colin Miller"
 ---
-
-# Subway Builder
-
 Subway Builder is a hyperrealistic transit simulation game created by studio member Colin Miller. It's his project — we helped where we could.
 
 The game uses real U.S. Census Bureau and employment data to simulate commuters across 26 major U.S. cities. Players deal with the same tradeoffs real transit planners face: geography, budgets, passenger behavior, and choosing between tunnels, viaducts, and cut-and-cover construction.
