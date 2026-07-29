@@ -1,8 +1,7 @@
 <template>
   <div>
     <section>
-      <p class="eyebrow">Room 302 Studio</p>
-      <h1>We make complicated things make sense</h1>
+      <h1 class="kinetic-display" :style="{ '--wght': wght }">We make complicated things make sense</h1>
       <p class="measure">
         Room 302 is a small studio that builds data visualizations, interactive tools, and
         prototypes. We've made election graphics for the AP, mapped coral reefs for the Wildlife
@@ -72,16 +71,18 @@
           <p><NuxtLink to="/for-data-analysts">For data teams →</NuxtLink></p>
         </div>
       </div>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <p>Have a project in mind? <a href="mailto:studio@room302.studio">studio@room302.studio</a></p>
+      <p><NuxtLink to="/process">How we go from first call to shipped product →</NuxtLink></p>
     </section>
   </div>
 </template>
 
 <script setup>
+// Kinetic display type: the hero weight "breathes" as you scroll — light and
+// airy at the top (wght 330), waking to a confident 640 as it scrolls away.
+// One CSS property (font-variation-settings) + one mapped scroll value; no lib.
+const { y } = useWindowScroll()
+const wght = computed(() => Math.round(330 + Math.min(y.value, 520) / 520 * 310))
+
 useSeoMeta({
   title: "Room 302 Studio — Data Visualization & Interactive Studio",
   description:
@@ -91,3 +92,30 @@ useSeoMeta({
     "A small studio building data visualizations, interactive tools, and prototypes.",
 });
 </script>
+
+<style scoped>
+/* The editorial-serif counterpoint to the mono/sans chrome. Fraunces at full
+   optical size, sentence-case (so the wonky old-style lowercase actually shows),
+   with weight driven live from JS (--wght) and WONK/SOFT flipped on hover. */
+.kinetic-display {
+  font-family: "Fraunces", Georgia, serif;
+  text-transform: none;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  max-width: 16ch;
+  --wonk: 0;
+  --soft: 0;
+  font-variation-settings:
+    "opsz" 144, "wght" var(--wght, 340), "SOFT" var(--soft, 0), "WONK" var(--wonk, 0);
+  /* Weight tracks scroll every frame; SOFT/WONK ease on hover. */
+  transition: font-variation-settings 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.kinetic-display:hover {
+  --wonk: 1;
+  --soft: 55;
+}
+@media (prefers-reduced-motion: reduce) {
+  .kinetic-display { transition: none; }
+}
+</style>

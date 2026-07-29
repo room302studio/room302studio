@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <p class="eyebrow">Room 302 — Lab</p>
+      <p class="eyebrow">Lab</p>
       <h1>The Lab</h1>
       <p class="measure">Experiments, prototypes, and visual explorations from the studio.</p>
     </section>

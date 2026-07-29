@@ -1,8 +1,8 @@
 <template>
   <div>
     <section>
-      <p class="eyebrow">Room 302 — Blog</p>
-      <h1>Journal</h1>
+      <p class="eyebrow">Blog</p>
+      <h1>Blog</h1>
       <p class="measure">Thoughts, processes, and ideas from Room 302 Studio.</p>
     </section>
 
@@ -43,17 +43,17 @@ const formatDate = (dateString?: string) => {
 };
 
 useHead({
-  title: "Journal | Room 302 Studio",
+  title: "Blog | Room 302 Studio",
 })
 
 useSeoMeta({
-  title: "Journal | Room 302 Studio",
+  title: "Blog | Room 302 Studio",
   description: "Thoughts, processes, and ideas from Room 302 Studio.",
-  ogTitle: "Journal | Room 302 Studio",
+  ogTitle: "Blog | Room 302 Studio",
   ogDescription: "Thoughts, processes, and ideas from Room 302 Studio.",
   ogImage: "https://room302.studio/og-image.jpg",
   ogUrl: "https://room302.studio/blog",
-  twitterTitle: "Journal | Room 302 Studio",
+  twitterTitle: "Blog | Room 302 Studio",
   twitterDescription: "Thoughts, processes, and ideas from Room 302 Studio.",
 })
 </script>

@@ -2,9 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: "2026-07-27",
   ssr: true,
-  // Native cross-page morphs via the View Transitions API (graceful cut where
-  // unsupported; the CSS below keeps the nav stable + honours reduced-motion).
-  experimental: { viewTransition: true },
   // Keep the flat root project structure (pages/, components/, etc. at root)
   // rather than moving everything under app/ for the Nuxt 4 default.
   srcDir: ".",
@@ -62,7 +59,18 @@ export default defineNuxtConfig({
             "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://umami.tools.ejfox.com; connect-src 'self' https://umami.tools.ejfox.com;",
         },
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      link: [
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+        // Fraunces as a TRUE variable font — full axis ranges (opsz/wght/SOFT/
+        // WONK) so we can interpolate weight on scroll and toggle WONK on hover.
+        // (Prototype: served from Google. Self-host via fontsource later.)
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,100..900,0..100,0..1&display=swap",
+        },
+      ],
     },
   },
 });

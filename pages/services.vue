@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <p class="eyebrow">Room 302 — Services</p>
+      <p class="eyebrow">Services</p>
       <h1>Our services</h1>
       <p class="measure">
         We help teams go from idea to working product. Data visualization,
@@ -106,7 +106,7 @@ import { useOgMetadata } from '~/composables/useOgMetadata'
 
 // Set up OG metadata for the services page
 useOgMetadata(
-  'Innovation Services',
+  'Services',
   'Data visualization, interactive tools, and rapid prototyping for teams that need to ship.'
 )
 

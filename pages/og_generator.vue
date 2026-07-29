@@ -96,7 +96,7 @@
 import html2canvas from 'html2canvas'
 import { createNoise2D } from 'simplex-noise'
 
-const pages = ['Room 302 Studio', 'Innovation Services', 'Our Work', 'Journal', 'Contact Us', 'R&D Lab']
+const pages = ['Room 302 Studio', 'Services', 'Our Work', 'Process', 'Blog', 'Contact Us', 'Lab']
 const currentPage = ref('Room 302 Studio')
 const preview = ref(null)
 const previewContainer = ref(null)
@@ -140,11 +140,12 @@ const backgrounds = {
 
 const pageDescriptions = {
   'Room 302 Studio': 'Data visualization and interactive studio. We make complicated things make sense.',
-  'Innovation Services': 'Data visualization, interactive tools, and rapid prototyping for teams that need to ship.',
+  'Services': 'Data visualization, interactive tools, and rapid prototyping for teams that need to ship.',
   'Our Work': 'Explore our portfolio of digital experiences and data visualizations.',
-  'Journal': 'Thoughts, processes, and ideas from Room 302 Studio.',
+  'Process': 'How we go from first conversation to shipped product.',
+  'Blog': 'Thoughts, processes, and ideas from Room 302 Studio.',
   'Contact Us': 'Get in touch with Room 302 Studio. Email us to start a conversation about your project.',
-  'R&D Lab': 'Explore our experimental digital workbench with videos, prototypes, and visual explorations.'
+  'Lab': 'Explore our experimental digital workbench with videos, prototypes, and visual explorations.'
 }
 
 const currentDescription = computed(() => pageDescriptions[currentPage.value] || '')

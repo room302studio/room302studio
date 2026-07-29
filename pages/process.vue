@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <p class="eyebrow">Room 302 — Process</p>
+      <p class="eyebrow">Process</p>
       <h1>Our Process</h1>
       <p class="measure">
         How we go from first conversation to shipped product. We move fast and show work

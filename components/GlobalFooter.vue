@@ -40,7 +40,6 @@
           <h4>Explore</h4>
           <ul class="stack">
             <li><NuxtLink to="/blog">Blog</NuxtLink></li>
-            <li><a href="https://discord.gg/QMg7pZgkxK">Join the Discord</a></li>
           </ul>
         </div>
         <div>

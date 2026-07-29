@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <p class="eyebrow">Room 302 — Contact</p>
+      <p class="eyebrow">Contact</p>
       <h1>Get in touch</h1>
       <p class="measure">
         Have a project in mind? Want to collaborate? Just want to say hi?
