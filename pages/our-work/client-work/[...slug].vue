@@ -73,7 +73,7 @@ const data = computed(() => {
 </script>
 
 <style scoped>
-dl.grid-2 { margin: 24px 0; }
+dl.grid-2 { margin: 24px 0 40px; gap: 24px 64px; }
 dt { margin-bottom: 4px; }
 dd { margin: 0; }
 </style>
