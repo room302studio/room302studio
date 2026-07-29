@@ -326,7 +326,7 @@ const isGradientBackground = computed(() =>
 }
 
 .title {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 100px;
   font-weight: 300;
   letter-spacing: -0.02em;
@@ -335,7 +335,7 @@ const isGradientBackground = computed(() =>
 }
 
 .description {
-  font-family: 'Fraunces', serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 32px;
   font-weight: 300;
   line-height: 1.4;

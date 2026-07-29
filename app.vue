@@ -10,7 +10,10 @@
 /* Remove or fix any @import statements that might be here */
 
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
+}
+:root.light {
+  color-scheme: light;
 }
 
 body {

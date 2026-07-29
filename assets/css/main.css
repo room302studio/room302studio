@@ -7,7 +7,8 @@
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --font-display: "Fraunces", "IBM Plex Sans", ui-serif, Georgia, serif;
+  --font-display: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
 
   --color-brand-50: #fef2f0;
   --color-brand-100: #fde6e1;
@@ -22,24 +23,18 @@
   --color-brand-950: #411a14;
 }
 
-/* Shared display-type (Fraunces) utilities — single source of truth so pages
+/* Shared display-type utilities — single source of truth so pages
    don't redefine them with drifting weights. */
-.font-fraunces,
 .font-display {
   font-family: var(--font-display);
 }
-.font-fraunces-regular {
+.font-display-regular {
   font-family: var(--font-display);
-  font-weight: 300;
+  font-weight: 400;
 }
-.font-fraunces-black {
+.font-display-bold {
   font-family: var(--font-display);
   font-weight: 700;
-}
-.font-fraunces-black-italic {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-style: italic;
 }
 
 /* Shared horizontal container padding — one source so pages stop drifting

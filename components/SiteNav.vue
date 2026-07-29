@@ -20,13 +20,13 @@ nav a { text-decoration: none; }
 /* The current page is the only nav item that gets the accent — a single
    orange underline that says "you are here." */
 nav a.here {
-  text-decoration: underline; text-underline-offset: 3px;
+  text-decoration: underline; text-underline-offset: 4px;
   text-decoration-color: var(--accent); text-decoration-thickness: 2px;
 }
 @media (max-width: 35rem) {
   /* Wrap the links into a tidy gapped row (no leading indent) once the
      wordmark drops them to their own line. */
-  nav { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; margin-top: 0.35rem; }
-  nav a { margin-left: 0; font-size: 0.9rem; }
+  nav { flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-top: 0.5rem; }
+  nav a { font-size: 0.875rem; }
 }
 </style>

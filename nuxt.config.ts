@@ -27,7 +27,6 @@ export default defineNuxtConfig({
     families: [
       { name: "IBM Plex Sans", provider: "google", weights: [300, 400, 500, 700] },
       { name: "IBM Plex Mono", provider: "google", weights: [400, 500] },
-      { name: "Fraunces", provider: "google", weights: [300, 500, 700] },
     ],
   },
   site: {
@@ -61,15 +60,6 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-        // Fraunces as a TRUE variable font — full axis ranges (opsz/wght/SOFT/
-        // WONK) so we can interpolate weight on scroll and toggle WONK on hover.
-        // (Prototype: served from Google. Self-host via fontsource later.)
-        { rel: "preconnect", href: "https://fonts.googleapis.com" },
-        { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,100..900,0..100,0..1&display=swap",
-        },
       ],
     },
   },
