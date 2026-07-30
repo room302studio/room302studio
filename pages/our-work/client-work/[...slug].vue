@@ -32,10 +32,10 @@
         <ContentRenderer :value="data" />
       </article>
 
-      <section>
+      <section v-if="relatedWork.length">
         <h2>Related Work</h2>
         <ul class="stack">
-          <li v-for="project in clientWork" :key="project.title">
+          <li v-for="project in relatedWork" :key="project.path">
             <NuxtLink :to="project.path">{{ project.title }}</NuxtLink>
           </li>
         </ul>
@@ -56,20 +56,25 @@ definePageMeta({
 });
 
 const route = useRoute();
+const slug = route.params.slug?.[0];
+if (!slug) throw createError({ statusCode: 404, statusMessage: "Project not found" });
 
 const { data: clientWork } = await useAsyncData(
   "content/our-work/client-work",
   () => queryCollection("clientWork").all(),
 );
 
-// find the current client work item from the list
-const data = computed(() => {
-  if (!clientWork.value) return;
-  const slug = route.params.slug[0];
-  return clientWork.value.find(
-    (item) => item.path === `/our-work/client-work/${slug}`,
-  );
-});
+const currentPath = `/our-work/client-work/${slug}`;
+
+// The current project, resolved from the collection.
+const data = computed(() =>
+  clientWork.value?.find((item) => item.path === currentPath),
+);
+
+// Everything else, for the Related Work list (excludes the current project).
+const relatedWork = computed(() =>
+  (clientWork.value ?? []).filter((item) => item.path !== currentPath),
+);
 </script>
 
 <style scoped>

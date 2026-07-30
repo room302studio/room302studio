@@ -28,9 +28,11 @@ definePageMeta({
 });
 
 const route = useRoute();
+const slug = route.params.slug?.[0];
+if (!slug) throw createError({ statusCode: 404, statusMessage: "Post not found" });
 
-const { data } = await useAsyncData(`blog-${route.params.slug[0]}`, () =>
-  queryCollection("blog").path(`/blog/${route.params.slug[0]}`).first()
+const { data } = await useAsyncData(`blog-${slug}`, () =>
+  queryCollection("blog").path(`/blog/${slug}`).first()
 );
 
 const formatDate = (dateString) => {

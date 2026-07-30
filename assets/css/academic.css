@@ -28,7 +28,7 @@
   --text-faint: #767676; /* tertiary / faint — lowest tone that still clears WCAG AA (4.6:1) */
   --bg: #000;
   --bg-muted: #141414;
-  --rule: #2a2a2a;
+  --rule: #3a3a3a; /* hairline dividers — nudged up for legibility on OLED */
   --link: #d8d8d8;
   --link-visited: #858585;
 
@@ -44,6 +44,7 @@
   --text-muted: #666; --text-faint: #767676;
   --bg: #fff; --bg-muted: #f4f4f4; --rule: #e4e4e4;
   --link: #1a1a1a; --link-visited: #666;
+  --accent: #c0492b; /* darker orange so it stays legible on white */
 }
 
 /* ===== RESET ===== */

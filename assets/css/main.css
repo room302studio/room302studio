@@ -23,23 +23,3 @@
   --color-brand-950: #411a14;
 }
 
-/* Shared display-type utilities — single source of truth so pages
-   don't redefine them with drifting weights. */
-.font-display {
-  font-family: var(--font-display);
-}
-.font-display-regular {
-  font-family: var(--font-display);
-  font-weight: 400;
-}
-.font-display-bold {
-  font-family: var(--font-display);
-  font-weight: 700;
-}
-
-/* Shared horizontal container padding — one source so pages stop drifting
-   between px-6/lg:px-24 and px-8/lg:px-32. Components that need their own
-   (e.g. card padding) still override locally via scoped styles. */
-.pad {
-  @apply px-8 md:px-12 lg:px-32;
-}

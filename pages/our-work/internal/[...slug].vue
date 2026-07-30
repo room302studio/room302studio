@@ -51,7 +51,8 @@ definePageMeta({
 });
 
 const route = useRoute();
-const slug = route.params.slug[0];
+const slug = route.params.slug?.[0];
+if (!slug) throw createError({ statusCode: 404, statusMessage: "Project not found" });
 
 const { data } = await useAsyncData(
   `internal-${slug}`,

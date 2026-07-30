@@ -12,11 +12,7 @@
 </template>
 
 <script setup>
-// Force scroll to top on route changes
-const router = useRouter()
-router.beforeEach((to, from, next) => {
-  window.scrollTo(0, 0)
-  next()
-})
+// Nuxt's default router scrollBehavior already resets scroll on route
+// changes; just handle the initial mount here (no global guard to leak).
 onMounted(() => window.scrollTo(0, 0))
 </script>

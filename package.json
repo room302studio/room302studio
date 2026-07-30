@@ -16,6 +16,7 @@
     "@nuxt/schema": "4.5.1"
   },
   "devDependencies": {
+    "@iconify-json/lucide": "^1.2.120",
     "better-sqlite3": "^12.4.1",
     "nuxt": "^4.5.1",
     "sass": "^1.102.0",
