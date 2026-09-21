@@ -27,9 +27,14 @@
 </template>
 
 <script setup lang="ts">
-const { data: articles } = await useAsyncData("blog-index", () =>
-  queryCollection("blog").order("date", "DESC").all()
-);
+const { data: articles } = await useAsyncData("blog-index", async () => {
+  const posts = await queryCollection("blog").order("date", "DESC").all();
+  // Content v3 has no built-in draft handling, so `draft: true` has to be
+  // filtered explicitly. Done in JS because a `<>` comparison in the query
+  // builder also drops rows where the column is NULL — i.e. every post that
+  // omits the flag.
+  return posts.filter((post) => !post.draft);
+});
 
 const formatDate = (dateString?: string) => {
   if (!dateString) return '';

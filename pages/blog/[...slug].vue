@@ -35,6 +35,13 @@ const { data } = await useAsyncData(`blog-${slug}`, () =>
   queryCollection("blog").path(`/blog/${slug}`).first()
 );
 
+// Content v3 returns drafts like any other document, so without this a post
+// marked `draft: true` would render in full to anyone with the URL.
+if (data.value?.draft) {
+  throw createError({ statusCode: 404, statusMessage: "Page Not Found", fatal: true });
+}
+
+// Format date in a more readable format
 const formatDate = (dateString) => {
   if (!dateString) return "";
   return new Intl.DateTimeFormat("en-US", {
