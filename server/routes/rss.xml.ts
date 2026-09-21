@@ -1,34 +1,53 @@
 import { serverQueryContent } from '#content/server'
-import RSS from 'rss'
+
+const SITE_URL = 'https://room302.studio'
+
+const escapeXml = (value: string) =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;')
 
 export default defineEventHandler(async (event) => {
-  const feed = new RSS({
-    title: 'Room 302 Studio Blog',
-    description: 'Innovation lab insights: rapid prototyping, data visualization mastery, and our 0-60 approach to building the future.',
-    feed_url: 'https://room302studio.com/rss.xml',
-    site_url: 'https://room302studio.com',
-    language: 'en',
-    pubDate: new Date(),
-    ttl: 60,
-  })
-
   const posts = await serverQueryContent(event, 'blog')
-    .where({ hidden: { $ne: true }, inprogress: { $ne: true } })
+    .where({
+      _draft: { $ne: true },
+      hidden: { $ne: true },
+      inprogress: { $ne: true },
+    })
     .sort({ date: -1 })
     .find()
 
-  for (const post of posts) {
-    feed.item({
-      title: post.title || 'Untitled',
-      url: `https://room302studio.com${post._path}`,
-      date: post.date || new Date(),
-      description: post.description || '',
-      author: post.author || 'Room 302 Studio',
+  const items = posts
+    .map((post) => {
+      const url = `${SITE_URL}${post._path}`
+      const date = new Date(post.date ?? Date.now()).toUTCString()
+
+      return `    <item>
+      <title>${escapeXml(post.title ?? 'Untitled')}</title>
+      <link>${escapeXml(url)}</link>
+      <guid isPermaLink="true">${escapeXml(url)}</guid>
+      <pubDate>${date}</pubDate>
+      <description>${escapeXml(post.description ?? '')}</description>
+    </item>`
     })
-  }
+    .join('\n')
 
-  const feedString = feed.xml({ indent: true })
+  const feed = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Room 302 Studio</title>
+    <link>${SITE_URL}</link>
+    <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Writing from Room 302 Studio.</description>
+    <language>en</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+${items}
+  </channel>
+</rss>`
 
-  event.node.res.setHeader('content-type', 'text/xml')
-  event.node.res.end(feedString)
+  event.node.res.setHeader('content-type', 'application/rss+xml; charset=utf-8')
+  event.node.res.end(feed)
 })
