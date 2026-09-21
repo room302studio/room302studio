@@ -76,7 +76,7 @@ export default defineNuxtConfig({
         {
           src: "https://umami.tools.ejfox.com/script.js",
           defer: true,
-          "data-website-id": "58781239-fddd-42bc-b5a5-6fe552e7406c",
+          "data-website-id": "b069146f-591b-47a8-86fd-48ce126b1b9f",
         },
       ],
     },
