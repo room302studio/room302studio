@@ -15,6 +15,8 @@ export default defineContentConfig({
         authorEmail: z.string().optional(),
         tags,
         inprogress: z.boolean().optional(),
+        hidden: z.boolean().optional(),
+        draft: z.boolean().optional(),
         image: z.string().optional(),
       }),
     }),
