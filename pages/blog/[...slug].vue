@@ -184,6 +184,14 @@ const { data } = await useAsyncData(async () => {
   return queryContent("blog", route.params.slug[0]).findOne();
 });
 
+// Content v2 drops `_draft: true` docs from production queries, so a draft slug
+// resolves to null here and would otherwise render as an empty 200 page. The
+// explicit flag checks cover the v3 migration, where `draft` is a schema field
+// and the document does come back.
+if (!data.value || data.value._draft || data.value.draft) {
+  throw createError({ statusCode: 404, statusMessage: "Page Not Found", fatal: true });
+}
+
 // Get all blog posts sorted by date
 const { data: allPosts } = await useAsyncData('all-blog-posts', async () => {
   return queryContent("blog")
