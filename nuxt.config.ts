@@ -72,6 +72,13 @@ export default defineNuxtConfig({
       link: [
         { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       ],
+      script: [
+        {
+          src: "https://umami.tools.ejfox.com/script.js",
+          defer: true,
+          "data-website-id": "58781239-fddd-42bc-b5a5-6fe552e7406c",
+        },
+      ],
     },
   },
 });
