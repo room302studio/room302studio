@@ -1,26 +1,24 @@
 ---
 title: "Process"
-description: "Our process is a collaborative journey that begins with a deep understanding of your business goals and ends with a product that's uniquely tailored to your audience."
---- 
+description: "How we work — from first conversation to finished product."
+---
 ## Kickoff
-We start by building a strong foundation: understanding your unique business goals, target audience, and the problem space, ensuring that every decision is aligned with your success metrics.
+We start by understanding what you're trying to do, who it's for, and what success looks like. No questionnaires — just a real conversation.
 
-## In-Depth Research
-Beyond just gathering data, we delve into user interviews, analyze your existing analytics, and deeply understand the ecosystem your product lives in. This thoroughness not only informs the final product but also uncovers insights that drive user engagement and satisfaction.
+## Research
+We look at your data, talk to your users if we can, and get familiar with the problem space. The goal is to know enough to make good decisions quickly, not to write a report nobody reads.
 
 ## Sketch The Vision
-Crafting a strategic vision, we translate research insights into innovative design solutions. We create wireframes and storyboards that not only reflect our findings but also your brand's identity, forming a clear path forward that's uniquely tailored to your audience.
+We turn what we've learned into wireframes and rough concepts. This is where we figure out the shape of the thing before we start building it.
 
-## Get To The First Visual
-With a vision in hand, we quickly turn abstract ideas into tangible visuals. This involves creating the first set of high-fidelity prototypes that breathe life into concepts, allowing for an early market test and stakeholder feedback.
+## First Prototype
+We get to something visual fast. A working prototype you can click through, share with stakeholders, and react to. This usually happens within the first couple weeks.
 
-## Explorative Prototyping
-Our iterative design process is where your product begins to take shape. Exploring various prototypes, we refine functionalities, aesthetics, and user interactions, continuously validating our choices through user testing to ensure product-market fit.
+## Iterate
+We build, test, and refine. Multiple rounds of prototyping, each one getting closer to the real thing. We show you work constantly — no big reveals.
 
-# Iterative Loop
+## Polish
+The details that make it feel good: transitions, interactions, edge cases, mobile. The stuff that separates "works" from "works well."
 
-# Finishing Touches
-In this stage, we address detailed user interface work, interactions, and micro-animations, adding the refined layers that differentiate your product as a superior user experience in the market.
-
-# Handoff
-Ensuring smooth transition, our comprehensive handoff includes documented design systems, well-commented code, and ongoing support. We also offer training and workshops to empower your team to take ownership of the product.
+## Handoff
+Clean code, documented design decisions, and anything your team needs to maintain it going forward. We stick around for questions.

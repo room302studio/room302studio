@@ -9,16 +9,15 @@
         <div class="container">
           <div class="hero-content">
             <h1 class="hero-title font-fraunces">
-              <span class="block font-fraunces-regular">We are an</span>
-              innovation lab
-              <span class="block mt-2 font-fraunces-regular">that turns
-                <em class="font-fraunces-black-italic text-primary-300 dark:text-primary-700">concepts</em>
-                into <em class="font-fraunces-black-italic text-primary-500">reality.</em>
+              <span class="block font-fraunces-regular">We make</span>
+              complicated things
+              <span class="block mt-2 font-fraunces-regular">
+                <em class="font-fraunces-black-italic text-primary-500">make sense.</em>
               </span>
             </h1>
 
             <p class="hero-subtitle">
-              If your team is struggling to validate and market something quickly, we can help you forge a path forward.
+              Room 302 is a small studio that builds data visualizations, interactive tools, and prototypes. We've made election graphics for the AP, mapped coral reefs for the Wildlife Conservation Society, and supported a studio member's indie game that ended up in Fast Company.
             </p>
 
             <div class="button-group">
@@ -55,27 +54,24 @@
               :style="{ 'transition-delay': `${index * 150}ms` }">
               <!-- Value prop content -->
               <template v-if="index === 0">
-                <UIcon name="i-material-symbols-light:speed-rounded" class="value-icon" />
-                <h3 class="value-title">Fast-paced prototyping</h3>
+                <UIcon name="i-material-symbols-light:insert-chart-outline" class="value-icon" />
+                <h3 class="value-title">Hard data, clear stories</h3>
                 <p class="value-text">
-                  We know the best way to make great ideas is to iterate. A lot. Our focus on rapid prototyping
-                  lets us get further, faster.
+                  We love the moment when a messy dataset clicks into a visualization that actually explains something. That's the work — whether it's global food supply chains or election night results.
                 </p>
               </template>
               <template v-else-if="index === 1">
-                <UIcon name="i-material-symbols-light:insert-chart-outline" class="value-icon" />
-                <h3 class="value-title">Rooted in data</h3>
+                <UIcon name="i-material-symbols-light:speed-rounded" class="value-icon" />
+                <h3 class="value-title">Small team, fast hands</h3>
                 <p class="value-text">
-                  We have a deep background in data visualization and analysis, and our core processes use data to
-                  inform all our decisions along the way.
+                  We're a small studio on purpose. No layers of approval, no scope creep meetings. You talk to the people building the thing, and we move quickly because we genuinely enjoy the work.
                 </p>
               </template>
               <template v-else>
                 <UIcon name="i-fa6-solid-hammer" class="value-icon" />
-                <h3 class="value-title">Fearless exploration</h3>
+                <h3 class="value-title">Toolmakers at heart</h3>
                 <p class="value-text">
-                  Part of being on the cutting edge is being willing to take risks. We're not afraid to explore
-                  uncharted territory with you; it's what we do best.
+                  When we're not doing client work, we're building our own tools — network visualizers, AI assistants, prototyping kits. That instinct to build things that are useful shows up in everything we make.
                 </p>
               </template>
             </div>
@@ -92,8 +88,9 @@
         <div class="video-container">
           <div class="video-wrapper">
             <!-- Video -->
-            <video class="full-video" autoplay loop muted playsinline>
-              <source src="https://res.cloudinary.com/ejf/video/upload/v1707429688/Comp_2_1_1.mp4" type="video/mp4" />
+            <video ref="heroVideo" class="full-video" loop muted playsinline preload="none"
+              poster="https://res.cloudinary.com/ejf/video/upload/q_auto,f_jpg,w_1280,so_0/v1707429688/Comp_2_1_1.jpg">
+              <source :src="videoSrc" type="video/mp4" />
             </video>
 
             <!-- Overlay -->
@@ -105,15 +102,12 @@
                 <div class="video-grid">
                   <div class="video-text-col">
                     <h2 class="video-title font-fraunces-black">
-                      Bringing your ideas from
-                      <span class="font-fraunces-black-italic">0</span> to
-                      <span class="font-fraunces-black-italic">60</span><span>.</span>
+                      See the work<span class="font-fraunces-black-italic">.</span>
                     </h2>
                   </div>
                   <div class="video-description-col">
                     <p class="video-description">
-                      From rapid prototyping to scalable solutions, we transform complex challenges into
-                      elegant implementations faster than you think.
+                      Interactive maps, real-time graphics, tools people actually use. We'd rather show you than tell you about it.
                     </p>
                   </div>
                 </div>
@@ -136,85 +130,48 @@
       </section>
 
 
-      <!-- Profile Cards Section -->
-      <section class="profiles-section">
+      <!-- How We Work Section -->
+      <section class="py-24 md:py-32">
         <div class="container">
-          <div class="profile-cards">
-            <!-- CEO/CTO Card -->
-            <div class="profile-card">
-              <div class="card-header">
-                <div class="card-header-gradient"></div>
-                <div class="card-title-wrapper">
-                  <h3 class="card-title">
-                    <span>Skunkworks for hire</span>
-                  </h3>
-                </div>
-              </div>
-              <div class="card-body">
-                <p class="card-description">
-                  Need to test and validate a prototype quickly? We help you overcome stakeholder politics and get to
-                  market faster.
-                </p>
-                <ul class="card-features">
-                  <li class="feature-item">
-                    <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>Visualize multiple possible futures for your product</span>
-                  </li>
-                  <li class="feature-item">
-                    <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>Bring stakeholders together with tangible prototypes</span>
-                  </li>
-                  <li class="feature-item">
-                    <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>Get to market quickly with validated solutions</span>
-                  </li>
-                </ul>
-                <div class="card-action">
-                  <UButton to="/for-ceos" class="card-button group">
-                    Learn more
-                    <UIcon name="i-heroicons-arrow-right" class="button-arrow" />
-                  </UButton>
-                </div>
-              </div>
-            </div>
+          <div class="grid md:grid-cols-2 gap-8 md:gap-12">
 
-            <!-- Data Analyst Card -->
-            <div class="profile-card">
-              <div class="card-header">
-                <div class="card-header-gradient"></div>
-                <div class="card-title-wrapper">
-                  <h3 class="card-title">
-                    <span>Unlock your data</span>
-                  </h3>
-                </div>
+            <NuxtLink to="/for-ceos"
+              class="group block p-8 md:p-10 rounded-xl border border-stone-200 dark:border-stone-800 hover:border-primary-500/50 dark:hover:border-primary-500/50 transition-all duration-300">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-2 h-2 rounded-full bg-primary-500"></div>
+                <h3 class="text-sm font-mono uppercase tracking-wider text-stone-500 dark:text-stone-400">Prototyping</h3>
               </div>
-              <div class="card-body">
-                <p class="card-description">
-                  Drowning in data but starving for insights? We transform complex data into actionable visualizations
-                  that tell a story for internal stakeholders or your customers.
-                </p>
-                <ul class="card-features">
-                  <li class="feature-item">
-                    <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>Create custom dashboards and alert systems</span>
-                  </li>
-                  <li class="feature-item">
-                    <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>Find patterns in complex datasets through visualization</span>
-                  </li>
-                  <li class="feature-item">
-                    <UIcon name="i-heroicons-check" class="feature-icon" />
-                    <span>Create reusable tools that deliver consistent value for your team</span>
-                  </li>
-                </ul>
-                <div class="card-action">
-                  <UButton to="/for-data-analysts" class="card-button group">
-                    Learn more
-                    <UIcon name="i-heroicons-arrow-right" class="button-arrow" />
-                  </UButton>
-                </div>
+              <h4 class="text-2xl md:text-3xl font-light mb-4 text-stone-800 dark:text-stone-200 group-hover:text-primary-500 transition-colors">
+                Skunkworks for hire
+              </h4>
+              <p class="text-stone-600 dark:text-stone-400 leading-relaxed mb-8">
+                Got an idea that needs to exist? We'll build it with you — working prototypes, not slide decks. You talk directly to the people making the thing.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">Newsrooms</span>
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">NGOs</span>
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">Indie creators</span>
               </div>
-            </div>
+            </NuxtLink>
+
+            <NuxtLink to="/for-data-analysts"
+              class="group block p-8 md:p-10 rounded-xl border border-stone-200 dark:border-stone-800 hover:border-primary-500/50 dark:hover:border-primary-500/50 transition-all duration-300">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="w-2 h-2 rounded-full bg-primary-500"></div>
+                <h3 class="text-sm font-mono uppercase tracking-wider text-stone-500 dark:text-stone-400">Data visualization</h3>
+              </div>
+              <h4 class="text-2xl md:text-3xl font-light mb-4 text-stone-800 dark:text-stone-200 group-hover:text-primary-500 transition-colors">
+                Make your data land
+              </h4>
+              <p class="text-stone-600 dark:text-stone-400 leading-relaxed mb-8">
+                You've got a dataset that should be telling a story but isn't yet. We build the map, the dashboard, the scrollytelling piece — whatever makes people actually get it.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">D3 / Mapbox / WebGL</span>
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">Election-night tested</span>
+              </div>
+            </NuxtLink>
+
           </div>
         </div>
       </section>
@@ -230,7 +187,7 @@
               </h3>
 
               <p class="contact-description">
-                We turn concepts into reality for organizations that need results.
+                We'd love to hear what you're working on.
               </p>
             </div>
 
@@ -281,6 +238,11 @@ router.afterEach(() => {
   }, 500)
 })
 
+// Lazy-load video only when section is visible
+const heroVideo = ref(null)
+const videoSrc = ref('')
+const videoUrl = 'https://res.cloudinary.com/ejf/video/upload/q_auto,f_auto,w_1280,br_2m/v1707429688/Comp_2_1_1'
+
 // Scroll-Triggered Value Propositions Reveal
 const valuePropsRef = ref(null)
 const valuePropsVisible = ref(false)
@@ -308,6 +270,17 @@ const { x: secondaryX, y: secondaryY } = usePointer({
 // Parallax Video Section
 const { y: scrollY } = useScroll()
 const videoSectionRef = ref(null)
+
+// Lazy-load video when section scrolls into view
+useIntersectionObserver(videoSectionRef, ([{ isIntersecting }]) => {
+  if (isIntersecting && !videoSrc.value) {
+    videoSrc.value = videoUrl
+    nextTick(() => {
+      heroVideo.value?.load()
+      heroVideo.value?.play()
+    })
+  }
+}, { threshold: 0.1 })
 
 // Compute parallax effect based on scroll position
 const videoParallax = computed(() => {
@@ -349,15 +322,50 @@ onMounted(() => {
 // Set up OG metadata for the home page
 useOgMetadata(
   'Room 302 Studio',
-  'We are an innovation lab that turns concepts into reality.'
+  'Data visualization and interactive studio. We build the maps, graphics, and tools that turn complex data into something people understand.'
 )
+
+// JSON-LD structured data for rich search results
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ProfessionalService',
+        name: 'Room 302 Studio',
+        url: 'https://room302.studio',
+        description: 'Data visualization and interactive studio. We build maps, graphics, and tools that turn complex data into something people understand.',
+        foundingDate: '2023',
+        founder: {
+          '@type': 'Person',
+          name: 'EJ Fox',
+          url: 'https://ejfox.com',
+        },
+        knowsAbout: [
+          'Data Visualization',
+          'Interactive Design',
+          'D3.js',
+          'Mapbox',
+          'Election Graphics',
+          'Rapid Prototyping',
+          'AI Tools',
+        ],
+        areaServed: 'Worldwide',
+        sameAs: [
+          'https://github.com/room302studio',
+        ],
+      }),
+    },
+  ],
+})
 
 // Featured projects data
 const featuredProjects = [
   {
     title: 'Mapping Resilience',
-    client: 'The Margin',
-    description: 'When the Wildlife Conservation Society needed to visualize critical environmental data quickly, we delivered an interactive experience that transformed complex datasets into a compelling narrative about coral reef resilience.',
+    client: 'Wildlife Conservation Society',
+    description: 'The Wildlife Conservation Society had years of research showing certain coral reefs were surviving climate change better than others. We built interactive maps that let people explore why — launched at NYC Climate Week.',
     images: {
       primary: '/our-work-images/reef-2.jpg',
       secondary: '/our-work-images/reef-1.jpg'
@@ -366,7 +374,7 @@ const featuredProjects = [
     valueAdd: [
       {
         icon: 'i-heroicons-globe-americas',
-        text: 'We developed interactive maps to visualize ecosystem resilience across the globe.'
+        text: 'Built interactive maps showing which reefs are surviving climate change and why.'
       },
       {
         icon: 'i-fluent-lightbulb-filament-48-filled',
@@ -381,7 +389,7 @@ const featuredProjects = [
   {
     title: 'Ukraine Grain',
     client: 'The Plotline',
-    description: 'Facing tight deadlines and challenging data sources, we built an interactive visualization that cut through bureaucratic barriers to clearly show how Ukraine\'s war impacts global food security, helping stakeholders make informed decisions.',
+    description: 'The war in Ukraine was disrupting global grain supply, but the data was scattered and in Ukrainian. We translated it, built an interactive tool where you can adjust output by region, and see the ripple effects on food security worldwide.',
     images: {
       primary: '/our-work-images/ukrainegrain.png',
       secondary: '/our-work-images/ukraine.jpg'
@@ -405,7 +413,7 @@ const featuredProjects = [
   {
     title: 'Election 2024',
     client: 'Associated Press',
-    description: 'Serving as a pinch hitter for AP\'s award-nominated VoteCast team, our founder integrated with their existing talent to support the development of real-time visualizations that helped millions understand complex voter data from 120,000+ respondents on election night.',
+    description: 'AP needed extra hands for election night. We joined their graphics team to help build and test live election visualizations used by news organizations around the world.',
     images: {
       primary: '/our-work-images/ap1.png',
       secondary: '/our-work-images/ap2.png'
@@ -414,11 +422,11 @@ const featuredProjects = [
     valueAdd: [
       {
         icon: 'i-heroicons-bolt',
-        text: 'We integrated seamlessly with AP\'s team to deliver real-time visualizations under extreme pressure.'
+        text: 'Joined AP\'s existing graphics team and hit the ground running for election night.'
       },
       {
         icon: 'i-heroicons-document-chart-bar',
-        text: 'Our work helped translate complex polling data from 120,000+ respondents into accessible insights.'
+        text: 'Helped build and QA live graphics under election-night pressure — no room for errors.'
       },
       {
         icon: 'i-heroicons-users',
@@ -565,75 +573,7 @@ const featuredProjects = [
   @apply text-xl md:text-2xl lg:text-3xl text-stone-200 font-light leading-relaxed;
 }
 
-/* Profile Cards */
-.profiles-section {
-  @apply my-24 md:my-32 py-8;
-}
-
-.profile-cards {
-  @apply grid md:grid-cols-2 gap-6 sm:gap-8 mt-8 sm:mt-12;
-}
-
-.profile-card {
-  @apply bg-white dark:bg-stone-950 rounded-xl shadow-sm transition-all duration-300 overflow-hidden p-4 sm:p-0;
-}
-
-.card-header {
-  /* @apply min-h-16 bg-stone-100 dark:bg-stone-800 relative overflow-hidden; */
-  @apply bg-primary-500 text-white relative min-h-16;
-}
-
-.card-header-gradient {
-  @apply absolute inset-0 bg-gradient-to-t from-white dark:from-stone-950 to-transparent;
-}
-
-.card-title-wrapper {
-  @apply absolute inset-0 flex items-center px-4 sm:px-6 py-0;
-}
-
-.card-title {
-  @apply text-xl sm:text-2xl flex items-center py-2;
-}
-
-.card-title-icon {
-  @apply text-stone-700 dark:text-stone-300 w-5 h-5 sm:w-6 sm:h-6 mr-2;
-}
-
-.card-body {
-  @apply p-4 sm:p-6;
-}
-
-.card-description {
-  @apply text-stone-700 dark:text-stone-300 mb-3 sm:mb-4 text-sm sm:text-base;
-}
-
-.card-features {
-  @apply mb-4 sm:mb-6 text-xs sm:text-sm text-stone-600 dark:text-stone-400 space-y-1 sm:space-y-2;
-}
-
-.feature-item {
-  @apply flex items-start;
-}
-
-.feature-icon {
-  @apply text-stone-700 dark:text-stone-300 mt-0.5 mr-1.5 sm:mt-1 sm:mr-2 flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5;
-}
-
-.card-action {
-  @apply flex items-center justify-between;
-}
-
-.card-button {
-  @apply text-sm sm:text-base px-3 py-1.5 sm:px-4 sm:py-2;
-}
-
-.button-arrow {
-  @apply ml-1 transition-transform duration-300 w-4 h-4 sm:w-5 sm:h-5;
-}
-
-.card-button:hover .button-arrow {
-  @apply translate-x-1;
-}
+/* Profile Cards - removed, using inline Tailwind now */
 
 /* Case Studies */
 .case-studies-section {

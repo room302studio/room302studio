@@ -1,10 +1,12 @@
 ---
-hidden: true
+title: "State of the Studio 2024"
+description: "Reflecting on a challenging year — slowed client work, personal decisions, and three internal experiments that evolved into full-fledged tools."
 inprogress: true
 date: 2024-12-23T14:18:33-04:00
 tags: behindthescenes studio
 author: EJ Fox
 authorEmail: ejfox@room302.studio
+hidden: true
 ---
 # 2024
 

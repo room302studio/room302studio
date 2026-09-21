@@ -6,7 +6,7 @@
         <div class="text-center space-y-8">
           <div class="font-mono text-primary-500 uppercase tracking-wide text-sm mb-6">Room 302 — Contact</div>
           <h1
-            class="text-4xl md:text-5xl xl:text-6xl font-heading font-light tracking-tight text-stone-800 dark:text-stone-200 mb-8">
+            class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-stone-800 dark:text-stone-200 mb-8">
             Get in touch
           </h1>
           <p

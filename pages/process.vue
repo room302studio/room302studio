@@ -12,14 +12,12 @@
           <div class="md:w-3/4 mb-16 md:mb-0">
             <div class="font-mono text-primary-500 uppercase tracking-wide text-sm mb-4">Room 302 — Process</div>
             <h1
-              class="font-heading text-6xl md:text-7xl xl:text-8xl font-light mb-12 md:mb-16 tracking-tight hero-title">
+              class="font-heading text-5xl md:text-6xl lg:text-7xl font-light mb-12 md:mb-16 tracking-tight hero-title">
               Our Process
             </h1>
             <p
-              class="text-lg md:text-xl xl:text-2xl font-light max-w-3xl leading-relaxed text-balance relative text-stone-700 dark:text-stone-400 hero-subtitle">
-              <span class="font-mono text-stone-800 dark:text-stone-300">"Rapid innovation with intention"</span>—we
-              work at the
-              intersection of speed and quality, turning complex data into elegant, usable tools.
+              class="text-lg md:text-xl font-light max-w-3xl leading-relaxed text-balance relative text-stone-700 dark:text-stone-400 hero-subtitle">
+              How we go from first conversation to shipped product. We move fast and show work constantly.
             </p>
           </div>
         </div>
@@ -282,11 +280,10 @@
     <section class="section-spacing text-center">
       <div class="content-container">
         <h2 class="font-heading text-3xl md:text-4xl xl:text-5xl font-light mb-8 text-stone-800 dark:text-stone-200">
-          Ready to move at
-          lightspeed?
+          Have a project in mind?
         </h2>
         <p class="text-lg md:text-xl text-stone-700 dark:text-stone-400 max-w-2xl mx-auto mb-16 xl:mb-20">
-          Let's create something that makes your team feel empowered and your competitors wonder how you did it.
+          Tell us what you're working on. We'll figure out how we can help.
         </p>
         <MonoButton to="/contact" primary large>
           Let's do this
@@ -306,7 +303,7 @@ import TufteGrid from '~/components/TufteGrid.vue'
 
 useSeoMeta({
   title: 'Our Process | Room 302 Studio',
-  description: "We're hackers for good, moving at lightspeed to build tools that transform how your team works.",
+  description: "How we work — from first conversation to shipped product. Research, prototype, iterate, deliver.",
 })
 
 // Track scroll progress

@@ -6,20 +6,18 @@
         <div class="overflow-hidden max-w-5xl mx-auto">
           <div class="mb-4 flex items-center">
             <UIcon name="i-heroicons-chart-bar" class="text-primary-500 w-8 h-8 mr-2" />
-            <h4 class="uppercase tracking-widest text-primary-500 font-medium">For Data Analysts</h4>
+            <h4 class="text-sm font-mono uppercase tracking-wide text-primary-500">For Data Teams</h4>
           </div>
 
           <h1
-            class="text-4xl md:text-6xl lg:text-7xl font-extralight mb-10 md:mb-12 text-balance leading-tight tracking-tight hero-text">
-            <span class="block">Transform your data into</span>
-            <span class="text-primary-500 font-light">actionable insights</span>
-            <span class="block mt-2">that your team can use.</span>
+            class="text-5xl md:text-6xl lg:text-7xl font-light mb-10 md:mb-12 text-balance leading-tight tracking-tight hero-text">
+            <span class="block">Turn your data into</span>
+            <span class="text-primary-500">something people get.</span>
           </h1>
 
           <p
-            class="text-xl md:text-2xl font-light text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed mb-12 hero-subtitle">
-            Understanding your existing data shouldn't require a PhD. We help you make sense of your data and visualize
-            it in ways that drive decisions.
+            class="text-lg md:text-xl font-light text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed mb-12 hero-subtitle">
+            You've got the data. We build the visualization that makes it click — for your team, your stakeholders, or the public.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-6 mt-8">
@@ -136,10 +134,8 @@
     <!-- CTA Section -->
     <section class="pad my-24 md:my-32">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-light mb-6 text-stone-800 dark:text-stone-200">Ready to unlock the power of
-          your data?</h2>
-        <p class="text-xl text-stone-600 dark:text-stone-400 mb-10">Let's transform your raw data into actionable
-          insights that drive better decisions.</p>
+        <h2 class="text-3xl md:text-4xl font-light mb-6 text-stone-800 dark:text-stone-200">Got a dataset that needs to tell a story?</h2>
+        <p class="text-xl text-stone-600 dark:text-stone-400 mb-10">Tell us what you're working with and we'll figure out the best way to make it click.</p>
         <UButton to="/contact" color="primary" class="text-lg px-10 py-4">Contact Us</UButton>
       </div>
     </section>

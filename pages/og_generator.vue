@@ -139,8 +139,8 @@ const backgrounds = {
 }
 
 const pageDescriptions = {
-  'Room 302 Studio': 'We are an innovation lab that turns concepts into reality.',
-  'Innovation Services': 'We help you see the future by exploring possibilities, nurturing ideas, and bringing them to life with care and expertise.',
+  'Room 302 Studio': 'Data visualization and interactive studio. We make complicated things make sense.',
+  'Innovation Services': 'Data visualization, interactive tools, and rapid prototyping for teams that need to ship.',
   'Our Work': 'Explore our portfolio of digital experiences and data visualizations.',
   'Journal': 'Thoughts, processes, and ideas from Room 302 Studio.',
   'Contact Us': 'Get in touch with Room 302 Studio. Email us to start a conversation about your project.',

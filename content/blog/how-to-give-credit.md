@@ -1,4 +1,6 @@
 ---
+title: "How To Give Credit"
+description: "Giving credit is an essential part of being a decent human. A look at how different industries handle attribution and how to do it right."
 date: 2023-09-03T14:18:33-04:00
 modified: 2023-12-17T19:08:46-05:00
 tags: howto process

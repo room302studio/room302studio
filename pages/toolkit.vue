@@ -3,14 +3,12 @@
     <!-- Hero Section -->
     <section class="hero-section relative py-16 md:py-32 overflow-hidden">
       <div class="pad relative z-10">
-        <h1 class="text-5xl md:text-7xl font-extralight mb-8 md:mb-12 tracking-tight text-balance">
-          <span class="block">The Room 302 Toolkit:</span>
-          <span class="text-primary-500 font-light">Visualization Instruments</span>
-          <span class="block">for Complex Systems</span>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-8 md:mb-12 tracking-tight text-balance">
+          Our Toolkit
         </h1>
         <p
-          class="text-lg md:text-2xl font-light max-w-3xl leading-relaxed text-balance text-stone-700 dark:text-stone-400">
-          Crafted for those who navigate digital complexity. Each tool reveals patterns invisible to the naked eye.
+          class="text-lg md:text-xl font-light max-w-3xl leading-relaxed text-balance text-stone-700 dark:text-stone-400">
+          The tools and technologies we use across our projects.
         </p>
       </div>
       <!-- Subtle topographic background pattern -->
@@ -171,8 +169,7 @@
         <div class="mt-16 text-center max-w-2xl mx-auto">
           <h3 class="text-2xl font-light mb-4">Ready to apply these tools to your challenges?</h3>
           <p class="text-stone-600 dark:text-stone-400 mb-8">
-            Our toolkit is designed to work together seamlessly, revealing insights that would remain hidden using
-            traditional methods.
+            These tools work well together — and we bring them to every client project.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <UButton color="primary" size="lg" to="/contact" class="px-8">
@@ -202,8 +199,8 @@
 
         <div class="space-y-6">
           <p class="text-stone-700 dark:text-stone-400">
-            The Room 302 approach to visualization is centered around revealing hidden patterns in complex systems.
-            Our toolkit works together to provide a comprehensive view of your data landscape.
+            We build visualizations that help people see patterns in complex systems.
+            These tools work together to give you a clear picture of your data.
           </p>
 
           <div class="bg-stone-100 dark:bg-stone-700/50 rounded-lg p-4">
@@ -223,7 +220,7 @@
               </li>
               <li class="flex items-start">
                 <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-                <span>Connect disparate data sources for holistic understanding</span>
+                <span>Connect different data sources to see the full picture</span>
               </li>
               <li class="flex items-start">
                 <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
@@ -346,7 +343,7 @@ const useCases = ref([
   },
   {
     title: 'Knowledge Graph Construction',
-    description: 'Building comprehensive knowledge representations from unstructured data sources.',
+    description: 'Turning unstructured data into something you can actually navigate and understand.',
     tools: ['Context Alchemy', 'Connectology']
   },
   {

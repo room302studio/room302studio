@@ -1,7 +1,9 @@
 ---
+title: "Livestream Learning: How Room 302 Engages and Educates in Real-Time"
+description: "Why livestreaming is a core part of our practice — it makes our work better and creates educational resources for others."
 inprogress: true
 date: 2024-06-06T14:18:33-04:00
-tags: howto process
+tags: howto process livestreaming
 author: EJ Fox
 authorEmail: ejfox@room302.studio
 ---

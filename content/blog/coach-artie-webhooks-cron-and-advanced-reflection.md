@@ -1,8 +1,9 @@
 ---
-dek: AI Coach Artie is stepping up his game; we are enhancing his reflection stage and giving him more tools
+title: "Coach Artie: Webhooks, Cron, and Advanced Reflection"
+description: "AI Coach Artie is stepping up his game — we're enhancing his reflection stage, adding webhook support, cron scheduling, and deep document ingest."
 date: 2024-05-16T14:50:23-04:00
 modified: 2024-05-16T14:50:23-04:00
-tags:
+tags: ai tools coachartie
 author: EJ Fox
 authorEmail: ejfox@room302.studio
 ---

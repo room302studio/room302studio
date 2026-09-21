@@ -29,18 +29,11 @@
               <li class="flex items-start">
                 <UIcon name="i-heroicons-light-bulb"
                   class="text-stone-500 dark:text-stone-400 mt-1 mr-2 flex-shrink-0" />
-                <span>We explored multiple futures through rapid prototyping, helping the client see possibilities they
-                  hadn't imagined.</span>
+                <span>Built several working prototypes to figure out what actually worked before committing to a direction.</span>
               </li>
               <li class="flex items-start">
                 <UIcon name="i-heroicons-beaker" class="text-stone-500 dark:text-stone-400 mt-1 mr-2 flex-shrink-0" />
-                <span>Our team brought unique perspectives, finding elegant solutions where others saw only
-                  complexity.</span>
-              </li>
-              <li class="flex items-start">
-                <UIcon name="i-heroicons-heart" class="text-stone-500 dark:text-stone-400 mt-1 mr-2 flex-shrink-0" />
-                <span>We nurtured this idea with kindness and care, serving as midwives to bring it into the world fully
-                  formed.</span>
+                <span>Worked closely with the client's team to make sure the final product served their actual needs.</span>
               </li>
             </template>
           </ul>
@@ -57,9 +50,11 @@
         </UButton>
       </div>
       <div class="intro-images-wrapper w-full md:w-5/12 md:grid grid-cols-1 grid-rows-1 relative md:p-12">
-        <img :src="project.images.primary" alt=""
+        <NuxtImg :src="project.images.primary" :alt="project.title + ' - ' + project.client"
+          width="600" quality="80" format="webp" loading="lazy"
           class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg py-2 md:py-0 transition-all duration-500 primary-image" />
-        <img :src="project.images.secondary" alt=""
+        <NuxtImg :src="project.images.secondary" :alt="project.title + ' - detail'"
+          width="600" quality="80" format="webp" loading="lazy"
           class="intro-image border border-gray-100 row-start-1 col-start-1 w-full rounded-lg py-2 md:py-0 hidden md:block transition-all duration-500 secondary-image" />
       </div>
     </div>
