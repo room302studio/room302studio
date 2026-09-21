@@ -1,7 +1,7 @@
 # Dependencies
 node_modules
 
-# Build output
+# Nuxt build output
 .nuxt
 .output
 .data
@@ -17,3 +17,4 @@ dist
 
 # OS / editor
 .DS_Store
+.obsidian/
