@@ -1,6 +1,19 @@
+# Dependencies
 node_modules
+
+# Build output
 .nuxt
 .output
+.data
+dist
+
+# Environment
 .env
-.env
-.env
+.env.*
+!.env.template
+
+# Logs
+*.log
+
+# OS / editor
+.DS_Store
