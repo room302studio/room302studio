@@ -23,8 +23,7 @@
             <div class="button-group">
               <!-- Primary Contact Button -->
               <UButton ref="primaryBtn" to="/contact" color="primary" class="hero-btn primary-btn font-mono"
-                @mouseenter="primaryBtnHover = true" @mouseleave="primaryBtnHover = false"
-                aria-label="Contact Room 302 Studio">
+                @mouseenter="primaryBtnHover = true" @mouseleave="primaryBtnHover = false">
                 <!-- Spotlight effect -->
                 <span v-if="primaryBtnHover" class="btn-spotlight" :style="{
                   left: `${primaryX - primaryBtn?.offsetLeft}px`,
@@ -36,8 +35,7 @@
 
               <!-- Secondary Button -->
               <UButton ref="secondaryBtn" to="/our-work" variant="ghost" class="hero-btn secondary-btn font-mono"
-                @mouseenter="secondaryBtnHover = true" @mouseleave="secondaryBtnHover = false"
-                aria-label="View our work">
+                @mouseenter="secondaryBtnHover = true" @mouseleave="secondaryBtnHover = false">
                 <!-- Spotlight effect -->
                 <span v-if="secondaryBtnHover" class="btn-spotlight secondary" :style="{
                   left: `${secondaryX - secondaryBtn?.offsetLeft}px`,

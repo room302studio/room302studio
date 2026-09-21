@@ -2,7 +2,7 @@
   <div class="case-study">
     <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0">
       <div class="w-full md:w-7/12">
-        <h4 class="font-mono text-gray-500 uppercase text-sm tracking-wider pb-2 client-name">
+        <h4 class="font-mono text-stone-600 dark:text-stone-400 uppercase text-sm tracking-wider pb-2 client-name">
           {{ project.client }}
         </h4>
         <h2 class="font-medium text-4xl md:text-5xl text-stone-800 dark:text-stone-200 pb-6 md:pb-8 project-title">
