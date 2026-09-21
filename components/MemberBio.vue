@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="headshot" :alt="name" width="120" />
+    <img :src="headshot" :alt="name" width="120" height="120" loading="lazy" />
     <h3>{{ name }}</h3>
     <p v-if="role" class="muted">{{ role }}</p>
     <p v-if="email"><a :href="`mailto:${email}`">{{ email }}</a></p>
