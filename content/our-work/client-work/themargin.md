@@ -10,10 +10,6 @@ image: "/our-work-images/margin-1.jpg"
 url: "https://themargin.us/"
 tags: ["dataviz", "interactive", "mapping", "nonprofit"]
 ---
-
-# The Margin: Mapping Environmental Justice
-
-
 In a series examining environmental justice's impact on different communities, we created interactive scroll-powered maps and visualizations for The Margin's five inaugural stories.
 
 Editor Bryce Cracknell brought together a team of talented journalists, and we were tasked with creating maps, data visualizations, and timelines to provide an immersive and informative data-driven experience. 

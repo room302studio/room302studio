@@ -1,22 +1,18 @@
 <template>
-  <div class="min-h-screen bg-stone-50 dark:bg-stone-950">
-    <SiteNav class="max-w-screen-2xl mx-auto" />
-    <main class="max-w-screen-2xl mx-auto px-8 md:px-12 lg:px-32">
+  <div>
+    <SiteNav />
+    <main class="page">
       <slot />
-      <UButton to="/our-work" color="primary" class="fixed bottom-12 right-12 z-50" variant="solid">
-        ← Back to work
-      </UButton>
+      <p class="row">
+        <NuxtLink to="/our-work" class="btn">← Back to work</NuxtLink>
+      </p>
     </main>
     <GlobalFooter />
   </div>
 </template>
 
 <script setup>
-// Force scroll to top on route changes
-const router = useRouter()
-router.beforeEach((to, from, next) => {
-  window.scrollTo(0, 0)
-  next()
-})
+// Nuxt's default router scrollBehavior already resets scroll on route
+// changes; just handle the initial mount here (no global guard to leak).
 onMounted(() => window.scrollTo(0, 0))
 </script>

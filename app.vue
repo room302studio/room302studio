@@ -10,7 +10,10 @@
 /* Remove or fix any @import statements that might be here */
 
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
+}
+:root.light {
+  color-scheme: light;
 }
 
 body {
@@ -25,16 +28,5 @@ body {
 
 .text-balance {
   text-wrap: balance;
-}
-
-/* Page transitions */
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.25s ease;
-}
-
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
 }
 </style>

@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   devServer: {
     port: 3302,
   },
-  css: ["~/assets/css/main.css"],
+  css: ["~/assets/css/main.css", "~/assets/css/academic.css"],
   modules: [
     "@nuxt/content",
     "@nuxt/ui",
@@ -27,7 +27,6 @@ export default defineNuxtConfig({
     families: [
       { name: "IBM Plex Sans", provider: "google", weights: [300, 400, 500, 700] },
       { name: "IBM Plex Mono", provider: "google", weights: [400, 500] },
-      { name: "Fraunces", provider: "google", weights: [300, 500, 700] },
     ],
   },
   site: {
@@ -50,7 +49,8 @@ export default defineNuxtConfig({
     serverBundle: "local",
   },
   app: {
-    pageTransition: { name: "page", mode: "out-in" },
+    pageTransition: false,
+    layoutTransition: false,
     head: {
       title: "Room 302 Studio — Data Visualization & Interactive Studio",
       htmlAttrs: {

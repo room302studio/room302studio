@@ -1,123 +1,65 @@
 <template>
-  <div class="min-h-screen">
-    <!-- Hero Section -->
-    <section class="min-h-[70vh] flex flex-col justify-center relative overflow-hidden">
-      <div class="pad relative z-10">
-        <div class="overflow-hidden max-w-5xl mx-auto">
-          <div class="mb-4 flex items-center">
-            <UIcon name="i-heroicons-building-office" class="text-primary-500 w-8 h-8 mr-2" />
-            <h4 class="text-sm font-mono uppercase tracking-wide text-primary-500">For CEOs & CTOs</h4>
-          </div>
+  <div>
+    <section>
+      <p class="eyebrow">For CEOs &amp; CTOs</p>
+      <h1>Test and validate your product prototype without the politics</h1>
+      <p class="measure">
+        It's hard to get prototypes built at target companies with multiple stakeholders. We
+        help you validate if your product will resonate with your target market.
+      </p>
+      <p class="row">
+        <NuxtLink to="/contact" class="btn big">Get started</NuxtLink>
+        <NuxtLink to="/our-work" class="btn big">See our work</NuxtLink>
+      </p>
+    </section>
 
-          <h1
-            class="text-5xl md:text-6xl lg:text-7xl font-light mb-10 md:mb-12 text-balance leading-tight tracking-tight hero-text">
-            <span class="block">Test and validate your</span>
-            <span class="text-primary-500 font-light">product prototype</span>
-            <span class="block mt-2">without the politics.</span>
-          </h1>
-
-          <p
-            class="text-lg md:text-xl font-light text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed mb-12 hero-subtitle">
-            It's hard to get prototypes built at target companies with multiple stakeholders. We help you validate if
-            your product will resonate with your target market.
+    <section>
+      <h2>Common challenges</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Time-to-market pressure</h3>
+          <p class="muted">
+            Every day spent on internal politics is a day your competitors gain ground. Our rapid
+            prototyping approach gets you from concept to validation quickly.
           </p>
-
-          <div class="flex flex-col sm:flex-row gap-6 mt-8">
-            <UButton to="/contact" color="primary"
-              class="hero-btn primary-btn px-8 py-4 text-lg rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] hover:shadow-lg">
-              Get started
-              <UIcon name="i-heroicons-arrow-right"
-                class="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-            </UButton>
-            <UButton to="/our-work" variant="ghost"
-              class="hero-btn secondary-btn border border-stone-300 dark:border-stone-700 hover:border-primary-500 px-8 py-4 text-lg rounded-lg transition-all duration-300 transform hover:translate-y-[-2px]">
-              See our work
-            </UButton>
-          </div>
         </div>
-      </div>
-
-      <!-- Background elements -->
-      <div
-        class="absolute inset-0 bg-gradient-to-b from-stone-50 to-stone-100 dark:from-stone-950 dark:to-stone-900 -z-10" />
-    </section>
-
-    <!-- Pain Points Section -->
-    <section
-      class="pad py-16 md:py-24 bg-gradient-to-br from-stone-100 to-stone-50 dark:from-stone-900/70 dark:to-stone-900/40 rounded-xl my-24 md:my-32">
-      <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-light mb-12 text-stone-800 dark:text-stone-200 text-center">Common
-          Challenges</h2>
-        <div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
-          <div class="what-we-do-item">
-            <div class="flex items-center mb-4">
-              <div
-                class="w-10 h-10 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-500 mr-4">
-                <UIcon name="i-heroicons-clock" class="text-xl" />
-              </div>
-              <h3 class="font-medium text-xl text-primary-500">Time-to-market pressure</h3>
-            </div>
-            <p class="text-stone-700 dark:text-stone-400 leading-relaxed">
-              Every day spent on internal politics is a day your competitors gain ground. Our rapid prototyping approach
-              gets you from concept to validation quickly.
-            </p>
-          </div>
-          <div class="what-we-do-item">
-            <div class="flex items-center mb-4">
-              <div
-                class="w-10 h-10 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-500 mr-4">
-                <UIcon name="i-heroicons-users" class="text-xl" />
-              </div>
-              <h3 class="font-medium text-xl text-primary-500">Stakeholder Alignment</h3>
-            </div>
-            <p class="text-stone-700 dark:text-stone-400 leading-relaxed">
-              Getting multiple stakeholders to agree on a direction can feel impossible. We help you build prototypes
-              that show rather than tell, making alignment easier.
-            </p>
-          </div>
-          <div class="what-we-do-item">
-            <div class="flex items-center mb-4">
-              <div
-                class="w-10 h-10 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-500 mr-4">
-                <UIcon name="i-heroicons-banknotes" class="text-xl" />
-              </div>
-              <h3 class="font-medium text-xl text-primary-500">Budget Uncertainty</h3>
-            </div>
-            <p class="text-stone-700 dark:text-stone-400 leading-relaxed">
-              Investing in full product development before validation is risky. Our approach lets you test assumptions
-              with minimal investment.
-            </p>
-          </div>
-          <div class="what-we-do-item">
-            <div class="flex items-center mb-4">
-              <div
-                class="w-10 h-10 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-500 mr-4">
-                <UIcon name="i-heroicons-light-bulb" class="text-xl" />
-              </div>
-              <h3 class="font-medium text-xl text-primary-500">Innovation Roadblocks</h3>
-            </div>
-            <p class="text-stone-700 dark:text-stone-400 leading-relaxed">
-              Existing systems and legacy technology often block innovation. We bring fresh perspectives and modern
-              solutions to help you break through.
-            </p>
-          </div>
+        <div>
+          <h3>Stakeholder alignment</h3>
+          <p class="muted">
+            Getting multiple stakeholders to agree on a direction can feel impossible. We help you
+            build prototypes that show rather than tell, making alignment easier.
+          </p>
+        </div>
+        <div>
+          <h3>Budget uncertainty</h3>
+          <p class="muted">
+            Investing in full product development before validation is risky. Our approach lets you
+            test assumptions with minimal investment.
+          </p>
+        </div>
+        <div>
+          <h3>Innovation roadblocks</h3>
+          <p class="muted">
+            Existing systems and legacy technology often block innovation. We bring fresh
+            perspectives and modern solutions to help you break through.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Technology Showcase -->
-    <TechnologyShowcase title="Technologies We Use" type="ceo" :showAndMore="false" />
+    <section>
+      <h2>Technologies we use</h2>
+      <TechnologyShowcase type="ceo" :showAndMore="false" />
+    </section>
 
-
-    <!-- CTA Section -->
-    <section class="pad my-24 md:my-32">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-light mb-6 text-stone-800 dark:text-stone-200">Ready to validate your
-          product quickly?</h2>
-        <p class="text-xl text-stone-600 dark:text-stone-400 mb-10">Let's turn your concept into a reality that
-          resonates with your target market.</p>
-        <UButton to="/contact" color="primary" class="text-lg px-10 py-4">Contact Us</UButton>
-      </div>
+    <section>
+      <h2>Ready to validate your product quickly?</h2>
+      <p class="measure">
+        Let's turn your concept into a reality that resonates with your target market.
+      </p>
+      <p class="row">
+        <NuxtLink to="/contact" class="btn big">Contact us</NuxtLink>
+      </p>
     </section>
   </div>
 </template>
@@ -131,49 +73,4 @@ useSeoMeta({
   ogImage: '/twitter-image.jpg',
   twitterImage: '/twitter-image.jpg',
 })
-
-// Page transition
-const isPageTransitioning = ref(false)
-const router = useRouter()
-
-router.beforeEach((to, from, next) => {
-  if (to.path !== from.path) {
-    isPageTransitioning.value = true
-    setTimeout(() => {
-      next()
-    }, 300)
-  } else {
-    next()
-  }
-})
-
-router.afterEach(() => {
-  setTimeout(() => {
-    isPageTransitioning.value = false
-  }, 500)
-})
 </script>
-
-<style scoped>
-@reference "~/assets/css/main.css";
-.pad {
-  @apply px-8 md:px-12 lg:px-32 py-12 md:py-16;
-}
-
-/* Hero section refinements */
-.hero-text {
-  @apply relative;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-.hero-text .text-primary-500 {
-  @apply relative inline-block;
-}
-
-.hero-text .text-primary-500::after {
-  content: '';
-  @apply absolute -bottom-1 left-0 w-full h-px bg-primary-500/30;
-}
-
-</style>

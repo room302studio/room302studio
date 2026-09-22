@@ -7,9 +7,6 @@ tags: howto process
 author: EJ Fox
 authorEmail: ejfox@room302.studio
 ---
-
-# How To Give Credit
-
 There was a maxim I once heard as a teenager and have valued ever since: **give credit, take blame**.
 
 Giving credit is an essential part of being a decent human. I see people fail at it surprisingly often.
