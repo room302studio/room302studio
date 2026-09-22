@@ -96,6 +96,9 @@
 import html2canvas from 'html2canvas'
 import { createNoise2D } from 'simplex-noise'
 
+// Internal tool for generating OG images, not a public page.
+useSeoMeta({ robots: "noindex, nofollow" });
+
 const pages = ['Room 302 Studio', 'Innovation Services', 'Our Work', 'Journal', 'Contact Us', 'R&D Lab']
 const currentPage = ref('Room 302 Studio')
 const preview = ref(null)

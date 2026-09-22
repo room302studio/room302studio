@@ -6,7 +6,10 @@
 </template>
 
 <script setup>
-// Simple component, no script needed
+// Only reachable after submitting the contact form, so it should never show up
+// in search results — otherwise someone can land on "Thank you for reaching
+// out!" without having reached out.
+useSeoMeta({ robots: "noindex, nofollow" });
 </script>
 
 <style scoped></style>
