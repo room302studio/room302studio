@@ -43,6 +43,15 @@ export default defineNuxtConfig({
   },
   sitemap: {
     strictNuxtContentPaths: true,
+    // strictNuxtContentPaths emits a sitemap URL for every Nuxt Content
+    // document. content/members/*.md have no matching route — the bios render
+    // inline on /members via ContentRenderer — so those URLs 404.
+    exclude: [
+      // Anything *under* /members. A glob ("/members/**" or "/members/*") also
+      // matches /members itself, which is a real page; this requires at least
+      // one character after the slash, so the parent survives.
+      /^\/members\/.+/,
+    ],
   },
   icon: {
     serverBundle: 'local',
