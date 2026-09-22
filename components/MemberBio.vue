@@ -7,7 +7,7 @@
         {{ name }}
       </h3>
 
-      <h4 class="text-zinc-500 font-semibold my-0 py-0 text-sm">
+      <h4 class="text-stone-500 font-semibold my-0 py-0 text-sm">
         {{ role }}
       </h4>
 
@@ -17,10 +17,7 @@
         }}</a>
       </h4>
 
-      <!-- <UButton @click="showBio = !showBio" class="mt-4" color="gray">
-        {{ showBio ? "Hide" : "Show" }} Bio
-      </UButton> -->
-      <div class="member-bio max-w-prose prose dark:prose-dark dark:text-white" v-show="showBio">
+      <div class="member-bio max-w-prose prose dark:prose-dark dark:text-white">
         <slot />
       </div>
     </div>
@@ -46,6 +43,4 @@ const props = defineProps({
     required: false,
   },
 });
-
-const showBio = ref(false);
 </script>

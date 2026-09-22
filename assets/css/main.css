@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* Tailwind v4 CSS-first theme.
+   Brand orange is pulled from the Room 302 logo (#e17055). */
+@theme static {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-display: "Fraunces", "IBM Plex Sans", ui-serif, Georgia, serif;
+
+  --color-brand-50: #fef2f0;
+  --color-brand-100: #fde6e1;
+  --color-brand-200: #fbd0c7;
+  --color-brand-300: #f7b0a0;
+  --color-brand-400: #f28a72;
+  --color-brand-500: #e17055; /* logo orange */
+  --color-brand-600: #d45a3e;
+  --color-brand-700: #b14730;
+  --color-brand-800: #913c2b;
+  --color-brand-900: #783629;
+  --color-brand-950: #411a14;
+}
+
+/* Shared display-type (Fraunces) utilities — single source of truth so pages
+   don't redefine them with drifting weights. */
+.font-fraunces,
+.font-display {
+  font-family: var(--font-display);
+}
+.font-fraunces-regular {
+  font-family: var(--font-display);
+  font-weight: 300;
+}
+.font-fraunces-black {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+.font-fraunces-black-italic {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Shared horizontal container padding — one source so pages stop drifting
+   between px-6/lg:px-24 and px-8/lg:px-32. Components that need their own
+   (e.g. card padding) still override locally via scoped styles. */
+.pad {
+  @apply px-8 md:px-12 lg:px-32;
+}

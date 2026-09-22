@@ -1,7 +1,6 @@
 <template>
   <main
     class="min-h-screen py-20 md:py-28 bg-gradient-to-b from-stone-50/80 to-white dark:from-stone-900/80 dark:to-stone-950">
-    <ContentQuery path="/lab" v-slot="{ data }">
       <div class="max-w-4xl mx-auto px-4 md:px-6">
 
         <!-- Experiments Index (always visible) -->
@@ -34,9 +33,6 @@
                 {{ data[0].description }}
               </p>
             </div>
-            <!-- Enhanced ambient background element -->
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-stone-100/20 to-transparent dark:from-stone-950/20 backdrop-blur-3xl -z-10 opacity-60" />
           </section>
 
           <!-- Timeline with improved visual treatment -->
@@ -246,7 +242,6 @@
       <div v-if="pending" class="flex justify-center py-20">
         <div class="h-12 w-12 border-2 border-t-primary-500 rounded-full animate-spin"></div>
       </div>
-    </ContentQuery>
   </main>
 </template>
 
@@ -283,8 +278,10 @@ interface LabItem {
   zIndex: number;
 }
 
-// Fetch content
-const { pending, data } = useAsyncData('lab-content', () => queryContent('/lab').find());
+// The lab index is driven by the static experiment list above; the old
+// CMS-backed lab collection was never populated.
+const pending = ref(false);
+const data = ref<any[]>([]);
 
 // State
 const expandedItems = ref<string[]>([]);

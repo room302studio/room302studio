@@ -121,6 +121,7 @@
   </div>
 </template>
 <style lang="scss" scoped>
+@reference "~/assets/css/main.css";
 li {
   @apply my-2 text-xs;
 }
