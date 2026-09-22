@@ -51,11 +51,6 @@ export default defineNuxtConfig({
       // matches /members itself, which is a real page; this requires at least
       // one character after the slash, so the parent survives.
       /^\/members\/.+/,
-      // Internal pages that shouldn't be in search results: the OG image
-      // generator dev tool, and the post-submission thank-you page. Both also
-      // carry a noindex robots meta.
-      "/og_generator",
-      "/contact-success",
     ],
   },
   icon: {
