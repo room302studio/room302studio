@@ -6,6 +6,7 @@ modified: 2023-04-09T23:48:17-04:00
 tags: personal dataviz studio
 author: EJ Fox
 authorEmail: ejfox@room302.studio
+featured: true
 ---
 
 # Introducing room302.studio
