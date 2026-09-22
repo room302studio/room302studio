@@ -53,21 +53,21 @@
               <!-- Value prop content -->
               <template v-if="index === 0">
                 <UIcon name="i-material-symbols-light:insert-chart-outline" class="value-icon" />
-                <h3 class="value-title">Hard data, clear stories</h3>
+                <h2 class="value-title">Hard data, clear stories</h2>
                 <p class="value-text">
                   We love the moment when a messy dataset clicks into a visualization that actually explains something. That's the work — whether it's global food supply chains or election night results.
                 </p>
               </template>
               <template v-else-if="index === 1">
                 <UIcon name="i-material-symbols-light:speed-rounded" class="value-icon" />
-                <h3 class="value-title">Small team, fast hands</h3>
+                <h2 class="value-title">Small team, fast hands</h2>
                 <p class="value-text">
                   We're a small studio on purpose. No layers of approval, no scope creep meetings. You talk to the people building the thing, and we move quickly because we genuinely enjoy the work.
                 </p>
               </template>
               <template v-else>
                 <UIcon name="i-fa6-solid-hammer" class="value-icon" />
-                <h3 class="value-title">Toolmakers at heart</h3>
+                <h2 class="value-title">Toolmakers at heart</h2>
                 <p class="value-text">
                   When we're not doing client work, we're building our own tools — network visualizers, AI assistants, prototyping kits. That instinct to build things that are useful shows up in everything we make.
                 </p>

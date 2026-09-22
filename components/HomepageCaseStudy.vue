@@ -2,9 +2,9 @@
   <div class="case-study">
     <div class="pad relative md:flex items-center my-8 md:my-32 mx-auto lg:mx-0">
       <div class="w-full md:w-7/12">
-        <h4 class="font-mono text-stone-700 dark:text-stone-300 uppercase text-sm tracking-wider pb-2 client-name">
+        <p class="font-mono text-stone-700 dark:text-stone-300 uppercase text-sm tracking-wider pb-2 client-name">
           {{ project.client }}
-        </h4>
+        </p>
         <h2 class="font-medium text-4xl md:text-5xl text-stone-800 dark:text-stone-200 pb-6 md:pb-8 project-title">
           {{ project.title }}
         </h2>
@@ -15,8 +15,8 @@
         </div>
 
         <div class="value-add my-4 pl-4 max-w-prose">
-          <h4 class="font-mono text-stone-600 dark:text-stone-400 text-sm uppercase tracking-wider mb-2">How We
-            Brought This To Life</h4>
+          <h3 class="font-mono text-stone-600 dark:text-stone-400 text-sm uppercase tracking-wider mb-2">How We
+            Brought This To Life</h3>
           <ul class="space-y-2 text-sm text-gray-700 dark:text-stone-400">
             <template v-if="project.valueAdd && project.valueAdd.length">
               <li v-for="(item, i) in project.valueAdd" :key="i" class="flex items-start">
