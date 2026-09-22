@@ -6,6 +6,7 @@ date: 2024-12-23T14:18:33-04:00
 tags: behindthescenes studio
 author: EJ Fox
 authorEmail: ejfox@room302.studio
+hidden: true
 ---
 # 2024
 
