@@ -1,7 +1,11 @@
 <template>
   <div class="member flex flex-col md:flex-row items-center">
     <div class="p-2">
-      <img :src="headshot" :alt="name" class="rounded-lg shadow-md md:mr-4 w-full object-cover" />
+      <!-- NuxtImg rather than a bare <img>: the source headshots are 0.7-4MB
+           PNGs served at full resolution, which put ~11.7MB of images on this
+           page. This resizes and re-encodes them at request time. -->
+      <NuxtImg :src="headshot" :alt="name" width="600" height="600" sizes="sm:100vw md:320px"
+        format="webp" quality="80" loading="lazy" class="rounded-lg shadow-md md:mr-4 w-full object-cover" />
 
       <h3 class="text-primary-500 my-0 pt-2 text-md font-semibold">
         {{ name }}
