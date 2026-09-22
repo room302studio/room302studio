@@ -2,8 +2,8 @@
   <div class="min-h-screen bg-stone-50 dark:bg-stone-950">
     <SiteNav class="pad max-w-screen-2xl mx-auto" />
     <div class="pad max-w-screen-2xl mx-auto">
-      <p class="md:hidden mb-12 font-light monospace text-xs text-stone-600/50 dark:text-stone-200/50">
-        Room 302 Studio is an innovation lab that guides concepts from ideation to implementation.
+      <p class="md:hidden mb-12 font-light monospace text-xs text-stone-600 dark:text-stone-400">
+        Room 302 Studio builds data visualizations, interactive tools, and prototypes.
       </p>
       <slot />
     </div>
