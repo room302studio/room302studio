@@ -6,6 +6,7 @@ date: 2024-12-23T14:18:33-04:00
 tags: behindthescenes studio
 author: EJ Fox
 authorEmail: ejfox@room302.studio
+hidden: true
 ---
 The truth is, 2024 was one of the hardest years I've faced in recent memory. Client work slowed, and we were faced with a lot of difficult personal decisions. That's not even getting into the state of the world beyond our privileged creative industry. But through all of that, we have persistently gone after the type of work that we want to do more of, and turned down work we don't want to be a part of. A lot of our energy has been manifesting through internal experimental projects. 
 

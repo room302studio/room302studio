@@ -6,6 +6,7 @@ modified: 2023-04-09T23:48:17-04:00
 tags: personal dataviz studio
 author: EJ Fox
 authorEmail: ejfox@room302.studio
+featured: true
 ---
 It's been a long journey since I first started in data visualization contracting over ten years ago, and **I'm incredibly proud to introduce my new data and prototyping studio: [Room 302 Studio](https://room302.studio).** 
 
