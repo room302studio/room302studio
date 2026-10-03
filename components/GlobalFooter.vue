@@ -118,6 +118,11 @@
         </div>
       </div>
     </div>
+
+    <div class="px-8 md:px-16 lg:px-12 pt-8 md:pt-12 max-w-screen-2xl mx-auto text-xs text-stone-500">
+      <a href="https://ejfox.com/?utm_source=room302&utm_medium=network&utm_campaign=footer"
+        data-umami-event="network-footer" class="hover:text-primary-500 transition duration-200">made by EJ Fox</a>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
