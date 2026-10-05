@@ -47,6 +47,11 @@
           <p class="muted mono small">Pleasure in the job puts perfection in the work.</p>
         </div>
       </div>
+
+      <p class="faint mono small" style="margin-top: 3rem">
+        <a href="https://ejfox.com/?utm_source=room302&utm_medium=network&utm_campaign=footer"
+          data-umami-event="network-footer">made by EJ Fox</a>
+      </p>
     </div>
   </footer>
 </template>
