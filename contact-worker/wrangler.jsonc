@@ -16,7 +16,7 @@
     // mail.room302.studio subdomain instead (enabled under Email Routing →
     // Settings → Subdomains), which leaves the apex MX untouched.
     "FROM_NAME": "Room 302 Studio",
-    "FROM_ADDRESS": "room302@vestibulequarterly.com",
+    "FROM_ADDRESS": "contact@mail.room302.studio",
     "ALLOWED_ORIGINS": "https://room302.studio,http://localhost:3302"
   }
 }
