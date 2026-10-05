@@ -8,9 +8,6 @@ author: EJ Fox
 authorEmail: ejfox@room302.studio
 featured: true
 ---
-
-# Introducing room302.studio
-
 It's been a long journey since I first started in data visualization contracting over ten years ago, and **I'm incredibly proud to introduce my new data and prototyping studio: [Room 302 Studio](https://room302.studio).** 
 
 As my client work grew larger and more intricate, I realized the tremendous potential of forming a studio where talented people could connect, collaborate and strive together towards empowering the world through projects and tools that center joy and kindness. This dynamic new studio sets up an exciting opportunity for each of us to take on more ambitious projects that reflect our strong values.

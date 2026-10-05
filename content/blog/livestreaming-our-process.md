@@ -7,8 +7,6 @@ tags: howto process livestreaming
 author: EJ Fox
 authorEmail: ejfox@room302.studio
 ---
-# Livestream Learning: How Room 302 Engages and Educates in Real-Time
-
 Livestreaming is an important part of our practice at Room 302 Studio. We've found that it's a habit that both increases our output, and gives us an opportunity to share our explorations with the world and get immediate feedback from strangers.
 
 We love working in public, not only to create educational resources for other people who want to learn to do work like this, but also because we think that documenting and recording our work makes our work *better*.

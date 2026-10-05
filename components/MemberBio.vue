@@ -1,25 +1,11 @@
 <template>
-  <div class="member flex flex-col md:flex-row items-center">
-    <div class="p-2">
-      <img :src="headshot" :alt="name" class="rounded-lg shadow-md md:mr-4 w-full object-cover" />
-
-      <h3 class="text-primary-500 my-0 pt-2 text-md font-semibold">
-        {{ name }}
-      </h3>
-
-      <h4 class="text-stone-500 font-semibold my-0 py-0 text-sm">
-        {{ role }}
-      </h4>
-
-      <h4 class="text-primary-900 my-0 py-2 text-1-xl">
-        <a href="`mailto:${email}`" class="hover:text-primary-500">{{
-          email
-        }}</a>
-      </h4>
-
-      <div class="member-bio max-w-prose prose dark:prose-dark dark:text-white">
-        <slot />
-      </div>
+  <div>
+    <img :src="headshot" :alt="name" width="120" height="120" loading="lazy" />
+    <h3>{{ name }}</h3>
+    <p v-if="role" class="muted">{{ role }}</p>
+    <p v-if="email"><a :href="`mailto:${email}`">{{ email }}</a></p>
+    <div class="prose">
+      <slot />
     </div>
   </div>
 </template>

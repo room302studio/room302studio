@@ -1,11 +1,6 @@
 <template>
-  <h2
-    :id="id"
-    class="text-2xl lg:text-6xl text-balance no-underline my-0 py-0 mb-12"
-  >
-    <a v-if="generate" :href="`#${id}`" class="no-underline font-light">
-      <slot />
-    </a>
+  <h2 :id="id">
+    <a v-if="generate" :href="`#${id}`"><slot /></a>
     <slot v-else />
   </h2>
 </template>
@@ -18,3 +13,7 @@ const props = defineProps<{ id?: string }>();
 const { headings } = useRuntimeConfig().public.mdc;
 const generate = computed(() => props.id && headings?.anchorLinks?.h2);
 </script>
+
+<style scoped>
+h2 a { text-decoration: none; color: inherit; }
+</style>

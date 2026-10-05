@@ -1,212 +1,102 @@
 <template>
-  <div class="min-h-screen">
-    <!-- Hero section -->
-    <section class="py-16 md:py-32 relative overflow-hidden">
-      <div class="pad relative z-10">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-8 md:mb-12 tracking-tight">
-          Our Services
-        </h1>
-        <p
-          class="text-lg md:text-xl font-light max-w-3xl leading-relaxed text-balance relative text-stone-700 dark:text-stone-400">
-          We help teams go from idea to working product. Data visualization, interactive tools, rapid prototyping — whatever the project needs.
-        </p>
-      </div>
+  <div>
+    <section>
+      <p class="eyebrow">Services</p>
+      <h1>Our services</h1>
+      <p class="measure">
+        We help teams go from idea to working product. Data visualization,
+        interactive tools, rapid prototyping — whatever the project needs.
+      </p>
     </section>
 
-    <!-- Services grid -->
-    <section class="pad pb-24">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-        <!-- Prototyping -->
-        <div
-          class="service-card bg-stone-50 dark:bg-stone-900/50 p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-          <div class="flex items-center mb-6">
-            <UIcon name="i-heroicons-light-bulb" class="text-4xl text-primary-500 mr-4" />
-            <h2 class="text-2xl md:text-3xl font-light text-stone-800 dark:text-stone-200">Prototyping & Development</h2>
-          </div>
-          <p class="text-stone-700 dark:text-stone-400 mb-6 leading-relaxed">
-            You have an idea or a rough concept. We turn it into a working prototype you can test, share, and build on.
+    <section>
+      <h2>What we do</h2>
+      <div class="grid-2">
+        <div>
+          <h3>Prototyping &amp; Development</h3>
+          <p class="muted">
+            You have an idea or a rough concept. We turn it into a working
+            prototype you can test, share, and build on. Concept development
+            workshops, rapid prototyping to visualize possibilities, iterative
+            refinement with thoughtful feedback, and implementation guidance
+            and support.
           </p>
-          <h3 class="text-lg font-medium text-primary-600 dark:text-primary-400 mb-3">How we help:</h3>
-          <ul class="space-y-2 text-stone-700 dark:text-stone-400">
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Concept development workshops</span>
-            </li>
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Rapid prototyping to visualize possibilities</span>
-            </li>
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Iterative refinement with thoughtful feedback</span>
-            </li>
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Implementation guidance and support</span>
-            </li>
-          </ul>
         </div>
 
-        <!-- Data Visualization -->
-        <div
-          class="service-card bg-stone-50 dark:bg-stone-900/50 p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-          <div class="flex items-center mb-6">
-            <UIcon name="i-material-symbols-light:insert-chart-outline" class="text-4xl text-primary-500 mr-4" />
-            <h2 class="text-2xl md:text-3xl font-light text-stone-800 dark:text-stone-200">Data Visualization</h2>
-          </div>
-          <p class="text-stone-700 dark:text-stone-400 mb-6 leading-relaxed">
-            We transform complex data into intuitive, interactive experiences that reveal insights and tell compelling
-            stories.
-            Our deep background in data visualization helps you make sense of your information.
+        <div>
+          <h3>Data Visualization</h3>
+          <p class="muted">
+            We transform complex data into intuitive, interactive experiences
+            that reveal insights and tell compelling stories. Interactive data
+            dashboards, narrative-driven data stories, custom visualization
+            tools, and data-driven journalism.
           </p>
-          <h3 class="text-lg font-medium text-primary-600 dark:text-primary-400 mb-3">Our expertise includes:</h3>
-          <ul class="space-y-2 text-stone-700 dark:text-stone-400">
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Interactive data dashboards</span>
-            </li>
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Narrative-driven data stories</span>
-            </li>
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Custom visualization tools</span>
-            </li>
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Data-driven journalism</span>
-            </li>
-          </ul>
         </div>
 
-        <!-- Interactive Design -->
-        <div
-          class="service-card bg-stone-50 dark:bg-stone-900/50 p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-          <div class="flex items-center mb-6">
-            <UIcon name="i-heroicons-cursor-arrow-rays" class="text-4xl text-primary-500 mr-4" />
-            <h2 class="text-2xl md:text-3xl font-light text-stone-800 dark:text-stone-200">Interactive Design</h2>
-          </div>
-          <p class="text-stone-700 dark:text-stone-400 mb-6 leading-relaxed">
-            We create engaging, intuitive interfaces and experiences that delight users while solving complex problems.
-            Our approach balances aesthetics with functionality to create products people love to use.
+        <div>
+          <h3>Interactive Design</h3>
+          <p class="muted">
+            We create engaging, intuitive interfaces and experiences that
+            delight users while solving complex problems. Web applications with
+            thoughtful UX, interactive storytelling experiences, experimental
+            interfaces, and accessible, inclusive design systems.
           </p>
-          <h3 class="text-lg font-medium text-primary-600 dark:text-primary-400 mb-3">What we design:</h3>
-          <ul class="space-y-2 text-stone-700 dark:text-stone-400">
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Web applications with thoughtful UX</span>
-            </li>
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Interactive storytelling experiences</span>
-            </li>
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Experimental interfaces</span>
-            </li>
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Accessible and inclusive design systems</span>
-            </li>
-          </ul>
         </div>
 
-        <!-- Developer Relations & Content Marketing -->
-        <div
-          class="service-card bg-stone-50 dark:bg-stone-900/50 p-8 rounded-xl shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1">
-          <div class="flex items-center mb-6">
-            <UIcon name="i-heroicons-document-text" class="text-4xl text-primary-500 mr-4" />
-            <h2 class="text-2xl md:text-3xl font-light text-stone-800 dark:text-stone-200">Developer Relations & Content
-            </h2>
-          </div>
-          <p class="text-stone-700 dark:text-stone-400 mb-6 leading-relaxed">
-            We help technical products connect with their audience through authentic, valuable content and community
-            building.
-            Our approach focuses on genuine relationships rather than marketing hype.
+        <div>
+          <h3>Developer Relations &amp; Content</h3>
+          <p class="muted">
+            We help technical products connect with their audience through
+            authentic, valuable content and community building. Developer
+            education and documentation, technical content strategy, community
+            building and engagement, and technical workshops and events.
           </p>
-          <h3 class="text-lg font-medium text-primary-600 dark:text-primary-400 mb-3">Our services include:</h3>
-          <ul class="space-y-2 text-stone-700 dark:text-stone-400">
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Developer education and documentation</span>
-            </li>
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Technical content strategy</span>
-            </li>
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Community building and engagement</span>
-            </li>
-            <li class="flex items-start">
-              <UIcon name="i-heroicons-check-circle" class="text-primary-500 mt-1 mr-2 flex-shrink-0" />
-              <span>Technical workshops and events</span>
-            </li>
-          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Our Process -->
-    <section class="pad py-16 md:py-24 bg-stone-100 dark:bg-stone-900/70 rounded-xl">
-      <h2 class="text-3xl md:text-4xl font-light mb-12 md:mb-16 text-stone-800 dark:text-stone-200">Our Process
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-        <div class="process-step">
-          <div class="flex items-center mb-4">
-            <div
-              class="w-12 h-12 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-500 font-medium text-xl mr-4">
-              1</div>
-            <h3 class="text-xl font-medium text-stone-800 dark:text-stone-200">Explore Possibilities</h3>
-          </div>
-          <p class="text-stone-700 dark:text-stone-400 leading-relaxed">
-            We begin by understanding your goals and challenges, then explore multiple possible futures through
-            research, sketching, and rapid prototyping. This phase is about opening up possibilities rather than
-            narrowing down.
+    <section>
+      <h2>Our process</h2>
+      <div class="grid-3">
+        <div>
+          <h3>1 — Explore possibilities</h3>
+          <p class="muted">
+            We begin by understanding your goals and challenges, then explore
+            multiple possible futures through research, sketching, and rapid
+            prototyping. This phase is about opening up possibilities rather
+            than narrowing down.
           </p>
         </div>
 
-        <div class="process-step">
-          <div class="flex items-center mb-4">
-            <div
-              class="w-12 h-12 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-500 font-medium text-xl mr-4">
-              2</div>
-            <h3 class="text-xl font-medium text-stone-800 dark:text-stone-200">Build & Iterate</h3>
-          </div>
-          <p class="text-stone-700 dark:text-stone-400 leading-relaxed">
-            We build working versions quickly and refine based on what we learn. Multiple rounds, constant feedback, getting closer each time.
+        <div>
+          <h3>2 — Build &amp; iterate</h3>
+          <p class="muted">
+            We build working versions quickly and refine based on what we learn.
+            Multiple rounds, constant feedback, getting closer each time.
           </p>
         </div>
 
-        <div class="process-step">
-          <div class="flex items-center mb-4">
-            <div
-              class="w-12 h-12 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-500 font-medium text-xl mr-4">
-              3</div>
-            <h3 class="text-xl font-medium text-stone-800 dark:text-stone-200">Bring to Life</h3>
-          </div>
-          <p class="text-stone-700 dark:text-stone-400 leading-relaxed">
-            We implement the solution with care and expertise, focusing on quality and attention to detail.
-            Throughout this phase, we maintain open communication and adapt as needed to ensure the final product
+        <div>
+          <h3>3 — Bring to life</h3>
+          <p class="muted">
+            We implement the solution with care and expertise, focusing on
+            quality and attention to detail. Throughout this phase, we maintain
+            open communication and adapt as needed to ensure the final product
             exceeds expectations.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="pad py-16 md:py-24 text-center">
-      <h2 class="text-3xl md:text-4xl font-light mb-6 text-stone-800 dark:text-stone-200">Ready to bring your ideas to
-        life?</h2>
-      <p class="text-lg text-stone-700 dark:text-stone-400 max-w-2xl mx-auto mb-8">
-        Let's collaborate to explore possibilities and create something amazing together.
+    <section>
+      <h2>Ready to bring your ideas to life?</h2>
+      <p class="measure">
+        Let's collaborate to explore possibilities and create something amazing
+        together.
       </p>
-      <UButton to="/contact" size="lg" color="primary" class="px-8 py-3">
-        Get in touch
-        <UIcon name="i-heroicons-arrow-right" class="ml-2" />
-      </UButton>
+      <p class="row">
+        <NuxtLink to="/contact" class="btn big">Get in touch</NuxtLink>
+      </p>
     </section>
   </div>
 </template>
@@ -216,7 +106,7 @@ import { useOgMetadata } from '~/composables/useOgMetadata'
 
 // Set up OG metadata for the services page
 useOgMetadata(
-  'Innovation Services',
+  'Services',
   'Data visualization, interactive tools, and rapid prototyping for teams that need to ship.'
 )
 
@@ -234,17 +124,3 @@ useSeoMeta({
   twitterDescription: 'Data visualization, interactive tools, and rapid prototyping for teams that need to ship.'
 })
 </script>
-
-<style scoped>
-@reference "~/assets/css/main.css";
-/* .pad now lives globally in assets/css/main.css */
-
-.service-card,
-.process-step {
-  @apply transition-all duration-300;
-}
-
-.service-card:hover {
-  @apply transform -translate-y-1;
-}
-</style>

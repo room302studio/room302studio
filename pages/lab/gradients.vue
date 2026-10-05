@@ -389,9 +389,9 @@ function drawGradient() {
     const n = grain.value;
     for (let i = 0; i < data.length; i += 4) {
       const rand = (Math.random() - 0.5) * 2 * n;
-      data[i] = clamp(data[i] + rand);
-      data[i + 1] = clamp(data[i + 1] + rand);
-      data[i + 2] = clamp(data[i + 2] + rand);
+      data[i] = clamp((data[i] ?? 0) + rand);
+      data[i + 1] = clamp((data[i + 1] ?? 0) + rand);
+      data[i + 2] = clamp((data[i + 2] ?? 0) + rand);
     }
   }
 
@@ -609,17 +609,17 @@ function applyDithering(imgData: ImageData, step: number) {
   const distribute = (x: number, y: number, er: number, eg: number, eb: number, factor: number) => {
     if (x < 0 || x >= w || y < 0 || y >= h) return;
     const idx = (y * w + x) * 4;
-    data[idx] = clamp(data[idx] + er * factor);
-    data[idx + 1] = clamp(data[idx + 1] + eg * factor);
-    data[idx + 2] = clamp(data[idx + 2] + eb * factor);
+    data[idx] = clamp((data[idx] ?? 0) + er * factor);
+    data[idx + 1] = clamp((data[idx + 1] ?? 0) + eg * factor);
+    data[idx + 2] = clamp((data[idx + 2] ?? 0) + eb * factor);
   };
 
   for (let y = 0; y < h; y++) {
     for (let x = 0; x < w; x++) {
       const idx = (y * w + x) * 4;
-      const oldR = data[idx];
-      const oldG = data[idx + 1];
-      const oldB = data[idx + 2];
+      const oldR = data[idx] ?? 0;
+      const oldG = data[idx + 1] ?? 0;
+      const oldB = data[idx + 2] ?? 0;
 
       const newR = Math.round(oldR / step) * step;
       const newG = Math.round(oldG / step) * step;
@@ -652,9 +652,9 @@ function applyRGBShift(imgData: ImageData, shift: number) {
       const rIdx = (y * w + clampX(x + shift)) * 4;
       const bIdx = (y * w + clampX(x - shift)) * 4;
 
-      data[idx] = copy[rIdx];       // R
+      data[idx] = copy[rIdx] ?? 0;       // R
       // G remains
-      data[idx + 2] = copy[bIdx + 2]; // B
+      data[idx + 2] = copy[bIdx + 2] ?? 0; // B
     }
   }
 }

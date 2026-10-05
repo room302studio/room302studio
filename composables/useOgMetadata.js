@@ -11,22 +11,18 @@ export const useOgMetadata = (pageName, description = null) => {
   // Build the image URL
   const baseUrl = "https://room302.studio";
   const pageImagePath = `/og/${formattedPageName}.png`;
-  const defaultImagePath = "/og-image.jpg";
 
-  // Create an image object to test if the OG image exists
-  // This is done client-side since we're using SSR: false
-  let useDefaultImage = false;
-  if (process.client) {
-    const img = new Image();
-    img.onerror = () => {
-      useDefaultImage = true;
-      console.warn(`OG image for "${pageName}" not found, using default image`);
-    };
-    img.src = pageImagePath;
-  }
-
-  // Use the page image or fall back to default
-  const ogImagePath = useDefaultImage ? defaultImagePath : pageImagePath;
+  // NOTE: this used to probe the OG image with `new Image()` client-side to
+  // decide whether to fall back to defaultImagePath. That downloaded the full
+  // OG image in every visitor's browser on every page load — and via a relative
+  // URL, so it hit the current origin rather than baseUrl. It never worked
+  // either: `onerror` is async, but the result was read synchronously on the
+  // very next line, so the fallback could never have been selected.
+  //
+  // OG images are consumed by crawlers reading the meta tag, so the browser
+  // never needs to load one. If a page's image is genuinely missing, the right
+  // fix is to add the file or pass the correct pageName.
+  const ogImagePath = pageImagePath;
 
   // Page-specific description or default
   const metaDescription =

@@ -7,9 +7,6 @@ tags: ai tools coachartie
 author: EJ Fox
 authorEmail: ejfox@room302.studio
 ---
-
-# Coach Artie: Webhooks, Cron, and Advanced Reflection
-
 We've been working hard to make Coach Artie even better, and we're excited to share some updates on recent work we’ve been doing to make him more helpful and intuitive.
 
 Recently, we introduced a new way for you to experiment with Artie's abilities without having to run the entire system or interact through Discord. This means you can now test and refine new capabilities quickly. It's a game-changer for speeding up development and making it easier for contributors to add their innovations. Coach Artie automatically parses jsdoc-formatted documentation within capabilities, so if the capability is well-documented he should be able to pick it right up.

@@ -1,230 +1,125 @@
 <template>
-  <main class="relative">
-    <!-- Hero image with transition -->
-    <div v-if="data?.image" class="w-full transition-all duration-500 ease-out relative"
-      :class="{ 'h-[85vh]': isImageLoaded }">
-      <div class="relative w-full h-full">
-        <img :src="data.image" @load="isImageLoaded = true" alt=""
-          class="w-full h-full object-cover transition-all duration-500" :class="{
-            'opacity-0': !isImageLoaded,
-            'opacity-100': isImageLoaded,
-            'rounded-lg': !isScrolled,
-            'rounded-none': isScrolled
-          }" />
+  <div>
+    <p class="back-row"><NuxtLink to="/our-work" class="mono back">← Work</NuxtLink></p>
 
-        <!-- Gradient overlay that fades out on scroll -->
-        <div class="absolute inset-0 bg-gradient-to-t 
-                    from-black/90 via-black/50 to-transparent
-                    transition-opacity duration-500" :class="{ 'opacity-0': isScrolled }">
+    <template v-if="data">
+      <h1>{{ data.title }}</h1>
 
-          <!-- Hero text that fades out on scroll -->
-          <div class="absolute bottom-12 md:bottom-24 left-0 right-0 p-12 md:px-24
-                      transform transition-all duration-500" :class="{
-                        'opacity-100 translate-y-0': !isScrolled,
-                        'opacity-0 translate-y-8': isScrolled
-                      }">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-light text-white mb-4 drop-shadow-lg max-w-4xl">
-              {{ data?.title }}
-            </h1>
-            <p class="text-xl text-white/90 font-light drop-shadow-md tracking-wide">
-              {{ data?.client }}
-            </p>
-          </div>
+      <dl class="grid-2 meta">
+        <div v-if="data.client">
+          <dt class="eyebrow">Client</dt>
+          <dd class="mono">{{ data.client }}</dd>
         </div>
-
-        <!-- Scroll indicator moved up slightly -->
-        <div class="absolute bottom-4 left-1/2 -translate-x-1/2
-                    transform transition-all duration-500" :class="{ 'opacity-0': isScrolled }">
-          <div class="flex flex-col items-center text-white/70">
-            <span class="text-sm uppercase tracking-widest mb-2">Scroll</span>
-            <div class="w-px h-8 bg-white/30"></div>
-          </div>
+        <div v-if="data.role">
+          <dt class="eyebrow">Role</dt>
+          <dd class="mono">{{ data.role }}</dd>
         </div>
-      </div>
-    </div>
-
-    <!-- Rest of the content -->
-    <div class="pad mt-24 mb-32" :class="{ 'opacity-0': !isImageLoaded, 'opacity-100': isImageLoaded }">
-      <!-- project metadata -->
-      <div class="md:flex mt-8 mb-16">
-        <div class="mb-8 md:w-1/2">
-          <h4 class="text-stone-400 uppercase font-medium">
-            Project Brief
-          </h4>
-          <p class="tracking-tight text-stone-700 dark:text-stone-300 pt-2 mt-2 pr-2 lg:pr-8 md:text-2xl leading-relaxed">
-            {{ data?.description }}
-          </p>
+        <div v-if="data.technology">
+          <dt class="eyebrow">Technology</dt>
+          <dd class="mono">{{ data.technology }}</dd>
         </div>
-
-        <div class="md:w-1/2 md:flex">
-          <div class="mb-8 w-1/3">
-            <h4 class="text-stone-400 uppercase font-medium">Client</h4>
-            <p class="monospace tracking-tight text-stone-700 dark:text-stone-300 pt-2 mt-2 pr-2">
-              {{ data?.client }}
-            </p>
-          </div>
-
-          <div class="mb-8 md:w-1/3">
-            <h4 class="text-stone-400 uppercase font-medium">Services</h4>
-            <p class="monospace tracking-tight text-stone-700 dark:text-stone-300 pt-2 mt-2 pr-2">
-              {{ data?.role }}
-            </p>
-          </div>
-
-          <div class="mb-8 md:w-1/3">
-            <h4 class="text-stone-400 uppercase font-medium">
-              Technology
-            </h4>
-            <p class="monospace tracking-tight text-stone-700 dark:text-stone-300 pt-2 mt-2 pr-2">
-              {{ data?.technology }}
-            </p>
-          </div>
+        <div v-if="data.date">
+          <dt class="eyebrow">Date</dt>
+          <dd class="mono"><time :datetime="data.date">{{ formatDate(data.date) }}</time></dd>
         </div>
-      </div>
+      </dl>
 
-      <div class="pt-12 pb-16 prose dark:prose-invert 
-                 prose-headings:mt-16 prose-headings:mb-8
-                 prose-p:my-8 prose-img:my-16
-                 prose-lg max-w-3xl">
-        <ContentRenderer v-if="data" :value="data" />
-        <div v-else>
-          <p>We couldn't find this project.</p>
-          <UButton to="/" class="mt-4"> Back home </UButton>
-        </div>
-      </div>
+      <p v-if="data.description" class="lead">{{ data.description }}</p>
 
-      <!-- make a related work section (just 3 random client works -->
-      <section class="w-full">
-        <USeparator class="my-16 md:my-24 lg:my-32" />
-        <h4 class="my-12 text-2xl">Related Work</h4>
-        <!-- make 3x3 grid of the projects in cards -->
-        <div class="projects md:grid md:grid-cols-2 gap-8 lg:gap-12">
-          <div v-for="project in clientWork" :key="project.title" :project="project"
-            class="hover:shadow-lg transition-all flex rounded-lg bg-stone-100 text-stone-700 min-h-32 mb-8 md:mb-0">
-            <div class="flex-1 min-w-24" v-if="project.image">
-              <!-- Assuming you have an image url 'backgroundUrl' -->
-              <div class="h-full bg-cover bg-center" :style="{ backgroundImage: `url(${project.image})` }"></div>
-            </div>
+      <p v-if="data.url" class="visit">
+        <a :href="data.url" target="_blank" rel="noopener" class="mono">Visit the project ↗</a>
+      </p>
 
-            <div class="flex-1 p-4 text-2xl leading-relaxed flex flex-row items-center">
-              <NuxtLink :to="project.path" class="tracking-wide leading-snug no-underline">
-                {{ project.title }}
-              </NuxtLink>
-            </div>
-          </div>
-        </div>
+      <figure v-if="data.image" class="hero-figure">
+        <img :src="data.image" :alt="data.title" />
+      </figure>
+
+      <article class="prose">
+        <ContentRenderer :value="data" />
+      </article>
+
+      <section v-if="relatedWork.length" class="related">
+        <h2>More client work</h2>
+        <table>
+          <thead>
+            <tr><th class="mono">Year</th><th>Project</th><th>Client</th></tr>
+          </thead>
+          <tbody>
+            <tr v-for="project in relatedWork" :key="project.path">
+              <td class="mono">{{ project.date?.slice(0, 4) }}</td>
+              <td><NuxtLink :to="project.path">{{ project.title }}</NuxtLink></td>
+              <td>{{ project.client }}</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
-    </div>
-  </main>
+    </template>
+
+    <template v-else>
+      <h1>Not found</h1>
+      <p>We couldn't find this project.</p>
+      <p><NuxtLink to="/" class="btn">Back home</NuxtLink></p>
+    </template>
+  </div>
 </template>
 
 <script setup>
 definePageMeta({
   layout: "work",
-  pageTransition: {
-    name: 'page',
-    mode: 'out-in',
-    onBeforeEnter: () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'instant'
-      })
-    }
-  },
-  scrollToTop: true
 });
 
-const isImageLoaded = ref(false)
-const isScrolled = ref(false)
-
-// Track scroll position
-onMounted(() => {
-  // Force scroll to top immediately
-  window.scrollTo(0, 0)
-
-  // Then set up scroll handler
-  const handleScroll = () => {
-    isScrolled.value = window.scrollY > 50
-  }
-  window.addEventListener('scroll', handleScroll)
-
-  // Clean up
-  onUnmounted(() => window.removeEventListener('scroll', handleScroll))
-})
-
-// Use router navigation guards as well
-const router = useRouter()
-router.beforeEach((to, from, next) => {
-  if (to.path.includes('/our-work/client-work/')) {
-    window.scrollTo(0, 0)
-  }
-  next()
-})
-
 const route = useRoute();
+const slug = route.params.slug?.[0];
+if (!slug) throw createError({ statusCode: 404, statusMessage: "Project not found" });
 
 const { data: clientWork } = await useAsyncData(
   "content/our-work/client-work",
   () => queryCollection("clientWork").all(),
 );
 
-// find the current client work item from the list
-const data = computed(() => {
-  if (!clientWork.value) return;
-  const slug = route.params.slug[0];
-  return clientWork.value.find(
-    (item) => item.path === `/our-work/client-work/${slug}`,
-  );
-});
+const currentPath = `/our-work/client-work/${slug}`;
+
+// The current project, resolved from the collection.
+const data = computed(() =>
+  clientWork.value?.find((item) => item.path === currentPath),
+);
+
+// Everything else, newest first, for the More client work table.
+const relatedWork = computed(() =>
+  (clientWork.value ?? [])
+    .filter((item) => item.path !== currentPath)
+    .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? "")),
+);
+
+// "2023-09-01" → "Sep 2023". Dates are month-precision at best, so no day.
+// Parsed as UTC so the month never slips back across a timezone boundary.
+const formatDate = (iso) =>
+  new Date(`${iso}T00:00:00Z`).toLocaleDateString("en-US", {
+    month: "short", year: "numeric", timeZone: "UTC",
+  });
 </script>
 
 <style scoped>
-@reference "~/assets/css/main.css";
-/* .pad now lives globally in assets/css/main.css */
+.back-row { margin-bottom: 3rem; }
+.back { text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8125rem; }
 
-/* Additional spacing for prose content */
-:deep(.prose) {
-  @apply mb-20;
-}
+/* Metadata block — same air as the internal project pages. */
+dl.meta.grid-2 { margin: 2.5rem 0 3.5rem; gap: 2rem 4rem; }
+dt { margin-bottom: 0.25rem; }
+dd { margin: 0; }
 
-:deep(.prose h2) {
-  @apply text-3xl mt-20 mb-8;
-}
+.lead { color: var(--text-strong); margin-bottom: 1.5rem; }
+.visit { margin-bottom: 0; }
 
-:deep(.prose h3) {
-  @apply text-2xl mt-16 mb-6;
-}
+.hero-figure { margin: 3.5rem 0 4rem; }
+.hero-figure img { width: 100%; border: 1px solid var(--rule); }
 
-:deep(.prose ul),
-:deep(.prose ol) {
-  @apply my-8 space-y-4;
-}
+.related { margin-top: 7rem; }
 
-:deep(.prose li) {
-  @apply mb-3;
-}
-
-:deep(.prose img) {
-  @apply my-16 rounded-lg shadow-lg;
-}
-
-:deep(.prose blockquote) {
-  @apply my-12 pl-6 border-l-4 border-stone-300 dark:border-stone-700 italic;
-}
-
-/* Page Transition */
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.5s ease-out;
-}
-
-.page-enter-from {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.page-leave-to {
-  opacity: 0;
-  transform: translateY(-20px);
+@media (max-width: 43.75rem) {
+  .back-row { margin-bottom: 2rem; }
+  dl.meta.grid-2 { grid-template-columns: 1fr 1fr; gap: 1.5rem 2rem; margin: 2rem 0 2.5rem; }
+  .hero-figure { margin: 2.5rem 0 3rem; }
+  .related { margin-top: 5rem; }
 }
 </style>

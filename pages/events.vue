@@ -1,16 +1,22 @@
 <template>
-  <div class="p-8 md:p-16 min-h-50vh flex flex-col justify-center items-center text-center">
-    <h2 class="text-xl md:text-4xl font-light mb-6">
-      Room 302 Studio Events
-    </h2>
-    <p class="text-stone-600 dark:text-stone-400 mb-8 max-w-md">
-      We livestream our work and occasionally host events. Follow us on GitHub or reach out to stay in the loop.
+  <section>
+    <h1>Events</h1>
+    <p class="measure">
+      We livestream our work and occasionally host events. Follow along as we
+      build data visualizations, tools, and prototypes in the open, and reach
+      out if you'd like to collaborate or attend.
     </p>
-    <UButton to="/contact" color="primary">Get in touch</UButton>
-  </div>
+    <p>
+      Follow us on GitHub or
+      <NuxtLink to="/contact">get in touch</NuxtLink> to stay in the loop.
+    </p>
+  </section>
 </template>
-<style>
-.min-h-50vh {
-  min-height: 50vh;
-}
-</style>
+
+<script setup>
+useSeoMeta({
+  title: "Events — Room 302 Studio",
+  description:
+    "Room 302 Studio livestreams our work and occasionally hosts events. Follow along and reach out to stay in the loop.",
+});
+</script>
