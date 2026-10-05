@@ -130,7 +130,12 @@ useSeoMeta({
   filter: grayscale(1) contrast(1.15);
   opacity: 0.35;
 }
-:global(:root.light) .hero-bg video {
+/* The whole selector goes inside :global() — Vue drops anything after a
+   :global(...) in scoped CSS, which once faded the entire page in light mode. */
+/* The clip is dark; faded over white it reads as a grey smudge. Inverted it
+   becomes a pale sketch texture that sits behind black type. */
+:global(:root.light .hero-bg video) {
+  filter: grayscale(1) invert(1);
   opacity: 0.18;
 }
 /* Hero heading — bold sans, matching the rest of the display type. */
