@@ -1,6 +1,10 @@
 <template>
   <div>
-    <section>
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <video ref="heroVideo" :src="videoUrl" :poster="posterUrl" loop muted playsinline
+          preload="auto" tabindex="-1"></video>
+      </div>
       <h1 class="hero-display">We make complicated things make sense</h1>
       <p class="measure">
         Room 302 is a small studio that builds data visualizations, interactive tools, and
@@ -77,6 +81,17 @@
 </template>
 
 <script setup>
+// Background loop from the old site — a slow overhead shot of a sketchbook.
+const videoUrl = 'https://res.cloudinary.com/ejf/video/upload/q_auto,f_auto,w_1280,br_2m/v1707429688/Comp_2_1_1'
+const posterUrl = 'https://res.cloudinary.com/ejf/video/upload/q_auto,f_jpg,w_1280,so_0/v1707429688/Comp_2_1_1.jpg'
+const heroVideo = ref(null)
+
+// No autoplay attribute: start it from JS so reduced-motion users just get the still poster.
+onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+  heroVideo.value?.play().catch(() => {})
+})
+
 useSeoMeta({
   title: "Room 302 Studio — Data Visualization & Interactive Studio",
   description:
@@ -88,6 +103,36 @@ useSeoMeta({
 </script>
 
 <style scoped>
+/* Hero video — a faint, full-bleed texture behind the headline, never competing with it. */
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+.hero-bg {
+  position: absolute;
+  z-index: -1;
+  top: -5.5rem;
+  bottom: -4rem;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  pointer-events: none;
+  /* Fade into the page on every edge so there's no visible rectangle. */
+  mask-image:
+    linear-gradient(to bottom, transparent, #000 25%, #000 60%, transparent),
+    linear-gradient(to right, transparent, #000 20%, #000 80%, transparent);
+  mask-composite: intersect;
+}
+.hero-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.15);
+  opacity: 0.35;
+}
+:global(:root.light) .hero-bg video {
+  opacity: 0.18;
+}
 /* Hero heading — bold sans, matching the rest of the display type. */
 .hero-display {
   font-family: var(--font-display);
