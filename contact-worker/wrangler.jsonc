@@ -10,7 +10,9 @@
   "vars": {
     // comma-separated; each address must be verified in Email Routing first.
     // One send per recipient, so an unverified one doesn't block the rest.
-    "LEAD_EMAILS": "ejfox+artie@ejfox.com,studio@room302.studio",
+    // studio@ is a Google group that forwards to every studio member; the
+    // ejfox+artie address is only a fallback until studio@ is verified.
+    "LEAD_EMAILS": "studio@room302.studio,ejfox+artie@ejfox.com",
     // Must be on a domain with Email Routing enabled. room302.studio's apex MX is
     // Google Workspace, so this can't be @room302.studio itself — it lives on the
     // mail.room302.studio subdomain instead (enabled under Email Routing →
