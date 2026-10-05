@@ -1,0 +1,22 @@
+{
+  "name": "room302-contact",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-01",
+  "observability": { "enabled": true },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "room302-contact", "database_id": "1077be3e-7e6b-4316-a6d4-0fa311c17036" }
+  ],
+  "send_email": [{ "name": "EMAIL" }],
+  "vars": {
+    // comma-separated; each address must be verified in Email Routing first.
+    // One send per recipient, so an unverified one doesn't block the rest.
+    "LEAD_EMAILS": "ejfox+artie@ejfox.com,studio@room302.studio",
+    // Must be on a domain with Email Routing enabled. room302.studio's apex MX is
+    // Google Workspace, so this can't be @room302.studio itself — it lives on the
+    // mail.room302.studio subdomain instead (enabled under Email Routing →
+    // Settings → Subdomains), which leaves the apex MX untouched.
+    "FROM_NAME": "Room 302 Studio",
+    "FROM_ADDRESS": "room302@vestibulequarterly.com",
+    "ALLOWED_ORIGINS": "https://room302.studio,http://localhost:3302"
+  }
+}

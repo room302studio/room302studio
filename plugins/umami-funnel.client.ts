@@ -8,6 +8,7 @@
 //   outbound-click  any link off-site             (from, host, label)
 //   read-half       halfway through a case study or blog post (from)
 //   read-finished   reached the end of one        (from)
+//   form-submit     contact form sent — fired from pages/contact.vue
 //
 // `from` is the page path the event happened on, so Umami can break each event
 // down by where in the site it came from. Links that already carry
@@ -21,6 +22,17 @@ export default defineNuxtPlugin((nuxtApp) => {
   const track = (name: string, data: Record<string, string>) =>
     (window as any).umami?.track(name, data);
   const from = () => window.location.pathname;
+
+  // First touch of the visit (landing page incl. utm_ params, and referrer),
+  // so a contact-form lead records where the person originally came from.
+  try {
+    if (!sessionStorage.getItem("r302-first-touch")) {
+      sessionStorage.setItem("r302-first-touch", JSON.stringify({
+        landing: window.location.pathname + window.location.search,
+        referrer: document.referrer,
+      }));
+    }
+  } catch {}
 
   document.addEventListener("click", (e) => {
     const link = (e.target as Element | null)?.closest?.("a[href]") as HTMLAnchorElement | null;

@@ -67,7 +67,7 @@ export default defineNuxtConfig({
         {
           "http-equiv": "Content-Security-Policy",
           content:
-            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://umami.tools.ejfox.com; connect-src 'self' https://umami.tools.ejfox.com;",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://umami.tools.ejfox.com; connect-src 'self' https://umami.tools.ejfox.com https://room302-contact.ejfox.workers.dev;",
         },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
