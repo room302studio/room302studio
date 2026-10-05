@@ -3,16 +3,15 @@
     <!-- Floating project stickers that overlap sections -->
     <div class="relative z-30">
       <div class="absolute inset-0 pointer-events-none">
-        <div v-for="(project, index) in allProjects.slice(0, 8)" :key="'sticker-' + project._path" :class="[
+        <div v-for="(project, index) in allProjects.slice(0, 8)" :key="'sticker-' + project.path" :class="[
           'absolute pointer-events-auto',
-          hoverSticker === project._path ? 'scale-110 z-40' : 'z-30'
-        ]" :style="`${stickerPositions[index % stickerPositions.length]}`" @mouseenter="hoverSticker = project._path"
+          hoverSticker === project.path ? 'scale-110 z-40' : 'z-30'
+        ]" :style="`${stickerPositions[index % stickerPositions.length]}`" @mouseenter="hoverSticker = project.path"
           @mouseleave="hoverSticker = null">
           <div class="relative group">
-            <NuxtLink :to="project._path"
+            <NuxtLink :to="project.path"
               class="relative block rounded-full overflow-hidden bg-white dark:bg-stone-800 shadow-lg hover:shadow-xl transform transition-all duration-300 border-2 border-white dark:border-stone-700 hover:scale-110"
               :style="`width: ${stickerSizes[index % stickerSizes.length]}px; height: ${stickerSizes[index % stickerSizes.length]}px;`">
-              <div class="absolute inset-0 bg-noise opacity-10"></div>
               <img v-if="project.image" :src="project.image" :alt="project.title" class="w-full h-full object-cover" />
               <div v-else class="w-full h-full flex items-center justify-center bg-primary-100 dark:bg-primary-900/30">
                 <span class="text-xs font-bold text-primary-600 dark:text-primary-400">{{ project.title.substring(0, 2)
@@ -32,8 +31,6 @@
 
     <!-- Hero section -->
     <section class="py-24 md:py-40 relative overflow-hidden">
-      <!-- Subtle noise texture overlay -->
-      <div class="absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay"></div>
 
       <div class="pad relative z-10">
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight hero-title relative">
@@ -57,9 +54,6 @@
           </p>
         </div>
       </div>
-
-      <!-- Subtle grid pattern -->
-      <div class="absolute inset-0 bg-grid opacity-5 dark:opacity-10 -z-5"></div>
     </section>
 
     <!-- Client Work Section with enhanced card design -->
@@ -75,9 +69,9 @@
           <div
             class="relative rounded-2xl overflow-hidden transform transition-all duration-700 hover:scale-[1.02] shadow-lg hover:shadow-xl">
             <!-- Project image with gradient overlay -->
-            <NuxtLink :to="project._path" class="block relative">
+            <NuxtLink :to="project.path" class="block relative">
               <div class="aspect-[16/9] relative">
-                <NuxtImg :src="project.image" :alt="project.title" width="800" quality="80" format="webp" loading="lazy"
+                <img :src="project.image" :alt="project.title" width="800" loading="lazy"
                   class="object-cover w-full h-full transition-all duration-1000 group-hover:scale-105 brightness-[0.85] group-hover:brightness-100" />
 
                 <!-- Enhanced gradient overlay -->
@@ -121,7 +115,7 @@
                 </p>
               </div>
 
-              <NuxtLink :to="project._path"
+              <NuxtLink :to="project.path"
                 class="inline-flex items-center text-primary-600 dark:text-primary-400 text-sm font-medium hover:text-primary-700 dark:hover:text-primary-300 transition-colors mt-2">
                 View Project
                 <UIcon name="i-heroicons-arrow-right"
@@ -144,10 +138,10 @@
         <div v-for="project in internalWork" :key="project.title" class="group relative bg-white dark:bg-stone-800 rounded-xl md:rounded-2xl p-8 md:p-10
             transform transition-all duration-500 hover:scale-[1.02]
             hover:shadow-2xl hover:shadow-stone-950/10">
-          <NuxtLink :to="project._path" class="block">
+          <NuxtLink :to="project.path" class="block">
             <!-- Project image with enhanced hover effects -->
             <div v-if="project.image" class="aspect-[16/9] mb-8 overflow-hidden rounded-xl">
-              <NuxtImg :src="project.image" :alt="project.title" width="600" quality="80" format="webp" loading="lazy"
+              <img :src="project.image" :alt="project.title" width="600" loading="lazy"
                   class="object-cover w-full h-full transition-all duration-700 group-hover:scale-105
                   brightness-95 group-hover:brightness-100" />
             </div>
@@ -266,12 +260,12 @@ useSeoMeta({
 
 const { data: clientWork } = await useAsyncData(
   "content/our-work/client-work",
-  () => queryContent("our-work/client-work").find(),
+  () => queryCollection("clientWork").all(),
 );
 
 const { data: internalWork } = await useAsyncData(
   "content/our-work/internal-work",
-  () => queryContent("our-work/internal").find(),
+  () => queryCollection("internalWork").all(),
 );
 
 // Reference to the currently hovered sticker
@@ -325,23 +319,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.pad {
-  @apply px-6 md:px-12 lg:px-24 xl:px-32;
-}
-
-/* Grid background */
-.bg-grid {
-  background-image: linear-gradient(to right, rgba(100, 100, 100, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(100, 100, 100, 0.1) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
-/* Noise texture */
-.bg-noise {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px 256px;
-}
+@reference "~/assets/css/main.css";
+/* .pad now lives globally in assets/css/main.css */
 
 /* Animated elements */
 .hero-title,

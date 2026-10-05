@@ -44,18 +44,15 @@
       </div>
 
       <!-- Content renderer with fallback -->
-      <ContentRenderer :value="data">
-        <template #empty>
-          <div class="py-12 text-center">
-            <h2 class="text-2xl font-light mb-4">We couldn't find this blog post</h2>
-            <p class="text-stone-600 dark:text-stone-400 mb-8">The page you're looking for doesn't exist or may have
-              been moved.</p>
-            <UButton to="/blog" color="gray" variant="soft" class="mt-4 px-6 py-2">
-              Browse all articles
-            </UButton>
-          </div>
-        </template>
-      </ContentRenderer>
+      <ContentRenderer v-if="data" :value="data" />
+      <div v-else class="py-12 text-center">
+        <h2 class="text-2xl font-light mb-4">We couldn't find this blog post</h2>
+        <p class="text-stone-600 dark:text-stone-400 mb-8">The page you're looking for doesn't exist or may have
+          been moved.</p>
+        <UButton to="/blog" color="neutral" variant="soft" class="mt-4 px-6 py-2">
+          Browse all articles
+        </UButton>
+      </div>
     </article>
 
     <!-- Reading progress indicator -->
@@ -75,9 +72,15 @@ definePageMeta({
 const route = useRoute();
 const readingProgress = ref(0);
 
-const { data } = await useAsyncData(async () => {
-  return queryContent("blog", route.params.slug[0]).findOne();
-});
+const { data } = await useAsyncData(`blog-${route.params.slug[0]}`, () =>
+  queryCollection("blog").path(`/blog/${route.params.slug[0]}`).first()
+);
+
+// Content v3 returns drafts like any other document, so without this a post
+// marked `draft: true` would render in full to anyone with the URL.
+if (data.value?.draft) {
+  throw createError({ statusCode: 404, statusMessage: "Page Not Found", fatal: true });
+}
 
 // Format date in a more readable format
 const formatDate = (dateString) => {
@@ -117,8 +120,6 @@ useSeoMeta({
   ogImage: () => data.value?.image || 'https://room302.studio/og-image.jpg',
 });
 
-useContentHead(data);
-
 onMounted(() => {
   // Initialize reading progress
   calculateReadingProgress();
@@ -152,6 +153,7 @@ watch(
 </script>
 
 <style lang="scss">
+@reference "~/assets/css/main.css";
 // Enhance typography with subtle improvements
 #blog-content {
   font-feature-settings: "liga" 1, "kern" 1;

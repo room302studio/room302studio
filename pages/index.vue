@@ -23,8 +23,7 @@
             <div class="button-group">
               <!-- Primary Contact Button -->
               <UButton ref="primaryBtn" to="/contact" color="primary" class="hero-btn primary-btn font-mono"
-                @mouseenter="primaryBtnHover = true" @mouseleave="primaryBtnHover = false"
-                aria-label="Contact Room 302 Studio">
+                @mouseenter="primaryBtnHover = true" @mouseleave="primaryBtnHover = false">
                 <!-- Spotlight effect -->
                 <span v-if="primaryBtnHover" class="btn-spotlight" :style="{
                   left: `${primaryX - primaryBtn?.offsetLeft}px`,
@@ -36,8 +35,7 @@
 
               <!-- Secondary Button -->
               <UButton ref="secondaryBtn" to="/our-work" variant="ghost" class="hero-btn secondary-btn font-mono"
-                @mouseenter="secondaryBtnHover = true" @mouseleave="secondaryBtnHover = false"
-                aria-label="View our work">
+                @mouseenter="secondaryBtnHover = true" @mouseleave="secondaryBtnHover = false">
                 <!-- Spotlight effect -->
                 <span v-if="secondaryBtnHover" class="btn-spotlight secondary" :style="{
                   left: `${secondaryX - secondaryBtn?.offsetLeft}px`,
@@ -55,21 +53,21 @@
               <!-- Value prop content -->
               <template v-if="index === 0">
                 <UIcon name="i-material-symbols-light:insert-chart-outline" class="value-icon" />
-                <h3 class="value-title">Hard data, clear stories</h3>
+                <h2 class="value-title">Hard data, clear stories</h2>
                 <p class="value-text">
                   We love the moment when a messy dataset clicks into a visualization that actually explains something. That's the work — whether it's global food supply chains or election night results.
                 </p>
               </template>
               <template v-else-if="index === 1">
                 <UIcon name="i-material-symbols-light:speed-rounded" class="value-icon" />
-                <h3 class="value-title">Small team, fast hands</h3>
+                <h2 class="value-title">Small team, fast hands</h2>
                 <p class="value-text">
                   We're a small studio on purpose. No layers of approval, no scope creep meetings. You talk to the people building the thing, and we move quickly because we genuinely enjoy the work.
                 </p>
               </template>
               <template v-else>
                 <UIcon name="i-fa6-solid-hammer" class="value-icon" />
-                <h3 class="value-title">Toolmakers at heart</h3>
+                <h2 class="value-title">Toolmakers at heart</h2>
                 <p class="value-text">
                   When we're not doing client work, we're building our own tools — network visualizers, AI assistants, prototyping kits. That instinct to build things that are useful shows up in everything we make.
                 </p>
@@ -80,7 +78,6 @@
 
         <!-- Background elements -->
         <div class="hero-bg"></div>
-        <div class="hero-grid"></div>
       </section>
 
       <!-- Video Section -->
@@ -438,6 +435,7 @@ const featuredProjects = [
 </script>
 
 <style scoped>
+@reference "~/assets/css/main.css";
 /* Base Layout */
 .container {
   @apply max-w-5xl mx-auto px-8 md:px-12 lg:px-32;
@@ -496,10 +494,6 @@ const featuredProjects = [
 
 .hero-bg {
   @apply absolute inset-0 bg-gradient-to-b from-stone-50 to-stone-100 dark:from-stone-950 dark:to-stone-900 -z-10;
-}
-
-.hero-grid {
-  @apply absolute inset-0 bg-grid opacity-5 dark:opacity-10 -z-10;
 }
 
 /* Value Props */
@@ -563,10 +557,6 @@ const featuredProjects = [
 
 .video-title {
   @apply text-5xl md:text-7xl lg:text-8xl text-white leading-tight;
-}
-
-.video-description-col {
-  /* Empty for counterpart styling */
 }
 
 .video-description {
@@ -633,14 +623,6 @@ const featuredProjects = [
   @apply text-stone-700 dark:text-stone-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors underline-offset-4 hover:underline;
 }
 
-/* Typography */
-.bg-grid {
-  background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
 .text-balance {
   text-wrap: balance;
 }
@@ -654,28 +636,5 @@ const featuredProjects = [
   @apply opacity-100;
 }
 
-/* Font definitions */
-.font-fraunces {
-  font-family: 'Fraunces', serif;
-}
-
-.font-fraunces-regular {
-  font-family: 'Fraunces', serif;
-  font-weight: 300;
-}
-
-.font-fraunces-black {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-}
-
-.font-fraunces-black-italic {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.font-mono {
-  font-family: 'IBM Plex Mono', monospace;
-}
+/* Fraunces display + mono utilities now live globally in assets/css/main.css */
 </style>

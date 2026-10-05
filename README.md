@@ -1,69 +1,52 @@
-# Nuxt 3 Minimal Starter
+# Room 302 Studio
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+The website for [Room 302 Studio](https://room302.studio) — a studio building data
+visualizations, interactive tools, and prototypes. We've made election graphics for the
+AP, mapped coral reefs for WCS, and supported a studio member's indie game covered by
+Fast Company.
 
-## Setup
+Built with [Nuxt](https://nuxt.com), [Nuxt Content](https://content.nuxt.com) for the
+blog/work/team, and [Nuxt UI](https://ui.nuxt.com). Content lives as markdown under
+`content/`.
 
-Make sure to install the dependencies:
+## Develop
 
 ```bash
-# yarn
 yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
+yarn dev          # http://localhost:3302
 ```
 
-## Development Server
-
-Start the development server on http://localhost:3000
+## Build
 
 ```bash
-npm run dev
+yarn build        # production build
+yarn preview      # preview the production build locally
+yarn generate     # static prerender
 ```
 
-## Production
+## Project layout
 
-Build the application for production:
+| Path | What |
+|------|------|
+| `pages/` | Routes (home, services, work, blog, lab, contact) |
+| `components/` | Shared Vue components |
+| `content/` | Markdown: `blog/`, `members/`, `our-work/` |
+| `layouts/` | Page layouts (default, blog, work) |
+| `composables/` | Shared composables |
+| `public/` | Static assets |
+
+## Authoring content
+
+Scaffold new markdown entries:
 
 ```bash
-npm run build
+yarn new:blog       # new blog post
+yarn new:project    # new work entry
+yarn new:member     # new team member
 ```
 
-Locally preview production build:
+## OG image generator
 
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
-## OG Image Generator
-
-The project includes a built-in Open Graph image generator at `/og_generator`. This tool helps create consistent social media preview cards for all pages.
-
-### Features
-- Dynamic text with IBM Plex Sans font
-- Gradient backgrounds with preset options
-- Subtle animated preview with 302 floating dots using Perlin noise
-- Watermarked logo
-- Downloads high-resolution (1200x630) PNG files
-
-### Usage
-1. Navigate to `/og_generator`
-2. Select a page from the dropdown
-3. Choose colors:
-   - Use the "Minimal" preset for dark monotone
-   - Use the "Primary" preset for brand colors
-   - Use "Random" to explore theme color combinations
-   - Or manually pick gradient colors
-4. Click "Download Image" to save
-
-### Technical Notes
-- Uses `html2canvas` for image generation
-- Implements `simplex-noise` for dot animation
-- Maintains consistent branding with theme color palette
-- Exports at 2x scale for retina displays
+A built-in Open Graph card generator lives at `/og_generator` — pick a page, choose
+colors, and download a 1200×630 PNG. Uses `html2canvas` + `simplex-noise` for the
+animated 302 dot background.

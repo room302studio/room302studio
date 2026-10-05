@@ -31,7 +31,7 @@
 
     <!-- Mobile menu - super simplified -->
     <transition name="fade">
-      <div v-show="isOpen" class="bg-gray-900/95 backdrop-blur-lg min-h-screen fixed top-0 left-0 w-full z-20">
+      <div v-show="isOpen" class="bg-stone-900/95 backdrop-blur-lg min-h-screen fixed top-0 left-0 w-full z-20">
         <div class="flex justify-between items-center py-8 px-8">
           <Logo class="text-center max-w-20 h-16 w-16" />
 
@@ -69,13 +69,13 @@ import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 const breakpoints = useBreakpoints(breakpointsTailwind)
 
 const linkClasses =
-  "no-underline border-b-2 border-transparent transition text-md xl:text-xl text-gray-500 dark:text-gray-300 duration-300 font-light tracking-widest hover:text-primary-500 dark:hover:text-primary-500";
+  "no-underline border-b-2 border-transparent transition text-md xl:text-xl text-stone-500 dark:text-stone-300 duration-300 font-light tracking-widest hover:text-primary-500 dark:hover:text-primary-500";
 
 const activeClasses =
   "border-primary-500 text-primary-500 dark:text-primary-500 font-medium";
 
 const mobileLinkClasses =
-  "no-underline border-b-2 border-transparent transition text-5xl text-gray-200 duration-300 font-light tracking-widest hover:text-primary-500";
+  "no-underline border-b-2 border-transparent transition text-5xl text-stone-200 duration-300 font-light tracking-widest hover:text-primary-500";
 
 const mobileActiveClasses =
   "border-primary-500 text-primary-500 font-normal";

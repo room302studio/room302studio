@@ -51,14 +51,6 @@
     <!-- Fallback hero for projects without images -->
     <div v-else class="w-full h-[60vh] max-h-[700px] relative bg-gradient-to-br 
                       from-stone-900 to-stone-800 dark:from-stone-950 dark:to-stone-900">
-      <div class="absolute inset-0 opacity-30">
-        <div class="absolute top-0 left-0 w-96 h-96 rounded-full bg-stone-700 blur-3xl 
-                    transform -translate-x-1/2 -translate-y-1/2">
-        </div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-stone-700 blur-3xl 
-                    transform translate-x-1/2 translate-y-1/2">
-        </div>
-      </div>
 
       <div class="relative h-full flex items-center justify-center">
         <div class="text-center p-12">
@@ -125,11 +117,7 @@
                     prose-img:rounded-lg prose-img:shadow-lg
                     prose-headings:mt-16 prose-headings:mb-8
                     prose-p:my-8 prose-img:my-16">
-          <ContentRenderer v-if="data" :value="data">
-            <template #empty>
-              <p>No content available for this project.</p>
-            </template>
-          </ContentRenderer>
+          <ContentRenderer v-if="data" :value="data" />
         </div>
       </div>
     </div>
@@ -167,25 +155,18 @@ onMounted(() => {
   onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 })
 
-const { data: internalWork } = await useAsyncData(
-  "content/our-work/internal",
-  () => queryContent("our-work/internal").find(),
+const { data } = await useAsyncData(
+  `internal-${route.params.slug[0]}`,
+  () =>
+    queryCollection("internalWork")
+      .path(`/our-work/internal/${route.params.slug[0]}`)
+      .first(),
 );
-
-const data = computed(() => {
-  if (!internalWork.value) return;
-  const slug = route.params.slug[0];
-  const item = internalWork.value.find(
-    (item) => item._path === `/our-work/internal/${slug}`,
-  );
-  return item;
-});
 </script>
 
 <style scoped>
-.pad {
-  @apply px-6 md:px-12 lg:px-24;
-}
+@reference "~/assets/css/main.css";
+/* .pad now lives globally in assets/css/main.css */
 
 /* Additional spacing for prose content */
 :deep(.prose) {
