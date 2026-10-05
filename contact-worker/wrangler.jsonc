@@ -12,8 +12,10 @@
     // One send per recipient, so an unverified one doesn't block the rest.
     "LEAD_EMAILS": "ejfox+artie@ejfox.com,studio@room302.studio",
     // Must be on a domain with Email Routing enabled. room302.studio's apex MX is
-    // Google Workspace, so this can't be @room302.studio itself — switch to a
-    // subdomain (e.g. contact@notify.room302.studio) once it's enabled there.
+    // Google Workspace, so this can't be @room302.studio itself — it lives on the
+    // mail.room302.studio subdomain instead (enabled under Email Routing →
+    // Settings → Subdomains), which leaves the apex MX untouched.
+    "FROM_NAME": "Room 302 Studio",
     "FROM_ADDRESS": "room302@vestibulequarterly.com",
     "ALLOWED_ORIGINS": "https://room302.studio,http://localhost:3302"
   }

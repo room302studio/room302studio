@@ -70,8 +70,8 @@ async function sendLead(env, lead) {
       <p style="font-size:12px;color:#aaa">Lead #${lead.id} · reply to answer ${esc(lead.name)} directly</p>
     </div>`;
 
-  const subject = `Room 302 inquiry from ${lead.name}`;
-  const from = `Room 302 contact form <${env.FROM_ADDRESS}>`;
+  const subject = `New inquiry: ${lead.name}`;
+  const from = `${env.FROM_NAME} <${env.FROM_ADDRESS}>`;
   const recipients = env.LEAD_EMAILS.split(',').map((s) => s.trim()).filter(Boolean);
   return Promise.all(recipients.map((to) =>
     env.EMAIL.send(new EmailMessage(env.FROM_ADDRESS, to, mime({ from, to, replyTo: lead.email, subject, text, html })))
