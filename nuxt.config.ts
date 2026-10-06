@@ -67,13 +67,31 @@ export default defineNuxtConfig({
         {
           "http-equiv": "Content-Security-Policy",
           content:
-            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://umami.tools.ejfox.com; connect-src 'self' https://umami.tools.ejfox.com https://room302-contact.ejfox.workers.dev;",
+            "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://umami.tools.ejfox.com https://umami-plus.tools.ejfox.com; connect-src 'self' https://umami.tools.ejfox.com https://room302-contact.ejfox.workers.dev;",
         },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      // Umami 3.4 (self-hosted). ?v= skips a pre-3.4 tracker still cached at Cloudflare's edge,
+      // which lacks data-performance + getSession (recorder.js needs them). recorder.js = heatmaps
+      // and session replay with STRICT masking (all text + inputs hidden; sampling is set inside
+      // Umami, not here). umami-plus = scroll depth, engaged time, copy (length only), 404s;
+      // outbound + mailto stay with plugins/umami-funnel.client.ts so nothing counts twice.
       script: [
         {
-          src: "https://umami.tools.ejfox.com/script.js",
+          src: "https://umami.tools.ejfox.com/script.js?v=3.4.0",
+          defer: true,
+          "data-website-id": "b069146f-591b-47a8-86fd-48ce126b1b9f",
+          "data-performance": "true",
+        },
+        {
+          src: "https://umami-plus.tools.ejfox.com/umami-plus.js?v=3",
+          defer: true,
+          "data-outbound": "false",
+          "data-mailto": "false",
+          "data-feeds": "false",
+        },
+        {
+          src: "https://umami.tools.ejfox.com/recorder.js",
           defer: true,
           "data-website-id": "b069146f-591b-47a8-86fd-48ce126b1b9f",
         },
