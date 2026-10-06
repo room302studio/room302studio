@@ -20,10 +20,12 @@ export default {
 
     let body;
     try { body = await request.json(); } catch { return json({ error: 'bad json' }, 400, cors); }
+    if (!body || typeof body !== 'object' || Array.isArray(body)) return json({ error: 'bad json' }, 400, cors);
 
-    // Bots: fill the hidden field, or submit faster than a person could.
-    // Pretend it worked so they don't learn anything.
-    if (body.website || Number(body.elapsed_ms) < MIN_FILL_MS) return json({ ok: true }, 200, cors);
+    // Bots: fill the hidden field, or submit faster than a person could (or
+    // post straight here without the form's timer). Pretend it worked so they
+    // don't learn anything.
+    if (body.website || !(Number(body.elapsed_ms) >= MIN_FILL_MS)) return json({ ok: true }, 200, cors);
 
     const lead = {};
     for (const [key, max] of Object.entries(LIMITS)) lead[key] = String(body[key] ?? '').trim().slice(0, max);
