@@ -1,0 +1,13 @@
+{
+  "name": "room302-contact",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "test": "node --test test/*.test.mjs",
+    "deploy": "wrangler d1 migrations apply room302-contact --remote && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.40.0"
+  }
+}
