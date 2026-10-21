@@ -136,3 +136,17 @@ test('rate limit: 5 an hour per IP, then a polite 429', async () => {
   assert.match(sixth.body.error, /email us directly/);
   assert.equal((await post(good({ email: 'other@example.com' }), { from: '198.51.100.8' })).status, 200, 'other visitors unaffected');
 });
+
+test('health: ok when every lead was emailed, 503 once a real lead sits unsent', async () => {
+  let res = await fetch(`${base}/health`);
+  assert.equal(res.status, 200);
+  assert.equal((await res.json()).ok, true);
+  sql("INSERT INTO leads (name, email, message, emailed, created_at) VALUES ('Stuck', 'stuck@example.com', 'x', 0, datetime('now', '-10 minutes'))");
+  res = await fetch(`${base}/health`);
+  assert.equal(res.status, 503);
+  const body = await res.json();
+  assert.equal(body.ok, false);
+  assert.equal(body.unsent_7d, 1);
+  assert.equal(JSON.stringify(body).includes('stuck@example.com'), false);
+  sql("DELETE FROM leads WHERE email = 'stuck@example.com'");
+});
