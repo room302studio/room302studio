@@ -3,133 +3,127 @@
     <section class="contact">
       <p class="eyebrow">Contact</p>
       <h1>Let's make something</h1>
-      <p class="measure lede">
-        Tell us what you're working on. Every message lands with a person at
-        the studio, and we usually reply within a day.
-      </p>
 
-      <!-- Sent: a handwritten-feeling thank-you -->
+      <!-- Note sent -->
       <div v-if="status === 'sent'" class="measure sent" role="status" aria-live="polite">
         <h2 class="sent-title">
           <span class="ringed">
-            Got it{{ firstName ? `, ${firstName}` : '' }}
-            <HandMark name="circle-lg" stretch draw from="down" class="ring" />
+            Got it{{ form.name.trim() ? `, ${firstName}` : '' }}
+            <PenLoop :seed="`got-${firstName}`" :weight="2.25" draw class="pen-ring" />
           </span>
         </h2>
         <p class="sent-line">
           <HandMark name="arrow-bend-down-right" size="1.4em" draw class="accent" />
-          We'll write to <strong>{{ form.email }}</strong>, typically within a day.
-        </p>
-        <p class="muted">
-          In the meantime, have a look at <NuxtLink to="/our-work">what we've made</NuxtLink>
+          We'll reply to <strong>{{ form.email }}</strong>, usually within a day.
         </p>
       </div>
 
-      <form v-else class="measure contact-form" novalidate @submit.prevent="submit">
-        <!-- 1. Email first: the one thing we need to write back -->
-        <div class="step" :class="{ done: emailOk }">
-          <HandMark name="circled-1" size="1.9em" class="num" :draw="emailOk" />
-          <label for="c-email">Where can we write back?</label>
-          <div class="inline">
-            <input
-              id="c-email"
-              ref="emailEl"
-              v-model="form.email"
-              name="email"
-              type="email"
-              inputmode="email"
-              autocomplete="email"
-              placeholder="you@company.com"
-              required
-              @keydown.enter.prevent="acceptEmail"
-              @blur="emailTouched = form.email.length > 0"
-            />
-            <button v-if="step < 2" type="button" class="btn next" @click="acceptEmail">
-              <span class="sr-only">Next</span>
-              <HandMark name="arrow-right-long" size="0.9em" />
+      <template v-else>
+        <!-- Main path: pick a time. No writing required. -->
+        <div class="measure book">
+          <p class="lede">Pick a time for a 20-minute call.</p>
+
+          <div v-if="slots.length" class="slots" role="group" aria-label="Open times">
+            <button
+              v-for="s in slots"
+              :key="s.datetime"
+              type="button"
+              class="slot"
+              :aria-pressed="picked?.datetime === s.datetime"
+              @click="pick(s)"
+            >
+              <span class="slot-day">{{ fmtDay(s.datetime) }}</span>
+              <span class="slot-time">
+                {{ fmtTime(s.datetime) }}
+                <PenLoop v-if="picked?.datetime === s.datetime" :seed="s.datetime" :weight="1.5" draw class="pen-ring" />
+              </span>
             </button>
           </div>
-          <p v-if="emailHint" class="hint" role="alert">{{ emailHint }}</p>
-        </div>
+          <p v-if="slots.length && tz" class="muted tz">Times in {{ tz }}</p>
 
-        <Transition name="unfold">
-          <div v-if="step >= 2" class="unfolded">
-            <!-- 2. What kind of thing: tap instead of describe -->
-            <fieldset class="step" :class="{ done: form.kinds.length > 0 }">
-              <HandMark name="circled-2" size="1.9em" class="num" :draw="form.kinds.length > 0" />
-              <legend>What are you working on? <span class="muted optional">pick any</span></legend>
-              <div class="chips">
-                <button
-                  v-for="(k, i) in KINDS"
-                  :key="k"
-                  :ref="(el) => { if (i === 0) firstChip = el }"
-                  type="button"
-                  class="chip"
-                  :aria-pressed="form.kinds.includes(k)"
-                  @click="toggleKind(k)"
-                >
-                  {{ k }}<HandMark v-if="k === WEIRD" name="star-4pt" size="0.85em" class="star" />
-                  <HandMark v-if="form.kinds.includes(k)" name="circle-lg" stretch draw from="down" class="ring" />
+          <Transition name="unfold">
+            <form v-if="picked" class="confirm" novalidate @submit.prevent="book">
+              <label for="c-book-email">Your email</label>
+              <div class="inline">
+                <input
+                  id="c-book-email"
+                  ref="bookEmailEl"
+                  v-model="form.email"
+                  type="email"
+                  inputmode="email"
+                  autocomplete="email"
+                  placeholder="you@company.com"
+                  required
+                />
+                <button type="submit" class="btn book-btn">
+                  Book it <HandMark name="arrow-right-thick" size="0.7em" class="send-arrow" />
                 </button>
               </div>
-            </fieldset>
+              <p v-if="emailHint" class="hint" role="alert">{{ emailHint }}</p>
+            </form>
+          </Transition>
 
-            <!-- 3. The message, with a nudge instead of a blank box -->
-            <div class="step" :class="{ done: form.message.trim().length > 2 }">
-              <HandMark name="circled-3" size="1.9em" class="num" :draw="form.message.trim().length > 2" />
-              <label for="c-message">Tell us a little more</label>
+          <p class="other">
+            <a :href="CAL_URL" data-umami-event="contact-other-times">{{ slots.length ? 'Other times' : 'See open times' }}</a>
+            <span class="muted" aria-hidden="true"> · </span>
+            <button type="button" class="linklike" :aria-expanded="showNote" @click="openNote">or send a note instead</button>
+          </p>
+        </div>
+
+        <!-- Secondary path: a note, for people who'd rather write -->
+        <Transition name="unfold">
+          <form v-if="showNote" class="measure contact-form" novalidate @submit.prevent="submit">
+            <div class="step">
+              <label for="c-email">Your email</label>
+              <input
+                id="c-email"
+                ref="emailEl"
+                v-model="form.email"
+                name="email"
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                placeholder="you@company.com"
+                required
+                @blur="emailTouched = form.email.length > 0"
+              />
+            </div>
+            <div class="step">
+              <label for="c-message">What's on your mind?</label>
               <textarea
                 id="c-message"
                 ref="messageEl"
                 v-model="form.message"
                 name="message"
-                rows="5"
-                placeholder="A sentence or two is plenty"
+                rows="4"
+                placeholder="A few sentences is plenty"
                 required
                 @keydown.meta.enter.prevent="submit"
                 @keydown.ctrl.enter.prevent="submit"
               ></textarea>
-              <p class="starters">
-                <span class="muted">try:</span>
-                <template v-for="(s, i) in STARTERS" :key="s.label">
-                  <button type="button" class="starter" @click="addStarter(s.text)">{{ s.label }}</button><span v-if="i < STARTERS.length - 1" class="muted dot" aria-hidden="true">·</span>
-                </template>
-              </p>
             </div>
-          </div>
-        </Transition>
-
-        <Transition name="unfold">
-          <div v-if="step >= 2 && form.message.trim().length > 0" class="unfolded">
-            <!-- 4. Who we're talking to -->
-            <div class="step" :class="{ done: form.name.trim().length > 0 }">
-              <HandMark name="circled-4" size="1.9em" class="num" :draw="form.name.trim().length > 0" />
-              <label for="c-name">And who are we talking to?</label>
-              <input id="c-name" v-model="form.name" name="name" autocomplete="name" placeholder="Your name" required />
-              <label for="c-heard" class="small-label">How'd you find us? <span class="muted optional">optional</span></label>
-              <input id="c-heard" v-model="form.heard_from" name="heard_from" class="small-input" placeholder="A friend, a search, a talk…" />
+            <div class="step">
+              <label for="c-name">Your name <span class="muted optional">optional</span></label>
+              <input id="c-name" v-model="form.name" name="name" autocomplete="name" />
             </div>
-
             <!-- Honeypot: hidden from people and screen readers; bots fill it in. -->
             <p class="hp" aria-hidden="true">
               <label for="c-website">Website</label>
               <input id="c-website" v-model="form.website" name="website" tabindex="-1" autocomplete="off" />
             </p>
-
             <p v-if="error" class="error" role="alert">{{ error }}</p>
             <p class="send-row">
               <button type="submit" class="btn big send" :disabled="status === 'sending'">
-                <span>{{ status === 'sending' ? 'Sending' : 'Send it' }}</span>
-                <HandMark name="arrow-right-long" size="0.75em" class="send-arrow" :class="{ flying: status === 'sending' }" />
+                <span>{{ status === 'sending' ? 'Sending' : 'Send' }}</span>
+                <HandMark name="arrow-right-thick" size="0.7em" class="send-arrow" :class="{ flying: status === 'sending' }" />
               </button>
-              <span class="muted kbd-hint">or press ⌘ + Enter</span>
             </p>
-          </div>
+          </form>
         </Transition>
-      </form>
+      </template>
 
       <p class="muted alt">
-        Prefer plain email? <a href="mailto:studio@room302.studio">studio@room302.studio</a>
+        Or email <a href="mailto:studio@room302.studio">studio@room302.studio</a>
       </p>
     </section>
   </div>
@@ -139,110 +133,118 @@
 import { useOgMetadata } from '~/composables/useOgMetadata'
 
 const ENDPOINT = 'https://room302-contact.ejfox.workers.dev'
-const WEIRD = 'Something weird'
-const KINDS = ['A data visualization', 'An interactive tool', 'A map', 'A prototype', 'Election or news graphics', WEIRD]
-const STARTERS = [
-  { label: 'a deadline', text: 'We need this by ' },
-  { label: 'a dataset', text: 'The data we have is ' },
-  { label: 'a dream', text: 'In a perfect world, ' },
-  { label: 'a budget', text: 'Our budget is around ' },
-]
+const CAL_URL = 'https://cal.com/ejfox/30min?duration=20'
 
-const form = reactive({ email: '', kinds: [], message: '', name: '', heard_from: '', website: '' })
+// Next open times (server/api/slots.get.ts). Client-only so a slow calendar
+// never delays the page; with no slots the page shows a plain calendar link.
+const { data: slotData } = useLazyFetch('/api/slots', { server: false, default: () => ({ slots: [] }) })
+const slots = computed(() => slotData.value?.slots || [])
+
+const form = reactive({ email: '', message: '', name: '', website: '' })
 const status = ref('idle') // idle | sending | sent
-const step = ref(1)
+const picked = ref(null)
+const showNote = ref(false)
 const error = ref('')
 const emailTouched = ref(false)
 const emailEl = ref(null)
+const bookEmailEl = ref(null)
 const messageEl = ref(null)
-let firstChip = null
 let openedAt = 0
 onMounted(() => { openedAt = Date.now() })
 
 const EMAIL_RE = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/
 const emailOk = computed(() => EMAIL_RE.test(form.email.trim()))
 const emailHint = computed(() =>
-  emailTouched.value && form.email.trim() && !emailOk.value ? 'That address looks a little off. Mind checking it?' : ''
+  emailTouched.value && form.email.trim() && !emailOk.value ? 'Check that email address' : ''
 )
 const firstName = computed(() => form.name.trim().split(/\s+/)[0] || '')
 
+// Shown in the visitor's own time zone.
+const fmtDay = (iso) => new Date(iso).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })
+const fmtTime = (iso) => new Date(iso).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' }).replace(':00', '').replace(' ', '').toLowerCase()
+const tz = computed(() => {
+  if (!import.meta.client || !slots.value[0]) return ''
+  return new Intl.DateTimeFormat(undefined, { timeZoneName: 'long' }).formatToParts(new Date(slots.value[0].datetime)).find((p) => p.type === 'timeZoneName')?.value || ''
+})
+
 const track = (name, data) => { try { window.umami?.track(name, data) } catch {} }
+const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches
 
-async function acceptEmail() {
-  emailTouched.value = true
-  if (!emailOk.value) return emailEl.value?.focus()
-  if (step.value < 2) {
-    step.value = 2
-    track('contact-step', { step: 'email' })
-    await nextTick()
-    firstChip?.focus({ preventScroll: true })
-    firstChip?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' })
-  }
-}
-
-function toggleKind(k) {
-  const i = form.kinds.indexOf(k)
-  if (i === -1) form.kinds.push(k)
-  else form.kinds.splice(i, 1)
-}
-
-async function addStarter(text) {
-  const m = form.message
-  form.message = m && !/\s$/.test(m) ? `${m} ${text}` : `${m}${text}`
+async function pick(s) {
+  picked.value = s
+  track('contact-slot-pick', { day: new Date(s.datetime).getDay() })
   await nextTick()
-  const el = messageEl.value
-  if (el) { el.focus(); el.setSelectionRange(form.message.length, form.message.length) }
+  bookEmailEl.value?.focus({ preventScroll: true })
+}
+
+// Hand off to Cal.com on the exact slot, email already filled in.
+function book() {
+  emailTouched.value = true
+  if (!emailOk.value) return bookEmailEl.value?.focus()
+  const url = new URL(picked.value.bookingUrl)
+  url.searchParams.set('email', form.email.trim())
+  track('contact-book', {})
+  window.location.href = url.toString()
+}
+
+async function openNote() {
+  showNote.value = !showNote.value
+  if (showNote.value) {
+    track('contact-note-open', {})
+    await nextTick()
+    ;(form.email ? messageEl : emailEl).value?.focus({ preventScroll: true })
+    ;(form.email ? messageEl : emailEl).value?.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'center' })
+  }
 }
 
 async function submit() {
   error.value = ''
-  if (!emailOk.value) { emailTouched.value = true; return emailEl.value?.focus() }
-  if (!form.message.trim()) return (error.value = 'Tell us a little about it first.')
-  if (!form.name.trim()) return (error.value = 'And your name, so we know who to thank.')
+  if (!emailOk.value) { emailTouched.value = true; error.value = 'Check that email address'; return emailEl.value?.focus() }
+  if (!form.message.trim()) { error.value = 'Add a line about the project'; return messageEl.value?.focus() }
 
   status.value = 'sending'
   // First page + referrer of this visit, saved by the umami-funnel plugin.
   let firstTouch = {}
   try { firstTouch = JSON.parse(sessionStorage.getItem('r302-first-touch') || '{}') } catch {}
-  const kinds = form.kinds.length ? `Working on: ${form.kinds.join(', ')}\n\n` : ''
+  // Name is optional here; the worker needs one, so fall back to the email's local part.
+  const name = form.name.trim() || form.email.trim().split('@')[0]
 
   try {
     const res = await fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name: form.name, email: form.email, message: kinds + form.message, heard_from: form.heard_from,
+        name, email: form.email, message: form.message, heard_from: '',
         website: form.website, ...firstTouch, page: location.pathname, elapsed_ms: Date.now() - openedAt,
       }),
     })
     const data = await res.json().catch(() => ({}))
-    if (!res.ok) throw new Error(data.error || 'Something went wrong on our end. Try the email address below?')
+    if (!res.ok) throw new Error(data.error || "That didn't send. Email studio@room302.studio instead")
     status.value = 'sent'
-    track('form-submit', { from: location.pathname, heard_from: form.heard_from.trim().slice(0, 60) || '(blank)', kinds: form.kinds.join('|') || '(none)' })
-    window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
+    track('form-submit', { from: location.pathname, named: form.name.trim() ? 'yes' : 'no' })
+    window.scrollTo({ top: 0, behavior: reduced() ? 'auto' : 'smooth' })
   } catch (e) {
     status.value = 'idle'
-    error.value = e.message || 'Something went wrong on our end. Try the email address below?'
+    error.value = e.message || "That didn't send. Email studio@room302.studio instead"
   }
 }
 
+const DESC = 'Pick a time for a 20-minute call with Room 302 Studio, or send a note.'
 useHead({ title: 'Contact Room 302 Studio' })
-
 useSeoMeta({
   title: 'Contact Room 302 Studio',
-  description: "Tell Room 302 Studio what you're working on. Every message lands with a person at the studio.",
+  description: DESC,
   ogTitle: 'Contact Room 302 Studio',
-  ogDescription: "Tell Room 302 Studio what you're working on. Every message lands with a person at the studio.",
+  ogDescription: DESC,
   ogUrl: 'https://room302.studio/contact',
   ogImage: 'https://room302.studio/og/contact.png',
   ogType: 'website',
   twitterCard: 'summary_large_image',
   twitterImage: 'https://room302.studio/og/contact.png',
   twitterTitle: 'Contact Room 302 Studio',
-  twitterDescription: "Tell Room 302 Studio what you're working on. Every message lands with a person at the studio.",
+  twitterDescription: DESC,
 })
-
-useOgMetadata('Contact Us', "Tell Room 302 Studio what you're working on. Every message lands with a person at the studio.")
+useOgMetadata('Contact Us', DESC)
 </script>
 
 <style scoped>
@@ -256,7 +258,6 @@ useOgMetadata('Contact Us', "Tell Room 302 Studio what you're working on. Every 
 @media (max-width: 760px) {
   .num { left: auto; right: 0; top: -0.35rem; }
   label, legend { padding-right: 2.5rem; }
-  .chips { padding-right: 2.25rem; }
 }
 
 label, legend { display: block; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.125rem; padding: 0; }
@@ -280,52 +281,16 @@ textarea { resize: vertical; line-height: 1.55; }
 .next { padding: 0 1.1rem; display: inline-flex; align-items: center; }
 .hint { margin: 0.5rem 0 0; color: var(--accent); font-size: 0.9375rem; }
 
-/* project chips: tap to pick; a pen ring loops around the chosen ones */
-.chips { display: flex; flex-wrap: wrap; gap: 0.6rem 0.7rem; }
-.chip {
-  position: relative;
-  padding: 0.55rem 0.95rem;
-  border: 1.5px solid var(--rule);
-  border-radius: 999px;
-  background: var(--bg);
-  font-size: 0.9375rem;
-  cursor: pointer;
-  transition: border-color 0.2s, transform 0.15s;
-}
-.chip:hover { border-color: var(--text-muted); transform: translateY(-1px) rotate(-0.4deg); }
-.chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.chip[aria-pressed='true'] { border-color: transparent; font-weight: 600; }
-.chip .ring {
-  position: absolute;
-  /* a loop only touches its box at the edge midpoints, so the box must be
-     ~1.3x the chip for the corners of the label to sit inside the ink */
-  left: -13%; top: -38%;
-  width: 126%; height: 176%;
-  color: var(--accent);
-  pointer-events: none;
-}
-.star { margin-left: 0.3rem; color: var(--accent); }
 
-.starters { margin: 0.6rem 0 0; font-size: 0.9375rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.45rem; }
-.starter {
-  background: none; border: 0; padding: 0; cursor: pointer; color: var(--text);
-  text-decoration: underline; text-decoration-style: wavy; text-decoration-color: color-mix(in srgb, var(--accent) 70%, transparent);
-  text-underline-offset: 4px;
-}
-.starter:hover { color: var(--accent); }
-.dot { user-select: none; }
 
-.small-label { font-size: 0.9375rem; font-weight: 600; margin-top: 1.25rem; }
-.small-input { font-size: 1rem; }
 
+.call { font-size: 0.9375rem; }
 .send-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
 .send { display: inline-flex; align-items: center; gap: 0.7rem; }
 .send-arrow { transition: transform 0.25s cubic-bezier(0.3, 0.7, 0.4, 1); }
 .send:hover .send-arrow { transform: translateX(4px); }
 .send-arrow.flying { animation: fly 0.9s ease-in-out infinite; }
 @keyframes fly { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(7px); } }
-.kbd-hint { font-size: 0.8125rem; font-family: var(--font-mono); }
-@media (hover: none) { .kbd-hint { display: none; } }
 button[disabled] { opacity: 0.6; cursor: wait; }
 
 .error { color: var(--accent); }
@@ -334,8 +299,9 @@ button[disabled] { opacity: 0.6; cursor: wait; }
 /* sent */
 .sent { margin: 3rem 0 2rem; }
 .sent-title { font-size: 2rem; margin-bottom: 1.25rem; }
-.ringed { position: relative; display: inline-block; padding: 0 0.15em; }
-.ringed .ring { position: absolute; left: -15%; top: -42%; width: 130%; height: 184%; color: var(--accent); pointer-events: none; }
+/* margin-left leaves room for the loop's left swing so it never runs off the page edge */
+.ringed { position: relative; display: inline-block; padding: 0 0.15em; margin-left: 0.55em; }
+.ringed .pen-ring { position: absolute; left: -15%; top: -42%; width: 130%; height: 184%; color: var(--accent); pointer-events: none; }
 .sent-line { font-size: 1.125rem; line-height: 1.6; }
 .sent-line .accent { margin-right: 0.45rem; vertical-align: -0.35em; }
 .accent { color: var(--accent); }
@@ -347,8 +313,38 @@ button[disabled] { opacity: 0.6; cursor: wait; }
 .unfold-enter-active { transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.3, 0.7, 0.4, 1); }
 .unfold-enter-from { opacity: 0; transform: translateY(10px); }
 @media (prefers-reduced-motion: reduce) {
-  .unfold-enter-active, .chip, .send-arrow, .num { transition: none; }
-  .chip:hover { transform: none; }
   .send-arrow.flying { animation: none; }
 }
+
+/* time slots: the main path */
+.book { margin-top: 0.5rem; }
+.slots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin: 1.25rem 0 0.5rem; }
+.slot {
+  position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 0.2rem;
+  padding: 0.85rem 1rem; border: 1.5px solid var(--rule); border-radius: 2px; background: var(--bg); cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.slot:hover { border-color: var(--text-muted); transform: translateY(-1px); }
+.slot:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.slot[aria-pressed='true'] { border-color: var(--accent); }
+.slot-day { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+.slot-time { position: relative; font-size: 1.25rem; font-weight: 600; }
+.slot .pen-ring { position: absolute; left: -22%; top: -18%; width: 144%; height: 136%; color: var(--accent); pointer-events: none; }
+.tz { font-size: 0.8125rem; margin: 0 0 1rem; }
+.confirm { margin: 1.25rem 0 0.5rem; }
+.book-btn { display: inline-flex; align-items: center; gap: 0.6rem; white-space: nowrap; }
+.other { margin-top: 1.25rem; font-size: 0.9375rem; }
+.linklike { background: none; border: 0; padding: 0; font: inherit; color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.linklike:hover { color: var(--text); }
+.contact-form { margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid var(--rule); }
+@media (max-width: 520px) {
+  .slots { grid-template-columns: 1fr; }
+  .slot { padding-right: 1.4rem; }
+  .slot { flex-direction: row; justify-content: space-between; align-items: baseline; }
+}
+@media (max-width: 400px) {
+  .confirm .inline { flex-direction: column; }
+  .book-btn { justify-content: center; padding: 0.8rem; }
+}
+@media (prefers-reduced-motion: reduce) { .slot { transition: none; } .slot:hover { transform: none; } }
 </style>
