@@ -4,32 +4,29 @@
       <p class="eyebrow">Contact</p>
       <h1>Let's make something</h1>
       <p class="measure lede">
-        Tell us what you're working on. Every message lands with a person at
-        the studio, and we usually reply within a day.
+        Tell us about the project. We read every message and usually reply
+        within a day.
       </p>
 
-      <!-- Sent: a handwritten-feeling thank-you -->
       <div v-if="status === 'sent'" class="measure sent" role="status" aria-live="polite">
         <h2 class="sent-title">
           <span class="ringed">
-            Got it{{ firstName ? `, ${firstName}` : '' }}
+            Got it{{ form.name.trim() ? `, ${firstName}` : '' }}
             <PenLoop :seed="`got-${firstName}`" :weight="2.25" draw class="pen-ring" />
           </span>
         </h2>
         <p class="sent-line">
           <HandMark name="arrow-bend-down-right" size="1.4em" draw class="accent" />
-          We'll write to <strong>{{ form.email }}</strong>, typically within a day.
+          We'll reply to <strong>{{ form.email }}</strong>, usually within a day.
         </p>
-        <p class="muted">
-          In the meantime, have a look at <NuxtLink to="/our-work">what we've made</NuxtLink>
-        </p>
+        <p class="muted"><NuxtLink to="/our-work">Our work</NuxtLink></p>
       </div>
 
       <form v-else class="measure contact-form" novalidate @submit.prevent="submit">
-        <!-- 1. Email first: the one thing we need to write back -->
+        <!-- 1. Email -->
         <div class="step" :class="{ done: emailOk }">
           <HandMark name="circled-bold-1" size="2.1em" class="num" :draw="emailOk" />
-          <label for="c-email">Where can we write back?</label>
+          <label for="c-email">Your email</label>
           <div class="inline">
             <input
               id="c-email"
@@ -54,60 +51,41 @@
 
         <Transition name="unfold">
           <div v-if="step >= 2" class="unfolded">
-            <!-- 2. What kind of thing: tap instead of describe -->
-            <fieldset class="step" :class="{ done: form.kinds.length > 0 }">
-              <HandMark name="circled-bold-2" size="2.1em" class="num" :draw="form.kinds.length > 0" />
-              <legend>What are you working on? <span class="muted optional">pick any</span></legend>
-              <div class="chips">
+            <!-- 2. The project: one box, optional one-tap tags -->
+            <div class="step" :class="{ done: form.message.trim().length > 2 }">
+              <HandMark name="circled-bold-2" size="2.1em" class="num" :draw="form.message.trim().length > 2" />
+              <label for="c-message">What's the project?</label>
+              <div class="chips" role="group" aria-label="Project type, optional">
                 <button
-                  v-for="(k, i) in KINDS"
+                  v-for="k in KINDS"
                   :key="k"
-                  :ref="(el) => { if (i === 0) firstChip = el }"
                   type="button"
                   class="chip"
                   :aria-pressed="form.kinds.includes(k)"
                   @click="toggleKind(k)"
                 >
-                  {{ k }}<HandMark v-if="k === WEIRD" name="star-4pt" size="0.85em" class="star" />
+                  {{ k }}
                   <PenLoop v-if="form.kinds.includes(k)" :seed="k" :weight="1.5" draw class="pen-ring" />
                 </button>
               </div>
-            </fieldset>
-
-            <!-- 3. The message, with a nudge instead of a blank box -->
-            <div class="step" :class="{ done: form.message.trim().length > 2 }">
-              <HandMark name="circled-bold-3" size="2.1em" class="num" :draw="form.message.trim().length > 2" />
-              <label for="c-message">Tell us a little more</label>
               <textarea
                 id="c-message"
                 ref="messageEl"
                 v-model="form.message"
                 name="message"
-                rows="5"
-                placeholder="A sentence or two is plenty"
+                rows="4"
+                placeholder="A few sentences is plenty"
                 required
                 @keydown.meta.enter.prevent="submit"
                 @keydown.ctrl.enter.prevent="submit"
               ></textarea>
-              <p class="starters">
-                <span class="muted">try:</span>
-                <template v-for="(s, i) in STARTERS" :key="s.label">
-                  <button type="button" class="starter" @click="addStarter(s.text)">{{ s.label }}</button><span v-if="i < STARTERS.length - 1" class="muted dot" aria-hidden="true">·</span>
-                </template>
-              </p>
             </div>
-          </div>
-        </Transition>
 
-        <Transition name="unfold">
-          <div v-if="step >= 2 && form.message.trim().length > 0" class="unfolded">
-            <!-- 4. Who we're talking to -->
-            <div class="step" :class="{ done: form.name.trim().length > 0 }">
-              <HandMark name="circled-bold-4" size="2.1em" class="num" :draw="form.name.trim().length > 0" />
-              <label for="c-name">And who are we talking to?</label>
-              <input id="c-name" v-model="form.name" name="name" autocomplete="name" placeholder="Your name" required />
-              <label for="c-heard" class="small-label">How'd you find us? <span class="muted optional">optional</span></label>
-              <input id="c-heard" v-model="form.heard_from" name="heard_from" class="small-input" placeholder="A friend, a search, a talk…" />
+            <!-- 3. Send (name optional) -->
+            <div class="step" :class="{ done: status === 'sending' }">
+              <HandMark name="circled-bold-3" size="2.1em" class="num" />
+              <label for="c-name">Your name <span class="muted optional">optional</span></label>
+              <input id="c-name" v-model="form.name" name="name" autocomplete="name" />
             </div>
 
             <!-- Honeypot: hidden from people and screen readers; bots fill it in. -->
@@ -119,17 +97,17 @@
             <p v-if="error" class="error" role="alert">{{ error }}</p>
             <p class="send-row">
               <button type="submit" class="btn big send" :disabled="status === 'sending'">
-                <span>{{ status === 'sending' ? 'Sending' : 'Send it' }}</span>
+                <span>{{ status === 'sending' ? 'Sending' : 'Send' }}</span>
                 <HandMark name="arrow-right-thick" size="0.7em" class="send-arrow" :class="{ flying: status === 'sending' }" />
               </button>
-              <span class="muted kbd-hint">or press ⌘ + Enter</span>
+              <a class="muted call" href="https://ejfox.com/calendar" data-umami-event="contact-book-call">or book a 20-minute call</a>
             </p>
           </div>
         </Transition>
       </form>
 
       <p class="muted alt">
-        Prefer plain email? <a href="mailto:studio@room302.studio">studio@room302.studio</a>
+        Or email <a href="mailto:studio@room302.studio">studio@room302.studio</a>
       </p>
     </section>
   </div>
@@ -139,34 +117,28 @@
 import { useOgMetadata } from '~/composables/useOgMetadata'
 
 const ENDPOINT = 'https://room302-contact.ejfox.workers.dev'
-const WEIRD = 'Something weird'
-const KINDS = ['A data visualization', 'An interactive tool', 'A map', 'A prototype', 'Election or news graphics', WEIRD]
-const STARTERS = [
-  { label: 'a deadline', text: 'We need this by ' },
-  { label: 'a dataset', text: 'The data we have is ' },
-  { label: 'a dream', text: 'In a perfect world, ' },
-  { label: 'a budget', text: 'Our budget is around ' },
-]
+// Optional one-tap tags. Kept short on purpose: every extra option is reading.
+const KINDS = ['Map', 'Dashboard', 'Prototype', 'AI', 'Election graphics', 'Something else']
 
-const form = reactive({ email: '', kinds: [], message: '', name: '', heard_from: '', website: '' })
+const form = reactive({ email: '', kinds: [], message: '', name: '', website: '' })
 const status = ref('idle') // idle | sending | sent
 const step = ref(1)
 const error = ref('')
 const emailTouched = ref(false)
 const emailEl = ref(null)
 const messageEl = ref(null)
-let firstChip = null
 let openedAt = 0
 onMounted(() => { openedAt = Date.now() })
 
 const EMAIL_RE = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/
 const emailOk = computed(() => EMAIL_RE.test(form.email.trim()))
 const emailHint = computed(() =>
-  emailTouched.value && form.email.trim() && !emailOk.value ? 'That address looks a little off. Mind checking it?' : ''
+  emailTouched.value && form.email.trim() && !emailOk.value ? 'Check that email address' : ''
 )
 const firstName = computed(() => form.name.trim().split(/\s+/)[0] || '')
 
 const track = (name, data) => { try { window.umami?.track(name, data) } catch {} }
+const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches
 
 async function acceptEmail() {
   emailTouched.value = true
@@ -175,74 +147,66 @@ async function acceptEmail() {
     step.value = 2
     track('contact-step', { step: 'email' })
     await nextTick()
-    firstChip?.focus({ preventScroll: true })
-    firstChip?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' })
+    messageEl.value?.focus({ preventScroll: true })
+    messageEl.value?.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'center' })
   }
 }
 
 function toggleKind(k) {
   const i = form.kinds.indexOf(k)
-  if (i === -1) form.kinds.push(k)
+  if (i === -1) { form.kinds.push(k); track('contact-step', { step: 'kind', kind: k }) }
   else form.kinds.splice(i, 1)
-}
-
-async function addStarter(text) {
-  const m = form.message
-  form.message = m && !/\s$/.test(m) ? `${m} ${text}` : `${m}${text}`
-  await nextTick()
-  const el = messageEl.value
-  if (el) { el.focus(); el.setSelectionRange(form.message.length, form.message.length) }
 }
 
 async function submit() {
   error.value = ''
   if (!emailOk.value) { emailTouched.value = true; return emailEl.value?.focus() }
-  if (!form.message.trim()) return (error.value = 'Tell us a little about it first.')
-  if (!form.name.trim()) return (error.value = 'And your name, so we know who to thank.')
+  if (!form.message.trim()) { error.value = 'Add a line about the project'; return messageEl.value?.focus() }
 
   status.value = 'sending'
   // First page + referrer of this visit, saved by the umami-funnel plugin.
   let firstTouch = {}
   try { firstTouch = JSON.parse(sessionStorage.getItem('r302-first-touch') || '{}') } catch {}
-  const kinds = form.kinds.length ? `Working on: ${form.kinds.join(', ')}\n\n` : ''
+  const kinds = form.kinds.length ? `Project: ${form.kinds.join(', ')}\n\n` : ''
+  // Name is optional here; the worker needs one, so fall back to the email's local part.
+  const name = form.name.trim() || form.email.trim().split('@')[0]
 
   try {
     const res = await fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name: form.name, email: form.email, message: kinds + form.message, heard_from: form.heard_from,
+        name, email: form.email, message: kinds + form.message, heard_from: '',
         website: form.website, ...firstTouch, page: location.pathname, elapsed_ms: Date.now() - openedAt,
       }),
     })
     const data = await res.json().catch(() => ({}))
-    if (!res.ok) throw new Error(data.error || 'Something went wrong on our end. Try the email address below?')
+    if (!res.ok) throw new Error(data.error || "That didn't send. Email studio@room302.studio instead")
     status.value = 'sent'
-    track('form-submit', { from: location.pathname, heard_from: form.heard_from.trim().slice(0, 60) || '(blank)', kinds: form.kinds.join('|') || '(none)' })
-    window.scrollTo({ top: 0, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
+    track('form-submit', { from: location.pathname, kinds: form.kinds.join('|') || '(none)', named: form.name.trim() ? 'yes' : 'no' })
+    window.scrollTo({ top: 0, behavior: reduced() ? 'auto' : 'smooth' })
   } catch (e) {
     status.value = 'idle'
-    error.value = e.message || 'Something went wrong on our end. Try the email address below?'
+    error.value = e.message || "That didn't send. Email studio@room302.studio instead"
   }
 }
 
+const DESC = 'Tell Room 302 Studio about your project. We read every message and usually reply within a day.'
 useHead({ title: 'Contact Room 302 Studio' })
-
 useSeoMeta({
   title: 'Contact Room 302 Studio',
-  description: "Tell Room 302 Studio what you're working on. Every message lands with a person at the studio.",
+  description: DESC,
   ogTitle: 'Contact Room 302 Studio',
-  ogDescription: "Tell Room 302 Studio what you're working on. Every message lands with a person at the studio.",
+  ogDescription: DESC,
   ogUrl: 'https://room302.studio/contact',
   ogImage: 'https://room302.studio/og/contact.png',
   ogType: 'website',
   twitterCard: 'summary_large_image',
   twitterImage: 'https://room302.studio/og/contact.png',
   twitterTitle: 'Contact Room 302 Studio',
-  twitterDescription: "Tell Room 302 Studio what you're working on. Every message lands with a person at the studio.",
+  twitterDescription: DESC,
 })
-
-useOgMetadata('Contact Us', "Tell Room 302 Studio what you're working on. Every message lands with a person at the studio.")
+useOgMetadata('Contact Us', DESC)
 </script>
 
 <style scoped>
@@ -257,6 +221,8 @@ useOgMetadata('Contact Us', "Tell Room 302 Studio what you're working on. Every 
   .num { left: auto; right: 0; top: -0.35rem; }
   label, legend { padding-right: 2.5rem; }
   .chips { padding: 0 2.25rem 0 0.5rem; }
+  /* loops are ~118% of a chip; capping width keeps them on screen, long labels wrap */
+  .chip { max-width: 82%; text-align: left; }
 }
 
 label, legend { display: block; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.125rem; padding: 0; }
@@ -281,7 +247,7 @@ textarea { resize: vertical; line-height: 1.55; }
 .hint { margin: 0.5rem 0 0; color: var(--accent); font-size: 0.9375rem; }
 
 /* project chips: tap to pick; a pen ring loops around the chosen ones */
-.chips { display: flex; flex-wrap: wrap; gap: 0.6rem 0.7rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.6rem 0.7rem; margin: 0.25rem 0 1rem; }
 .chip {
   position: relative;
   padding: 0.55rem 0.95rem;
@@ -304,28 +270,16 @@ textarea { resize: vertical; line-height: 1.55; }
   color: var(--accent);
   pointer-events: none;
 }
-.star { margin-left: 0.3rem; color: var(--accent); }
 
-.starters { margin: 0.6rem 0 0; font-size: 0.9375rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.45rem; }
-.starter {
-  background: none; border: 0; padding: 0; cursor: pointer; color: var(--text);
-  text-decoration: underline; text-decoration-style: wavy; text-decoration-color: color-mix(in srgb, var(--accent) 70%, transparent);
-  text-underline-offset: 4px;
-}
-.starter:hover { color: var(--accent); }
-.dot { user-select: none; }
 
-.small-label { font-size: 0.9375rem; font-weight: 600; margin-top: 1.25rem; }
-.small-input { font-size: 1rem; }
 
+.call { font-size: 0.9375rem; }
 .send-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
 .send { display: inline-flex; align-items: center; gap: 0.7rem; }
 .send-arrow { transition: transform 0.25s cubic-bezier(0.3, 0.7, 0.4, 1); }
 .send:hover .send-arrow { transform: translateX(4px); }
 .send-arrow.flying { animation: fly 0.9s ease-in-out infinite; }
 @keyframes fly { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(7px); } }
-.kbd-hint { font-size: 0.8125rem; font-family: var(--font-mono); }
-@media (hover: none) { .kbd-hint { display: none; } }
 button[disabled] { opacity: 0.6; cursor: wait; }
 
 .error { color: var(--accent); }
