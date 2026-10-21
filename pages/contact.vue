@@ -3,11 +3,8 @@
     <section class="contact">
       <p class="eyebrow">Contact</p>
       <h1>Let's make something</h1>
-      <p class="measure lede">
-        Tell us about the project. We read every message and usually reply
-        within a day.
-      </p>
 
+      <!-- Note sent -->
       <div v-if="status === 'sent'" class="measure sent" role="status" aria-live="polite">
         <h2 class="sent-title">
           <span class="ringed">
@@ -19,55 +16,80 @@
           <HandMark name="arrow-bend-down-right" size="1.4em" draw class="accent" />
           We'll reply to <strong>{{ form.email }}</strong>, usually within a day.
         </p>
-        <p class="muted"><NuxtLink to="/our-work">Our work</NuxtLink></p>
       </div>
 
-      <form v-else class="measure contact-form" novalidate @submit.prevent="submit">
-        <!-- 1. Email -->
-        <div class="step" :class="{ done: emailOk }">
-          <HandMark name="circled-bold-1" size="2.1em" class="num" :draw="emailOk" />
-          <label for="c-email">Your email</label>
-          <div class="inline">
-            <input
-              id="c-email"
-              ref="emailEl"
-              v-model="form.email"
-              name="email"
-              type="email"
-              inputmode="email"
-              autocomplete="email"
-              placeholder="you@company.com"
-              required
-              @keydown.enter.prevent="acceptEmail"
-              @blur="emailTouched = form.email.length > 0"
-            />
-            <button v-if="step < 2" type="button" class="btn next" @click="acceptEmail">
-              <span class="sr-only">Next</span>
-              <HandMark name="arrow-right-thick" size="0.75em" />
+      <template v-else>
+        <!-- Main path: pick a time. No writing required. -->
+        <div class="measure book">
+          <p class="lede">Pick a time for a 20-minute call.</p>
+
+          <div v-if="slots.length" class="slots" role="group" aria-label="Open times">
+            <button
+              v-for="s in slots"
+              :key="s.datetime"
+              type="button"
+              class="slot"
+              :aria-pressed="picked?.datetime === s.datetime"
+              @click="pick(s)"
+            >
+              <span class="slot-day">{{ fmtDay(s.datetime) }}</span>
+              <span class="slot-time">
+                {{ fmtTime(s.datetime) }}
+                <PenLoop v-if="picked?.datetime === s.datetime" :seed="s.datetime" :weight="1.5" draw class="pen-ring" />
+              </span>
             </button>
           </div>
-          <p v-if="emailHint" class="hint" role="alert">{{ emailHint }}</p>
-        </div>
+          <p v-if="slots.length && tz" class="muted tz">Times in {{ tz }}</p>
 
-        <Transition name="unfold">
-          <div v-if="step >= 2" class="unfolded">
-            <!-- 2. The project: one box, optional one-tap tags -->
-            <div class="step" :class="{ done: form.message.trim().length > 2 }">
-              <HandMark name="circled-bold-2" size="2.1em" class="num" :draw="form.message.trim().length > 2" />
-              <label for="c-message">What's the project?</label>
-              <div class="chips" role="group" aria-label="Project type, optional">
-                <button
-                  v-for="k in KINDS"
-                  :key="k"
-                  type="button"
-                  class="chip"
-                  :aria-pressed="form.kinds.includes(k)"
-                  @click="toggleKind(k)"
-                >
-                  {{ k }}
-                  <PenLoop v-if="form.kinds.includes(k)" :seed="k" :weight="1.5" draw class="pen-ring" />
+          <Transition name="unfold">
+            <form v-if="picked" class="confirm" novalidate @submit.prevent="book">
+              <label for="c-book-email">Your email</label>
+              <div class="inline">
+                <input
+                  id="c-book-email"
+                  ref="bookEmailEl"
+                  v-model="form.email"
+                  type="email"
+                  inputmode="email"
+                  autocomplete="email"
+                  placeholder="you@company.com"
+                  required
+                />
+                <button type="submit" class="btn book-btn">
+                  Book it <HandMark name="arrow-right-thick" size="0.7em" class="send-arrow" />
                 </button>
               </div>
+              <p v-if="emailHint" class="hint" role="alert">{{ emailHint }}</p>
+            </form>
+          </Transition>
+
+          <p class="other">
+            <a :href="CAL_URL" data-umami-event="contact-other-times">{{ slots.length ? 'Other times' : 'See open times' }}</a>
+            <span class="muted" aria-hidden="true"> · </span>
+            <button type="button" class="linklike" :aria-expanded="showNote" @click="openNote">or send a note instead</button>
+          </p>
+        </div>
+
+        <!-- Secondary path: a note, for people who'd rather write -->
+        <Transition name="unfold">
+          <form v-if="showNote" class="measure contact-form" novalidate @submit.prevent="submit">
+            <div class="step">
+              <label for="c-email">Your email</label>
+              <input
+                id="c-email"
+                ref="emailEl"
+                v-model="form.email"
+                name="email"
+                type="email"
+                inputmode="email"
+                autocomplete="email"
+                placeholder="you@company.com"
+                required
+                @blur="emailTouched = form.email.length > 0"
+              />
+            </div>
+            <div class="step">
+              <label for="c-message">What's on your mind?</label>
               <textarea
                 id="c-message"
                 ref="messageEl"
@@ -80,31 +102,25 @@
                 @keydown.ctrl.enter.prevent="submit"
               ></textarea>
             </div>
-
-            <!-- 3. Send (name optional) -->
-            <div class="step" :class="{ done: status === 'sending' }">
-              <HandMark name="circled-bold-3" size="2.1em" class="num" />
+            <div class="step">
               <label for="c-name">Your name <span class="muted optional">optional</span></label>
               <input id="c-name" v-model="form.name" name="name" autocomplete="name" />
             </div>
-
             <!-- Honeypot: hidden from people and screen readers; bots fill it in. -->
             <p class="hp" aria-hidden="true">
               <label for="c-website">Website</label>
               <input id="c-website" v-model="form.website" name="website" tabindex="-1" autocomplete="off" />
             </p>
-
             <p v-if="error" class="error" role="alert">{{ error }}</p>
             <p class="send-row">
               <button type="submit" class="btn big send" :disabled="status === 'sending'">
                 <span>{{ status === 'sending' ? 'Sending' : 'Send' }}</span>
                 <HandMark name="arrow-right-thick" size="0.7em" class="send-arrow" :class="{ flying: status === 'sending' }" />
               </button>
-              <a class="muted call" href="https://ejfox.com/calendar" data-umami-event="contact-book-call">or book a 20-minute call</a>
             </p>
-          </div>
+          </form>
         </Transition>
-      </form>
+      </template>
 
       <p class="muted alt">
         Or email <a href="mailto:studio@room302.studio">studio@room302.studio</a>
@@ -117,15 +133,21 @@
 import { useOgMetadata } from '~/composables/useOgMetadata'
 
 const ENDPOINT = 'https://room302-contact.ejfox.workers.dev'
-// Optional one-tap tags. Kept short on purpose: every extra option is reading.
-const KINDS = ['Map', 'Dashboard', 'Prototype', 'AI', 'Election graphics', 'Something else']
+const CAL_URL = 'https://cal.com/ejfox/30min?duration=20'
 
-const form = reactive({ email: '', kinds: [], message: '', name: '', website: '' })
+// Next open times (server/api/slots.get.ts). Client-only so a slow calendar
+// never delays the page; with no slots the page shows a plain calendar link.
+const { data: slotData } = useLazyFetch('/api/slots', { server: false, default: () => ({ slots: [] }) })
+const slots = computed(() => slotData.value?.slots || [])
+
+const form = reactive({ email: '', message: '', name: '', website: '' })
 const status = ref('idle') // idle | sending | sent
-const step = ref(1)
+const picked = ref(null)
+const showNote = ref(false)
 const error = ref('')
 const emailTouched = ref(false)
 const emailEl = ref(null)
+const bookEmailEl = ref(null)
 const messageEl = ref(null)
 let openedAt = 0
 onMounted(() => { openedAt = Date.now() })
@@ -137,37 +159,53 @@ const emailHint = computed(() =>
 )
 const firstName = computed(() => form.name.trim().split(/\s+/)[0] || '')
 
+// Shown in the visitor's own time zone.
+const fmtDay = (iso) => new Date(iso).toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })
+const fmtTime = (iso) => new Date(iso).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' }).replace(':00', '').replace(' ', '').toLowerCase()
+const tz = computed(() => {
+  if (!import.meta.client || !slots.value[0]) return ''
+  return new Intl.DateTimeFormat(undefined, { timeZoneName: 'long' }).formatToParts(new Date(slots.value[0].datetime)).find((p) => p.type === 'timeZoneName')?.value || ''
+})
+
 const track = (name, data) => { try { window.umami?.track(name, data) } catch {} }
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches
 
-async function acceptEmail() {
-  emailTouched.value = true
-  if (!emailOk.value) return emailEl.value?.focus()
-  if (step.value < 2) {
-    step.value = 2
-    track('contact-step', { step: 'email' })
-    await nextTick()
-    messageEl.value?.focus({ preventScroll: true })
-    messageEl.value?.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'center' })
-  }
+async function pick(s) {
+  picked.value = s
+  track('contact-slot-pick', { day: new Date(s.datetime).getDay() })
+  await nextTick()
+  bookEmailEl.value?.focus({ preventScroll: true })
 }
 
-function toggleKind(k) {
-  const i = form.kinds.indexOf(k)
-  if (i === -1) { form.kinds.push(k); track('contact-step', { step: 'kind', kind: k }) }
-  else form.kinds.splice(i, 1)
+// Hand off to Cal.com on the exact slot, email already filled in.
+function book() {
+  emailTouched.value = true
+  if (!emailOk.value) return bookEmailEl.value?.focus()
+  const url = new URL(picked.value.bookingUrl)
+  url.searchParams.set('email', form.email.trim())
+  track('contact-book', {})
+  window.location.href = url.toString()
+}
+
+async function openNote() {
+  showNote.value = !showNote.value
+  if (showNote.value) {
+    track('contact-note-open', {})
+    await nextTick()
+    ;(form.email ? messageEl : emailEl).value?.focus({ preventScroll: true })
+    ;(form.email ? messageEl : emailEl).value?.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'center' })
+  }
 }
 
 async function submit() {
   error.value = ''
-  if (!emailOk.value) { emailTouched.value = true; return emailEl.value?.focus() }
+  if (!emailOk.value) { emailTouched.value = true; error.value = 'Check that email address'; return emailEl.value?.focus() }
   if (!form.message.trim()) { error.value = 'Add a line about the project'; return messageEl.value?.focus() }
 
   status.value = 'sending'
   // First page + referrer of this visit, saved by the umami-funnel plugin.
   let firstTouch = {}
   try { firstTouch = JSON.parse(sessionStorage.getItem('r302-first-touch') || '{}') } catch {}
-  const kinds = form.kinds.length ? `Project: ${form.kinds.join(', ')}\n\n` : ''
   // Name is optional here; the worker needs one, so fall back to the email's local part.
   const name = form.name.trim() || form.email.trim().split('@')[0]
 
@@ -176,14 +214,14 @@ async function submit() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name, email: form.email, message: kinds + form.message, heard_from: '',
+        name, email: form.email, message: form.message, heard_from: '',
         website: form.website, ...firstTouch, page: location.pathname, elapsed_ms: Date.now() - openedAt,
       }),
     })
     const data = await res.json().catch(() => ({}))
     if (!res.ok) throw new Error(data.error || "That didn't send. Email studio@room302.studio instead")
     status.value = 'sent'
-    track('form-submit', { from: location.pathname, kinds: form.kinds.join('|') || '(none)', named: form.name.trim() ? 'yes' : 'no' })
+    track('form-submit', { from: location.pathname, named: form.name.trim() ? 'yes' : 'no' })
     window.scrollTo({ top: 0, behavior: reduced() ? 'auto' : 'smooth' })
   } catch (e) {
     status.value = 'idle'
@@ -191,7 +229,7 @@ async function submit() {
   }
 }
 
-const DESC = 'Tell Room 302 Studio about your project. We read every message and usually reply within a day.'
+const DESC = 'Pick a time for a 20-minute call with Room 302 Studio, or send a note.'
 useHead({ title: 'Contact Room 302 Studio' })
 useSeoMeta({
   title: 'Contact Room 302 Studio',
@@ -220,9 +258,6 @@ useOgMetadata('Contact Us', DESC)
 @media (max-width: 760px) {
   .num { left: auto; right: 0; top: -0.35rem; }
   label, legend { padding-right: 2.5rem; }
-  .chips { padding: 0 2.25rem 0 0.5rem; }
-  /* loops are ~118% of a chip; capping width keeps them on screen, long labels wrap */
-  .chip { max-width: 82%; text-align: left; }
 }
 
 label, legend { display: block; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.125rem; padding: 0; }
@@ -246,30 +281,6 @@ textarea { resize: vertical; line-height: 1.55; }
 .next { padding: 0 1.1rem; display: inline-flex; align-items: center; }
 .hint { margin: 0.5rem 0 0; color: var(--accent); font-size: 0.9375rem; }
 
-/* project chips: tap to pick; a pen ring loops around the chosen ones */
-.chips { display: flex; flex-wrap: wrap; gap: 0.6rem 0.7rem; margin: 0.25rem 0 1rem; }
-.chip {
-  position: relative;
-  padding: 0.55rem 0.95rem;
-  border: 1.5px solid var(--rule);
-  border-radius: 999px;
-  background: var(--bg);
-  font-size: 0.9375rem;
-  cursor: pointer;
-  transition: border-color 0.2s, transform 0.15s;
-}
-.chip:hover { border-color: var(--text-muted); transform: translateY(-1px) rotate(-0.4deg); }
-.chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.chip[aria-pressed='true'] { border-color: transparent; font-weight: 600; }
-.chip .pen-ring {
-  position: absolute;
-  /* a loop only touches its box at the edge midpoints, so the box must be
-     ~1.3x the chip for the corners of the label to sit inside the ink */
-  left: -9%; top: -30%;
-  width: 118%; height: 160%;
-  color: var(--accent);
-  pointer-events: none;
-}
 
 
 
@@ -302,8 +313,38 @@ button[disabled] { opacity: 0.6; cursor: wait; }
 .unfold-enter-active { transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.3, 0.7, 0.4, 1); }
 .unfold-enter-from { opacity: 0; transform: translateY(10px); }
 @media (prefers-reduced-motion: reduce) {
-  .unfold-enter-active, .chip, .send-arrow, .num { transition: none; }
-  .chip:hover { transform: none; }
   .send-arrow.flying { animation: none; }
 }
+
+/* time slots: the main path */
+.book { margin-top: 0.5rem; }
+.slots { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin: 1.25rem 0 0.5rem; }
+.slot {
+  position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 0.2rem;
+  padding: 0.85rem 1rem; border: 1.5px solid var(--rule); border-radius: 2px; background: var(--bg); cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.slot:hover { border-color: var(--text-muted); transform: translateY(-1px); }
+.slot:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.slot[aria-pressed='true'] { border-color: var(--accent); }
+.slot-day { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+.slot-time { position: relative; font-size: 1.25rem; font-weight: 600; }
+.slot .pen-ring { position: absolute; left: -22%; top: -18%; width: 144%; height: 136%; color: var(--accent); pointer-events: none; }
+.tz { font-size: 0.8125rem; margin: 0 0 1rem; }
+.confirm { margin: 1.25rem 0 0.5rem; }
+.book-btn { display: inline-flex; align-items: center; gap: 0.6rem; white-space: nowrap; }
+.other { margin-top: 1.25rem; font-size: 0.9375rem; }
+.linklike { background: none; border: 0; padding: 0; font: inherit; color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.linklike:hover { color: var(--text); }
+.contact-form { margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid var(--rule); }
+@media (max-width: 520px) {
+  .slots { grid-template-columns: 1fr; }
+  .slot { padding-right: 1.4rem; }
+  .slot { flex-direction: row; justify-content: space-between; align-items: baseline; }
+}
+@media (max-width: 400px) {
+  .confirm .inline { flex-direction: column; }
+  .book-btn { justify-content: center; padding: 0.8rem; }
+}
+@media (prefers-reduced-motion: reduce) { .slot { transition: none; } .slot:hover { transform: none; } }
 </style>
