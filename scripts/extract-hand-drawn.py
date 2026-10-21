@@ -6,8 +6,8 @@ import json, os, re
 from svgelements import SVG, Path
 
 SRC = os.path.expanduser("~/code/website2/assets/hand-drawn")
-NAMES = ["arrow-right-long", "arrow-down-curve", "arrow-bend-down-right", "circle-md", "circle-lg",
-         "star-4pt", "scribble", "circled-1", "circled-2", "circled-3", "circled-4", "mark-dash"]
+NAMES = ["arrow-right-long", "arrow-right-thick", "arrow-bend-down-right", "star-4pt",
+         "circled-bold-1", "circled-bold-2", "circled-bold-3", "circled-bold-4"]
 man = {a["name"]: a for a in json.load(open(f"{SRC}/manifest.json"))}
 raw = open(f"{SRC}/master.svg").read()
 # class -> stroked? (st0 is a 2px stroke; st1/st2 are fills)

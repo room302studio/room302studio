@@ -13,7 +13,7 @@
         <h2 class="sent-title">
           <span class="ringed">
             Got it{{ firstName ? `, ${firstName}` : '' }}
-            <HandMark name="circle-lg" stretch draw from="down" class="ring" />
+            <PenLoop :seed="`got-${firstName}`" :weight="2.25" draw class="pen-ring" />
           </span>
         </h2>
         <p class="sent-line">
@@ -28,7 +28,7 @@
       <form v-else class="measure contact-form" novalidate @submit.prevent="submit">
         <!-- 1. Email first: the one thing we need to write back -->
         <div class="step" :class="{ done: emailOk }">
-          <HandMark name="circled-1" size="1.9em" class="num" :draw="emailOk" />
+          <HandMark name="circled-bold-1" size="2.1em" class="num" :draw="emailOk" />
           <label for="c-email">Where can we write back?</label>
           <div class="inline">
             <input
@@ -46,7 +46,7 @@
             />
             <button v-if="step < 2" type="button" class="btn next" @click="acceptEmail">
               <span class="sr-only">Next</span>
-              <HandMark name="arrow-right-long" size="0.9em" />
+              <HandMark name="arrow-right-thick" size="0.75em" />
             </button>
           </div>
           <p v-if="emailHint" class="hint" role="alert">{{ emailHint }}</p>
@@ -56,7 +56,7 @@
           <div v-if="step >= 2" class="unfolded">
             <!-- 2. What kind of thing: tap instead of describe -->
             <fieldset class="step" :class="{ done: form.kinds.length > 0 }">
-              <HandMark name="circled-2" size="1.9em" class="num" :draw="form.kinds.length > 0" />
+              <HandMark name="circled-bold-2" size="2.1em" class="num" :draw="form.kinds.length > 0" />
               <legend>What are you working on? <span class="muted optional">pick any</span></legend>
               <div class="chips">
                 <button
@@ -69,14 +69,14 @@
                   @click="toggleKind(k)"
                 >
                   {{ k }}<HandMark v-if="k === WEIRD" name="star-4pt" size="0.85em" class="star" />
-                  <HandMark v-if="form.kinds.includes(k)" name="circle-lg" stretch draw from="down" class="ring" />
+                  <PenLoop v-if="form.kinds.includes(k)" :seed="k" :weight="1.5" draw class="pen-ring" />
                 </button>
               </div>
             </fieldset>
 
             <!-- 3. The message, with a nudge instead of a blank box -->
             <div class="step" :class="{ done: form.message.trim().length > 2 }">
-              <HandMark name="circled-3" size="1.9em" class="num" :draw="form.message.trim().length > 2" />
+              <HandMark name="circled-bold-3" size="2.1em" class="num" :draw="form.message.trim().length > 2" />
               <label for="c-message">Tell us a little more</label>
               <textarea
                 id="c-message"
@@ -103,7 +103,7 @@
           <div v-if="step >= 2 && form.message.trim().length > 0" class="unfolded">
             <!-- 4. Who we're talking to -->
             <div class="step" :class="{ done: form.name.trim().length > 0 }">
-              <HandMark name="circled-4" size="1.9em" class="num" :draw="form.name.trim().length > 0" />
+              <HandMark name="circled-bold-4" size="2.1em" class="num" :draw="form.name.trim().length > 0" />
               <label for="c-name">And who are we talking to?</label>
               <input id="c-name" v-model="form.name" name="name" autocomplete="name" placeholder="Your name" required />
               <label for="c-heard" class="small-label">How'd you find us? <span class="muted optional">optional</span></label>
@@ -120,7 +120,7 @@
             <p class="send-row">
               <button type="submit" class="btn big send" :disabled="status === 'sending'">
                 <span>{{ status === 'sending' ? 'Sending' : 'Send it' }}</span>
-                <HandMark name="arrow-right-long" size="0.75em" class="send-arrow" :class="{ flying: status === 'sending' }" />
+                <HandMark name="arrow-right-thick" size="0.7em" class="send-arrow" :class="{ flying: status === 'sending' }" />
               </button>
               <span class="muted kbd-hint">or press ⌘ + Enter</span>
             </p>
@@ -256,7 +256,7 @@ useOgMetadata('Contact Us', "Tell Room 302 Studio what you're working on. Every 
 @media (max-width: 760px) {
   .num { left: auto; right: 0; top: -0.35rem; }
   label, legend { padding-right: 2.5rem; }
-  .chips { padding-right: 2.25rem; }
+  .chips { padding: 0 2.25rem 0 0.5rem; }
 }
 
 label, legend { display: block; font-weight: 700; margin-bottom: 0.5rem; font-size: 1.125rem; padding: 0; }
@@ -295,12 +295,12 @@ textarea { resize: vertical; line-height: 1.55; }
 .chip:hover { border-color: var(--text-muted); transform: translateY(-1px) rotate(-0.4deg); }
 .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .chip[aria-pressed='true'] { border-color: transparent; font-weight: 600; }
-.chip .ring {
+.chip .pen-ring {
   position: absolute;
   /* a loop only touches its box at the edge midpoints, so the box must be
      ~1.3x the chip for the corners of the label to sit inside the ink */
-  left: -13%; top: -38%;
-  width: 126%; height: 176%;
+  left: -9%; top: -30%;
+  width: 118%; height: 160%;
   color: var(--accent);
   pointer-events: none;
 }
@@ -334,8 +334,9 @@ button[disabled] { opacity: 0.6; cursor: wait; }
 /* sent */
 .sent { margin: 3rem 0 2rem; }
 .sent-title { font-size: 2rem; margin-bottom: 1.25rem; }
-.ringed { position: relative; display: inline-block; padding: 0 0.15em; }
-.ringed .ring { position: absolute; left: -15%; top: -42%; width: 130%; height: 184%; color: var(--accent); pointer-events: none; }
+/* margin-left leaves room for the loop's left swing so it never runs off the page edge */
+.ringed { position: relative; display: inline-block; padding: 0 0.15em; margin-left: 0.55em; }
+.ringed .pen-ring { position: absolute; left: -15%; top: -42%; width: 130%; height: 184%; color: var(--accent); pointer-events: none; }
 .sent-line { font-size: 1.125rem; line-height: 1.6; }
 .sent-line .accent { margin-right: 0.45rem; vertical-align: -0.35em; }
 .accent { color: var(--accent); }
