@@ -4,8 +4,8 @@
       <p class="eyebrow">Contact</p>
       <h1>Let's make something</h1>
       <p class="measure lede">
-        Tell us what you're working on. A person at the studio reads every
-        message and writes every reply, typically within a day on business days.
+        Tell us what you're working on. Every message lands with a person at
+        the studio, and we usually reply within a day.
       </p>
 
       <!-- Sent: a handwritten-feeling thank-you -->
@@ -230,19 +230,19 @@ useHead({ title: 'Contact Room 302 Studio' })
 
 useSeoMeta({
   title: 'Contact Room 302 Studio',
-  description: "Tell Room 302 Studio what you're working on. A person reads every message and writes every reply.",
+  description: "Tell Room 302 Studio what you're working on. Every message lands with a person at the studio.",
   ogTitle: 'Contact Room 302 Studio',
-  ogDescription: "Tell Room 302 Studio what you're working on. A person reads every message and writes every reply.",
+  ogDescription: "Tell Room 302 Studio what you're working on. Every message lands with a person at the studio.",
   ogUrl: 'https://room302.studio/contact',
   ogImage: 'https://room302.studio/og/contact.png',
   ogType: 'website',
   twitterCard: 'summary_large_image',
   twitterImage: 'https://room302.studio/og/contact.png',
   twitterTitle: 'Contact Room 302 Studio',
-  twitterDescription: "Tell Room 302 Studio what you're working on. A person reads every message and writes every reply.",
+  twitterDescription: "Tell Room 302 Studio what you're working on. Every message lands with a person at the studio.",
 })
 
-useOgMetadata('Contact Us', "Tell Room 302 Studio what you're working on. A person reads every message and writes every reply.")
+useOgMetadata('Contact Us', "Tell Room 302 Studio what you're working on. Every message lands with a person at the studio.")
 </script>
 
 <style scoped>
