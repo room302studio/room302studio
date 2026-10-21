@@ -2,6 +2,7 @@
 //
 // POST / (JSON) { name, email, message, heard_from, landing, referrer, page,
 //                 website (honeypot), elapsed_ms }
+// GET /health → uptime check (see health() below)
 //
 // The lead is written to D1 first, then emailed to LEAD_EMAILS via Email
 // Routing, with Reply-To set to the sender so replying answers them directly.
@@ -14,6 +15,7 @@ const MIN_FILL_MS = 3000; // humans don't fill a form in under 3s
 export default {
   async fetch(request, env) {
     const cors = corsHeaders(request, env);
+    if (request.method === 'GET' && new URL(request.url).pathname === '/health') return health(env);
     if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
     if (request.method !== 'POST') return json({ error: 'POST only' }, 405, cors);
     if (!cors['Access-Control-Allow-Origin']) return json({ error: 'origin not allowed' }, 403, cors);
@@ -52,6 +54,23 @@ export default {
     return json({ ok: true }, 200, cors);
   },
 };
+
+// For Uptime Kuma (keyword "ok":true, every 5 min). Fails if D1 can't be read,
+// the email binding is missing, or any real lead from the last 7 days was saved
+// but never emailed. Leads under 5 minutes old are skipped (send in flight).
+// Reports no lead details.
+async function health(env) {
+  const headers = { 'Cache-Control': 'no-store' };
+  try {
+    const { unsent } = await env.DB.prepare(
+      "SELECT count(*) AS unsent FROM leads WHERE emailed = 0 AND created_at > datetime('now', '-7 days') AND created_at < datetime('now', '-5 minutes')"
+    ).first();
+    const ok = Boolean(env.EMAIL) && unsent === 0;
+    return json({ ok, db: true, email_binding: Boolean(env.EMAIL), unsent_7d: unsent }, ok ? 200 : 503, headers);
+  } catch (e) {
+    return json({ ok: false, db: false }, 503, headers);
+  }
+}
 
 async function sendLead(env, lead) {
   const rows = [
